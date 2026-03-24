@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Provas 🎓</title>
+    <style>
+        /* Configurações Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 { margin: 0; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; }
+        p { margin-top: 10px; opacity: 0.9; }
+
+        /* Grade de Matérias */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            padding-bottom: 50px;
+        }
+
+        /* Estilo dos Cards */
+        .card {
+            background: white;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            border-color: #2a5298;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .materia-nome {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Cores de destaque (opcional) */
+        .card:nth-child(1) { border-top: 5px solid #ff4757; } /* Matemática */
+        .card:nth-child(2) { border-top: 5px solid #2ed573; } /* Português */
+        .card:nth-child(3) { border-top: 5px solid #eccc68; } /* História */
+        .card:nth-child(4) { border-top: 5px solid #70a1ff; } /* Geografia */
+        .card:nth-child(5) { border-top: 5px solid #ffa502; } /* Ciências */
+        .card:nth-child(6) { border-top: 5px solid #3742fa; } /* Inglês */
+        .card:nth-child(7) { border-top: 5px solid #5352ed; } /* Espanhol */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portal de Provas - Kleber 7º Ano</h1>
+        <p>Selecione sua matéria para começar os estudos</p>
+    </header>
+
+    <div class="container">
+        <a href="Matematica/trimestres.html" class="card">
+            <div class="icon">📐</div>
+            <div class="materia-nome">Matemática</div>
+        </a>
+
+        <a href="Portugues/trimestres.html" class="card">
+            <div class="icon">📚</div>
+            <div class="materia-nome">Português</div>
+        </a>
+
+        <a href="Historia/trimestres.html" class="card">
+            <div class="icon">📜</div>
+            <div class="materia-nome">História</div>
+        </a>
+
+        <a href="Geografia/trimestres.html" class="card">
+            <div class="icon">🌍</div>
+            <div class="materia-nome">Geografia</div>
+        </a>
+
+        <a href="Ciencias/trimestres.html" class="card">
+            <div class="icon">🧪</div>
+            <div class="materia-nome">Ciências</div>
+        </a>
+
+        <a href="Ingles/trimestres.html" class="card">
+            <div class="icon">🇺🇸</div>
+            <div class="materia-nome">Inglês</div>
+        </a>
+
+        <a href="Espanhol/trimestres.html" class="card">
+            <div class="icon">🇪🇸</div>
+            <div class="materia-nome">Espanhol</div>
+        </a>
+    </div>
+
+</body>
+</html>
