@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Matemática - 7º Ano (Parte 2)</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; color: #333; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2980b9; }
+        .question { margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
+        .question p { font-weight: bold; margin-bottom: 10px; }
+        .options label { display: block; cursor: pointer; padding: 8px; border-radius: 6px; transition: 0.2s; }
+        .options label:hover { background-color: #f1faff; }
+        button { display: block; width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+        button:hover { background-color: #2980b9; }
+        #result { margin-top: 20px; padding: 20px; border-radius: 8px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .wrong { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .answer-list { margin-top: 15px; font-weight: normal; list-style-type: none; padding-left: 0; }
+        .answer-list li { padding: 5px 0; border-bottom: 1px dashed #ccc; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado 7º Ano: Novos Desafios</h1>
+    <form id="quizForm">
+        
+        <!-- Números Decimais -->
+        <div class="question">
+            <p>1. Qual é o resultado de 12,5 - 4,75?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) 7,75</label>
+                <label><input type="radio" name="q1" value="B"> B) 8,25</label>
+                <label><input type="radio" name="q1" value="C"> C) 7,25</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Multiplicando 0,5 por 0,2, obtemos:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) 0,1</label>
+                <label><input type="radio" name="q2" value="B"> B) 1,0</label>
+                <label><input type="radio" name="q2" value="C"> C) 0,01</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Qual número decimal representa a fração 1/8?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) 0,12</label>
+                <label><input type="radio" name="q3" value="B"> B) 0,125</label>
+                <label><input type="radio" name="q3" value="C"> C) 0,8</label>
+            </div>
+        </div>
+
+        <!-- Simetria -->
+        <div class="question">
+            <p>4. Em relação ao eixo x, o ponto simétrico de (4, -5) é:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) (-4, -5)</label>
+                <label><input type="radio" name="q4" value="B"> B) (4, 5)</label>
+                <label><input type="radio" name="q4" value="C"> C) (-4, 5)</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Figuras que podem ser dobradas ao meio de modo que as duas partes coincidam possuem:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Eixo de simetria</label>
+                <label><input type="radio" name="q5" value="B"> B) Vértice oposto</label>
+                <label><input type="radio" name="q5" value="C"> C) Ângulo reto</label>
+            </div>
+        </div>
+
+        <!-- Conjuntos e Retas Numéricas -->
+        <div class="question">
+            <p>6. O conjunto Z* representa o conjunto dos números inteiros:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Apenas positivos</label>
+                <label><input type="radio" name="q6" value="B"> B) Apenas negativos</label>
+                <label><input type="radio" name="q6" value="C"> C) Sem o número zero</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. Na reta numérica, qual número está exatamente no meio entre -4 e +2?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) -1</label>
+                <label><input type="radio" name="q7" value="B"> B) -2</label>
+                <label><input type="radio" name="q7" value="C"> C) 0</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. Qual destes números NÃO é um número inteiro?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) -100</label>
+                <label><input type="radio" name="q8" value="B"> B) 15/3</label>
+                <label><input type="radio" name="q8" value="C"> C) 2,5</label>
+            </div>
+        </div>
+
+        <!-- Antecessor, Sucessor, Consecutivo -->
+        <div class="question">
+            <p>9. Qual o antecessor do sucessor de -7?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) -6</label>
+                <label><input type="radio" name="q9" value="B"> B) -7</label>
+                <label><input type="radio" name="q9" value="C"> C) -8</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. Se n é um número inteiro, seu sucessor é representado por:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) n - 1</label>
+                <label><input type="radio" name="q10" value="B"> B) n + 1</label>
+                <label><input type="radio" name="q10" value="C"> C) n + n</label>
+            </div>
+        </div>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Matemática - Parte 2</title>
+    <style>
+        :root { --primary: #2980b9; --success: #27ae60; --danger: #e74c3c; --bg: #f0f2f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #333; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h1 { color: var(--primary); text-align: center; font-size: 1.6em; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #ddd; transition: all 0.3s; border-left: 6px solid var(--primary); }
+        .question p { font-weight: bold; margin-top: 0; color: #2c3e50; }
+
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #f1faff; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        /* Estilos de Correção */
+        .q-correct { border-left-color: var(--success); background: #f0fff4; }
+        .q-wrong { border-left-color: var(--danger); background: #fff5f5; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; font-weight: bold; }
+        .correct-box { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .wrong-box { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #1e3c72; transform: translateY(-2px); }
+
+        .answer-list { margin-top: 15px; font-weight: normal; list-style: none; padding: 0; text-align: left; }
+        .answer-list li { padding: 8px 0; border-bottom: 1px dashed #ccc; font-size: 0.9em; }
+
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>Simulado 7º Ano: Novos Desafios</strong></header>
+
+<div class="container">
+    <h1>Matemática - Parte 2</h1>
+    <div id="result"></div>
+    
+    <form id="quizForm">
+        <!-- QUESTÕES 1-10 -->
+        <div class="question" id="div_q1"><p>1. Qual é o resultado de 12,5 - 4,75?</p>
+            <label><input type="radio" name="q1" value="A"> A) 7,75</label>
+            <label><input type="radio" name="q1" value="B"> B) 8,25</label>
+            <label><input type="radio" name="q1" value="C"> C) 7,25</label></div>
+
+        <div class="question" id="div_q2"><p>2. Multiplicando 0,5 por 0,2, obtemos:</p>
+            <label><input type="radio" name="q2" value="A"> A) 0,1</label>
+            <label><input type="radio" name="q2" value="B"> B) 1,0</label>
+            <label><input type="radio" name="q2" value="C"> C) 0,01</label></div>
+
+        <div class="question" id="div_q3"><p>3. Qual número decimal representa a fração 1/8?</p>
+            <label><input type="radio" name="q3" value="A"> A) 0,12</label>
+            <label><input type="radio" name="q3" value="B"> B) 0,125</label>
+            <label><input type="radio" name="q3" value="C"> C) 0,8</label></div>
+
+        <div class="question" id="div_q4"><p>4. Em relação ao eixo x, o ponto simétrico de (4, -5) é:</p>
+            <label><input type="radio" name="q4" value="A"> A) (-4, -5)</label>
+            <label><input type="radio" name="q4" value="B"> B) (4, 5)</label>
+            <label><input type="radio" name="q4" value="C"> C) (-4, 5)</label></div>
+
+        <div class="question" id="div_q5"><p>5. Figuras que coincidem ao serem dobradas possuem:</p>
+            <label><input type="radio" name="q5" value="A"> A) Eixo de simetria</label>
+            <label><input type="radio" name="q5" value="B"> B) Vértice oposto</label>
+            <label><input type="radio" name="q5" value="C"> C) Ângulo reto</label></div>
+
+        <div class="question" id="div_q6"><p>6. O conjunto Z* representa os inteiros:</p>
+            <label><input type="radio" name="q6" value="A"> A) Apenas positivos</label>
+            <label><input type="radio" name="q6" value="B"> B) Apenas negativos</label>
+            <label><input type="radio" name="q6" value="C"> C) Sem o número zero</label></div>
+
+        <div class="question" id="div_q7"><p>7. Na reta, qual número está no meio entre -4 e +2?</p>
+            <label><input type="radio" name="q7" value="A"> A) -1</label>
+            <label><input type="radio" name="q7" value="B"> B) -2</label>
+            <label><input type="radio" name="q7" value="C"> C) 0</label></div>
+
+        <div class="question" id="div_q8"><p>8. Qual destes números NÃO é um número inteiro?</p>
+            <label><input type="radio" name="q8" value="A"> A) -100</label>
+            <label><input type="radio" name="q8" value="B"> B) 15/3</label>
+            <label><input type="radio" name="q8" value="C"> C) 2,5</label></div>
+
+        <div class="question" id="div_q9"><p>9. Qual o antecessor do sucessor de -7?</p>
+            <label><input type="radio" name="q9" value="A"> A) -6</label>
+            <label><input type="radio" name="q9" value="B"> B) -7</label>
+            <label><input type="radio" name="q9" value="C"> C) -8</label></div>
+
+        <div class="question" id="div_q10"><p>10. Se n é inteiro, seu sucessor é:</p>
+            <label><input type="radio" name="q10" value="A"> A) n - 1</label>
+            <label><input type="radio" name="q10" value="B"> B) n + 1</label>
+            <label><input type="radio" name="q10" value="C"> C) n + n</label></div>
+
+        <!-- QUESTÕES 11-20 -->
+        <div class="question" id="div_q11"><p>11. O sucessor de -20 é:</p>
+            <label><input type="radio" name="q11" value="A"> A) -21</label>
+            <label><input type="radio" name="q11" value="B"> B) -19</label>
+            <label><input type="radio" name="q11" value="C"> C) 21</label></div>
+
+        <div class="question" id="div_q12"><p>12. Se o oposto de um número é -12, esse número é:</p>
+            <label><input type="radio" name="q12" value="A"> A) -12</label>
+            <label><input type="radio" name="q12" value="B"> B) 12</label>
+            <label><input type="radio" name="q12" value="C"> C) 0</label></div>
+
+        <div class="question" id="div_q13"><p>13. A soma de um número com seu oposto é:</p>
+            <label><input type="radio" name="q13" value="A"> A) 1</label>
+            <label><input type="radio" name="q13" value="B"> B) O próprio número</label>
+            <label><input type="radio" name="q13" value="C"> C) 0</label></div>
+
+        <div class="question" id="div_q14"><p>14. Qual alternativa usa corretamente o sinal de maior que (>)?</p>
+            <label><input type="radio" name="q14" value="A"> A) -15 > -10</label>
+            <label><input type="radio" name="q14" value="B"> B) 0 > -5</label>
+            <label><input type="radio" name="q14" value="C"> C) -8 > 2</label></div>
+
+        <div class="question" id="div_q15"><p>15. Se x >= 5, qual valor NÃO pode ser x?</p>
+            <label><input type="radio" name="q15" value="A"> A) 5</label>
+            <label><input type="radio" name="q15" value="B"> B) 10</label>
+            <label><input type="radio" name="q15" value="C"> C) 4</label></div>
+
+        <div class="question" id="div_q16"><p>16. Entre -12, -2, 0 e -15, qual é o menor?</p>
+            <label><input type="radio" name="q16" value="A"> A) 0</label>
+            <label><input type="radio" name="q16" value="B"> B) -2</label>
+            <label><input type="radio" name="q16" value="C"> C) -15</label></div>
+
+        <div class="question" id="div_q17"><p>17. Complete a sequência: 10, 7, 4, 1, ...</p>
+            <label><input type="radio" name="r17" value="A"> A) -2</label>
+            <label><input type="radio" name="r17" value="B"> B) 0</label>
+            <label><input type="radio" name="r17" value="C"> C) -3</label></div>
+
+        <div class="question" id="div_q18"><p>18. Números simétricos têm:</p>
+            <label><input type="radio" name="q18" value="A"> A) O mesmo sinal</label>
+            <label><input type="radio" name="q18" value="B"> B) A mesma distância do zero</label>
+            <label><input type="radio" name="q18" value="C"> C) O mesmo sinal e valor</label></div>
+
+        <div class="question" id="div_q19"><p>19. O oposto do sucessor de 9 é:</p>
+            <label><input type="radio" name="q19" value="A"> A) -10</label>
+            <label><input type="radio" name="q19" value="B"> B) -8</label>
+            <label><input type="radio" name="q19" value="C"> C) 10</label></div>
+
+        <div class="question" id="div_q20"><p>20. Qual é o resultado de (-3) + (-5)?</p>
+            <label><input type="radio" name="q20" value="A"> A) -2</label>
+            <label><input type="radio" name="q20" value="B"> B) 8</label>
+            <label><input type="radio" name="q20" value="C"> C) -8</label></div>
+
+        <button type="button" id="btnFinalizar" onclick="calculateResult()">Finalizar e Ver Respostas</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="lista_provas.html">← Voltar para Lista</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function calculateResult() {
+        const answers = {
+            q1: 'A', q2: 'A', q3: 'B', q4: 'B', q5: 'A',
+            q6: 'C', q7: 'A', q8: 'C', q9: 'B', q10: 'B',
+            q11: 'B', q12: 'B', q13: 'C', q14: 'B', q15: 'C',
+            q16: 'C', q17: 'A', q18: 'B', q19: 'A', q20: 'C'
+        };
+
+        let score = 0;
+        let total = 20;
+
+        // Validação
+        for(let i=1; i<=total; i++) {
+            if(!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Responda a questão " + i); return;
+            }
+        }
+
+        let report = "<ul class='answer-list'>";
+        for (let i = 1; i <= total; i++) {
+            let q = "q" + i;
+            let div = document.getElementById("div_" + q);
+            let selected = document.querySelector(`input[name="${q}"]:checked`);
+            
+            if (selected && selected.value === answers[q]) {
+                score++;
+                div.className = "question q-correct";
+            } else {
+                div.className = "question q-wrong";
+            }
+            report += `<li><b>Q${i}:</b> Correta: <b>${answers[q]}</b></li>`;
+        }
+        report += "</ul>";
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        const nota = (score / total) * 10;
+        resultDiv.innerHTML = `<h3>Nota: ${nota.toFixed(1)} (${score} acertos)</h3>` + report;
+        resultDiv.className = score >= 12 ? 'correct-box' : 'wrong-box';
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

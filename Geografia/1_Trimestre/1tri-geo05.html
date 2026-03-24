@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia 7º Ano - Dissertativa Bloco 02</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --info: #2980b9; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; margin-bottom: 15px; }
+        
+        textarea { 
+            width: 100%; min-height: 110px; padding: 15px; border-radius: 8px; border: 1px solid #ccc; 
+            font-family: inherit; font-size: 1em; resize: vertical; box-sizing: border-box; transition: 0.3s;
+        }
+        textarea:focus { outline: none; border-color: var(--primary); background: #fef5e7; }
+
+        .feedback-box { 
+            display: none; margin-top: 15px; padding: 15px; border-radius: 8px; 
+            background: #e8f4fd; border: 1px solid #b8daff; color: #245580; font-size: 0.95em;
+        }
+        .feedback-box strong { color: var(--info); display: block; margin-bottom: 5px; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🌎 Geografia: Evolução Territorial e Relevo (7º Ano)</strong></header>
+
+<div class="container">
+    <h1>Avaliação Dissertativa - Bloco 02</h1>
+    <p style="text-align:center; font-style: italic;">Aprofundamento: Formação do Brasil e Geologia</p>
+    
+    <div id="result"></div>
+
+    <form id="geoDissert02">
+        <h2>Fronteiras e Regionalizações do Nordeste</h2>
+        
+        <div class="question">
+            <p>1. O Brasil possui uma grande extensão de norte a sul (latitudinal). Como essa característica influencia a quantidade de zonas climáticas e a diversidade de vegetação no país?</p>
+            <textarea name="q1" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> A grande extensão latitudinal faz com que o Brasil tenha terras tanto na zona intertropical quanto na zona temperada do sul. Isso resulta em uma enorme variação climática (do equatorial ao subtropical) e, consequentemente, em biomas diversos como a Amazônia, o Cerrado e os Pampas.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Explique a importância do Tratado de Petrópolis (1903) para a definição da fronteira norte do Brasil. Qual ciclo econômico estava envolvido nessa negociação?</p>
+            <textarea name="q2" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> O Tratado de Petrópolis selou a compra do atual estado do Acre junto à Bolívia. O principal interesse econômico era a extração de látex para a produção de borracha, que estava em seu auge na região amazônica.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. O Complexo Regional do Nordeste (divisão geoeconômica) é muito diverso. Cite as quatro sub-regiões do Nordeste e explique a característica principal de uma delas.</p>
+            <textarea name="q3" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> As sub-regiões são: Zona da Mata, Agreste, Sertão e Meio-Norte. (Exemplo: O Sertão caracteriza-se pelo clima semiárido e vegetação de Caatinga, sendo a área com maiores períodos de seca).
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Por que o Brasil possui quatro fusos horários diferentes? Relacione sua resposta à extensão longitudinal (leste-oeste) do país.</p>
+            <textarea name="q4" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Devido à sua grande extensão longitudinal (leste-oeste). Como o sol nasce no leste, as diferentes partes do país recebem a luz solar em momentos distintos, exigindo a divisão em 4 fusos para organizar o horário oficial.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. O que Milton Santos quis dizer ao classificar o Brasil através do "meio técnico-científico-informacional"?</p>
+            <textarea name="q5" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Ele se referia à forma como o território é organizado com base na tecnologia, na ciência e na velocidade da informação. Regiões com mais infraestrutura digital, universidades e indústrias modernas estão mais inseridas nesse meio.
+            </div>
+        </div>
+
+        <h2>Estruturas Internas e Solo</h2>
+
+        <div class="question">
+            <p>6. O Brasil não apresenta dobramentos modernos (como o Himalaia). Explique em qual Era Geológica a maior parte da nossa estrutura de base foi formada.</p>
+            <textarea name="q6" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> A base do território brasileiro (os escudos cristalinos) formou-se em eras muito antigas, principalmente no Pré-Cambriano (Arqueozoico e Proterozoico), sendo estruturas pré-cambrianas muito resistentes e desgastadas.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. Explique a relação entre a estrutura geológica das Bacias Sedimentares e a formação de aquíferos (reservatórios de água subterrânea) no Brasil.</p>
+            <textarea name="q7" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> As bacias sedimentares são compostas por rochas porosas (como o arenito) que funcionam como uma esponja, permitindo que a água da chuva se infiltre e fique armazenada no subsolo, formando aquíferos como o Guarani.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. Como o vulcanismo ocorrido no passado geológico do Brasil (Era Mesozoica) contribuiu para a formação da "Terra Roxa" no Sul e Sudeste?</p>
+            <textarea name="q8" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Antigos derrames de lava vulcânica (basalto) sofreram intemperismo químico ao longo de milhões de anos. A decomposição dessa rocha vulcânica deu origem a um solo muito fértil de cor avermelhada, conhecido como Terra Roxa.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. Diferencie as formas de relevo "Planaltos" e "Depressões", segundo a classificação de Jurandyr Ross.</p>
+            <textarea name="q9" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Os Planaltos são superfícies elevadas onde o processo de erosão supera o de sedimentação. As Depressões são áreas inclinadas e mais baixas que o relevo ao redor, formadas por longos processos de erosão nas bordas das bacias sedimentares.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. Por que as bacias sedimentares são as únicas estruturas geológicas onde se pode encontrar combustíveis fósseis como o carvão e o petróleo?</p>
+            <textarea name="q10" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Porque a formação de combustíveis fósseis exige o soterramento de matéria orgânica (restos de plantas e animais) por camadas de sedimentos ao longo de eras geológicas, processo que só ocorre em bacias sedimentares.
+            </div>
+        </div>
+
+        <button type="button" id="btnFinish" onclick="revealGeoAnswers02()">Finalizar e Ver Gabarito</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../../index.html">🏠 Voltar ao Menu</a>
+    </div>
+</div>
+
+<script>
+    function revealGeoAnswers02() {
+        const total = 10;
+        for (let i = 1; i <= total; i++) {
+            const field = document.querySelector(`textarea[name="q${i}"]`);
+            if (field.value.trim() === "") {
+                alert("Responda a questão " + i + " antes de finalizar.");
+                field.focus(); return;
+            }
+        }
+
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('result').innerHTML = "<h2>Atividade Concluída!</h2><p>Confira o gabarito oficial abaixo e compare com seus argumentos.</p>";
+        
+        document.querySelectorAll('.feedback-box').forEach(box => box.style.display = 'block');
+        document.querySelectorAll('textarea').forEach(t => t.disabled = true);
+        document.getElementById('btnFinish').style.display = "none";
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>

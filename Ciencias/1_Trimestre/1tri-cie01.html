@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Ciências - 7º Ano</title>
+    <style>
+        :root { --primary: #00695c; --secondary: #00897b; --success: #2e7d32; --danger: #c62828; --bg: #e0f2f1; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eceff1; transition: 0.2s; }
+        label:hover { background: #f1f8e9; border-color: var(--secondary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        /* Feedback de Correção */
+        .q-correct { border-left: 6px solid var(--success); background: #f1f8e9; }
+        .q-wrong { border-left: 6px solid var(--danger); background: #ffebee; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        .res-correct { background-color: #c8e6c9; color: var(--success); border: 1px solid #a5d6a7; }
+        .res-wrong { background-color: #ffcdd2; color: var(--danger); border: 1px solid #ef9a9a; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .ans-guide { margin-top: 15px; font-weight: normal; font-size: 0.9em; list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; text-align: left; }
+        .ans-guide li { padding: 5px; border-bottom: 1px dashed #ccc; }
+
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🌿 Simulado de Ciências: Ecologia e Vida</strong></header>
+
+<div class="container">
+    <h1>Avaliação 7º Ano</h1>
+    <p style="text-align: center; color: #546e7a; font-style: italic;">Responda com atenção a todas as questões.</p>
+    
+    <div id="result"></div>
+
+    <form id="scienceQuiz">
+        <h2>Capítulo 1: Organização da Natureza</h2>
+        
+        <div class="question" id="div_q1">
+            <p>1. Qual é o nível de organização que compreende um conjunto de indivíduos da mesma espécie vivendo em uma mesma área?</p>
+            <label><input type="radio" name="q1" value="A"> A) Comunidade</label>
+            <label><input type="radio" name="q1" value="B"> B) População</label>
+            <label><input type="radio" name="q1" value="C"> C) Ecossistema</label>
+        </div>
+
+        <div class="question" id="div_q2">
+            <p>2. O conjunto de todas as populações que interagem em uma região forma:</p>
+            <label><input type="radio" name="q2" value="A"> A) Uma comunidade (ou biocenose)</label>
+            <label><input type="radio" name="q2" value="B"> B) Um organismo</label>
+            <label><input type="radio" name="q2" value="C"> C) A biosfera</label>
+        </div>
+
+        <div class="question" id="div_q3">
+            <p>3. Um ecossistema é formado pela interação entre:</p>
+            <label><input type="radio" name="q3" value="A"> A) Apenas os seres vivos</label>
+            <label><input type="radio" name="q3" value="B"> B) Apenas luz, água e solo</label>
+            <label><input type="radio" name="q3" value="C"> C) Fatores bióticos e fatores abióticos</label>
+        </div>
+
+        <h2>Habitat e Nicho Ecológico</h2>
+
+        <div class="question" id="div_q4">
+            <p>4. O "endereço" de um ser vivo na natureza é chamado de:</p>
+            <label><input type="radio" name="q4" value="A"> A) Nicho ecológico</label>
+            <label><input type="radio" name="q4" value="B"> B) Habitat</label>
+            <label><input type="radio" name="q4" value="C"> C) Ecótono</label>
+        </div>
+
+        <div class="question" id="div_q5">
+            <p>5. O papel funcional de uma espécie, incluindo seus hábitos, é o seu:</p>
+            <label><input type="radio" name="q5" value="A"> A) Habitat</label>
+            <label><input type="radio" name="q5" value="B"> B) Nicho ecológico</label>
+            <label><input type="radio" name="q5" value="C"> C) Território</label>
+        </div>
+
+        <div class="question" id="div_q6">
+            <p>6. Espécies no mesmo habitat com o mesmo nicho ecológico terão:</p>
+            <label><input type="radio" name="q6" value="A"> A) Cooperação mútua</label>
+            <label><input type="radio" name="q6" value="B"> B) Extinção imediata</label>
+            <label><input type="radio" name="q6" value="C"> C) Competição por recursos</label>
+        </div>
+
+        <h2>Estratégias de Vida</h2>
+
+        <div class="question" id="div_q7">
+            <p>7. Seres que produzem seu próprio alimento (fotossíntese) são:</p>
+            <label><input type="radio" name="q7" value="A"> A) Consumidores</label>
+            <label><input type="radio" name="q7" value="B"> B) Produtores (Autótrofos)</label>
+            <label><input type="radio" name="q7" value="C"> C) Decompositores</label>
+        </div>
+
+        <div class="question" id="div_q8">
+            <p>8. Fungos e bactérias que reciclam matéria orgânica são:</p>
+            <label><input type="radio" name="q8" value="A"> A) Produtores</label>
+            <label><input type="radio" name="q8" value="B"> B) Decompositores</label>
+            <label><input type="radio" name="q8" value="C"> C) Predadores</label>
+        </div>
+
+        <div class="question" id="div_q9">
+            <p>9. A camuflagem serve principalmente para:</p>
+            <label><input type="radio" name="q9" value="A"> A) Fugir de predadores ou surpreender presas</label>
+            <label><input type="radio" name="q9" value="B"> B) Atrair parceiros</label>
+            <label><input type="radio" name="q9" value="C"> C) Aumentar a temperatura</label>
+        </div>
+
+        <h2>Capítulo 2: Interações Ecológicas</h2>
+
+        <div class="question" id="div_q10">
+            <p>10. Seres da mesma espécie unidos fisicamente (ex: corais) formam uma:</p>
+            <label><input type="radio" name="q10" value="A"> A) Sociedade</label>
+            <label><input type="radio" name="q10" value="B"> B) Colônia</label>
+            <label><input type="radio" name="q10" value="C"> C) Cooperação</label>
+        </div>
+
+        <div class="question" id="div_q11">
+            <p>11. Abelhas vivem em grupos organizados, mas livres fisicamente. Isso é uma:</p>
+            <label><input type="radio" name="q11" value="A"> A) Sociedade</label>
+            <label><input type="radio" name="q11" value="B"> B) Colônia</label>
+            <label><input type="radio" name="q11" value="C"> C) Predação</label>
+        </div>
+
+        <div class="question" id="div_q12">
+            <p>12. No Mutualismo, a relação entre as espécies é:</p>
+            <label><input type="radio" name="q12" value="A"> A) Obrigatória e ambas se beneficiam</label>
+            <label><input type="radio" name="q12" value="B"> B) Prejudicial para uma delas</label>
+            <label><input type="radio" name="q12" value="C"> C) Indiferente para ambas</label>
+        </div>
+
+        <div class="question" id="div_q13">
+            <p>13. Um leão caçando uma zebra caracteriza:</p>
+            <label><input type="radio" name="q13" value="A"> A) Parasitismo</label>
+            <label><input type="radio" name="q13" value="B"> B) Predatismo</label>
+            <label><input type="radio" name="q13" value="C"> C) Comensalismo</label>
+        </div>
+
+        <div class="question" id="div_q14">
+            <p>14. O indivíduo que vive à custa do outro sem matá-lo rápido é o:</p>
+            <label><input type="radio" name="q14" value="A"> A) Hospedeiro</label>
+            <label><input type="radio" name="q14" value="B"> B) Parasita</label>
+            <label><input type="radio" name="q14" value="C"> C) Comensal</label>
+        </div>
+
+        <div class="question" id="div_q15">
+            <p>15. Beneficiar-se de restos alimentares (ex: rêmora e tubarão) é:</p>
+            <label><input type="radio" name="q15" value="A"> A) Comensalismo</label>
+            <label><input type="radio" name="q15" value="B"> B) Mutualismo</label>
+            <label><input type="radio" name="q15" value="C"> C) Amensalismo</label>
+        </div>
+
+        <div class="question" id="div_q16">
+            <p>16. O canibalismo ocorre entre:</p>
+            <label><input type="radio" name="q16" value="A"> A) Espécies diferentes</label>
+            <label><input type="radio" name="q16" value="B"> B) Indivíduos da mesma espécie</label>
+            <label><input type="radio" name="q16" value="C"> C) Apenas plantas</label>
+        </div>
+
+        <div class="question" id="div_q17">
+            <p>17. Relação harmônica entre espécies diferentes:</p>
+            <label><input type="radio" name="q17" value="A"> A) Protocooperação</label>
+            <label><input type="radio" name="q17" value="B"> B) Competição</label>
+            <label><input type="radio" name="q17" value="C"> C) Parasitismo</label>
+        </div>
+
+        <div class="question" id="div_q18">
+            <p>18. Os liquens são exemplos de:</p>
+            <label><input type="radio" name="r18" value="A"> A) Predatismo</label>
+            <label><input type="radio" name="r18" value="B"> B) Mutualismo</label>
+            <label><input type="radio" name="r18" value="C"> C) Sociedade</label>
+        </div>
+
+        <div class="question" id="div_q19">
+            <p>19. São fatores abióticos de um ecossistema:</p>
+            <label><input type="radio" name="q19" value="A"> A) Plantas e Animais</label>
+            <label><input type="radio" name="q19" value="B"> B) Fungos e Bactérias</label>
+            <label><input type="radio" name="q19" value="C"> C) Temperatura, Umidade e Luz</label>
+        </div>
+
+        <div class="question" id="div_q20">
+            <p>20. A Biosfera compreende:</p>
+            <label><input type="radio" name="q20" value="A"> A) Todos os seres vivos e ambientes da Terra</label>
+            <label><input type="radio" name="q20" value="B"> B) Apenas as florestas</label>
+            <label><input type="radio" name="q20" value="C"> C) Apenas a atmosfera</label>
+        </div>
+
+        <button type="button" id="btnFinalizar" onclick="gradeScience()">Finalizar Prova de Ciências</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function gradeScience() {
+        const answers = {
+            q1: 'B', q2: 'A', q3: 'C', q4: 'B', q5: 'B',
+            q6: 'C', q7: 'B', q8: 'B', q9: 'A', q10: 'B',
+            q11: 'A', q12: 'A', q13: 'B', q14: 'B', q15: 'A',
+            q16: 'B', q17: 'A', r18: 'B', q19: 'C', q20: 'A'
+        };
+
+        // Validação
+        for (let i = 1; i <= 20; i++) {
+            let name = i === 18 ? "r18" : "q" + i;
+            if (!document.querySelector(`input[name="${name}"]:checked`)) {
+                alert("Responda a questão " + i); return;
+            }
+        }
+
+        let score = 0;
+        let guideHtml = "<ul class='ans-guide'>";
+
+        for (let i = 1; i <= 20; i++) {
+            let name = i === 18 ? "r18" : "q" + i;
+            let div = document.getElementById("div_q" + i);
+            let selected = document.querySelector(`input[name="${name}"]:checked`);
+            
+            if (selected && selected.value === answers[name]) {
+                score++;
+                div.className = "question q-correct";
+            } else {
+                div.className = "question q-wrong";
+            }
+            guideHtml += `<li>Q${i}: <b>${answers[name]}</b></li>`;
+        }
+        guideHtml += "</ul>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (score / 20) * 10;
+        resDiv.innerHTML = `<h2>Nota: ${nota.toFixed(1)}</h2><p>Acertos: ${score}/20</p>` + guideHtml;
+        resDiv.className = nota >= 6 ? 'res-correct' : 'res-wrong';
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

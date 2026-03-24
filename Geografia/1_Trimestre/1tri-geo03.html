@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia 7º Ano - Simulado 03</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #fef5e7; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .q-correct { border-left-color: var(--success) !important; background: #f1fcf4; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5; }
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; text-align: left; font-size: 0.9em; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🌎 Geografia: Fronteiras e Riquezas (Bloco 03)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Geografia - Parte 3</h1>
+    <p style="text-align:center; font-style: italic;">Material Completo: Território, Regiões e Estrutura Geológica</p>
+    
+    <div id="result"></div>
+
+    <form id="geoQuiz03">
+        <h2>Fronteiras e Localização</h2>
+        
+        <div class="question" id="div_q1"><p>1. O termo "Amazônia Azul" refere-se a qual parte do território brasileiro?</p>
+            <label><input type="radio" name="q1" value="0"> A) À floresta amazônica inundada</label>
+            <label><input type="radio" name="q1" value="1"> B) Ao território marítimo (Zona Econômica Exclusiva) do Brasil no Atlântico</label>
+            <label><input type="radio" name="q1" value="0"> C) Aos rios de água cristalina do Mato Grosso</label></div>
+
+        <div class="question" id="div_q2"><p>2. Em relação ao Meridiano de Greenwich, o território brasileiro está localizado totalmente em qual hemisfério?</p>
+            <label><input type="radio" name="q2" value="1"> A) Hemisfério Ocidental (Oeste)</label>
+            <label><input type="radio" name="q2" value="0"> B) Hemisfério Oriental (Leste)</label>
+            <label><input type="radio" name="q2" value="0"> C) Hemisfério Norte</label></div>
+
+        <div class="question" id="div_q3"><p>3. Qual país da América do Sul possui a maior fronteira terrestre com o Brasil?</p>
+            <label><input type="radio" name="q3" value="0"> A) Argentina</label>
+            <label><input type="radio" name="q3" value="1"> B) Bolívia</label>
+            <label><input type="radio" name="q3" value="0"> C) Paraguai</label></div>
+
+        <div class="question" id="div_q4"><p>4. O Brasil é o país com a maior área contínua de terras localizadas na zona intertropical. Isso influencia predominantemente no nosso:</p>
+            <label><input type="radio" name="q4" value="0"> A) Tipo de rocha</label>
+            <label><input type="radio" name="q4" value="1"> B) Clima (predomínio de temperaturas elevadas)</label>
+            <label><input type="radio" name="q4" value="0"> C) Quantidade de terremotos</label></div>
+
+        <h2>Formação e Mudanças Territoriais</h2>
+
+        <div class="question" id="div_q5"><p>5. Após a Constituição de 1988, um novo estado foi criado a partir da divisão do norte de Goiás. Qual é esse estado?</p>
+            <label><input type="radio" name="q5" value="1"> A) Tocantins</label>
+            <label><input type="radio" name="q5" value="0"> B) Mato Grosso do Sul</label>
+            <label><input type="radio" name="q5" value="0"> C) Rondônia</label></div>
+
+        <div class="question" id="div_q6"><p>6. Os tratados de limites entre Portugal e Espanha utilizaram marcos naturais. O que era usado para definir essas divisas?</p>
+            <label><input type="radio" name="q6" value="1"> A) Rios, serras e divisores de águas</label>
+            <label><input type="radio" name="q6" value="0"> B) Muros de concreto construídos pelos colonos</label>
+            <label><input type="radio" name="q6" value="0"> C) Apenas coordenadas enviadas por satélites antigos</label></div>
+
+        <div class="question" id="div_q7"><p>7. A transferência da capital federal do Rio de Janeiro para Brasília (1960) teve como um dos objetivos principais:</p>
+            <label><input type="radio" name="q7" value="0"> A) Ficar mais perto de Portugal</label>
+            <label><input type="radio" name="q7" value="1"> B) Promover a integração e o povoamento do interior do Brasil (Marcha para o Oeste)</label>
+            <label><input type="radio" name="q7" value="0"> C) Facilitar a exportação de cana-de-açúcar</label></div>
+
+        <div class="question" id="div_q8"><p>8. Antes de serem estados, Roraima e Amapá eram classificados como:</p>
+            <label><input type="radio" name="q8" value="1"> A) Territórios Federais</label>
+            <label><input type="radio" name="q8" value="0"> B) Países independentes</label>
+            <label><input type="radio" name="q8" value="0"> C) Capitanias Hereditárias</label></div>
+
+        <h2>Regionalizações do Brasil</h2>
+
+        <div class="question" id="div_q9"><p>9. Qual critério o IBGE utiliza para agrupar estados na mesma região oficial?</p>
+            <label><input type="radio" name="q9" value="1"> A) Combinação de aspectos naturais, sociais e econômicos, respeitando os limites dos estados</label>
+            <label><input type="radio" name="q9" value="0"> B) Apenas a vontade dos governadores</label>
+            <label><input type="radio" name="q9" value="0"> C) A ordem alfabética dos nomes dos estados</label></div>
+
+        <div class="question" id="div_q10"><p>10. Na divisão Geoeconômica, o Complexo do Nordeste é subdividido em 4 zonas. Qual delas é a zona de transição para a Amazônia?</p>
+            <label><input type="radio" name="q10" value="0"> A) Sertão</label>
+            <label><input type="radio" name="q10" value="1"> B) Meio-Norte (Maranhão e Piauí)</label>
+            <label><input type="radio" name="q10" value="0"> C) Zona da Mata</label></div>
+
+        <div class="question" id="div_q11"><p>11. Milton Santos criou a "Região Nordeste" em sua proposta dos "Quatro Brasis" focando em:</p>
+            <label><input type="radio" name="q11" value="1"> A) Uma agricultura menos mecanizada e circulação de informações mais lenta que no Centro-Sul</label>
+            <label><input type="radio" name="q11" value="0"> B) Ser a região com a maior frota de jatos particulares</label>
+            <label><input type="radio" name="q11" value="0"> C) Não possuir cidades grandes</label></div>
+
+        <div class="question" id="div_q12"><p>12. A regionalização geoeconômica de Pedro Geiger divide o Brasil em quantos complexos?</p>
+            <label><input type="radio" name="q12" value="0"> A) 5 complexos</label>
+            <label><input type="radio" name="q12" value="1"> B) 3 complexos</label>
+            <label><input type="radio" name="q12" value="0"> C) 4 complexos</label></div>
+
+        <h2>Geologia e Recursos Naturais</h2>
+
+        <div class="question" id="div_q13"><p>13. O Petróleo encontrado na camada do "Pré-sal" está localizado em qual estrutura geológica?</p>
+            <label><input type="radio" name="q13" value="0"> A) Escudos Cristalinos</label>
+            <label><input type="radio" name="q13" value="1"> B) Bacias Sedimentares (no fundo do mar)</label>
+            <label><input type="radio" name="q13" value="0"> C) Crátons terrestres</label></div>
+
+        <div class="question" id="div_q14"><p>14. O Brasil é um dos maiores exportadores mundiais de nióbio e manganês. Esses minerais metálicos são extraídos de:</p>
+            <label><input type="radio" name="q14" value="1"> A) Escudos Cristalinos antigos</label>
+            <label><input type="radio" name="q14" value="0"> B) Planícies aluviais recentes</label>
+            <label><input type="radio" name="q14" value="0"> C) Dunas de areia</label></div>
+
+        <div class="question" id="div_q15"><p>15. As rochas metamórficas resultam da transformação de outras rochas devido a:</p>
+            <label><input type="radio" name="q15" value="1"> A) Altas pressões e temperaturas no interior da Terra</label>
+            <label><input type="radio" name="q15" value="0"> B) Impacto de meteoritos apenas</label>
+            <label><input type="radio" name="q15" value="0"> C) Exposição prolongada à luz solar</label></div>
+
+        <div class="question" id="div_q16"><p>16. A Serra do Navio (Amapá) foi uma área historicamente importante para a extração de:</p>
+            <label><input type="radio" name="q16" value="0"> A) Ouro</label>
+            <label><input type="radio" name="q16" value="1"> B) Manganês</label>
+            <label><input type="radio" name="q16" value="0"> C) Carvão Mineral</label></div>
+
+        <div class="question" id="div_q17"><p>17. Qual é a idade aproximada da estrutura geológica predominante do Brasil?</p>
+            <label><input type="radio" name="q17" value="1"> A) Muito antiga (Eras Pré-Cambriana e Paleozoica)</label>
+            <label><input type="radio" name="q17" value="0"> B) Muito recente (formada nos últimos 100 anos)</label>
+            <label><input type="radio" name="q17" value="0"> C) O Brasil não possui estrutura geológica definida</label></div>
+
+        <div class="question" id="div_q18"><p>18. A decomposição de rochas vulcânicas (basalto) no Sul e Sudeste deu origem a um solo muito fértil conhecido como:</p>
+            <label><input type="radio" name="q18" value="0"> A) Solo de areia</label>
+            <label><input type="radio" name="q18" value="1"> B) Terra Roxa (Nitossolos)</label>
+            <label><input type="radio" name="q18" value="0"> C) Massapê</label></div>
+
+        <div class="question" id="div_q19"><p>19. O relevo brasileiro, por ser muito antigo, sofreu longos processos de:</p>
+            <label><input type="radio" name="q19" value="1"> A) Erosão e sedimentação (desgaste)</label>
+            <label><input type="radio" name="q19" value="0"> B) Soerguimento tectônico constante</label>
+            <label><input type="radio" name="q19" value="0"> C) Congelamento permanente</label></div>
+
+        <div class="question" id="div_q20"><p>20. No Brasil, os grandes reservatórios de água subterrânea, como o Aquífero Guarani, localizam-se em:</p>
+            <label><input type="radio" name="q20" value="0"> A) Rochas magmáticas compactas</label>
+            <label><input type="radio" name="q20" value="1"> B) Bacias Sedimentares (rochas porosas que acumulam água)</label>
+            <label><input type="radio" name="q20" value="0"> C) Topo das montanhas de granito</label></div>
+
+        <button type="button" id="btnCheck" onclick="checkGeo03()">Finalizar Simulado 03</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkGeo03() {
+        const total = 20;
+        for (let i = 1; i <= total; i++) {
+            if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Questão " + i + " está sem resposta!"); return;
+            }
+        }
+
+        let hits = 0;
+        let gabHtml = "<div class='ans-list'>";
+        for (let i = 1; i <= total; i++) {
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="q${i}"]:checked`);
+            if (sel.value === "1") { hits++; div.className = "question q-correct"; }
+            else { div.className = "question q-wrong"; }
+            gabHtml += `<div>Q${i}: <b>${sel.parentElement.innerText.charAt(0)}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (hits / total) * 10;
+        resDiv.innerHTML = `<h2>Nota Final: ${nota.toFixed(1)}</h2><p>Acertos: ${hits}/${total}</p>` + gabHtml;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnCheck').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

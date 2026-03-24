@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de História - 7º Ano</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #fef5e7; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .q-correct { border-left-color: var(--success) !important; background: #f1fcf4; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5; }
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; text-align: left; font-size: 0.9em; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🏰 História: Da Idade Média ao Renascimento</strong></header>
+
+<div class="container">
+    <h1>Simulado 7º Ano</h1>
+    <p style="text-align:center; font-style: italic;">Material base: Sistema Positivo</p>
+    
+    <div id="result"></div>
+
+    <form id="historyQuiz">
+        <h2>Feudalismo e Organização Social</h2>
+        
+        <div class="question" id="div_q1"><p>1. O Feudalismo foi um sistema que predominou na Europa durante qual período?</p>
+            <label><input type="radio" name="q1" value="0"> A) Idade Antiga</label>
+            <label><input type="radio" name="q1" value="1"> B) Idade Média</label>
+            <label><input type="radio" name="q1" value="0"> C) Idade Moderna</label></div>
+
+        <div class="question" id="div_q2"><p>2. A relação de fidelidade entre dois nobres (um doador de terras e um receptor) era chamada de:</p>
+            <label><input type="radio" name="q2" value="1"> A) Suserania e Vassalagem</label>
+            <label><input type="radio" name="q2" value="0"> B) Escravidão</label>
+            <label><input type="radio" name="q2" value="0"> C) Colonato</label></div>
+
+        <div class="question" id="div_q3"><p>3. Como era dividida a sociedade feudal conforme o clero?</p>
+            <label><input type="radio" name="q3" value="0"> A) Patrícios e Plebeus</label>
+            <label><input type="radio" name="q3" value="1"> B) Oratores, Bellatores e Laboratores</label>
+            <label><input type="radio" name="q3" value="0"> C) Burgueses e Proletários</label></div>
+
+        <div class="question" id="div_q4"><p>4. O "Manso Senhorial" representava qual parte do feudo?</p>
+            <label><input type="radio" name="q4" value="1"> A) Terras de uso exclusivo do senhor feudal</label>
+            <label><input type="radio" name="q4" value="0"> B) Terras divididas entre os servos</label>
+            <label><input type="radio" name="q4" value="0"> C) Florestas abertas a todos</label></div>
+
+        <div class="question" id="div_q5"><p>5. O trabalho obrigatório do servo nas terras do senhor alguns dias por semana chamava-se:</p>
+            <label><input type="radio" name="q5" value="0"> A) Talha</label>
+            <label><input type="radio" name="q5" value="1"> B) Corveia</label>
+            <label><input type="radio" name="q5" value="0"> C) Banalidade</label></div>
+
+        <div class="question" id="div_q6"><p>6. O imposto pago pelo uso de instrumentos do feudo (moinho, forno) era a:</p>
+            <label><input type="radio" name="q6" value="1"> A) Banalidade</label>
+            <label><input type="radio" name="q6" value="0"> B) Mão-morta</label>
+            <label><input type="radio" name="q6" value="0"> C) Dízimo</label></div>
+
+        <div class="question" id="div_q7"><p>7. A economia feudal era baseada principalmente na:</p>
+            <label><input type="radio" name="q7" value="0"> A) Indústria e comércio global</label>
+            <label><input type="radio" name="q7" value="1"> B) Agricultura de subsistência e trocas naturais</label>
+            <label><input type="radio" name="q7" value="0"> C) Mineração de ouro e prata</label></div>
+
+        <div class="question" id="div_q8"><p>8. Politicamente, o poder na Idade Média era:</p>
+            <label><input type="radio" name="q8" value="1"> A) Descentralizado (dividido entre os senhores feudais)</label>
+            <label><input type="radio" name="q8" value="0"> B) Centralizado nas mãos de um único Imperador</label>
+            <label><input type="radio" name="q8" value="0"> C) Uma democracia direta</label></div>
+
+        <div class="question" id="div_q9"><p>9. Quem eram os "Laboratores"?</p>
+            <label><input type="radio" name="q9" value="0"> A) Os nobres cavaleiros</label>
+            <label><input type="radio" name="q9" value="1"> B) Os camponeses e servos</label>
+            <label><input type="radio" name="q9" value="0"> C) Os membros da Igreja</label></div>
+
+        <div class="question" id="div_q10"><p>10. O feudo era uma unidade:</p>
+            <label><input type="radio" name="q10" value="1"> A) Autossuficiente</label>
+            <label><input type="radio" name="q10" value="0"> B) Dependente de importações asiáticas</label>
+            <label><input type="radio" name="q10" value="0"> C) Apenas militar</label></div>
+
+        <h2>O Papel da Igreja Católica</h2>
+
+        <div class="question" id="div_q11"><p>11. A visão de mundo que colocava Deus no centro de tudo chamava-se:</p>
+            <label><input type="radio" name="q11" value="0"> A) Antropocentrismo</label>
+            <label><input type="radio" name="q11" value="1"> B) Teocentrismo</label>
+            <label><input type="radio" name="q11" value="0"> C) Humanismo</label></div>
+
+        <div class="question" id="div_q12"><p>12. Qual instituição era a maior proprietária de terras na Idade Média?</p>
+            <label><input type="radio" name="q12" value="1"> A) Igreja Católica</label>
+            <label><input type="radio" name="q12" value="0"> B) Liga Hanseática</label>
+            <label><input type="radio" name="q12" value="0"> C) Império Bizantino</label></div>
+
+        <div class="question" id="div_q13"><p>13. O Tribunal do Santo Ofício (Inquisição) tinha a função de:</p>
+            <label><input type="radio" name="q13" value="0"> A) Arrecadar impostos dos servos</label>
+            <label><input type="radio" name="q13" value="1"> B) Combater as heresias e manter o dogma cristão</label>
+            <label><input type="radio" name="q13" value="0"> C) Traduzir textos gregos antigos</label></div>
+
+        <div class="question" id="div_q14"><p>14. O clero que vivia em mosteiros, seguindo regras rígidas (como os beneditinos), era o:</p>
+            <label><input type="radio" name="q14" value="1"> A) Clero Regular</label>
+            <label><input type="radio" name="q14" value="0"> B) Clero Secular</label>
+            <label><input type="radio" name="q14" value="0"> C) Clero Burguês</label></div>
+
+        <div class="question" id="div_q15"><p>15. A Igreja controlava o tempo na Idade Média através:</p>
+            <label><input type="radio" name="q15" value="0"> A) Das estações do metrô</label>
+            <label><input type="radio" name="q15" value="1"> B) Do toque dos sinos e do calendário religioso</label>
+            <label><input type="radio" name="q15" value="0"> C) Dos relógios digitais</label></div>
+
+        <div class="question" id="div_q16"><p>16. Qual era o principal objetivo das Cruzadas?</p>
+            <label><input type="radio" name="q16" value="1"> A) Reconquistar a Terra Santa (Jerusalém)</label>
+            <label><input type="radio" name="q16" value="0"> B) Descobrir a América</label>
+            <label><input type="radio" name="q16" value="0"> C) Destruir os feudos europeus</label></div>
+
+        <div class="question" id="div_q17"><p>17. Os responsáveis por copiar livros à mão nos mosteiros eram os:</p>
+            <label><input type="radio" name="q17" value="0"> A) Vassalos</label>
+            <label><input type="radio" name="q17" value="1"> B) Monges Copistas</label>
+            <label><input type="radio" name="q17" value="0"> C) Cavaleiros Templários</label></div>
+
+        <h2>Renascimento (Capítulo 01)</h2>
+
+        <div class="question" id="div_q18"><p>18. O Renascimento começou principalmente em qual região?</p>
+            <label><input type="radio" name="r18" value="1"> A) Península Itálica</label>
+            <label><input type="radio" name="r18" value="0"> B) Inglaterra</label>
+            <label><input type="radio" name="r18" value="0"> C) Portugal</label></div>
+
+        <div class="question" id="div_q19"><p>19. O pensamento que colocava o ser humano como centro das preocupações é o:</p>
+            <label><input type="radio" name="q19" value="1"> A) Antropocentrismo</label>
+            <label><input type="radio" name="q19" value="0"> B) Teocentrismo</label>
+            <label><input type="radio" name="q19" value="0"> C) Feudalismo</label></div>
+
+        <div class="question" id="div_q20"><p>20. O movimento intelectual que valorizava a razão e a cultura clássica chama-se:</p>
+            <label><input type="radio" name="q20" value="0"> A) Escolástica</label>
+            <label><input type="radio" name="q20" value="1"> B) Humanismo</label>
+            <label><input type="radio" name="q20" value="0"> C) Iluminismo</label></div>
+
+        <div class="question" id="div_q21"><p>21. Quem eram os "Mecenas"?</p>
+            <label><input type="radio" name="q21" value="1"> A) Ricos burgueses ou nobres que financiavam os artistas</label>
+            <label><input type="radio" name="q21" value="0"> B) Guerreiros que lutavam nas Cruzadas</label>
+            <label><input type="radio" name="q21" value="0"> C) Servos que fugiam dos feudos</label></div>
+
+        <div class="question" id="div_q22"><p>22. Uma característica fundamental da arte renascentista é:</p>
+            <label><input type="radio" name="q22" value="0"> A) Ausência de profundidade</label>
+            <label><input type="radio" name="q22" value="1"> B) Uso da perspectiva e realismo</label>
+            <label><input type="radio" name="q22" value="0"> C) Pinturas apenas de fundo dourado</label></div>
+
+        <div class="question" id="div_q23"><p>23. O Renascimento buscava inspiração na cultura de quais povos antigos?</p>
+            <label><input type="radio" name="q23" value="1"> A) Gregos e Romanos</label>
+            <label><input type="radio" name="q23" value="0"> B) Egípcios e Persas</label>
+            <label><input type="radio" name="q23" value="0"> C) Astecas e Maias</label></div>
+
+        <div class="question" id="div_q24"><p>24. Qual inovação técnica permitiu a rápida difusão das ideias renascentistas?</p>
+            <label><input type="radio" name="q24" value="0"> A) A bússola</label>
+            <label><input type="radio" name="q24" value="1"> B) A prensa de tipos móveis (Gutenberg)</label>
+            <label><input type="radio" name="q24" value="0"> C) O motor a vapor</label></div>
+
+        <div class="question" id="div_q25"><p>25. Leonardo da Vinci é considerado o "Homem Universal" do Renascimento porque:</p>
+            <label><input type="radio" name="q25" value="0"> A) Foi o maior suserano da Europa</label>
+            <label><input type="radio" name="q25" value="1"> B) Dominava diversas áreas: pintura, anatomia, engenharia e ciência</label>
+            <label><input type="radio" name="q25" value="0"> C) Foi o Papa que iniciou o Renascimento</label></div>
+
+        <button type="button" id="btnFinalizar" onclick="checkHistory()">Finalizar Prova de História</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkHistory() {
+        const answers = {
+            q1: '1', q2: '1', q3: '1', q4: '1', q5: '1',
+            q6: '1', q7: '1', q8: '1', q9: '1', q10: '1',
+            q11: '1', q12: '1', q13: '1', q14: '1', q15: '1',
+            q16: '1', q17: '1', r18: '1', q19: '1', q20: '1',
+            q21: '1', q22: '1', q23: '1', q24: '1', q25: '1'
+        };
+
+        for (let i = 1; i <= 25; i++) {
+            let name = i === 18 ? "r18" : "q" + i;
+            if (!document.querySelector(`input[name="${name}"]:checked`)) {
+                alert("Questão " + i + " está em branco!"); return;
+            }
+        }
+
+        let hits = 0;
+        let gabHtml = "<div class='ans-list'>";
+
+        for (let i = 1; i <= 25; i++) {
+            let q = i === 18 ? "r18" : "q" + i;
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="${q}"]:checked`);
+            if (sel && sel.value === "1") { hits++; div.className = "question q-correct"; }
+            else { div.className = "question q-wrong"; }
+            gabHtml += `<div>Q${i}: <b>${sel.parentElement.innerText.charAt(0)}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (hits / 25) * 10;
+        resDiv.innerHTML = `<h2>Nota Final: ${nota.toFixed(1)}</h2><p>Acertos: ${hits}/25</p>` + gabHtml;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

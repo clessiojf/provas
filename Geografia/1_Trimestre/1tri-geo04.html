@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia 7º Ano - Atividade Dissertativa</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --info: #2980b9; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; margin-bottom: 15px; }
+        
+        textarea { 
+            width: 100%; min-height: 110px; padding: 15px; border-radius: 8px; border: 1px solid #ccc; 
+            font-family: inherit; font-size: 1em; resize: vertical; box-sizing: border-box; transition: 0.3s;
+        }
+        textarea:focus { outline: none; border-color: var(--primary); background: #fef5e7; }
+
+        .feedback-box { 
+            display: none; margin-top: 15px; padding: 15px; border-radius: 8px; 
+            background: #e8f4fd; border: 1px solid #b8daff; color: #245580; font-size: 0.95em;
+        }
+        .feedback-box strong { color: var(--info); display: block; margin-bottom: 5px; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🌎 Geografia: Território e Geologia (7º Ano)</strong></header>
+
+<div class="container">
+    <h1>Avaliação Dissertativa de Geografia</h1>
+    <p style="text-align:center; font-style: italic;">Baseado no Material Positivo - Capítulos 1 e 2</p>
+    
+    <div id="result"></div>
+
+    <form id="geoDissert">
+        <h2>Localização e Regionalização</h2>
+        
+        <div class="question">
+            <p>1. Explique por que o Brasil é frequentemente chamado de "país de dimensões continentais" e qual a consequência disso para a diversidade de paisagens do país.</p>
+            <textarea name="q1" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Devido à sua vasta extensão territorial (mais de 8,5 milhões de km²), ocupando quase metade da América do Sul. Isso resulta em uma grande diversidade de climas, solos, vegetações e fusos horários.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. O Tratado de Madri (1750) substituiu o de Tordesilhas. Explique o princípio do "Uti Possidetis" e como ele ajudou o Brasil a ter o formato atual.</p>
+            <textarea name="q2" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> O princípio estabelecia que o direito à posse da terra pertencia a quem de fato a ocupasse. Como os colonos portugueses já haviam avançado para o interior, esse princípio validou a expansão do território brasileiro para além da linha original de Tordesilhas.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Qual a diferença fundamental entre a regionalização oficial do IBGE (5 regiões) e a divisão geoeconômica de Pedro Geiger (3 complexos) quanto aos limites dos estados?</p>
+            <textarea name="q3" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> A regionalização do IBGE respeita os limites político-administrativos dos estados (nenhum estado pertence a duas regiões). Já a geoeconômica não respeita esses limites, dividindo estados como Minas Gerais e Mato Grosso entre complexos diferentes de acordo com suas características econômicas.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. No conceito dos "Quatro Brasis" de Milton Santos, o que define a "Região Concentrada" e quais regiões oficiais do IBGE ela engloba?</p>
+            <textarea name="q4" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> É definida pela alta densidade de infraestrutura, fluxos de informação e tecnologia (meio técnico-científico-informacional). Ela engloba as regiões Sudeste e Sul.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. O que é a "Amazônia Azul" e qual sua importância econômica e estratégica para o Brasil?</p>
+            <textarea name="q5" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> É a Zona Econômica Exclusiva (ZEE) do Brasil no Oceano Atlântico. É estratégica pela presença de recursos como o petróleo do pré-sal, biodiversidade marinha e por ser a principal rota do comércio exterior brasileiro.
+            </div>
+        </div>
+
+        <h2>Estrutura Geológica e Relevo</h2>
+
+        <div class="question">
+            <p>6. Por que o Brasil é considerado um país com estabilidade geológica? Relacione sua resposta com a teoria das Placas Tectônicas.</p>
+            <textarea name="q6" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Porque o território brasileiro está situado no centro da Placa Tectônica Sul-Americana, longe das bordas onde ocorrem os encontros de placas que causam terremotos de grande magnitude e vulcões ativos.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. Explique a importância econômica dos Escudos Cristalinos (crátons) para a indústria de mineração brasileira.</p>
+            <textarea name="q7" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Os escudos cristalinos são formações rochosas muito antigas onde se localizam as principais reservas de minerais metálicos, como o ferro (Minas Gerais e Pará), manganês, ouro e bauxita.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. Como se formam as Bacias Sedimentares e quais tipos de recursos energéticos (combustíveis fósseis) costumam ser encontrados nelas?</p>
+            <textarea name="q8" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Formam-se pela deposição de sedimentos e restos orgânicos em áreas de depressão ao longo de milhões de anos. Nelas são encontrados o petróleo, o gás natural e o carvão mineral.
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. O relevo brasileiro não possui dobramentos modernos (grandes cordilheiras). Como isso afeta as altitudes do nosso território?</p>
+            <textarea name="q9" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> Como o Brasil tem uma estrutura geológica antiga e não sofreu processos recentes de soerguimento de montanhas, o relevo foi muito desgastado pela erosão, resultando em altitudes modestas (baixas a médias).
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. Diferencie o processo de Intemperismo Químico do Intemperismo Físico na formação do relevo brasileiro.</p>
+            <textarea name="q10" placeholder="Sua resposta..."></textarea>
+            <div class="feedback-box">
+                <strong>Gabarito Sugerido:</strong> O físico é a desintegração da rocha por variações de temperatura (comum em áreas secas). O químico é a alteração da rocha pela ação da água (comum em climas tropicais úmidos, como a maior parte do Brasil), que "derrete" os minerais da rocha.
+            </div>
+        </div>
+
+        <button type="button" id="btnFinish" onclick="revealGeoAnswers()">Finalizar e Ver Gabarito</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function revealGeoAnswers() {
+        const total = 10;
+        let complete = true;
+
+        for (let i = 1; i <= total; i++) {
+            const field = document.querySelector(`textarea[name="q${i}"]`);
+            if (field.value.trim() === "") {
+                complete = false;
+                alert("Responda a questão " + i + " antes de ver o gabarito.");
+                field.focus();
+                return;
+            }
+        }
+
+        if (complete) {
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerHTML = "<h2>Atividade Concluída!</h2><p>Compare suas respostas com as definições técnicas do gabarito abaixo.</p>";
+            
+            const feedbacks = document.querySelectorAll('.feedback-box');
+            feedbacks.forEach(box => box.style.display = 'block');
+
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(t => t.disabled = true);
+
+            document.getElementById('btnFinish').style.display = "none";
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    }
+</script>
+
+</body>
+</html>

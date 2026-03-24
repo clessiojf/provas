@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História 7º Ano - Simulado 02</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #fef5e7; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .q-correct { border-left-color: var(--success) !important; background: #f1fcf4; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5; }
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; text-align: left; font-size: 0.9em; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🏰 História: Novas Descobertas Medievais e Modernas</strong></header>
+
+<div class="container">
+    <h1>Simulado de História - Bloco 2</h1>
+    <p style="text-align:center; font-style: italic;">Material Complementar - 7º Ano</p>
+    
+    <div id="result"></div>
+
+    <form id="historyQuiz02">
+        <h2>Origens e Estruturas do Feudalismo</h2>
+        
+        <div class="question" id="div_q1"><p>1. O Feudalismo resultou da mistura de costumes romanos e germânicos. Qual herança germânica valorizava a fidelidade entre o chefe militar e seus guerreiros?</p>
+            <label><input type="radio" name="q1" value="0"> A) Colonato</label>
+            <label><input type="radio" name="q1" value="1"> B) Comitatus</label>
+            <label><input type="radio" name="q1" value="0"> C) Direito Escrito</label></div>
+
+        <div class="question" id="div_q2"><p>2. A Vila Romana deu origem a qual estrutura medieval?</p>
+            <label><input type="radio" name="q2" value="0"> A) Às Cidades-Estado</label>
+            <label><input type="radio" name="q2" value="1"> B) Ao Feudo</label>
+            <label><input type="radio" name="q2" value="0"> C) Aos Mosteiros</label></div>
+
+        <div class="question" id="div_q3"><p>3. Qual era a principal função social da Nobreza (Bellatores) no feudalismo?</p>
+            <label><input type="radio" name="q3" value="1"> A) A defesa militar da sociedade</label>
+            <label><input type="radio" name="q3" value="0"> B) O trabalho agrícola</label>
+            <label><input type="radio" name="q3" value="0"> C) A reza pela salvação das almas</label></div>
+
+        <div class="question" id="div_q4"><p>4. O sistema de rotação trienal de culturas servia para:</p>
+            <label><input type="radio" name="q4" value="0"> A) Dividir as terras entre os filhos do senhor</label>
+            <label><input type="radio" name="q4" value="1"> B) Evitar o esgotamento do solo e aumentar a produção</label>
+            <label><input type="radio" name="q4" value="0"> C) Pagar menos impostos à Igreja</label></div>
+
+        <div class="question" id="div_q5"><p>5. A "Mão-morta" era um imposto pago pelos servos quando:</p>
+            <label><input type="radio" name="q5" value="1"> A) O chefe da família servil morria, para que os filhos continuassem na terra</label>
+            <label><input type="radio" name="q5" value="0"> B) O senhor feudal perdia uma batalha</label>
+            <label><input type="radio" name="q5" value="0"> C) O servo se tornava cavaleiro</label></div>
+
+        <div class="question" id="div_q6"><p>6. Os camponeses que não eram servos e tinham liberdade para circular, embora trabalhassem no feudo, eram chamados de:</p>
+            <label><input type="radio" name="q6" value="1"> A) Vilões</label>
+            <label><input type="radio" name="q6" value="0"> B) Vassalos</label>
+            <label><input type="radio" name="q6" value="0"> C) Clérigos</label></div>
+
+        <div class="question" id="div_q7"><p>7. Qual era a principal arma de defesa de um castelo medieval?</p>
+            <label><input type="radio" name="q7" value="0"> A) Canhões a laser</label>
+            <label><input type="radio" name="q7" value="1"> B) Muralhas e fossos de água</label>
+            <label><input type="radio" name="q7" value="0"> C) Cavalaria pesada de ataque</label></div>
+
+        <div class="question" id="div_q8"><p>8. A cerimônia de "Homenagem" marcava:</p>
+            <label><input type="radio" name="q8" value="1"> A) O juramento de fidelidade do vassalo ao suserano</label>
+            <label><input type="radio" name="q8" value="0"> B) O casamento do senhor feudal</label>
+            <label><input type="radio" name="q8" value="0"> C) A coroação de um novo Papa</label></div>
+
+        <div class="question" id="div_q9"><p>9. Sobre a mobilidade social na Idade Média, é correto afirmar que:</p>
+            <label><input type="radio" name="q9" value="0"> A) Era fácil enriquecer e mudar de classe</label>
+            <label><input type="radio" name="q9" value="1"> B) Era quase inexistente (sociedade estamental)</label>
+            <label><input type="radio" name="q9" value="0"> C) Todos eram iguais perante as leis do rei</label></div>
+
+        <div class="question" id="div_q10"><p>10. O feudo buscava produzir tudo o que necessitava para evitar dependência externa. Esse conceito chama-se:</p>
+            <label><input type="radio" name="q10" value="1"> A) Autossuficiência</label>
+            <label><input type="radio" name="q10" value="0"> B) Globalização</label>
+            <label><input type="radio" name="q10" value="0"> C) Mercantilismo</label></div>
+
+        <h2>Igreja Católica e Cultura Medieval</h2>
+
+        <div class="question" id="div_q11"><p>11. O "Cisma do Oriente" (1054) resultou na divisão da cristandade entre:</p>
+            <label><input type="radio" name="q11" value="0"> A) Católicos e Protestantes</label>
+            <label><input type="radio" name="q11" value="1"> B) Igreja Católica Romana e Igreja Ortodoxa</label>
+            <label><input type="radio" name="q11" value="0"> C) Cristãos e Muçulmanos</label></div>
+
+        <div class="question" id="div_q12"><p>12. Estilo arquitetônico com paredes grossas, poucas janelas e arcos arredondados:</p>
+            <label><input type="radio" name="q12" value="1"> A) Românico</label>
+            <label><input type="radio" name="q12" value="0"> B) Gótico</label>
+            <label><input type="radio" name="q12" value="0"> C) Barroco</label></div>
+
+        <div class="question" id="div_q13"><p>13. O estilo Gótico, surgido depois do Românico, era caracterizado por:</p>
+            <label><input type="radio" name="q13" value="0"> A) Construções baixas e escuras</label>
+            <label><input type="radio" name="q13" value="1"> B) Verticalidade, vitrais coloridos e muita luz</label>
+            <label><input type="radio" name="q13" value="0"> C) Ausência de torres</label></div>
+
+        <div class="question" id="div_q14"><p>14. "Ora et Labora" (Reza e Trabalha) era o lema de qual ordem religiosa?</p>
+            <label><input type="radio" name="q14" value="1"> A) Beneditinos</label>
+            <label><input type="radio" name="q14" value="0"> B) Cavaleiros de Malta</label>
+            <label><input type="radio" name="q14" value="0"> C) Jesuítas</label></div>
+
+        <div class="question" id="div_q15"><p>15. Como a Igreja via o lucro excessivo (usura) na Idade Média?</p>
+            <label><input type="radio" name="q15" value="0"> A) Como uma bênção divina</label>
+            <label><input type="radio" name="q15" value="1"> B) Como um pecado condenável</label>
+            <label><input type="radio" name="q15" value="0"> C) Como algo necessário para o progresso</label></div>
+
+        <div class="question" id="div_q16"><p>16. A excomunhão era a maior punição da Igreja porque:</p>
+            <label><input type="radio" name="q16" value="1"> A) O fiel era expulso da comunidade e perdia o direito à salvação</label>
+            <label><input type="radio" name="q16" value="0"> B) O fiel perdia apenas suas terras</label>
+            <label><input type="radio" name="q16" value="0"> C) O fiel era obrigado a se tornar monge</label></div>
+
+        <div class="question" id="div_q17"><p>17. Qual era o idioma oficial da Igreja e dos documentos acadêmicos medievais?</p>
+            <label><input type="radio" name="q17" value="0"> A) Grego</label>
+            <label><input type="radio" name="q17" value="1"> B) Latim</label>
+            <label><input type="radio" name="q17" value="0"> C) Francês</label></div>
+
+        <h2>Renascimento Cultural e Científico</h2>
+
+        <div class="question" id="div_q18"><p>18. O Renascimento valorizava o indivíduo e sua capacidade criativa. Esse conceito é o:</p>
+            <label><input type="radio" name="q18" value="1"> A) Individualismo</label>
+            <label><input type="radio" name="q18" value="0"> B) Coletivismo feudal</label>
+            <label><input type="radio" name="q18" value="0"> C) Teocentrismo radical</label></div>
+
+        <div class="question" id="div_q19"><p>19. A técnica que dava sensação de profundidade e 3D nas pinturas renascentistas é a:</p>
+            <label><input type="radio" name="q19" value="0"> A) Têmpera</label>
+            <label><input type="radio" name="q19" value="1"> B) Perspectiva</label>
+            <label><input type="radio" name="q19" value="0"> C) Mosaico</label></div>
+
+        <div class="question" id="div_q20"><p>20. Qual cientista defendeu o heliocentrismo, afirmando que a Terra girava em torno do Sol?</p>
+            <label><input type="radio" name="q20" value="0"> A) Aristóteles</label>
+            <label><input type="radio" name="q20" value="1"> B) Nicolau Copérnico</label>
+            <label><input type="radio" name="q20" value="0"> C) Ptolomeu</label></div>
+
+        <div class="question" id="div_q21"><p>21. A família Médici, famosa por patrocinar artistas como Michelangelo, vivia em qual cidade?</p>
+            <label><input type="radio" name="q21" value="0"> A) Roma</label>
+            <label><input type="radio" name="q21" value="1"> B) Florença</label>
+            <label><input type="radio" name="q21" value="0"> C) Veneza</label></div>
+
+        <div class="question" id="div_q22"><p>22. O estudo do corpo humano através da dissecação de cadáveres foi fundamental para qual artista?</p>
+            <label><input type="radio" name="q22" value="1"> A) Leonardo da Vinci</label>
+            <label><input type="radio" name="q22" value="0"> B) Botticelli</label>
+            <label><input type="radio" name="q22" value="0"> C) Donatello</label></div>
+
+        <div class="question" id="div_q23"><p>23. O Renascimento também ocorreu na literatura. Quem escreveu "A Divina Comédia"?</p>
+            <label><input type="radio" name="q23" value="1"> A) Dante Alighieri</label>
+            <label><input type="radio" name="q23" value="0"> B) William Shakespeare</label>
+            <label><input type="radio" name="q23" value="0"> C) Maquiavel</label></div>
+
+        <div class="question" id="div_q24"><p>24. O Humanismo defendia que o conhecimento deveria ser baseado na:</p>
+            <label><input type="radio" name="q24" value="1"> A) Observação, experiência e razão</label>
+            <label><input type="radio" name="q24" value="0"> B) Apenas na fé cega</label>
+            <label><input type="radio" name="q24" value="0"> C) Tradição oral das lendas bárbaras</label></div>
+
+        <div class="question" id="div_q25"><p>25. A obra "O Nascimento de Vênus", que retrata uma deusa grega, é de autoria de:</p>
+            <label><input type="radio" name="q25" value="0"> A) Rafael Sanzio</label>
+            <label><input type="radio" name="q25" value="1"> B) Sandro Botticelli</label>
+            <label><input type="radio" name="q25" value="0"> C) Michelangelo</label></div>
+
+        <button type="button" id="btnCheck" onclick="checkHistory02()">Finalizar Simulado 02</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="simulado_historia.html">⏮ Ver Bloco 01</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkHistory02() {
+        const total = 25;
+        for (let i = 1; i <= total; i++) {
+            if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Questão " + i + " não respondida!"); return;
+            }
+        }
+
+        let hits = 0;
+        let gabHtml = "<div class='ans-list'>";
+        for (let i = 1; i <= total; i++) {
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="q${i}"]:checked`);
+            if (sel.value === "1") { hits++; div.className = "question q-correct"; }
+            else { div.className = "question q-wrong"; }
+            gabHtml += `<div>Q${i}: <b>${sel.parentElement.innerText.charAt(0)}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (hits / total) * 10;
+        resDiv.innerHTML = `<h2>Nota: ${nota.toFixed(1)}</h2><p>Acertos: ${hits}/${total}</p>` + gabHtml;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnCheck').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

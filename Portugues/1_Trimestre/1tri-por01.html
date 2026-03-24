@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Português 7º Ano - Simulado 01</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #fef5e7; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .q-correct { border-left-color: var(--success) !important; background: #f1fcf4; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5; }
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; text-align: left; font-size: 0.9em; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>📚 Língua Portuguesa: Análise Linguística (7º Ano)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Português - Unidade 1</h1>
+    <p style="text-align:center; font-style: italic;">Gênero Anúncio, Sintaxe e Transitividade</p>
+    
+    <div id="result"></div>
+
+    <form id="portQuiz">
+        <h2>Gênero Textual: Anúncio Publicitário</h2>
+        
+        <div class="question" id="div_q1"><p>1. Qual é a principal finalidade de um anúncio publicitário?</p>
+            <label><input type="radio" name="q1" value="0"> A) Narrar uma história fictícia para entretenimento.</label>
+            <label><input type="radio" name="q1" value="1"> B) Convencer o público a adotar uma ideia ou comprar um produto.</label>
+            <label><input type="radio" name="q1" value="0"> C) Apresentar dados científicos sobre um experimento.</label>
+            <label><input type="radio" name="q1" value="0"> D) Ensinar o passo a passo de uma receita culinária.</label></div>
+
+        <div class="question" id="div_q2"><p>2. No anúncio, o "Slogan" é caracterizado por ser uma frase:</p>
+            <label><input type="radio" name="q2" value="1"> A) Curta, criativa e de fácil memorização.</label>
+            <label><input type="radio" name="q2" value="0"> B) Longa e explicativa com termos técnicos.</label>
+            <label><input type="radio" name="q2" value="0"> C) Que nunca aparece em letras grandes.</label>
+            <label><input type="radio" name="q2" value="0"> D) Sem relação direta com a marca ou produto.</label></div>
+
+        <div class="question" id="div_q3"><p>3. Os anúncios que visam conscientizar a população sobre temas sociais (como vacinação) são chamados de:</p>
+            <label><input type="radio" name="q3" value="0"> A) Anúncios comerciais de lucro.</label>
+            <label><input type="radio" name="q3" value="1"> B) Anúncios de propaganda institucional ou social.</label>
+            <label><input type="radio" name="q3" value="0"> C) Classificados de jornal.</label>
+            <label><input type="radio" name="q3" value="0"> D) Editais de convocação pública.</label></div>
+
+        <div class="question" id="div_q4"><p>4. Além do texto verbal, que outro elemento é fundamental na construção de sentido de um anúncio?</p>
+            <label><input type="radio" name="q4" value="0"> A) Apenas a bibliografia do autor.</label>
+            <label><input type="radio" name="q4" value="0"> B) O número de páginas do anúncio.</label>
+            <label><input type="radio" name="q4" value="1"> C) A linguagem não verbal (imagens, cores e fontes).</label>
+            <label><input type="radio" name="q4" value="0"> D) O índice de capítulos.</label></div>
+
+        <h2>Sintagma, Sujeito e Predicado</h2>
+
+        <div class="question" id="div_q5"><p>5. O sintagma cujo núcleo é um substantivo ou pronome é chamado de:</p>
+            <label><input type="radio" name="q5" value="1"> A) Sintagma Nominal.</label>
+            <label><input type="radio" name="q5" value="0"> B) Sintagma Verbal.</label>
+            <label><input type="radio" name="q5" value="0"> C) Sintagma Adjetival.</label>
+            <label><input type="radio" name="q5" value="0"> D) Sintagma Adverbial.</label></div>
+
+        <div class="question" id="div_q6"><p>6. Na oração "Aquelas crianças sorridentes brincavam no parque", qual é o núcleo do sujeito?</p>
+            <label><input type="radio" name="q6" value="0"> A) Aquelas</label>
+            <label><input type="radio" name="q6" value="1"> B) Crianças</label>
+            <label><input type="radio" name="q6" value="0"> C) Sorridentes</label>
+            <label><input type="radio" name="q6" value="0"> D) Brincavam</label></div>
+
+        <div class="question" id="div_q7"><p>7. Qual é o tipo de sujeito na frase: "Compramos os ingressos ontem"?</p>
+            <label><input type="radio" name="q7" value="0"> A) Sujeito Simples.</label>
+            <label><input type="radio" name="q7" value="1"> B) Sujeito Desinencial (Oculto).</label>
+            <label><input type="radio" name="q7" value="0"> C) Sujeito Indeterminado.</label>
+            <label><input type="radio" name="q7" value="0"> D) Oração sem Sujeito.</label></div>
+
+        <div class="question" id="div_q8"><p>8. Identifique a frase que possui Sujeito Composto:</p>
+            <label><input type="radio" name="q8" value="0"> A) Os alunos estudaram bastante.</label>
+            <label><input type="radio" name="q8" value="1"> B) Livros e cadernos estavam sobre a mesa.</label>
+            <label><input type="radio" name="q8" value="0"> C) Alguém bateu à porta.</label>
+            <label><input type="radio" name="q8" value="0"> D) Choveu muito durante a noite.</label></div>
+
+        <div class="question" id="div_q9"><p>9. Em "Havia muitos problemas na escola", temos um caso de:</p>
+            <label><input type="radio" name="q9" value="1"> A) Oração sem sujeito (verbo haver no sentido de existir).</label>
+            <label><input type="radio" name="q9" value="0"> B) Sujeito Simples: "muitos problemas".</label>
+            <label><input type="radio" name="q9" value="0"> C) Sujeito Indeterminado.</label>
+            <label><input type="radio" name="q9" value="0"> D) Sujeito Composto.</label></div>
+
+        <h2>Tipos de Predicado</h2>
+
+        <div class="question" id="div_q10"><p>10. O predicado que apresenta um verbo de ligação e uma característica do sujeito (predicativo) é o:</p>
+            <label><input type="radio" name="q10" value="1"> A) Predicado Nominal.</label>
+            <label><input type="radio" name="q10" value="0"> B) Predicado Verbal.</label>
+            <label><input type="radio" name="q10" value="0"> C) Predicado Verbo-Nominal.</label>
+            <label><input type="radio" name="q10" value="0"> D) Predicado Adverbial.</label></div>
+
+        <div class="question" id="div_q11"><p>11. Na frase "O atleta correu muito", o predicado é:</p>
+            <label><input type="radio" name="q11" value="0"> A) Nominal.</label>
+            <label><input type="radio" name="q11" value="1"> B) Verbal (o núcleo é o verbo de ação).</label>
+            <label><input type="radio" name="q11" value="0"> C) Verbo-Nominal.</label>
+            <label><input type="radio" name="q11" value="0"> D) Indeterminado.</label></div>
+
+        <div class="question" id="div_q12"><p>12. "Os alunos saíram da prova cansados". O termo sublinhado "cansados" indica que o predicado é:</p>
+            <label><input type="radio" name="q12" value="0"> A) Nominal.</label>
+            <label><input type="radio" name="q12" value="0"> B) Verbal.</label>
+            <label><input type="radio" name="q12" value="1"> C) Verbo-Nominal (ação + característica).</label>
+            <label><input type="radio" name="q12" value="0"> D) Inexistente.</label></div>
+
+        <div class="question" id="div_q13"><p>13. Assinale a alternativa que contém apenas um verbo de ligação:</p>
+            <label><input type="radio" name="q13" value="0"> A) Correr, pular, gritar.</label>
+            <label><input type="radio" name="q13" value="1"> B) Ser, estar, parecer, ficar.</label>
+            <label><input type="radio" name="q13" value="0"> C) Estudar, ler, escrever.</label>
+            <label><input type="radio" name="q13" value="0"> D) Partir, sair, voltar.</label></div>
+
+        <h2>Transitividade Verbal</h2>
+
+        <div class="question" id="div_q14"><p>14. Um verbo é considerado INTRANSITIVO quando:</p>
+            <label><input type="radio" name="q14" value="1"> A) Tem sentido completo e não exige complemento (objeto).</label>
+            <label><input type="radio" name="q14" value="0"> B) Exige obrigatoriamente um objeto direto.</label>
+            <label><input type="radio" name="q14" value="0"> C) Liga o sujeito a uma característica.</label>
+            <label><input type="radio" name="q14" value="0"> D) Exige dois complementos com preposição.</label></div>
+
+        <div class="question" id="div_q15"><p>15. Na frase "Mariana comprou um livro novo", o verbo "comprou" é:</p>
+            <label><input type="radio" name="q15" value="1"> A) Transitivo Direto (VTD).</label>
+            <label><input type="radio" name="q15" value="0"> B) Transitivo Indireto (VTI).</label>
+            <label><input type="radio" name="q15" value="0"> C) Intransitivo (VI).</label>
+            <label><input type="radio" name="q15" value="0"> D) Verbo de Ligação (VL).</label></div>
+
+        <div class="question" id="div_q16"><p>16. Qual a transitividade do verbo em: "Eu gosto de chocolate"?</p>
+            <label><input type="radio" name="q16" value="0"> A) Transitivo Direto.</label>
+            <label><input type="radio" name="q16" value="1"> B) Transitivo Indireto (exige a preposição 'de').</label>
+            <label><input type="radio" name="q16" value="0"> C) Intransitivo.</label>
+            <label><input type="radio" name="q16" value="0"> D) Bitransitivo.</label></div>
+
+        <div class="question" id="div_q17"><p>17. Em "O professor entregou a nota aos alunos", o verbo é:</p>
+            <label><input type="radio" name="q17" value="0"> A) Transitivo Direto.</label>
+            <label><input type="radio" name="q17" value="0"> B) Transitivo Indireto.</label>
+            <label><input type="radio" name="q17" value="1"> C) Transitivo Direto e Indireto (Bitransitivo).</label>
+            <label><input type="radio" name="q17" value="0"> D) Intransitivo.</label></div>
+
+        <div class="question" id="div_q18"><p>18. Na oração "A criança dorme", o verbo é:</p>
+            <label><input type="radio" name="q18" value="1"> A) Intransitivo.</label>
+            <label><input type="radio" name="q18" value="0"> B) Transitivo Direto.</label>
+            <label><input type="radio" name="q18" value="0"> C) Verbo de Ligação.</label>
+            <label><input type="radio" name="q18" value="0"> D) Transitivo Indireto.</label></div>
+
+        <div class="question" id="div_q19"><p>19. O complemento de um Verbo Transitivo Direto chama-se:</p>
+            <label><input type="radio" name="q19" value="0"> A) Objeto Indireto.</label>
+            <label><input type="radio" name="q19" value="1"> B) Objeto Direto.</label>
+            <label><input type="radio" name="q19" value="0"> C) Predicativo do Sujeito.</label>
+            <label><input type="radio" name="q19" value="0"> D) Agente da Passiva.</label></div>
+
+        <div class="question" id="div_q20"><p>20. Assinale a frase que possui um Verbo Transitivo Indireto:</p>
+            <label><input type="radio" name="q20" value="0"> A) Fizemos o bolo.</label>
+            <label><input type="radio" name="q20" value="0"> B) As flores murcharam.</label>
+            <label><input type="radio" name="q20" value="1"> C) Nós precisamos de ajuda.</label>
+            <label><input type="radio" name="q20" value="0"> D) Ele parece triste.</label></div>
+
+        <button type="button" id="btnCheck" onclick="checkPort()">Finalizar Simulado de Português</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../../index.html">🏠 Voltar ao Início</a>
+    </div>
+</div>
+
+<script>
+    function checkPort() {
+        const total = 20;
+        for (let i = 1; i <= total; i++) {
+            if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Você esqueceu a questão " + i + "!"); return;
+            }
+        }
+
+        let hits = 0;
+        let gabHtml = "<div class='ans-list'>";
+        for (let i = 1; i <= total; i++) {
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="q${i}"]:checked`);
+            if (sel.value === "1") { hits++; div.className = "question q-correct"; }
+            else { div.className = "question q-wrong"; }
+            gabHtml += `<div>Q${i}: <b>${sel.parentElement.innerText.charAt(0)}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (hits / total) * 10;
+        resDiv.innerHTML = `<h2>Nota Final: ${nota.toFixed(1)}</h2><p>Acertos: ${hits}/${total}</p>` + gabHtml;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnCheck').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

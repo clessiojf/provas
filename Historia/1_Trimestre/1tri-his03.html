@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História 7º Ano - Simulado 03</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #fef5e7; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .q-correct { border-left-color: var(--success) !important; background: #f1fcf4; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5; }
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; text-align: left; font-size: 0.9em; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🏰 História: Legado e Transformações (Bloco 03)</strong></header>
+
+<div class="container">
+    <h1>Simulado de História - Parte 3</h1>
+    <p style="text-align:center; font-style: italic;">Material Complementar - 7º Ano</p>
+    
+    <div id="result"></div>
+
+    <form id="historyQuiz03">
+        <h2>Vida Rural e Contratos Feudais</h2>
+        
+        <div class="question" id="div_q1"><p>1. No contrato de suserania e vassalagem, o suserano entregava ao vassalo um objeto (como um anel ou galho) simbolizando a posse da terra. Esse ato chamava-se:</p>
+            <label><input type="radio" name="q1" value="0"> A) Inquisição</label>
+            <label><input type="radio" name="q1" value="1"> B) Investidura</label>
+            <label><input type="radio" name="q1" value="0"> C) Excomunhão</label></div>
+
+        <div class="question" id="div_q2"><p>2. A "Talha" era um imposto feudal que consistia em:</p>
+            <label><input type="radio" name="q2" value="1"> A) Dar ao senhor parte de tudo o que era produzido no manso servil</label>
+            <label><input type="radio" name="q2" value="0"> B) Trabalhar três dias na semana nas terras do senhor</label>
+            <label><input type="radio" name="q2" value="0"> C) Pagar moedas de ouro para sair do feudo</label></div>
+
+        <div class="question" id="div_q3"><p>3. As terras do feudo que podiam ser usadas tanto por servos quanto por nobres para pasto e coleta de madeira eram o:</p>
+            <label><input type="radio" name="q3" value="0"> A) Manso Senhorial</label>
+            <label><input type="radio" name="q3" value="1"> B) Manso Comunal</label>
+            <label><input type="radio" name="q3" value="0"> C) Manso Servil</label></div>
+
+        <div class="question" id="div_q4"><p>4. No feudalismo, o servo era diferente do escravo antigo porque:</p>
+            <label><input type="radio" name="q4" value="1"> A) O servo estava preso à terra e não podia ser vendido individualmente</label>
+            <label><input type="radio" name="q4" value="0"> B) O servo recebia salário mensal</label>
+            <label><input type="radio" name="q4" value="0"> C) O servo era proprietário da terra que trabalhava</label></div>
+
+        <div class="question" id="div_q5"><p>5. O cavaleiro medieval seguia um código de conduta que valorizava a coragem e a proteção dos fracos, conhecido como:</p>
+            <label><input type="radio" name="q5" value="0"> A) Humanismo</label>
+            <label><input type="radio" name="q5" value="1"> B) Cavalaria</label>
+            <label><input type="radio" name="q5" value="0"> C) Suserania</label></div>
+
+        <div class="question" id="div_q6"><p>6. Qual evento histórico contribuiu para o enfraquecimento do feudalismo ao reabrir rotas de comércio com o Oriente?</p>
+            <label><input type="radio" name="q6" value="1"> A) As Cruzadas</label>
+            <label><input type="radio" name="q6" value="0"> B) A queda do Muro de Berlim</label>
+            <label><input type="radio" name="q6" value="0"> C) A Revolução Francesa</label></div>
+
+        <div class="question" id="div_q7"><p>7. A principal diferença entre o suserano e o vassalo era que:</p>
+            <label><input type="radio" name="q7" value="0"> A) O suserano era sempre o Papa</label>
+            <label><input type="radio" name="q7" value="1"> B) O suserano doava a terra e o vassalo recebia, prometendo apoio militar</label>
+            <label><input type="radio" name="q7" value="0"> C) O vassalo era sempre um camponês pobre</label></div>
+
+        <h2>Igreja, Fé e Conhecimento</h2>
+
+        <div class="question" id="div_q8"><p>8. Como a Igreja Católica justificava a divisão da sociedade em três ordens?</p>
+            <label><input type="radio" name="q8" value="1"> A) Afirmava que era uma vontade divina para manter a harmonia</label>
+            <label><input type="radio" name="q8" value="0"> B) Através de uma votação democrática anual</label>
+            <label><input type="radio" name="q8" value="0"> C) Baseando-se apenas na riqueza acumulada</label></div>
+
+        <div class="question" id="div_q9"><p>9. A filosofia medieval que buscava conciliar a fé cristã com o pensamento racional de Aristóteles chamava-se:</p>
+            <label><input type="radio" name="q9" value="0"> A) Iluminismo</label>
+            <label><input type="radio" name="q9" value="1"> B) Escolástica</label>
+            <label><input type="radio" name="q9" value="0"> C) Antropocentrismo</label></div>
+
+        <div class="question" id="div_q10"><p>10. Quem foi o principal representante da Escolástica, autor da obra "Suma Teológica"?</p>
+            <label><input type="radio" name="q10" value="1"> A) Santo Tomás de Aquino</label>
+            <label><input type="radio" name="q10" value="0"> B) Martinho Lutero</label>
+            <label><input type="radio" name="q10" value="0"> C) Leonardo da Vinci</label></div>
+
+        <div class="question" id="div_q11"><p>11. As universidades medievais surgiram a partir de quais instituições?</p>
+            <label><input type="radio" name="q11" value="0"> A) Quartéis militares</label>
+            <label><input type="radio" name="q11" value="1"> B) Escolas catedrais e monásticas</label>
+            <label><input type="radio" name="q11" value="0"> C) Feiras de comércio</label></div>
+
+        <div class="question" id="div_q12"><p>12. A prática de vender cargos eclesiásticos ou relíquias sagradas (condenada por alguns) era a:</p>
+            <label><input type="radio" name="q12" value="1"> A) Simonia</label>
+            <label><input type="radio" name="q12" value="0"> B) Heresia</label>
+            <label><input type="radio" name="q12" value="0"> C) Investidura</label></div>
+
+        <div class="question" id="div_q13"><p>13. Os "Heresias" eram pessoas que:</p>
+            <label><input type="radio" name="q13" value="0"> A) Não acreditavam em nenhum Deus</label>
+            <label><input type="radio" name="q13" value="1"> B) Seguiam crenças que discordavam dos dogmas oficiais da Igreja</label>
+            <label><input type="radio" name="q13" value="0"> C) Lutavam nas Cruzadas pelo Rei</label></div>
+
+        <h2>Renascimento e Ciência Moderna</h2>
+
+        <div class="question" id="div_q14"><p>14. O Renascimento defendia o "Otimismo", que significava:</p>
+            <label><input type="radio" name="q14" value="1"> A) A crença na capacidade do homem de progredir e ser feliz na Terra</label>
+            <label><input type="radio" name="q14" value="0"> B) A ideia de que o sofrimento era necessário para ir ao céu</label>
+            <label><input type="radio" name="q14" value="0"> C) A esperança de que o feudalismo voltaria</label></div>
+
+        <div class="question" id="div_q15"><p>15. Na arte, a técnica de sombras que criava volume e suavidade (muito usada por Da Vinci) é o:</p>
+            <label><input type="radio" name="q15" value="1"> A) Sfumato</label>
+            <label><input type="radio" name="q15" value="0"> B) Vitral</label>
+            <label><input type="radio" name="q15" value="0"> C) Afresco</label></div>
+
+        <div class="question" id="div_q16"><p>16. Michelangelo Buonarroti é o autor de qual destas obras icônicas?</p>
+            <label><input type="radio" name="q16" value="1"> A) Pintura do teto da Capela Sistina</label>
+            <label><input type="radio" name="q16" value="0"> B) Mona Lisa</label>
+            <label><input type="radio" name="q16" value="0"> C) O Nascimento de Vênus</label></div>
+
+        <div class="question" id="div_q17"><p>17. Qual obra literária renascentista, escrita por Erasmo de Rotterdam, criticava os abusos da Igreja e da sociedade?</p>
+            <label><input type="radio" name="q17" value="1"> A) Elogio da Loucura</label>
+            <label><input type="radio" name="q17" value="0"> B) Dom Quixote</label>
+            <label><input type="radio" name="q17" value="0"> C) Os Lusíadas</label></div>
+
+        <div class="question" id="div_q18"><p>18. Rafael Sanzio ficou famoso por suas pinturas de figuras serenas e equilibradas, conhecidas como:</p>
+            <label><input type="radio" name="q18" value="1"> A) Madonas (representações da Virgem Maria)</label>
+            <label><input type="radio" name="q18" value="0"> B) Gárgulas</label>
+            <label><input type="radio" name="q18" value="0"> C) Paisagens abstratas</label></div>
+
+        <div class="question" id="div_q19"><p>19. O cientista que aperfeiçoou o telescópio e confirmou o heliocentrismo foi:</p>
+            <label><input type="radio" name="q19" value="1"> A) Galileu Galilei</label>
+            <label><input type="radio" name="q19" value="0"> B) Isaac Newton</label>
+            <label><input type="radio" name="q19" value="0"> C) René Descartes</label></div>
+
+        <div class="question" id="div_q20"><p>20. O Renascimento marcou a passagem da Mentalidade Medieval para a:</p>
+            <label><input type="radio" name="q20" value="0"> A) Mentalidade Pré-Histórica</label>
+            <label><input type="radio" name="q20" value="1"> B) Mentalidade Moderna</label>
+            <label><input type="radio" name="q20" value="0"> C) Mentalidade Grega Clássica apenas</label></div>
+
+        <div class="question" id="div_q21"><p>21. O Humanismo valorizava a "Virtù", que representava:</p>
+            <label><input type="radio" name="q21" value="1"> A) A capacidade humana de agir e transformar o próprio destino</label>
+            <label><input type="radio" name="q21" value="0"> B) A obediência cega aos dogmas</label>
+            <label><input type="radio" name="q21" value="0"> C) O isolamento em mosteiros</label></div>
+
+        <div class="question" id="div_q22"><p>22. Qual destes países teve um Renascimento tardio, mas com grandes obras como "Os Lusíadas" de Camões?</p>
+            <label><input type="radio" name="q22" value="1"> A) Portugal</label>
+            <label><input type="radio" name="q22" value="0"> B) Itália</label>
+            <label><input type="radio" name="q22" value="0"> C) Grécia</label></div>
+
+        <div class="question" id="div_q23"><p>23. No Renascimento Científico, o conhecimento passou a ser validado através de:</p>
+            <label><input type="radio" name="q23" value="1"> A) Observação e Experimentação</label>
+            <label><input type="radio" name="q23" value="0"> B) Apenas citações bíblicas</label>
+            <label><input type="radio" name="q23" value="0"> C) Sorteios e oráculos</label></div>
+
+        <div class="question" id="div_q24"><p>24. O realismo na escultura renascentista buscava retratar:</p>
+            <label><input type="radio" name="q24" value="1"> A) A anatomia humana com precisão e movimento</label>
+            <label><input type="radio" name="q24" value="0"> B) Figuras retas e sem expressão</label>
+            <label><input type="radio" name="q24" value="0"> C) Apenas seres mitológicos monstruosos</label></div>
+
+        <div class="question" id="div_q25"><p>25. Por que a burguesia apoiava o Renascimento?</p>
+            <label><input type="radio" name="q25" value="1"> A) Porque valorizava o lucro, o prazer terreno e o progresso, que combinavam com seus negócios</label>
+            <label><input type="radio" name="q25" value="0"> B) Porque queriam voltar a ser servos dos feudos</label>
+            <label><input type="radio" name="q25" value="0"> C) Porque desejavam o fim de todas as igrejas</label></div>
+
+        <button type="button" id="btnCheck" onclick="checkHistory03()">Finalizar Simulado 03</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="simulado_historia_02.html">⏮ Ver Bloco 02</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkHistory03() {
+        const total = 25;
+        for (let i = 1; i <= total; i++) {
+            if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Você esqueceu a questão " + i + "!"); return;
+            }
+        }
+
+        let hits = 0;
+        let gabHtml = "<div class='ans-list'>";
+        for (let i = 1; i <= total; i++) {
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="q${i}"]:checked`);
+            if (sel.value === "1") { hits++; div.className = "question q-correct"; }
+            else { div.className = "question q-wrong"; }
+            gabHtml += `<div>Q${i}: <b>${sel.parentElement.innerText.charAt(0)}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (hits / total) * 10;
+        resDiv.innerHTML = `<h2>Nota: ${nota.toFixed(1)}</h2><p>Acertos: ${hits}/${total}</p>` + gabHtml;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnCheck').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciências 7º Ano - Simulado 2</title>
+    <style>
+        :root { --primary: #2e7d32; --secondary: #388e3c; --success: #1b5e20; --danger: #c62828; --bg: #f1f8e9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #333; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h1 { text-align: center; color: var(--primary); border-bottom: 3px solid #81c784; padding-bottom: 10px; margin-bottom: 5px; }
+        h3 { color: var(--secondary); margin-top: 30px; background: #e8f5e9; padding: 10px; border-radius: 6px; border-left: 5px solid var(--secondary); }
+        
+        .question { margin-bottom: 20px; padding: 20px; border-radius: 10px; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; }
+
+        label { display: block; cursor: pointer; padding: 10px; border-radius: 6px; margin: 5px 0; transition: 0.2s; border: 1px solid transparent; }
+        label:hover { background-color: #f1f8e9; border-color: #81c784; }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        /* Estados de Correção */
+        .q-correct { border-left: 6px solid #2ecc71 !important; background: #f0fff4; }
+        .q-wrong { border-left: 6px solid #e74c3c !important; background: #fff5f5; }
+
+        #result { display: none; padding: 20px; border-radius: 10px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        .correct-box { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .wrong-box { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+        button { display: block; width: 100%; padding: 18px; background-color: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background-color: #1b5e20; transform: translateY(-2px); }
+
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; font-size: 0.85em; text-align: left; }
+        
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🔬 Simulado de Ciências: Parte 2</strong></header>
+
+<div class="container">
+    <h1>Avaliação de Ciências</h1>
+    <p style="text-align:center; color: #666; font-style: italic;">Níveis de Organização e Interações Ecológicas</p>
+
+    <div id="result"></div>
+
+    <form id="quizScience2">
+        <h3>Capítulo 1: Ecologia e Estratégias</h3>
+        
+        <div class="question" id="div_q1">
+            <p>1. O conjunto de todos os ecossistemas do planeta Terra é chamado de:</p>
+            <label><input type="radio" name="q1" value="A"> A) Atmosfera</label>
+            <label><input type="radio" name="q1" value="B"> B) Biosfera</label>
+            <label><input type="radio" name="q1" value="C"> C) Litosfera</label>
+        </div>
+
+        <div class="question" id="div_q2">
+            <p>2. Fatores abióticos como luz e temperatura influenciam diretamente:</p>
+            <label><input type="radio" name="q2" value="A"> A) Apenas os animais</label>
+            <label><input type="radio" name="q2" value="B"> B) O comportamento e a distribuição dos seres vivos</label>
+            <label><input type="radio" name="q2" value="C"> C) Apenas a cor do solo</label>
+        </div>
+
+        <div class="question" id="div_q3">
+            <p>3. Qual a principal diferença entre Habitat e Nicho Ecológico?</p>
+            <label><input type="radio" name="q3" value="A"> A) Habitat é a função e Nicho é o lugar</label>
+            <label><input type="radio" name="q3" value="B"> B) Habitat é o lugar e Nicho é a função/modo de vida</label>
+            <label><input type="radio" name="q3" value="C"> C) São termos sinônimos</label>
+        </div>
+
+        <div class="question" id="div_q4">
+            <p>4. Quando uma espécie se assemelha a outra para afastar predadores, chamamos de:</p>
+            <label><input type="radio" name="q4" value="A"> A) Camuflagem</label>
+            <label><input type="radio" name="q4" value="B"> B) Mimetismo</label>
+            <label><input type="radio" name="q4" value="C"> C) Mutualismo</label>
+        </div>
+
+        <div class="question" id="div_q5">
+            <p>5. Organismos heterótrofos que se alimentam de produtores são:</p>
+            <label><input type="radio" name="q5" value="A"> A) Consumidores Primários</label>
+            <label><input type="radio" name="q5" value="B"> B) Consumidores Secundários</label>
+            <label><input type="radio" name="q5" value="C"> C) Produtores</label>
+        </div>
+
+        <div class="question" id="div_q6">
+            <p>6. O beija-flor ao polinizar uma flor enquanto se alimenta realiza uma:</p>
+            <label><input type="radio" name="q6" value="A"> A) Relação desarmônica</label>
+            <label><input type="radio" name="q6" value="B"> B) Protocooperação</label>
+            <label><input type="radio" name="q6" value="C"> C) Competição</label>
+        </div>
+
+        <div class="question" id="div_q7">
+            <p>7. Qual nível de organização vem logo após "Organismo"?</p>
+            <label><input type="radio" name="q7" value="A"> A) Comunidade</label>
+            <label><input type="radio" name="q7" value="B"> B) Ecossistema</label>
+            <label><input type="radio" name="q7" value="C"> C) População</label>
+        </div>
+
+        <h3>Capítulo 2: Relações Ecológicas</h3>
+
+        <div class="question" id="div_q8">
+            <p>8. Relações interespecíficas ocorrem entre:</p>
+            <label><input type="radio" name="q8" value="A"> A) Indivíduos de espécies diferentes</label>
+            <label><input type="radio" name="q8" value="B"> B) Indivíduos da mesma espécie</label>
+            <label><input type="radio" name="q8" value="C"> C) Apenas seres abióticos</label>
+        </div>
+
+        <div class="question" id="div_q9">
+            <p>9. A Sociedade (ex: formigas) é uma relação do tipo:</p>
+            <label><input type="radio" name="q9" value="A"> A) Harmônica intraespecífica</label>
+            <label><input type="radio" name="q9" value="B"> B) Desarmônica interespecífica</label>
+            <label><input type="radio" name="q9" value="C"> C) Harmônica interespecífica</label>
+        </div>
+
+        <div class="question" id="div_q10">
+            <p>10. No Inquilinismo, uma espécie busca proteção em outra:</p>
+            <label><input type="radio" name="q10" value="A"> A) Prejudicando a outra espécie</label>
+            <label><input type="radio" name="q10" value="B"> B) Sem prejudicar ou beneficiar a outra</label>
+            <label><input type="radio" name="q10" value="C"> C) Matando a outra espécie</label>
+        </div>
+
+        <div class="question" id="div_q11">
+            <p>11. As orquídeas sobre árvores são exemplos de:</p>
+            <label><input type="radio" name="q11" value="A"> A) Parasitismo</label>
+            <label><input type="radio" name="q11" value="B"> B) Epifitismo (Inquilinismo)</label>
+            <label><input type="radio" name="q11" value="C"> C) Canibalismo</label>
+        </div>
+
+        <div class="question" id="div_q12">
+            <p>12. A competição pode ocorrer por:</p>
+            <label><input type="radio" name="q12" value="A"> A) Alimento, território ou parceiros</label>
+            <label><input type="radio" name="q12" value="B"> B) Apenas por água</label>
+            <label><input type="radio" name="q12" value="C"> C) Somente entre plantas</label>
+        </div>
+
+        <div class="question" id="div_q13">
+            <p>13. O carrapato em um cachorro é um exemplo de:</p>
+            <label><input type="radio" name="q13" value="A"> A) Endoparasita</label>
+            <label><input type="radio" name="q13" value="B"> B) Ectoparasita</label>
+            <label><input type="radio" name="q13" value="C"> C) Predador</label>
+        </div>
+
+        <div class="question" id="div_q14">
+            <p>14. No Amensalismo, uma espécie:</p>
+            <label><input type="radio" name="q14" value="A"> A) Inibe o crescimento de outra</label>
+            <label><input type="radio" name="q14" value="B"> B) Ajuda a outra a crescer</label>
+            <label><input type="radio" name="q14" value="C"> C) Alimenta-se da outra</label>
+        </div>
+
+        <div class="question" id="div_q15">
+            <p>15. A Herbivoria é a relação onde:</p>
+            <label><input type="radio" name="q15" value="A"> A) Animais comem animais</label>
+            <label><input type="radio" name="q15" value="B"> B) Animais se alimentam de plantas</label>
+            <label><input type="radio" name="q15" value="C"> C) Plantas comem insetos</label>
+        </div>
+
+        <div class="question" id="div_q16">
+            <p>16. Qual dessas é desarmônica intraespecífica?</p>
+            <label><input type="radio" name="q16" value="A"> A) Predatismo</label>
+            <label><input type="radio" name="q16" value="B"> B) Canibalismo</label>
+            <label><input type="radio" name="q16" value="C"> C) Mutualismo</label>
+        </div>
+
+        <div class="question" id="div_q17">
+            <p>17. Várias comunidades em interação com o ambiente formam:</p>
+            <label><input type="radio" name="q17" value="A"> A) Uma população</label>
+            <label><input type="radio" name="q17" value="B"> B) Um ecossistema</label>
+            <label><input type="radio" name="q17" value="C"> C) Um organismo</label>
+        </div>
+
+        <div class="question" id="div_q18">
+            <p>18. O Mutualismo difere da Protocooperação pois:</p>
+            <label><input type="radio" name="q18" value="A"> A) É obrigatório para a sobrevivência</label>
+            <label><input type="radio" name="q18" value="B"> B) É uma relação facultativa</label>
+            <label><input type="radio" name="q18" value="C"> C) Nenhuma traz benefícios</label>
+        </div>
+
+        <div class="question" id="div_q19">
+            <p>19. Seres produtores geram energia:</p>
+            <label><input type="radio" name="q19" value="A"> A) Térmica apenas</label>
+            <label><input type="radio" name="q19" value="B"> B) Química (alimento)</label>
+            <label><input type="radio" name="q19" value="C"> C) Elétrica</label>
+        </div>
+
+        <div class="question" id="div_q20">
+            <p>20. O termo "biocenose" é sinônimo de:</p>
+            <label><input type="radio" name="q20" value="A"> A) Comunidade</label>
+            <label><input type="radio" name="q20" value="B"> B) População</label>
+            <label><input type="radio" name="q20" value="C"> C) Biosfera</label>
+        </div>
+
+        <button type="button" id="btnFinalizar" onclick="checkScience2()">Finalizar Simulado</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkScience2() {
+        const answers = {
+            q1: 'B', q2: 'B', q3: 'B', q4: 'B', q5: 'A',
+            q6: 'B', q7: 'C', q8: 'A', q9: 'A', q10: 'B',
+            q11: 'B', q12: 'A', q13: 'B', q14: 'A', q15: 'B',
+            q16: 'B', q17: 'B', q18: 'A', q19: 'B', q20: 'A'
+        };
+
+        // Validação: Todas respondidas?
+        for (let i = 1; i <= 20; i++) {
+            if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Responda a questão " + i); return;
+            }
+        }
+
+        let score = 0;
+        let gabHtml = "<div class='ans-list'>";
+
+        for (let i = 1; i <= 20; i++) {
+            let q = "q" + i;
+            let div = document.getElementById("div_" + q);
+            let sel = document.querySelector(`input[name="${q}"]:checked`);
+            
+            if (sel && sel.value === answers[q]) {
+                score++;
+                div.className = "question q-correct";
+            } else {
+                div.className = "question q-wrong";
+            }
+            gabHtml += `<div>Q${i}: <b>${answers[q]}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (score / 20) * 10;
+        resDiv.innerHTML = `<h2>Nota Final: ${nota.toFixed(1)}</h2><p>Acertos: ${score}/20</p>` + gabHtml;
+        resDiv.className = nota >= 6 ? 'correct-box' : 'wrong-box';
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

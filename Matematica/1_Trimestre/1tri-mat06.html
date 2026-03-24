@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Cálculos - Parte 2</title>
+    <style>
+        :root { --primary: #2e86de; --success: #27ae60; --danger: #e74c3c; --bg: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #333; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h1 { color: var(--primary); text-align: center; font-size: 1.6em; margin-bottom: 10px; }
+        p.instr { text-align: center; color: #666; font-style: italic; margin-bottom: 30px; font-size: 0.9em; }
+
+        .grid-questions { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        .question { padding: 15px; background: #fff; border: 1px solid #eee; border-left: 5px solid var(--primary); border-radius: 8px; transition: 0.3s; }
+        .question label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 0.9em; color: #2c3e50; }
+
+        input[type="text"] { 
+            width: 100%; max-width: 150px; padding: 10px; border: 2px solid #eee; 
+            border-radius: 6px; font-size: 15px; outline: none; transition: 0.3s;
+            font-weight: bold; color: var(--primary);
+        }
+        input[type="text"]:focus { border-color: var(--primary); background: #f0f7ff; }
+
+        /* Estados de Correção */
+        .q-correct { border-left-color: var(--success) !important; background: #f0fff4 !important; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5 !important; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; }
+
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin-top: 30px; transition: 0.3s; }
+        button:hover { background: #2173c5; transform: translateY(-2px); }
+
+        .gabarito-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 20px; text-align: left; font-size: 0.85em; background: rgba(255,255,255,0.5); padding: 15px; border-radius: 8px; }
+
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+
+        @media (max-width: 650px) { .grid-questions { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header><strong>📝 Desafio de Matemática: 7º Ano (Parte 2)</strong></header>
+
+<div class="container">
+    <h1>Cálculos e Desafios</h1>
+    <p class="instr">Resolva com atenção. Use vírgula para decimais e o sinal (-) para negativos.</p>
+    
+    <div id="result"></div>
+
+    <form id="calcForm">
+        <div class="grid-questions">
+            <div class="question" id="div_q1">
+                <label>1. Calcule: 45,6 - 12,35</label>
+                <input type="text" id="q1">
+            </div>
+            <div class="question" id="div_q2">
+                <label>2. Calcule: 3,5 × 4</label>
+                <input type="text" id="q2">
+            </div>
+            <div class="question" id="div_q3">
+                <label>3. Quanto é 100 ÷ 0,5?</label>
+                <input type="text" id="q3">
+            </div>
+            <div class="question" id="div_q4">
+                <label>4. Calcule: 0,75 + 0,25 + 1,5</label>
+                <input type="text" id="q4">
+            </div>
+            <div class="question" id="div_q5">
+                <label>5. Resultado de: -18 + (-22)</label>
+                <input type="text" id="q5">
+            </div>
+            <div class="question" id="div_q6">
+                <label>6. Resultado de: -50 - (-20)</label>
+                <input type="text" id="q6">
+            </div>
+            <div class="question" id="div_q7">
+                <label>7. Sucessor do número -1</label>
+                <input type="text" id="q7">
+            </div>
+            <div class="question" id="div_q8">
+                <label>8. Antecessor do número 0</label>
+                <input type="text" id="q8">
+            </div>
+            <div class="question" id="div_q9">
+                <label>9. Oposto do oposto de -15</label>
+                <input type="text" id="q9">
+            </div>
+            <div class="question" id="div_q10">
+                <label>10. Valor absoluto de (25 - 40)</label>
+                <input type="text" id="q10">
+            </div>
+            <div class="question" id="div_q11">
+                <label>11. Simétrico de +37</label>
+                <input type="text" id="q11">
+            </div>
+            <div class="question" id="div_q12">
+                <label>12. Módulo de -1000</label>
+                <input type="text" id="q12">
+            </div>
+            <div class="question" id="div_q13">
+                <label>13. Menor valor entre: -5 e -10</label>
+                <input type="text" id="q13">
+            </div>
+            <div class="question" id="div_q14">
+                <label>14. Próximo termo: 1, 4, 7, 10...</label>
+                <input type="text" id="q14">
+            </div>
+            <div class="question" id="div_q15">
+                <label>15. Próximo termo: 5, 0, -5, -10...</label>
+                <input type="text" id="q15">
+            </div>
+            <div class="question" id="div_q16">
+                <label>16. Quantos inteiros há entre -2 e 2?</label>
+                <input type="text" id="q16">
+            </div>
+            <div class="question" id="div_q17">
+                <label>17. Calcule: ( -10 + 5 ) - 2</label>
+                <input type="text" id="q17">
+            </div>
+            <div class="question" id="div_q18">
+                <label>18. Converta 9/4 para decimal:</label>
+                <input type="text" id="q18">
+            </div>
+            <div class="question" id="div_q19">
+                <label>19. Calcule: 1,2 + 1,2 + 1,2</label>
+                <input type="text" id="q19">
+            </div>
+            <div class="question" id="div_q20">
+                <label>20. Qual o oposto de zero?</label>
+                <input type="text" id="q20">
+            </div>
+        </div>
+
+        <button type="button" id="btnCheck" onclick="checkAnswers()">Finalizar Desafio</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="lista_provas.html">← Voltar para Lista</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: "33,25", q2: "14", q3: "200", q4: "2,5",
+            q5: "-40", q6: "-30", q7: "0", q8: "-1",
+            q9: "-15", q10: "15", q11: "-37", q12: "1000",
+            q13: "-10", q14: "13", q15: "-15", q16: "3",
+            q17: "-7", q18: "2,25", q19: "3,6", q20: "0"
+        };
+
+        // Validação de campos vazios
+        for (let i = 1; i <= 20; i++) {
+            if (document.getElementById('q' + i).value.trim() === "") {
+                alert("Por favor, preencha a questão " + i + " antes de finalizar.");
+                document.getElementById('q' + i).focus();
+                return;
+            }
+        }
+
+        let score = 0;
+        let report = "<div class='gabarito-grid'>";
+
+        for (let i = 1; i <= 20; i++) {
+            let inputField = document.getElementById('q' + i);
+            let divField = document.getElementById('div_q' + i);
+            let userAns = inputField.value.trim().replace('.', ',');
+
+            if (userAns === answers['q' + i]) {
+                score++;
+                divField.className = "question q-correct";
+            } else {
+                divField.className = "question q-wrong";
+            }
+            report += `<div><b>Q${i}:</b> ${answers['q' + i]}</div>`;
+            inputField.disabled = true;
+        }
+        report += "</div>";
+
+        const resultDiv = document.getElementById('result');
+        const nota = (score / 20) * 10;
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `<h2>Nota: ${nota.toFixed(1)}</h2><p>Você acertou ${score} de 20 questões.</p>` + report;
+        resultDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resultDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnCheck').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

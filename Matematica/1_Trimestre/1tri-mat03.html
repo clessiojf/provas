@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Matemática - 7º Ano</title>
+    <style>
+        :root { --primary: #27ae60; --success: #2ecc71; --danger: #e74c3c; --bg: #f4f4f9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #333; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; font-size: 1.6em; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #ddd; transition: all 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #f0fdf4; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .correct { background: #d4edda !important; border-color: #c3e6cb !important; color: #155724; }
+        .wrong { background: #f8d7da !important; border-color: #f5c6cb !important; color: #721c24; }
+        #resultado { display: none; padding: 20px; border-radius: 10px; text-align: center; font-size: 1.3em; margin-bottom: 30px; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>Simulado de Matemática: 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Avaliação de Conteúdos</h1>
+    <div id="resultado"></div>
+    <form id="quiz">
+        <!-- Questões 1 a 15 -->
+        <div class="question" id="q1"><p>1. Qual é o resultado da soma 3,45 + 1,2?</p>
+            <label><input type="radio" name="r1" value="0"> A) 3,57</label>
+            <label><input type="radio" name="r1" value="1"> B) 4,65</label>
+            <label><input type="radio" name="r1" value="0"> C) 4,57</label></div>
+
+        <div class="question" id="q2"><p>2. Como se escreve a fração 3/4 em forma decimal?</p>
+            <label><input type="radio" name="r2" value="1"> A) 0,75</label>
+            <label><input type="radio" name="r2" value="0"> B) 0,34</label>
+            <label><input type="radio" name="r2" value="0"> C) 0,70</label></div>
+
+        <div class="question" id="q3"><p>3. Se um ponto A está a 5 unidades à direita do zero, onde está seu simétrico?</p>
+            <label><input type="radio" name="r3" value="0"> A) No +5</label>
+            <label><input type="radio" name="r3" value="1"> B) No -5</label>
+            <label><input type="radio" name="r3" value="0"> C) No 0</label></div>
+
+        <div class="question" id="q4"><p>4. O simétrico do ponto (2, 3) em relação ao eixo y é:</p>
+            <label><input type="radio" name="r4" value="1"> A) (-2, 3)</label>
+            <label><input type="radio" name="r4" value="0"> B) (2, -3)</label>
+            <label><input type="radio" name="r4" value="0"> C) (-2, -3)</label></div>
+
+        <div class="question" id="q5"><p>5. Quais números pertencem ao conjunto dos Inteiros (Z)?</p>
+            <label><input type="radio" name="r5" value="0"> A) Apenas números positivos</label>
+            <label><input type="radio" name="r5" value="1"> B) Positivos, negativos e zero (sem decimais)</label>
+            <label><input type="radio" name="r5" value="0"> C) Todos os decimais</label></div>
+
+        <div class="question" id="q6"><p>6. Na reta numérica, o número -8 está localizado:</p>
+            <label><input type="radio" name="r6" value="0"> A) À direita do zero</label>
+            <label><input type="radio" name="r6" value="0"> B) À esquerda de -10</label>
+            <label><input type="radio" name="r6" value="1"> C) À direita de -10</label></div>
+
+        <div class="question" id="q7"><p>7. Qual é o antecessor do número -15?</p>
+            <label><input type="radio" name="r7" value="0"> A) -14</label>
+            <label><input type="radio" name="r7" value="1"> B) -16</label>
+            <label><input type="radio" name="r7" value="0"> C) 14</label></div>
+
+        <div class="question" id="q8"><p>8. Qual é o sucessor do número -1?</p>
+            <label><input type="radio" name="r8" value="0"> A) -2</label>
+            <label><input type="radio" name="r8" value="1"> B) 0</label>
+            <label><input type="radio" name="r8" value="0"> C) 1</label></div>
+
+        <div class="question" id="q9"><p>9. Três números inteiros consecutivos cuja soma é 0 são:</p>
+            <label><input type="radio" name="r9" value="1"> A) -1, 0, 1</label>
+            <label><input type="radio" name="r9" value="0"> B) 1, 2, 3</label>
+            <label><input type="radio" name="r9" value="0"> C) -2, -1, 0</label></div>
+
+        <div class="question" id="q10"><p>10. Qual é o oposto de +25?</p>
+            <label><input type="radio" name="r10" value="0"> A) 25</label>
+            <label><input type="radio" name="r10" value="1"> B) -25</label>
+            <label><input type="radio" name="r10" value="0"> C) 0</label></div>
+
+        <div class="question" id="q11"><p>11. O simétrico de um número negativo é sempre:</p>
+            <label><input type="radio" name="r11" value="0"> A) Negativo</label>
+            <label><input type="radio" name="r11" value="0"> B) Zero</label>
+            <label><input type="radio" name="r11" value="1"> C) Positivo</label></div>
+
+        <div class="question" id="q12"><p>12. Qual sentença é verdadeira?</p>
+            <label><input type="radio" name="r12" value="0"> A) -5 > -2</label>
+            <label><input type="radio" name="r12" value="1"> B) -10 < -1</label>
+            <label><input type="radio" name="r12" value="0"> C) 0 < -5</label></div>
+
+        <div class="question" id="q13"><p>13. Ordem crescente: -3, 5, 0, -10</p>
+            <label><input type="radio" name="r13" value="1"> A) -10, -3, 0, 5</label>
+            <label><input type="radio" name="r13" value="0"> B) 0, -3, 5, -10</label>
+            <label><input type="radio" name="r13" value="0"> C) -3, -10, 0, 5</label></div>
+
+        <div class="question" id="q14"><p>14. Na sequência (2, 5, 8, 11, ...), o próximo termo é:</p>
+            <label><input type="radio" name="r14" value="0"> A) 13</label>
+            <label><input type="radio" name="r14" value="1"> B) 14</label>
+            <label><input type="radio" name="r14" value="0"> C) 15</label></div>
+
+        <div class="question" id="q15"><p>15. Qual número é maior: 0,5 ou 0,05?</p>
+            <label><input type="radio" name="r15" value="1"> A) 0,5</label>
+            <label><input type="radio" name="r15" value="0"> B) 0,05</label>
+            <label><input type="radio" name="r15" value="0"> C) São iguais</label></div>
+
+        <!-- Questões 16 a 20 (Adicionadas para completar) -->
+        <div class="question" id="q16"><p>16. O valor de | -45 | é:</p>
+            <label><input type="radio" name="r16" value="1"> A) 45</label>
+            <label><input type="radio" name="r16" value="0"> B) -45</label>
+            <label><input type="radio" name="r16" value="0"> C) 0</label></div>
+
+        <div class="question" id="q17"><p>17. O resultado de -7 + 10 é:</p>
+            <label><input type="radio" name="r17" value="1"> A) 3</label>
+            <label><input type="radio" name="r17" value="0"> B) -3</label>
+            <label><input type="radio" name="r17" value="0"> C) 17</label></div>
+
+        <div class="question" id="q18"><p>18. Qual número decimal representa 1/2?</p>
+            <label><input type="radio" name="r18" value="0"> A) 0,2</label>
+            <label><input type="radio" name="r18" value="1"> B) 0,5</label>
+            <label><input type="radio" name="r18" value="0"> C) 1,2</label></div>
+
+        <div class="question" id="q19"><p>19. O oposto do antecessor de 1 é:</p>
+            <label><input type="radio" name="r19" value="1"> A) 0</label>
+            <label><input type="radio" name="r19" value="0"> B) -1</label>
+            <label><input type="radio" name="r19" value="0"> C) 1</label></div>
+
+        <div class="question" id="q20"><p>20. Qual é o menor valor entre -5 e -8?</p>
+            <label><input type="radio" name="r20" value="0"> A) -5</label>
+            <label><input type="radio" name="r20" value="1"> B) -8</label>
+            <label><input type="radio" name="r20" value="0"> C) 0</label></div>
+
+        <button type="button" id="btnFinalizar" onclick="verificar()">Finalizar e Corrigir</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="lista_provas.html">← Voltar para Lista</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function verificar() {
+        let pontos = 0; const total = 20;
+        const form = document.getElementById('quiz');
+        for(let i=1; i<=total; i++) {
+            if(!form['r'+i].value) { alert("Responda a questão " + i); return; }
+        }
+        for(let i=1; i<=total; i++) {
+            const div = document.getElementById('q' + i);
+            if(form['r'+i].value === "1") { pontos++; div.className="question correct"; }
+            else { div.className="question wrong"; }
+        }
+        const resDiv = document.getElementById('resultado');
+        resDiv.style.display = "block";
+        const nota = (pontos / total) * 10;
+        resDiv.innerHTML = `Acertos: ${pontos} de ${total} | Nota Final: ${nota.toFixed(1)}`;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+</body>
+</html>

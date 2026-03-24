@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Cálculos - 7º Ano</title>
+    <style>
+        :root { --primary: #3498db; --success: #27ae60; --danger: #e74c3c; --bg: #eef2f3; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #333; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 750px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h1 { color: var(--primary); text-align: center; font-size: 1.6em; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #ddd; transition: all 0.3s; border-left: 6px solid var(--primary); }
+        .question p { font-weight: bold; margin-top: 0; color: #2c3e50; }
+
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #f0f7ff; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        .correct { background: #d4edda !important; border-color: #c3e6cb !important; color: #155724; }
+        .wrong { background: #f8d7da !important; border-color: #f5c6cb !important; color: #721c24; }
+
+        #placar { display: none; padding: 20px; border-radius: 10px; text-align: center; font-size: 1.3em; margin-bottom: 30px; font-weight: bold; }
+
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #2980b9; transform: translateY(-2px); }
+
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <strong>📝 Desafio de Cálculos: 7º Ano</strong>
+</header>
+
+<div class="container">
+    <h1>Operações com Inteiros</h1>
+    <div id="placar"></div>
+    
+    <form id="quiz">
+        <div class="question" id="q1">
+            <p>1. Calcule: | -12 | + (oposto de 7) - (simétrico de -5)</p>
+            <label><input type="radio" name="r1" value="0"> 10</label>
+            <label><input type="radio" name="r1" value="1"> 0</label>
+            <label><input type="radio" name="r1" value="0"> 24</label>
+        </div>
+
+        <div class="question" id="q2">
+            <p>2. Resolva: -(-10) + (-5) - | -3 |</p>
+            <label><input type="radio" name="r2" value="1"> 2</label>
+            <label><input type="radio" name="r2" value="0"> 12</label>
+            <label><input type="radio" name="r2" value="0"> -18</label>
+        </div>
+
+        <div class="question" id="q3">
+            <p>3. Se X = (sucessor de -10) + (antecessor de -2), qual o valor de X?</p>
+            <label><input type="radio" name="r3" value="0"> -11</label>
+            <label><input type="radio" name="r3" value="0"> -13</label>
+            <label><input type="radio" name="r3" value="1"> -12</label>
+        </div>
+
+        <div class="question" id="q4">
+            <p>4. Qual é a distância entre -8 e seu simétrico na reta numérica?</p>
+            <label><input type="radio" name="r4" value="0"> 8 unidades</label>
+            <label><input type="radio" name="r4" value="1"> 16 unidades</label>
+            <label><input type="radio" name="r4" value="0"> 0 unidades</label>
+        </div>
+
+        <div class="question" id="q5">
+            <p>5. Complete a sequência: (-20, -16, -12, -8, ...)</p>
+            <label><input type="radio" name="r5" value="1"> -4 e 0</label>
+            <label><input type="radio" name="r5" value="0"> -4 e -2</label>
+            <label><input type="radio" name="r5" value="0"> 4 e 8</label>
+        </div>
+
+        <div class="question" id="q6">
+            <p>6. Transforme 0,8 em uma fração simplificada:</p>
+            <label><input type="radio" name="r6" value="0"> 8/100</label>
+            <label><input type="radio" name="r6" value="1"> 4/5</label>
+            <label><input type="radio" name="r6" value="0"> 1/8</label>
+        </div>
+
+        <div class="question" id="q7">
+            <p>7. Qual alternativa contém a comparação CORRETA?</p>
+            <label><input type="radio" name="r7" value="0"> -1,2 < -1,5</label>
+            <label><input type="radio" name="r7" value="0"> 0,5 < 0,05</label>
+            <label><input type="radio" name="r7" value="1"> -1,2 > -1,5</label>
+        </div>
+
+        <div class="question" id="q8">
+            <p>8. Quais inteiros estão no conjunto: {x | -3 < x <= 1}?</p>
+            <label><input type="radio" name="r8" value="1"> -2, -1, 0, 1</label>
+            <label><input type="radio" name="r8" value="0"> -3, -2, -1, 0, 1</label>
+            <label><input type="radio" name="r8" value="0"> -2, -1, 0</label>
+        </div>
+
+        <div class="question" id="q9">
+            <p>9. O dobro do simétrico de -15 é:</p>
+            <label><input type="radio" name="r9" value="0"> -30</label>
+            <label><input type="radio" name="r9" value="1"> 30</label>
+            <label><input type="radio" name="r9" value="0"> 15</label>
+        </div>
+
+        <div class="question" id="q10">
+            <p>10. Qual o valor de: | -5 | + | 5 | - | -10 |?</p>
+            <label><input type="radio" name="r10" value="1"> 0</label>
+            <label><input type="radio" name="r10" value="0"> 10</label>
+            <label><input type="radio" name="r10" value="0"> -10</label>
+        </div>
+
+        <button type="button" id="btnFinalizar" onclick="corrigir()">Corrigir Cálculos</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="lista_provas.html">← Voltar para Lista</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function corrigir() {
+        let pontos = 0;
+        const total = 10;
+        const form = document.getElementById('quiz');
+
+        // Validação
+        for(let i=1; i<=total; i++) {
+            if(!form['r'+i].value) {
+                alert("Opa! Você esqueceu a questão " + i);
+                return;
+            }
+        }
+
+        for(let i=1; i<=total; i++) {
+            const div = document.getElementById('q' + i);
+            const resposta = form['r' + i].value;
+            
+            if(resposta === "1") {
+                pontos++;
+                div.className = "question correct";
+            } else {
+                div.className = "question wrong";
+            }
+        }
+
+        const placar = document.getElementById('placar');
+        placar.style.display = "block";
+        const nota = (pontos / total) * 10;
+        placar.innerHTML = `Resultado: ${pontos} de ${total} acertos!<br>Nota: ${nota.toFixed(1)}`;
+        placar.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        placar.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteiros e Plano Cartesiano</title>
+    <style>
+        :root { --primary: #3498db; --success: #27ae60; --danger: #e74c3c; --bg: #f0f4f7; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #333; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 950px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        
+        h1 { text-align: center; color: var(--primary); margin-bottom: 25px; border-bottom: 3px solid #eee; padding-bottom: 10px; }
+
+        .question { margin-bottom: 15px; padding: 20px; border-left: 6px solid var(--primary); background: #f9f9f9; border-radius: 8px; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; }
+        
+        input { padding: 12px; border: 2px solid #ddd; border-radius: 8px; width: 100%; max-width: 200px; font-size: 16px; outline: none; transition: 0.3s; color: var(--primary); font-weight: bold; text-align: center; }
+        input:focus { border-color: var(--primary); background: #fff; }
+
+        button { width: 100%; padding: 20px; background: var(--primary); color: white; border: none; border-radius: 12px; font-size: 1.2em; cursor: pointer; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        button:hover { background: #2980b9; transform: translateY(-2px); }
+
+        /* Resultado e Gabarito Visual */
+        #result-area { display: none; margin-top: 30px; padding: 25px; background: #fff; border-radius: 15px; border: 2px solid var(--primary); }
+        .gabarito-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .gabarito-item { padding: 15px; border: 1px solid #eee; border-radius: 12px; text-align: center; background: #fff; }
+        
+        svg { background: #fff; border: 1px solid #eee; margin-top: 10px; border-radius: 8px; display: block; margin: 10px auto; }
+        .axis { stroke: #333; stroke-width: 2.5; }
+        .grid { stroke: #f0f0f0; stroke-width: 1; }
+        .point { fill: var(--danger); stroke: #fff; stroke-width: 1.5; }
+        .label-text { font-size: 11px; font-weight: bold; fill: #2c3e50; }
+
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>📊 Matemática: Plano Cartesiano e Localização</strong></header>
+
+<div class="container">
+    <h1>Simulado Interativo</h1>
+    <form id="mathQuiz">
+        <div class="question" id="div_q1"><p>1. Calcule: (-8) + (+3)</p><input type="text" id="q1" placeholder="Ex: -5"></div>
+        <div class="question" id="div_q2"><p>2. Em qual quadrante está o ponto A(-4, 2)?</p><input type="text" id="q2" placeholder="Digite 1, 2, 3 ou 4"></div>
+        <div class="question" id="div_q3"><p>3. Par ordenado B (5 para esquerda, 3 para baixo):</p><input type="text" id="q3" placeholder="Ex: (-5,-3)"></div>
+        <div class="question" id="div_q4"><p>4. O ponto C(0, -4) está em qual eixo (x ou y)?</p><input type="text" id="q4"></div>
+        <div class="question" id="div_q5"><p>5. Em qual quadrante está o ponto D(3, -5)?</p><input type="text" id="q5"></div>
+        <div class="question" id="div_q6"><p>6. Simétrico de (2, 4) em relação ao eixo x:</p><input type="text" id="q6"></div>
+        <div class="question" id="div_q7"><p>7. Calcule o produto: (-6) * (-2)</p><input type="text" id="q7"></div>
+        <div class="question" id="div_q8"><p>8. Qual o par ordenado da Origem?</p><input type="text" id="q8"></div>
+        <div class="question" id="div_q9"><p>9. Simétrico de (-3, 1) em relação ao eixo y:</p><input type="text" id="q9"></div>
+        <div class="question" id="div_q10"><p>10. O ponto F(5, 0) está em qual eixo (x ou y)?</p><input type="text" id="q10"></div>
+        <button type="button" id="btnFinalizar" onclick="processQuiz()">Finalizar e Ver Gabarito Visual</button>
+    </form>
+
+    <div id="result-area">
+        <h2 id="score" style="text-align: center;"></h2>
+        <div class="gabarito-grid" id="gabarito"></div>
+    </div>
+
+    <div class="nav-links">
+        <a href="lista_provas.html">← Voltar para Lista</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function drawVisual(valX, valY, label, isReta) {
+        const size = 260; const mid = size / 2;
+        if (isReta) {
+            const scale = 7.5; const posX = mid + (valX * scale);
+            return `<svg width="${size}" height="90"><line x1="10" y1="45" x2="${size-10}" y2="45" class="axis" />
+                ${[-15, -10, -5, 0, 5, 10, 15].map(v => `<line x1="${mid + (v*scale)}" y1="40" x2="${mid + (v*scale)}" y2="50" stroke="#999" /><text x="${mid + (v*scale)}" y="68" font-size="10" text-anchor="middle" fill="#666">${v}</text>`).join('')}
+                <circle cx="${posX}" cy="45" r="7" fill="#27ae60" /><text x="${posX}" y="32" class="label-text" text-anchor="middle" fill="#27ae60">${valX}</text></svg>`;
+        } else {
+            const scale = 22; const px = mid + (valX * scale); const py = mid - (valY * scale);
+            let gridLines = "";
+            for(let i = -5; i <= 5; i++) {
+                gridLines += `<line x1="${mid + i*scale}" y1="10" x2="${mid + i*scale}" y2="${size-10}" class="grid" /><line x1="10" y1="${mid + i*scale}" x2="${size-10}" y2="${mid + i*scale}" class="grid" />`;
+            }
+            return `<svg width="${size}" height="${size}">${gridLines}<line x1="10" y1="${mid}" x2="${size-10}" y2="${mid}" class="axis" /><line x1="${mid}" y1="10" x2="${mid}" y2="${size-10}" class="axis" /><circle cx="${px}" cy="${py}" r="6" class="point" /><text x="${px+6}" y="${py-10}" class="label-text" fill="#e74c3c">${label}(${valX},${valY})</text></svg>`;
+        }
+    }
+
+    function processQuiz() {
+        const ref = {
+            q1: { ans: "-5", x: -5, y: 0, lbl: '', reta: true },
+            q2: { ans: "2", x: -4, y: 2, lbl: 'A', reta: false },
+            q3: { ans: "(-5,-3)", x: -5, y: -3, lbl: 'B', reta: false },
+            q4: { ans: "y", x: 0, y: -4, lbl: 'C', reta: false },
+            q5: { ans: "4", x: 3, y: -5, lbl: 'D', reta: false },
+            q6: { ans: "(2,-4)", x: 2, y: -4, lbl: 'S', reta: false },
+            q7: { ans: "12", x: 12, y: 0, lbl: '', reta: true },
+            q8: { ans: "(0,0)", x: 0, y: 0, lbl: 'O', reta: false },
+            q9: { ans: "(3,1)", x: 3, y: 1, lbl: 'S', reta: false },
+            q10: { ans: "x", x: 5, y: 0, lbl: 'F', reta: false }
+        };
+
+        // Validação
+        for (let i = 1; i <= 10; i++) {
+            if (document.getElementById('q'+i).value.trim() === "") {
+                alert("Responda a questão " + i + " antes de ver o gabarito!");
+                document.getElementById('q'+i).focus();
+                return;
+            }
+        }
+
+        let hits = 0; let html = "";
+        for (let i = 1; i <= 10; i++) {
+            let field = document.getElementById('q'+i);
+            let user = field.value.trim().toLowerCase().replace(/\s/g, '');
+            let d = ref['q'+i];
+            let isOk = (user === d.ans.toLowerCase());
+            if (isOk) hits++;
+
+            document.getElementById('div_q'+i).style.borderLeftColor = isOk ? 'var(--success)' : 'var(--danger)';
+            field.disabled = true;
+
+            html += `<div class="gabarito-item">
+                <p><strong>Questão ${i}</strong><br>
+                Resposta: <b style="color:${isOk?'#27ae60':'#e74c3c'}">${d.ans}</b></p>
+                ${drawVisual(d.x, d.y, d.lbl, d.reta)}
+            </div>`;
+        }
+
+        document.getElementById('score').innerText = `Nota: ${hits}.0 (Acertos: ${hits}/10)`;
+        document.getElementById('gabarito').innerHTML = html;
+        document.getElementById('result-area').style.display = 'block';
+        document.getElementById('btnFinalizar').style.display = 'none';
+        window.scrollTo({top: document.getElementById('result-area').offsetTop - 100, behavior: 'smooth'});
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Dissertativa de Ciências - 7º Ano</title>
+    <style>
+        :root { --primary: #27ae60; --secondary: #2ecc71; --bg: #f0f7f4; --text: #2c3e50; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
+        
+        header { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        
+        .container { max-width: 900px; margin: 80px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        h1 { color: var(--primary); text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-top: 0; }
+        
+        .info-aluno { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
+        .info-aluno input { width: 95%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; outline: none; }
+        .info-aluno input:focus { border-color: var(--primary); }
+
+        .question { margin-bottom: 35px; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; }
+        .question p { font-weight: bold; font-size: 1.1em; color: #1e8449; margin-bottom: 15px; }
+        
+        textarea { width: 100%; height: 100px; padding: 15px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 15px; resize: vertical; font-family: inherit; transition: 0.3s; box-sizing: border-box; }
+        textarea:focus { border-color: var(--primary); outline: none; background-color: #fafffa; }
+
+        .controls { text-align: center; margin-top: 20px; }
+        button { padding: 15px 35px; font-size: 16px; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s; margin: 5px; }
+        
+        .btn-finalizar { background-color: var(--primary); color: white; }
+        .btn-finalizar:hover { background-color: #1e8449; transform: translateY(-2px); }
+        
+        .btn-print { background-color: #3498db; color: white; display: none; }
+        .btn-print:hover { background-color: #2980b9; }
+        
+        /* Relatório Final */
+        #relatorio { display: none; margin-top: 50px; border-top: 4px double var(--primary); padding-top: 30px; }
+        .resp-aluno { background: #f4f4f4; padding: 15px; border-radius: 5px; margin-bottom: 10px; font-style: italic; border-left: 4px solid #95a5a6; }
+        .gabarito-sugerido { background: #e8f6ef; padding: 15px; border-left: 5px solid var(--primary); margin-bottom: 30px; font-size: 0.95em; }
+        
+        .nav-links { text-align: center; margin-top: 30px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+
+        @media print {
+            header, .controls, .nav-links, textarea, .question p { display: none; }
+            #relatorio, .info-aluno, .container { display: block; box-shadow: none; margin: 0; width: 100%; padding: 0; }
+            .pergunta-review p { display: block; font-weight: bold; border-top: 1px solid #ccc; padding-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header><strong>🔬 Avaliação Dissertativa: Ciências 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Ciências Naturais</h1>
+    
+    <div class="info-aluno">
+        <div>
+            <label><strong>Nome do Aluno:</strong></label><br>
+            <input type="text" id="nome" placeholder="Nome Completo">
+        </div>
+        <div>
+            <label><strong>Turma / Ano:</strong></label><br>
+            <input type="text" id="turma" placeholder="Ex: 7º Ano A">
+        </div>
+    </div>
+
+    <form id="provaForm">
+        <!-- QUESTÕES 1 A 10 -->
+        <div class="question" id="q_1">
+            <p>1. Habitat vs. Nicho Ecológico: Imagine uma floresta com uma onça-pintada e um macaco-prego. Explique a diferença entre o habitat e o nicho ecológico desses dois animais.</p>
+            <textarea id="ans1" placeholder="Sua explicação..."></textarea>
+        </div>
+
+        <div class="question" id="q_2">
+            <p>2. Níveis de Organização: Diferencie os conceitos de população e comunidade (biocenose) dentro de um ecossistema.</p>
+            <textarea id="ans2"></textarea>
+        </div>
+
+        <div class="question" id="q_3">
+            <p>3. Fatores do Ecossistema: Defina o que são fatores bióticos e abióticos, citando dois exemplos de cada para um ambiente de praia.</p>
+            <textarea id="ans3"></textarea>
+        </div>
+
+        <div class="question" id="q_4">
+            <p>4. O Papel dos Produtores: Por que os seres produtores são a base de qualquer ecossistema? O que ocorreria se eles sumissem?</p>
+            <textarea id="ans4"></textarea>
+        </div>
+
+        <div class="question" id="q_5">
+            <p>5. Sociedade vs. Colônia: Explique a principal diferença física e de organização entre uma sociedade (abelhas) e uma colônia (corais).</p>
+            <textarea id="ans5"></textarea>
+        </div>
+
+        <div class="question" id="q_6">
+            <p>6. Estratégias de Defesa: Explique como a camuflagem e o mimetismo ajudam na sobrevivência e a diferença entre eles.</p>
+            <textarea id="ans6"></textarea>
+        </div>
+
+        <div class="question" id="q_7">
+            <p>7. Mutualismo: Qual é a característica fundamental que diferencia o Mutualismo da Protocooperação?</p>
+            <textarea id="ans7"></textarea>
+        </div>
+
+        <div class="question" id="q_8">
+            <p>8. Predatismo vs. Parasitismo: Explique a diferença focado no destino do animal que serve de alimento (presa ou hospedeiro).</p>
+            <textarea id="ans8"></textarea>
+        </div>
+
+        <div class="question" id="q_9">
+            <p>9. Decomposição: Qual é a importância fundamental dos seres decompositores para a manutenção da vida no planeta?</p>
+            <textarea id="ans9"></textarea>
+        </div>
+
+        <div class="question" id="q_10">
+            <p>10. Equilíbrio Ecológico: Se um predador for extinto, o que se espera que aconteça com a população de presas a longo prazo?</p>
+            <textarea id="ans10"></textarea>
+        </div>
+
+        <div class="controls">
+            <button type="button" class="btn-finalizar" id="btnFinalizar" onclick="gerarRelatorio()">Finalizar e Ver Gabarito</button>
+            <button type="button" class="btn-print" id="btnPrint" onclick="window.print()">Imprimir / Salvar PDF</button>
+        </div>
+    </form>
+
+    <div id="relatorio">
+        <h2 style="text-align: center; color: var(--primary);">Relatório de Revisão</h2>
+        <div id="conteudoRelatorio"></div>
+    </div>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function gerarRelatorio() {
+        // Validação básica de Nome
+        if(document.getElementById('nome').value.trim() === "") {
+            alert("Por favor, preencha seu nome antes de finalizar."); return;
+        }
+
+        const perguntas = [
+            "1. Habitat vs. Nicho Ecológico", "2. Níveis de Organização", "3. Fatores do Ecossistema", 
+            "4. O Papel dos Produtores", "5. Sociedade vs. Colônia", "6. Estratégias de Defesa", 
+            "7. Mutualismo e Protocooperação", "8. Predatismo vs. Parasitismo", "9. Importância da Decomposição", 
+            "10. Equilíbrio Ecológico (Extinção de Predador)"
+        ];
+
+        const gabarito = [
+            "Habitat é o local físico; Nicho é o papel funcional (hábitos alimentares e comportamento).",
+            "População: indivíduos da mesma espécie. Comunidade: conjunto de populações de espécies diferentes.",
+            "Bióticos: seres vivos (peixes, aves). Abióticos: componentes não vivos (luz, salinidade, temperatura).",
+            "Eles produzem a matéria orgânica que sustenta os demais. Sem eles, a cadeia alimentar entraria em colapso.",
+            "Na Sociedade os indivíduos são separados fisicamente; na Colônia são unidos anatomicamente.",
+            "Camuflagem: cor ou forma igual ao meio. Mimetismo: imitar outra espécie para parecer perigoso.",
+            "O Mutualismo é uma relação obrigatória; a Protocooperação é facultativa (não obrigatória).",
+            "Predatismo: a presa morre logo. Parasitismo: o hospedeiro deve ser mantido vivo para sustentar o parasita.",
+            "Eles reciclam a matéria orgânica morta, devolvendo nutrientes ao solo para os produtores.",
+            "A população de presas cresce sem controle, causando falta de alimento e possível colapso do ecossistema."
+        ];
+
+        let html = "";
+        for (let i = 1; i <= 10; i++) {
+            let resposta = document.getElementById('ans' + i).value;
+            html += `<div class='pergunta-review'>
+                        <p class="print-only"><strong>${perguntas[i-1]}</strong></p>
+                        <div class='resp-aluno'><strong>Sua resposta:</strong> ${resposta || "<i>Não respondida</i>"}</div>
+                        <div class='gabarito-sugerido'><strong>Sugestão de Resposta:</strong> ${gabarito[i-1]}</div>
+                     </div>`;
+        }
+
+        document.getElementById('conteudoRelatorio').innerHTML = html;
+        document.getElementById('relatorio').style.display = 'block';
+        document.getElementById('btnPrint').style.display = 'inline-block';
+        document.getElementById('btnFinalizar').style.display = 'none';
+        
+        // Esconde os campos de texto originais
+        const boxes = document.querySelectorAll('.question');
+        boxes.forEach(b => b.style.display = 'none');
+        
+        window.scrollTo({top: document.getElementById('relatorio').offsetTop - 100, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Ciências - Parte 2 (7º Ano)</title>
+    <style>
+        :root { --primary: #2980b9; --secondary: #3498db; --bg: #fdfefe; --text: #2c3e50; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
+        
+        header { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        
+        .container { max-width: 900px; margin: 80px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid var(--primary); }
+        
+        h1 { color: var(--primary); text-align: center; margin-bottom: 5px; margin-top: 0; }
+        .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; font-size: 0.9em; }
+        
+        .info-aluno { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; background: #ebf5fb; padding: 20px; border-radius: 8px; border: 1px solid #d4e6f1; }
+        .info-aluno input { width: 95%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 5px; outline: none; }
+        .info-aluno input:focus { border-color: var(--primary); }
+
+        .question { margin-bottom: 35px; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; }
+        .question p { font-weight: bold; font-size: 1.1em; color: var(--primary); margin-bottom: 15px; }
+        
+        textarea { width: 100%; height: 110px; padding: 15px; border: 2px solid #d5dbdb; border-radius: 8px; font-size: 15px; resize: vertical; font-family: inherit; transition: 0.3s; box-sizing: border-box; }
+        textarea:focus { border-color: var(--primary); outline: none; background-color: #f4faff; }
+
+        .controls { text-align: center; margin-top: 20px; }
+        button { padding: 15px 35px; font-size: 16px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; margin: 5px; }
+        
+        .btn-finalizar { background-color: var(--primary); color: white; }
+        .btn-finalizar:hover { background-color: #21618c; transform: scale(1.02); }
+        
+        .btn-print { background-color: #9b59b6; color: white; display: none; }
+        .btn-print:hover { background-color: #8e44ad; }
+        
+        #relatorio { display: none; margin-top: 50px; border-top: 5px double var(--primary); padding-top: 30px; }
+        .resp-aluno { background: #fdfefe; border: 1px solid #eee; padding: 15px; border-radius: 5px; margin-bottom: 10px; font-style: italic; color: #34495e; border-left: 4px solid #bdc3c7; }
+        .gabarito-sugerido { background: #eaf2f8; padding: 15px; border-left: 5px solid var(--primary); margin-bottom: 30px; font-size: 0.95em; }
+        
+        .nav-links { text-align: center; margin-top: 30px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+
+        @media print {
+            header, .controls, .nav-links, textarea, .subtitle { display: none; }
+            #relatorio, .info-aluno, .container { display: block; box-shadow: none; border: none; margin: 0; width: 100%; padding: 0; }
+            .pergunta-review p { border-top: 1px solid #eee; padding-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header><strong>🔬 Ciências Naturais: Desafios Ecológicos</strong></header>
+
+<div class="container">
+    <h1>Avaliação Dissertativa - Parte 2</h1>
+    <p class="subtitle">Estratégias, Adaptações e Interações Desarmônicas</p>
+    
+    <div class="info-aluno">
+        <div>
+            <label><strong>Nome do Estudante:</strong></label><br>
+            <input type="text" id="nome" placeholder="Nome Completo">
+        </div>
+        <div>
+            <label><strong>Turma:</strong></label><br>
+            <input type="text" id="turma" placeholder="Ex: 7º Ano B">
+        </div>
+    </div>
+
+    <form id="provaForm2">
+        <div class="question" id="q_1">
+            <p>1. Biosfera e Ecossistemas: Como você definiria a biosfera em relação aos outros níveis de organização da vida? Explique sua resposta.</p>
+            <textarea id="ans1" placeholder="Sua resposta fundamentada..."></textarea>
+        </div>
+
+        <div class="question" id="q_2">
+            <p>2. Adaptação ao Habitat: Cite uma característica abiótica de um deserto e explique como uma planta específica (como o cacto) se adaptou a esse fator.</p>
+            <textarea id="ans2"></textarea>
+        </div>
+
+        <div class="question" id="q_3">
+            <p>3. Sobreposição de Nicho: O que acontece quando duas espécies diferentes tentam ocupar exatamente o mesmo nicho ecológico no mesmo habitat? Justifique.</p>
+            <textarea id="ans3"></textarea>
+        </div>
+
+        <div class="question" id="q_4">
+            <p>4. Comensalismo: No comensalismo (ex: rêmora e tubarão), uma espécie é beneficiada. Por que essa relação não é considerada parasitismo?</p>
+            <textarea id="ans4"></textarea>
+        </div>
+
+        <div class="question" id="q_5">
+            <p>5. Epifitismo vs Parasitismo: Por que as orquídeas são consideradas inquilinas harmônicas, enquanto o cipó-chumbo é considerado um parasita?</p>
+            <textarea id="ans5"></textarea>
+        </div>
+
+        <div class="question" id="q_6">
+            <p>6. Amensalismo: Explique o fenômeno da "Maré Vermelha" como um exemplo de amensalismo e como isso afeta a comunidade local.</p>
+            <textarea id="ans6"></textarea>
+        </div>
+
+        <div class="question" id="q_7">
+            <p>7. Canibalismo: Cite uma situação na natureza onde esse comportamento ocorre e qual seria o benefício biológico para o indivíduo que o pratica.</p>
+            <textarea id="ans7"></textarea>
+        </div>
+
+        <div class="question" id="q_8">
+            <p>8. Fluxo de Energia: Por que os decompositores são essenciais para que o ciclo de nutrientes recomece, mesmo não sendo produtores?</p>
+            <textarea id="ans8"></textarea>
+        </div>
+
+        <div class="question" id="q_9">
+            <p>9. Competição Interespecífica: Como a competição entre espécies diferentes por um mesmo recurso pode influenciar a biodiversidade de uma região?</p>
+            <textarea id="ans9"></textarea>
+        </div>
+
+        <div class="question" id="q_10">
+            <p>10. Espécies Invasoras e Nicho: Explique por que uma espécie invasora pode destruir as espécies nativas usando o conceito de nicho ecológico.</p>
+            <textarea id="ans10"></textarea>
+        </div>
+
+        <div class="controls">
+            <button type="button" class="btn-finalizar" id="btnFinalizar" onclick="gerarRelatorio2()">Finalizar e Comparar Respostas</button>
+            <button type="button" class="btn-print" id="btnPrint" onclick="window.print()">Salvar Relatório em PDF</button>
+        </div>
+    </form>
+
+    <div id="relatorio">
+        <h2 style="text-align: center; color: var(--primary);">Espelho da Avaliação</h2>
+        <div id="conteudoRelatorio"></div>
+    </div>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function gerarRelatorio2() {
+        if(document.getElementById('nome').value.trim() === "") {
+            alert("Por favor, identifique-se com seu nome antes de finalizar."); return;
+        }
+
+        const gabarito2 = [
+            "A biosfera é o conjunto de todos os ecossistemas da Terra onde existe vida.",
+            "Escassez de água. O cacto adaptou folhas em espinhos para evitar a perda de água por transpiração.",
+            "Ocorre competição. Uma espécie acaba sendo expulsa ou extinta (Princípio da Exclusão Competitiva).",
+            "No comensalismo a outra espécie não sofre nenhum prejuízo, enquanto no parasitismo o hospedeiro é lesado.",
+            "As orquídeas apenas usam a árvore como suporte; o cipó-chumbo retira a seiva da árvore, prejudicando-a.",
+            "Algas liberam toxinas que matam outros seres. A alga não ganha com isso, mas os outros são prejudicados.",
+            "Ex: Louva-a-deus fêmea come o macho para obter nutrientes extras para a produção de ovos.",
+            "Eles transformam matéria orgânica em minerais inorgânicos, que os produtores usam para reiniciar o ciclo.",
+            "Força a especialização de nichos ou causa migrações, selecionando as espécies mais adaptadas.",
+            "Ela ocupa um nicho similar à nativa, mas sem predadores naturais, domina os recursos e extingue a nativa."
+        ];
+
+        let html = "";
+        for (let i = 1; i <= 10; i++) {
+            let resposta = document.getElementById('ans' + i).value;
+            html += `<div class='pergunta-review'>
+                        <p><strong>Questão ${i}</strong></p>
+                        <div class='resp-aluno'><strong>Sua resposta:</strong> ${resposta || "Questão não respondida."}</div>
+                        <div class='gabarito-sugerido'><strong>Gabarito Esperado:</strong> ${gabarito2[i-1]}</div>
+                     </div>`;
+        }
+
+        document.getElementById('conteudoRelatorio').innerHTML = html;
+        document.getElementById('relatorio').style.display = 'block';
+        document.getElementById('btnPrint').style.display = 'inline-block';
+        document.getElementById('btnFinalizar').style.display = 'none';
+        
+        const boxes = document.querySelectorAll('.question');
+        boxes.forEach(b => b.style.display = 'none');
+        
+        window.scrollTo({top: document.getElementById('relatorio').offsetTop - 100, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>

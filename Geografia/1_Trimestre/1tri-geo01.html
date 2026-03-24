@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia 7º Ano - Simulado 01</title>
+    <style>
+        :root { --primary: #7b241c; --secondary: #922b21; --success: #27ae60; --danger: #c0392b; --bg: #fdf5e6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #1a1a1a; }
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: white; background: var(--primary); font-size: 1.1em; margin-top: 30px; padding: 10px; border-radius: 5px; }
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; border: 1px solid #ddd; border-left: 6px solid var(--primary); background: #fff; }
+        .question p { font-weight: bold; margin-top: 0; }
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; }
+        label:hover { background: #fef5e7; border-color: var(--primary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        .q-correct { border-left-color: var(--success) !important; background: #f1fcf4; }
+        .q-wrong { border-left-color: var(--danger) !important; background: #fff5f5; }
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #641e16; }
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; text-align: left; font-size: 0.9em; }
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🌎 Geografia: Território e Estrutura (Cap. 1 e 2)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Geografia - 7º Ano</h1>
+    <p style="text-align:center; font-style: italic;">Localização, Formação, Regionalização e Geologia do Brasil</p>
+    
+    <div id="result"></div>
+
+    <form id="geoQuiz">
+        <h2>Localização e Características Gerais</h2>
+        
+        <div class="question" id="div_q1"><p>1. O Brasil é considerado um país de dimensões continentais. Qual é a sua posição em relação à extensão territorial no mundo?</p>
+            <label><input type="radio" name="q1" value="0"> A) 3º maior país</label>
+            <label><input type="radio" name="q1" value="1"> B) 5º maior país</label>
+            <label><input type="radio" name="q1" value="0"> C) 1º maior país</label></div>
+
+        <div class="question" id="div_q2"><p>2. A maior parte do território brasileiro está localizada em qual hemisfério (em relação à Linha do Equador)?</p>
+            <label><input type="radio" name="q2" value="0"> A) Hemisfério Norte</label>
+            <label><input type="radio" name="q2" value="1"> B) Hemisfério Sul</label>
+            <label><input type="radio" name="q2" value="0"> C) Hemisfério Oriental</label></div>
+
+        <div class="question" id="div_q3"><p>3. O Brasil faz fronteira com quase todos os países da América do Sul, exceto:</p>
+            <label><input type="radio" name="q3" value="1"> A) Chile e Equador</label>
+            <label><input type="radio" name="q3" value="0"> B) Argentina e Uruguai</label>
+            <label><input type="radio" name="q3" value="0"> C) Peru e Bolívia</label></div>
+
+        <div class="question" id="div_q4"><p>4. O território brasileiro é atravessado por duas linhas imaginárias principais:</p>
+            <label><input type="radio" name="q4" value="0"> A) Meridiano de Greenwich e Círculo Polar Ártico</label>
+            <label><input type="radio" name="q4" value="1"> B) Linha do Equador e Trópico de Capricórnio</label>
+            <label><input type="radio" name="q4" value="0"> C) Trópico de Câncer e Linha do Equador</label></div>
+
+        <h2>Formação Histórica do Território</h2>
+
+        <div class="question" id="div_q5"><p>5. Qual foi o primeiro tratado entre Portugal e Espanha que dividiu as terras da América no século XV?</p>
+            <label><input type="radio" name="q5" value="1"> A) Tratado de Tordesilhas</label>
+            <label><input type="radio" name="q5" value="0"> B) Tratado de Madri</label>
+            <label><input type="radio" name="q5" value="0"> C) Tratado de Petrópolis</label></div>
+
+        <div class="question" id="div_q6"><p>6. Quem foram os agentes responsáveis por expandir o território brasileiro além da linha de Tordesilhas em busca de ouro e indígenas?</p>
+            <label><input type="radio" name="q6" value="0"> A) Imigrantes europeus</label>
+            <label><input type="radio" name="q6" value="1"> B) Bandeirantes</label>
+            <label><input type="radio" name="q6" value="0"> C) Jesuítas apenas</label></div>
+
+        <div class="question" id="div_q7"><p>7. No século XVIII, a atividade econômica que ajudou a ocupar o interior do Brasil e fundar vilas foi:</p>
+            <label><input type="radio" name="q7" value="1"> A) Mineração (ouro e diamantes)</label>
+            <label><input type="radio" name="q7" value="0"> B) Cultivo de cana-de-açúcar no litoral</label>
+            <label><input type="radio" name="q7" value="0"> C) Indústria automobilística</label></div>
+
+        <div class="question" id="div_q8"><p>8. O Tratado de Madri (1750) utilizou qual princípio para definir as novas fronteiras?</p>
+            <label><input type="radio" name="q8" value="1"> A) Uti Possidetis (quem possui a terra de fato, tem o direito)</label>
+            <label><input type="radio" name="q8" value="0"> B) Compra de terras em dinheiro</label>
+            <label><input type="radio" name="q8" value="0"> C) Divisão baseada apenas em linhas retas astronômicas</label></div>
+
+        <h2>Regionalização do Território</h2>
+
+        <div class="question" id="div_q9"><p>9. A regionalização oficial do Brasil, que divide o país em 5 regiões (Norte, Nordeste, Centro-Oeste, Sudeste e Sul), foi feita por qual órgão?</p>
+            <label><input type="radio" name="q9" value="0"> A) INCRA</label>
+            <label><input type="radio" name="q9" value="1"> B) IBGE</label>
+            <label><input type="radio" name="q9" value="0"> C) ONU</label></div>
+
+        <div class="question" id="div_q10"><p>10. A divisão do Brasil em 3 Complexos Regionais (Amazônia, Nordeste e Centro-Sul) leva em conta critérios:</p>
+            <label><input type="radio" name="q10" value="1"> A) Geoeconômicos e históricos</label>
+            <label><input type="radio" name="q10" value="0"> B) Apenas as fronteiras dos estados</label>
+            <label><input type="radio" name="q10" value="0"> C) Somente o clima e a vegetação</label></div>
+
+        <div class="question" id="div_q11"><p>11. Na divisão geoeconômica, qual complexo é o mais industrializado e povoado?</p>
+            <label><input type="radio" name="q11" value="0"> A) Amazônia</label>
+            <label><input type="radio" name="q11" value="1"> B) Centro-Sul</label>
+            <label><input type="radio" name="q11" value="0"> C) Nordeste</label></div>
+
+        <div class="question" id="div_q12"><p>12. A proposta de Milton Santos e Maria Laura Silveira divide o Brasil em "Quatro Brasis", baseada no critério de:</p>
+            <label><input type="radio" name="q12" value="1"> A) Meio técnico-científico-informacional</label>
+            <label><input type="radio" name="q12" value="0"> B) Quantidade de rios</label>
+            <label><input type="radio" name="q12" value="0"> C) Produção de café</label></div>
+
+        <h2>Estrutura Geológica do Brasil</h2>
+
+        <div class="question" id="div_q13"><p>13. O território brasileiro está localizado no centro de qual placa tectônica?</p>
+            <label><input type="radio" name="q13" value="1"> A) Placa Sul-Americana</label>
+            <label><input type="radio" name="q13" value="0"> B) Placa de Nazca</label>
+            <label><input type="radio" name="q13" value="0"> C) Placa Africana</label></div>
+
+        <div class="question" id="div_q14"><p>14. Devido à sua localização no centro de uma placa, o Brasil é considerado uma região de:</p>
+            <label><input type="radio" name="q14" value="0"> A) Grande atividade vulcânica ativa</label>
+            <label><input type="radio" name="q14" value="1"> B) Estabilidade geológica (sem grandes terremotos)</label>
+            <label><input type="radio" name="q14" value="0"> C) Formação recente de montanhas (dobramentos modernos)</label></div>
+
+        <div class="question" id="div_q15"><p>15. Quais são as duas estruturas geológicas principais que formam o Brasil?</p>
+            <label><input type="radio" name="q15" value="1"> A) Escudos Cristalinos e Bacias Sedimentares</label>
+            <label><input type="radio" name="q15" value="0"> B) Dobramentos Modernos e Vulcões</label>
+            <label><input type="radio" name="q15" value="0"> C) Fossas Abissais e Chapadas</label></div>
+
+        <div class="question" id="div_q16"><p>16. Nas Bacias Sedimentares brasileiras, podemos encontrar quais recursos?</p>
+            <label><input type="radio" name="q16" value="1"> A) Combustíveis fósseis (petróleo, carvão mineral)</label>
+            <label><input type="radio" name="q16" value="0"> B) Ouro e Diamante apenas</label>
+            <label><input type="radio" name="q16" value="0"> C) Não há recursos naturais nessas áreas</label></div>
+
+        <div class="question" id="div_q17"><p>17. Os Escudos Cristalinos são formações antigas ricas em:</p>
+            <label><input type="radio" name="q17" value="0"> A) Petróleo</label>
+            <label><input type="radio" name="q17" value="1"> B) Minerais metálicos (ferro, manganês)</label>
+            <label><input type="radio" name="q17" value="0"> C) Sedimentos orgânicos recentes</label></div>
+
+        <div class="question" id="div_q18"><p>18. Por que no Brasil não existem grandes cadeias de montanhas como a Cordilheira dos Andes?</p>
+            <label><input type="radio" name="q18" value="0"> A) Porque o Brasil é muito pequeno</label>
+            <label><input type="radio" name="q18" value="1"> B) Porque o Brasil não possui dobramentos modernos em sua estrutura</label>
+            <label><input type="radio" name="q18" value="0"> C) Porque o clima brasileiro derrete as montanhas</label></div>
+
+        <div class="question" id="div_q19"><p>19. A estrutura geológica do Brasil é predominantemente:</p>
+            <label><input type="radio" name="q19" value="1"> A) Antiga e bastante desgastada pela erosão</label>
+            <label><input type="radio" name="q19" value="0"> B) Recente e em fase de crescimento</label>
+            <label><input type="radio" name="q19" value="0"> C) Composta apenas por gelo e rochas vulcânicas</label></div>
+
+        <div class="question" id="div_q20"><p>20. O relevo brasileiro é caracterizado por altitudes:</p>
+            <label><input type="radio" name="q20" value="1"> A) Modestas (baixas a médias), predominando planaltos e depressões</label>
+            <label><input type="radio" name="q20" value="0"> B) Extremamente elevadas, acima de 6000 metros</label>
+            <label><input type="radio" name="q20" value="0"> C) Apenas planícies ao nível do mar</label></div>
+
+        <button type="button" id="btnCheck" onclick="checkGeo()">Finalizar Simulado de Geografia</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../../index.html">🏠 Voltar ao Início</a>
+    </div>
+</div>
+
+<script>
+    function checkGeo() {
+        const total = 20;
+        for (let i = 1; i <= total; i++) {
+            if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                alert("Por favor, responda a questão " + i); return;
+            }
+        }
+
+        let hits = 0;
+        let gabHtml = "<div class='ans-list'>";
+        for (let i = 1; i <= total; i++) {
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="q${i}"]:checked`);
+            if (sel.value === "1") { hits++; div.className = "question q-correct"; }
+            else { div.className = "question q-wrong"; }
+            gabHtml += `<div>Q${i}: <b>${sel.parentElement.innerText.charAt(0)}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (hits / total) * 10;
+        resDiv.innerHTML = `<h2>Nota: ${nota.toFixed(1)}</h2><p>Acertos: ${hits}/${total}</p>` + gabHtml;
+        resDiv.style.background = nota >= 6 ? "#d4edda" : "#f8d7da";
+        resDiv.style.color = nota >= 6 ? "#155724" : "#721c24";
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnCheck').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

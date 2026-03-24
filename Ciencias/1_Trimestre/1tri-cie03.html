@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciências 7º Ano - Simulado 3</title>
+    <style>
+        :root { --primary: #16a085; --secondary: #1abc9c; --success: #009432; --danger: #c0392b; --bg: #f3f4f6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #2d3436; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h1 { text-align: center; color: var(--primary); border-bottom: 3px solid var(--secondary); padding-bottom: 10px; margin-bottom: 5px; }
+        h3 { color: var(--success); margin-top: 30px; border-left: 5px solid var(--success); padding-left: 15px; background: #f1fcf4; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+        
+        .question { margin-bottom: 20px; padding: 20px; border-radius: 10px; border: 1px solid #dfe6e9; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; }
+
+        label { display: block; cursor: pointer; padding: 10px; border-radius: 6px; margin: 5px 0; transition: 0.2s; border: 1px solid transparent; }
+        label:hover { background-color: #f1f2f6; border-color: var(--secondary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        /* Estilos de Correção */
+        .q-correct { border-left: 6px solid #2ecc71 !important; background: #f0fff4; }
+        .q-wrong { border-left: 6px solid #e74c3c !important; background: #fff5f5; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        .correct-box { background-color: #d1fae5; color: #065f46; border: 1px solid #34d399; }
+        .wrong-box { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+
+        button { display: block; width: 100%; padding: 18px; background-color: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background-color: #0e6251; transform: translateY(-2px); }
+
+        .ans-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; font-size: 0.85em; text-align: left; }
+        
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🔬 Simulado de Ciências: Nível Pro</strong></header>
+
+<div class="container">
+    <h1>Avaliação de Ecologia</h1>
+    <p style="text-align:center; color: #636e72; font-style: italic;">Capítulos 1 e 2: Do Organismo à Biosfera</p>
+
+    <div id="result"></div>
+
+    <form id="quizScience3">
+        <h3>Capítulo 1: O Ambiente e a Vida</h3>
+        
+        <div class="question" id="div_q1">
+            <p>1. Qual a sequência correta da hierarquia biológica (do menor para o maior)?</p>
+            <label><input type="radio" name="q1" value="A"> A) Organismo → Comunidade → População → Ecossistema</label>
+            <label><input type="radio" name="q1" value="B"> B) Organismo → População → Comunidade → Ecossistema</label>
+            <label><input type="radio" name="q1" value="C"> C) População → Organismo → Ecossistema → Comunidade</label>
+        </div>
+
+        <div class="question" id="div_q2">
+            <p>2. Os detritívoros, como o urubu e a minhoca, têm como estratégia:</p>
+            <label><input type="radio" name="q2" value="A"> A) Produzir seu próprio alimento</label>
+            <label><input type="radio" name="q2" value="B"> B) Alimentar-se de matéria orgânica em decomposição</label>
+            <label><input type="radio" name="q2" value="C"> C) Caçar presas vivas exclusivamente</label>
+        </div>
+
+        <div class="question" id="div_q3">
+            <p>3. O conjunto de seres abióticos (físicos e químicos) é chamado de:</p>
+            <label><input type="radio" name="q3" value="A"> A) Biótopo</label>
+            <label><input type="radio" name="q3" value="B"> B) Biocenose</label>
+            <label><input type="radio" name="q3" value="C"> C) Biosfera</label>
+        </div>
+
+        <div class="question" id="div_q4">
+            <p>4. Uma planta em ambiente seco com espinhos demonstra uma:</p>
+            <label><input type="radio" name="q4" value="A"> A) Interação desarmônica</label>
+            <label><input type="radio" name="q4" value="B"> B) Estratégia de adaptação ao habitat</label>
+            <label><input type="radio" name="q4" value="C"> C) Relação de mimetismo</label>
+        </div>
+
+        <div class="question" id="div_q5">
+            <p>5. O nicho ecológico de um animal inclui:</p>
+            <label><input type="radio" name="q5" value="A"> A) Apenas o local onde ele dorme</label>
+            <label><input type="radio" name="q5" value="B"> B) O que come, como se reproduz e interage</label>
+            <label><input type="radio" name="q5" value="C"> C) Apenas a temperatura do ambiente</label>
+        </div>
+
+        <h3>Capítulo 2: Detalhes das Interações</h3>
+
+        <div class="question" id="div_q6">
+            <p>6. O pássaro-palito que limpa os dentes do jacaré realiza uma:</p>
+            <label><input type="radio" name="q6" value="A"> A) Sociedade</label>
+            <label><input type="radio" name="q6" value="B"> B) Protocooperação</label>
+            <label><input type="radio" name="q6" value="C"> C) Parasitismo</label>
+        </div>
+
+        <div class="question" id="div_q7">
+            <p>7. Vermes que vivem dentro do intestino humano são:</p>
+            <label><input type="radio" name="q7" value="A"> A) Ectoparasitas</label>
+            <label><input type="radio" name="q7" value="B"> B) Endoparasitas</label>
+            <label><input type="radio" name="q7" value="C"> C) Comensais</label>
+        </div>
+
+        <div class="question" id="div_q8">
+            <p>8. A relação entre cupins e os protozoários em seus estômagos é:</p>
+            <label><input type="radio" name="q8" value="A"> A) Mutualismo (obrigatório)</label>
+            <label><input type="radio" name="q8" value="B"> B) Canibalismo</label>
+            <label><input type="radio" name="q8" value="C"> C) Inquilinismo</label>
+        </div>
+
+        <div class="question" id="div_q9">
+            <p>9. A competição intraespecífica ocorre entre:</p>
+            <label><input type="radio" name="q9" value="A"> A) Membros de espécies diferentes</label>
+            <label><input type="radio" name="q9" value="B"> B) Indivíduos da mesma espécie</label>
+            <label><input type="radio" name="q9" value="C"> C) Predadores e presas</label>
+        </div>
+
+        <div class="question" id="div_q10">
+            <p>10. Qual dessas relações é DESARMÔNICA INTERESPECÍFICA?</p>
+            <label><input type="radio" name="q10" value="A"> A) Sociedade</label>
+            <label><input type="radio" name="q10" value="B"> B) Parasitismo</label>
+            <label><input type="radio" name="q10" value="C"> C) Colônia</label>
+        </div>
+
+        <div class="question" id="div_q11">
+            <p>11. O Amensalismo ocorre quando:</p>
+            <label><input type="radio" name="q11" value="A"> A) Uma espécie inibe o crescimento de outra</label>
+            <label><input type="radio" name="q11" value="B"> B) Duas espécies se ajudam</label>
+            <label><input type="radio" name="q11" value="C"> C) Uma espécie usa a outra como transporte</label>
+        </div>
+
+        <div class="question" id="div_q12">
+            <p>12. Na relação de Sociedade, os indivíduos são:</p>
+            <label><input type="radio" name="q12" value="A"> A) Anatomicamente unidos</label>
+            <label><input type="radio" name="q12" value="B"> B) Fisicamente separados, mas cooperam</label>
+            <label><input type="radio" name="q12" value="C"> C) Inimigos naturais</label>
+        </div>
+
+        <div class="question" id="div_q13">
+            <p>13. Epifitismo é um tipo de inquilinismo entre:</p>
+            <label><input type="radio" name="q13" value="A"> A) Animais marinhos</label>
+            <label><input type="radio" name="q13" value="B"> B) Plantas sobre outras plantas sem sugá-las</label>
+            <label><input type="radio" name="q13" value="C"> C) Fungos e bactérias</label>
+        </div>
+
+        <div class="question" id="div_q14">
+            <p>14. O equilíbrio de um ecossistema depende:</p>
+            <label><input type="radio" name="q14" value="A"> A) Da extinção dos predadores</label>
+            <label><input type="radio" name="q14" value="B"> B) Das interações contínuas entre seres e ambiente</label>
+            <label><input type="radio" name="q14" value="C"> C) Da ausência de luz</label>
+        </div>
+
+        <div class="question" id="div_q15">
+            <p>15. Qual o papel dos produtores no fluxo de energia?</p>
+            <label><input type="radio" name="q15" value="A"> A) Consumir matéria orgânica morta</label>
+            <label><input type="radio" name="q15" value="B"> B) Transformar energia solar em química (alimento)</label>
+            <label><input type="radio" name="q15" value="C"> C) Controlar a população de herbívoros</label>
+        </div>
+
+        <div class="question" id="div_q16">
+            <p>16. A "Maré Vermelha" por toxinas de algas é:</p>
+            <label><input type="radio" name="q16" value="A"> A) Amensalismo</label>
+            <label><input type="radio" name="q16" value="B"> B) Mutualismo</label>
+            <label><input type="radio" name="q16" value="C"> C) Comensalismo</label>
+        </div>
+
+        <div class="question" id="div_q17">
+            <p>17. O que define uma População em ecologia?</p>
+            <label><input type="radio" name="q17" value="A"> A) Várias espécies no mesmo lugar</label>
+            <label><input type="radio" name="q17" value="B"> B) Mesma espécie na mesma área e tempo</label>
+            <label><input type="radio" name="q17" value="C"> C) Todo o planeta Terra</label>
+        </div>
+
+        <div class="question" id="div_q18">
+            <p>18. Na predação, a espécie beneficiada é o:</p>
+            <label><input type="radio" name="r18" value="A"> A) Presa</label>
+            <label><input type="radio" name="r18" value="B"> B) Predador</label>
+            <label><input type="radio" name="r18" value="C"> C) Hospedeiro</label>
+        </div>
+
+        <div class="question" id="div_q19">
+            <p>19. Fungos em raízes (micorrizas) ajudando a planta é:</p>
+            <label><input type="radio" name="q19" value="A"> A) Mutualismo</label>
+            <label><input type="radio" name="q19" value="B"> B) Parasitismo</label>
+            <label><input type="radio" name="q19" value="C"> C) Competição</label>
+        </div>
+
+        <div class="question" id="div_q20">
+            <p>20. O termo "Abiótico" refere-se a componentes:</p>
+            <label><input type="radio" name="q20" value="A"> A) Vivos</label>
+            <label><input type="radio" name="q20" value="B"> B) Não vivos (água, luz, ar)</label>
+            <label><input type="radio" name="q20" value="C"> C) Microrganismos apenas</label>
+        </div>
+
+        <button type="button" id="btnFinalizar" onclick="checkScience3()">Finalizar Simulado Pro</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function checkScience3() {
+        const answers = {
+            q1: 'B', q2: 'B', q3: 'A', q4: 'B', q5: 'B',
+            q6: 'B', q7: 'B', q8: 'A', q9: 'B', q10: 'B',
+            q11: 'A', q12: 'B', q13: 'B', q14: 'B', q15: 'B',
+            q16: 'A', q17: 'B', r18: 'B', q19: 'A', q20: 'B'
+        };
+
+        // Validação: Todas respondidas?
+        for (let i = 1; i <= 20; i++) {
+            let name = i === 18 ? "r18" : "q" + i;
+            if (!document.querySelector(`input[name="${name}"]:checked`)) {
+                alert("Responda a questão " + i); return;
+            }
+        }
+
+        let score = 0;
+        let gabHtml = "<div class='ans-list'>";
+
+        for (let i = 1; i <= 20; i++) {
+            let q = i === 18 ? "r18" : "q" + i;
+            let div = document.getElementById("div_q" + i);
+            let sel = document.querySelector(`input[name="${q}"]:checked`);
+            
+            if (sel && sel.value === answers[q]) {
+                score++;
+                div.className = "question q-correct";
+            } else {
+                div.className = "question q-wrong";
+            }
+            gabHtml += `<div>Q${i}: <b>${answers[q]}</b></div>`;
+        }
+        gabHtml += "</div>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (score / 20) * 10;
+        resDiv.innerHTML = `<h2>Nota Final: ${nota.toFixed(1)}</h2><p>Acertos: ${score}/20</p>` + gabHtml;
+        resDiv.className = nota >= 6 ? 'correct-box' : 'wrong-box';
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+
+</body>
+</html>
