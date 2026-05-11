@@ -92,33 +92,24 @@
         .btn-link:hover { text-decoration: underline; }
     </style>
 </head>
-<body>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (!window.netlifyIdentity) {
-      window.location.href = "/login.html";
-      return;
-    }
+<body oncontextmenu="return false;">
 
-    // Espera o Identity inicializar corretamente
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.location.href = "/login.html";
-      }
-    });
-
-    // Caso o Identity ainda não tenha carregado, força a inicialização
-    window.netlifyIdentity.init();
-  });
-</script>
     <header>
-        <h1>Língua Portuguesa - 1º Trimestre</h1>
+        <!-- Título corrigido para 2º Trimestre -->
+        <h1>Língua Portuguesa - 2º Trimestre</h1>
         <div class="subtitulo">Selecione a avaliação desejada</div>
     </header>
 
     <div class="container">
         <ul>
-            <li><a href="2tri-por01.html" class="prova-link"><span class="icon-doc">01</span><span class="nome-prova">Avaliação 01</span><span class="seta">›</span></a></li>
+            <!-- Link direto para o simulado que criamos -->
+            <li>
+                <a href="2tri-por01.html" class="prova-link">
+                    <span class="icon-doc">01</span>
+                    <span class="nome-prova">Avaliação de Notícia e Sintaxe</span>
+                    <span class="seta">›</span>
+                </a>
+            </li>
         </ul>
 
         <div class="footer-nav">
@@ -127,13 +118,11 @@
             <a href="../../index.html" class="btn-link">🏠 Início</a>
         </div>
     </div>
-<script>
-    // Bloqueia o clique direito
-    document.addEventListener('contextmenu', event => event.preventDefault());
 
+<script>
     // Bloqueia atalhos de desenvolvedor (F12, Ctrl+Shift+I, etc)
     document.onkeydown = function(e) {
-        if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+        if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
             return false;
         }
     }
