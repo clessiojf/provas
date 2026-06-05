@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Ciências - Módulos 6 e 7</title>
+    <style>
+        :root { --primary: #00695c; --secondary: #00897b; --success: #2e7d32; --danger: #c62828; --bg: #e0f2f1; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eceff1; transition: 0.2s; }
+        label:hover { background: #f1f8e9; border-color: var(--secondary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        .q-correct { border-left: 6px solid var(--success); background: #f1f8e9; }
+        .q-wrong { border-left: 6px solid var(--danger); background: #ffebee; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; }
+        .res-correct { background-color: #c8e6c9; color: var(--success); border: 1px solid #a5d6a7; }
+        .res-wrong { background-color: #ffcdd2; color: var(--danger); border: 1px solid #ef9a9a; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .ans-guide { margin-top: 15px; font-weight: normal; font-size: 0.9em; list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; text-align: left; }
+        .ans-guide li { padding: 5px; border-bottom: 1px dashed #ccc; }
+
+        .nav-links { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9em; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+<header><strong>🧬 Simulado de Ciências – Módulos 6 e 7</strong></header>
+
+<div class="container">
+    <h1>Simulado 02 - 2º Bimestre</h1>
+    <p style="text-align: center; color: #546e7a; font-style: italic;">Responda com atenção a todas as questões.</p>
+    
+    <div id="result"></div>
+
+    <form id="scienceQuiz">
+
+        <h2>Sistema Digestório</h2>
+
+        <div class="question" id="div_q1">
+            <p>1. A função principal dos dentes na digestão é:</p>
+            <label><input type="radio" name="q1" value="A"> A) Produzir enzimas digestivas</label>
+            <label><input type="radio" name="q1" value="B"> B) Realizar digestão mecânica</label>
+            <label><input type="radio" name="q1" value="C"> C) Absorver nutrientes</label>
+            <label><input type="radio" name="q1" value="D"> D) Produzir saliva</label>
+        </div>
+
+        <div class="question" id="div_q2">
+            <p>2. O suco gástrico é produzido por qual órgão?</p>
+            <label><input type="radio" name="q2" value="A"> A) Fígado</label>
+            <label><input type="radio" name="q2" value="B"> B) Estômago</label>
+            <label><input type="radio" name="q2" value="C"> C) Pâncreas</label>
+            <label><input type="radio" name="q2" value="D"> D) Intestino grosso</label>
+        </div>
+
+        <div class="question" id="div_q3">
+            <p>3. O pâncreas participa da digestão liberando:</p>
+            <label><input type="radio" name="q3" value="A"> A) Bile</label>
+            <label><input type="radio" name="q3" value="B"> B) Suco pancreático</label>
+            <label><input type="radio" name="q3" value="C"> C) Suco gástrico</label>
+            <label><input type="radio" name="q3" value="D"> D) Saliva</label>
+        </div>
+
+        <h2>Sistema Respiratório</h2>
+
+        <div class="question" id="div_q4">
+            <p>4. A função da epiglote é:</p>
+            <label><input type="radio" name="q4" value="A"> A) Aumentar o fluxo de ar</label>
+            <label><input type="radio" name="q4" value="B"> B) Impedir a entrada de ar no esôfago</label>
+            <label><input type="radio" name="q4" value="C"> C) Impedir a entrada de alimento na traqueia</label>
+            <label><input type="radio" name="q4" value="D"> D) Produzir muco</label>
+        </div>
+
+        <div class="question" id="div_q5">
+            <p>5. A estrutura que conduz o ar da laringe até os brônquios é a:</p>
+            <label><input type="radio" name="q5" value="A"> A) Faringe</label>
+            <label><input type="radio" name="q5" value="B"> B) Traqueia</label>
+            <label><input type="radio" name="q5" value="C"> C) Epiglote</label>
+            <label><input type="radio" name="q5" value="D"> D) Cavidade nasal</label>
+        </div>
+
+        <div class="question" id="div_q6">
+            <p>6. A respiração celular ocorre em qual estrutura das células?</p>
+            <label><input type="radio" name="q6" value="A"> A) Núcleo</label>
+            <label><input type="radio" name="q6" value="B"> B) Mitocôndria</label>
+            <label><input type="radio" name="q6" value="C"> C) Ribossomo</label>
+            <label><input type="radio" name="q6" value="D"> D) Lisossomo</label>
+        </div>
+
+        <h2>Sistema Circulatório</h2>
+
+        <div class="question" id="div_q7">
+            <p>7. O sangue pobre em oxigênio chega ao coração pelo(a):</p>
+            <label><input type="radio" name="q7" value="A"> A) Aorta</label>
+            <label><input type="radio" name="q7" value="B"> B) Veia cava</label>
+            <label><input type="radio" name="q7" value="C"> C) Artéria pulmonar</label>
+            <label><input type="radio" name="q7" value="D"> D) Veia pulmonar</label>
+        </div>
+
+        <div class="question" id="div_q8">
+            <p>8. O sangue rico em oxigênio retorna dos pulmões ao coração pelo(a):</p>
+            <label><input type="radio" name="q8" value="A"> A) Veia pulmonar</label>
+            <label><input type="radio" name="q8" value="B"> B) Artéria pulmonar</label>
+            <label><input type="radio" name="q8" value="C"> C) Veia cava</label>
+            <label><input type="radio" name="q8" value="D"> D) Aorta</label>
+        </div>
+
+        <div class="question" id="div_q9">
+            <p>9. A função das plaquetas é:</p>
+            <label><input type="radio" name="q9" value="A"> A) Transportar oxigênio</label>
+            <label><input type="radio" name="q9" value="B"> B) Defender o organismo</label>
+            <label><input type="radio" name="q9" value="C"> C) Coagular o sangue</label>
+            <label><input type="radio" name="q9" value="D"> D) Produzir hormônios</label>
+        </div>
+
+        <div class="question" id="div_q10">
+            <p>10. O coração humano é formado por:</p>
+            <label><input type="radio" name="q10" value="A"> A) 2 átrios e 2 ventrículos</label>
+            <label><input type="radio" name="q10" value="B"> B) 3 átrios e 1 ventrículo</label>
+            <label><input type="radio" name="q10" value="C"> C) 1 átrio e 3 ventrículos</label>
+            <label><input type="radio" name="q10" value="D"> D) 4 átrios</label>
+        </div>
+
+        <div class="question" id="div_q11">
+            <p>11. A circulação pulmonar tem como função:</p>
+            <label><input type="radio" name="q11" value="A"> A) Distribuir nutrientes pelo corpo</label>
+            <label><input type="radio" name="q11" value="B"> B) Oxigenar o sangue</label>
+            <label><input type="radio" name="q11" value="C"> C) Produzir glóbulos vermelhos</label>
+            <label><input type="radio" name="q11" value="D"> D) Controlar a temperatura corporal</label>
+        </div>
+
+        <div class="question" id="div_q12">
+            <p>12. A digestão de proteínas começa no(a):</p>
+            <label><input type="radio" name="q12" value="A"> A) Boca</label>
+            <label><input type="radio" name="q12" value="B"> B) Estômago</label>
+            <label><input type="radio" name="q12" value="C"> C) Intestino delgado</label>
+            <label><input type="radio" name="q12" value="D"> D) Fígado</label>
+        </div>
+
+        <div class="question" id="div_q13">
+            <p>13. A troca de oxigênio e gás carbônico entre o sangue e os tecidos ocorre nos:</p>
+            <label><input type="radio" name="q13" value="A"> A) Brônquios</label>
+            <label><input type="radio" name="q13" value="B"> B) Capilares</label>
+            <label><input type="radio" name="q13" value="C"> C) Alvéolos</label>
+            <label><input type="radio" name="q13" value="D"> D) Ventriculares</label>
+        </div>
+
+        <div class="question" id="div_q14">
+            <p>14. A função do diafragma é:</p>
+            <label><input type="radio" name="q14" value="A"> A) Bombear sangue</label>
+            <label><input type="radio" name="q14" value="B"> B) Auxiliar na respiração</label>
+            <label><input type="radio" name="q14" value="C"> C) Produzir enzimas</label>
+            <label><input type="radio" name="q14" value="D"> D) Filtrar impurezas do ar</label>
+        </div>
+
+        <div class="question" id="div_q15">
+            <p>15. O órgão responsável por armazenar a bile é:</p>
+            <label><input type="radio" name="q15" value="A"> A) Fígado</label>
+            <label><input type="radio" name="q15" value="B"> B) Estômago</label>
+            <label><input type="radio" name="q15" value="C"> C) Vesícula biliar</label>
+            <label><input type="radio" name="q15" value="D"> D) Pâncreas</label>
+        </div>
+
+        <button type="button" id="btnFinalizar" onclick="gradeScience()">Finalizar Prova de Ciências</button>
+    </form>
+
+    <div class="nav-links">
+        <a href="../trimestres.html">← Voltar para Trimestres</a>
+        <a href="../../index.html">🏠 Início</a>
+    </div>
+</div>
+
+<script>
+    function gradeScience() {
+        const answers = {
+            q1: 'B', q2: 'B', q3: 'B', q4: 'C', q5: 'B',
+            q6: 'B', q7: 'B', q8: 'A', q9: 'C', q10: 'A',
+            q11: 'B', q12: 'B', q13: 'B', q14: 'B', q15: 'C'
+        };
+
+        for (let i = 1; i <= 15; i++) {
+            let name = "q" + i;
+            if (!document.querySelector(`input[name="${name}"]:checked`)) {
+                alert("Responda a questão " + i); return;
+            }
+        }
+
+        let score = 0;
+        let guideHtml = "<ul class='ans-guide'>";
+
+        for (let i = 1; i <= 15; i++) {
+            let name = "q" + i;
+            let div = document.getElementById("div_q" + i);
+            let selected = document.querySelector(`input[name="${name}"]:checked`);
+            
+            if (selected && selected.value === answers[name]) {
+                score++;
+                div.className = "question q-correct";
+            } else {
+                div.className = "question q-wrong";
+            }
+            guideHtml += `<li>Q${i}: <b>${answers[name]}</b></li>`;
+        }
+        guideHtml += "</ul>";
+
+        const resDiv = document.getElementById('result');
+        resDiv.style.display = 'block';
+        const nota = (score / 15) * 10;
+        resDiv.innerHTML = `<h2>Nota: ${nota.toFixed(1)}</h2><p>Acertos: ${score}/15</p>` + guideHtml;
+        resDiv.className = nota >= 6 ? 'res-correct' : 'res-wrong';
+        
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('btnFinalizar').style.display = "none";
+    }
+</script>
+
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>
