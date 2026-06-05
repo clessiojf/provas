@@ -266,6 +266,15 @@ function finalizar() {
     const form = document.getElementById("quiz");
     const formData = new FormData(form);
 
+    // 🔥 NOVO: enviar gabarito junto
+    for (let i = 1; i <= 20; i++) {
+        formData.append(`gabarito_q${i}`, respostasCorretas["q" + i]);
+    }
+
+    // 🔥 NOVO: enviar nota e acertos
+    formData.append("acertos", score);
+    formData.append("porcentagem", nota.toFixed(1) + "%");    
+
     fetch(form.action, {
         method: "POST",
         body: formData,
