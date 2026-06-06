@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado Dissertativo - Ciências</title>
+
+    <style>
+        :root { --primary: #00695c; --secondary: #00897b; --success: #2e7d32; --danger: #c62828; --bg: #e0f2f1; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            font-size: 1em;
+        }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; background: #e8f5e9; border: 1px solid #a5d6a7; }
+        #result h2 { color: var(--success); }
+
+        .answer-box {
+            background: #f1f8e9;
+            border-left: 5px solid var(--secondary);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📝 Simulado Dissertativo – Ciências</strong></header>
+
+<div class="container">
+    <h1>Questões Dissertativas – Parte 2</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda todas as questões antes de finalizar.</p>
+
+    <div id="result"></div>
+
+    <form id="discursiveQuiz">
+
+        <div class="question" id="div_q1">
+            <p>1. Explique a importância do estômago no processo digestório e descreva como o suco gástrico atua nos alimentos.</p>
+            <textarea name="q1" rows="4"></textarea>
+        </div>
+
+        <div class="question" id="div_q2">
+            <p>2. Descreva como ocorre a ventilação pulmonar, explicando o papel do diafragma e dos músculos intercostais.</p>
+            <textarea name="q2" rows="4"></textarea>
+        </div>
+
+        <div class="question" id="div_q3">
+            <p>3. Explique por que o sangue precisa passar pelos pulmões antes de ser distribuído para o corpo.</p>
+            <textarea name="q3" rows="4"></textarea>
+        </div>
+
+        <div class="question" id="div_q4">
+            <p>4. Diferencie artérias, veias e capilares, destacando suas funções no sistema circulatório.</p>
+            <textarea name="q4" rows="4"></textarea>
+        </div>
+
+        <div class="question" id="div_q5">
+            <p>5. Descreva como ocorre a absorção de água e sais minerais no intestino grosso.</p>
+            <textarea name="q5" rows="4"></textarea>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar</button>
+
+    </form>
+</div>
+
+<script>
+function finalizar() {
+    const respostasAluno = {};
+    const respostasModelo = {
+        q1: "O estômago realiza digestão mecânica e química. O suco gástrico contém ácido clorídrico e pepsina, que iniciam a digestão de proteínas.",
+        q2: "Na inspiração, o diafragma desce e os músculos intercostais elevam as costelas, aumentando o volume torácico. Na expiração, eles relaxam, diminuindo o volume e expulsando o ar.",
+        q3: "O sangue passa pelos pulmões para liberar gás carbônico e receber oxigênio, tornando-se adequado para nutrir as células do corpo.",
+        q4: "Artérias levam sangue do coração para o corpo, veias trazem sangue de volta ao coração e capilares realizam trocas de gases e nutrientes com os tecidos.",
+        q5: "O intestino grosso absorve água e sais minerais através de sua mucosa, formando as fezes e mantendo o equilíbrio hídrico do organismo."
+    };
+
+    let preenchidas = true;
+
+    for (let i = 1; i <= 5; i++) {
+        let campo = document.querySelector(`textarea[name="q${i}"]`);
+        if (!campo.value.trim()) {
+            alert("Responda a questão " + i);
+            preenchidas = false;
+            break;
+        }
+        respostasAluno["q" + i] = campo.value.trim();
+    }
+
+    if (!preenchidas) return;
+
+    let html = "<h2>Suas Respostas e Respostas Modelo</h2>";
+
+    for (let i = 1; i <= 5; i++) {
+        html += `
+            <p><strong>Questão ${i}:</strong></p>
+            <div class="answer-box"><strong>Sua resposta:</strong><br>${respostasAluno["q" + i]}</div>
+            <div class="answer-box"><strong>Resposta modelo:</strong><br>${respostasModelo["q" + i]}</div>
+            <hr>
+        `;
+    }
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = "block";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>

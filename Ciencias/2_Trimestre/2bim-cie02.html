@@ -35,7 +35,7 @@
 
 <body>
 
-<header><strong>🧪 Simulado 2 – Temperatura, Calor e Botânica</strong></header>
+<header><strong>🧪 Ciências | Simulado 2 – Temperatura, Calor e Botânica</strong></header>
 
 <div class="container">
     <h1>Simulado 2 – 20 Questões</h1>
@@ -270,6 +270,36 @@ function finalizar() {
     // Enviar nota e acertos
     formData.append("acertos", score);
     formData.append("porcentagem", nota.toFixed(1) + "%");
+
+    // 🔥 NOVO: gerar relatório completo em um único campo
+
+    let relatorio = "RESULTADO DO ALUNO\n-------------------------\n";
+    relatorio += `Acertos: ${score} de 20\n`;
+    relatorio += `Porcentagem: ${nota.toFixed(1)}%\n\n`;
+
+    relatorio += "RESPOSTAS DO ALUNO\n-------------------------\n";
+    for (let i = 1; i <= 20; i++) {
+        let respostaAluno = document.querySelector(`input[name="q${i}"]:checked`).value;
+        relatorio += `Q${i}: ${respostaAluno}\n`;
+    }
+
+    relatorio += "\nGABARITO\n-------------------------\n";
+    for (let i = 1; i <= 20; i++) {
+        relatorio += `Q${i}: ${respostasCorretas["q" + i]}\n`;
+    }
+
+    relatorio += "\nQUESTÕES INCORRETAS\n-------------------------\n";
+    for (let i = 1; i <= 20; i++) {
+        let respostaAluno = document.querySelector(`input[name="q${i}"]:checked`).value;
+        let respostaCorreta = respostasCorretas["q" + i];
+
+        if (respostaAluno !== respostaCorreta) {
+            relatorio += `- Questão ${i} (marcou ${respostaAluno}, correto ${respostaCorreta})\n`;
+        }
+    }
+
+    // Enviar relatório completo
+    formData.append("relatorio", relatorio);
 
     fetch(form.action, {
         method: "POST",
