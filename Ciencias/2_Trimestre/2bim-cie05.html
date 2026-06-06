@@ -1,130 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado Dissertativo - Ciências</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Dissertativo – Ciências</title>
 
-    <style>
-        :root { --primary: #00695c; --secondary: #00897b; --success: #2e7d32; --danger: #c62828; --bg: #e0f2f1; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
-        
-        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        
-        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        
-        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
-        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+<style>
+    :root { --primary: #00695c; --secondary: #00897b; --success: #2e7d32; --bg: #e0f2f1; }
 
-        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
-        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: var(--bg);
+        margin: 0;
+        padding-top: 80px;
+        color: #263238;
+    }
 
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            resize: vertical;
-            font-size: 1em;
-        }
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
 
-        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; background: #e8f5e9; border: 1px solid #a5d6a7; }
-        #result h2 { color: var(--success); }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
 
-        .answer-box {
-            background: #f1f8e9;
-            border-left: 5px solid var(--secondary);
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
+    h1 {
+        text-align: center;
+        color: var(--primary);
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
 
-        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
-        button:hover { background: var(--primary); transform: translateY(-2px); }
-    </style>
+    .question {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+    }
+
+    textarea {
+        width: 100%;
+        height: 130px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #b0bec5;
+        font-size: 1em;
+        resize: vertical;
+        transition: 0.3s;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-color: var(--secondary);
+        box-shadow: 0 0 5px rgba(0,137,123,0.4);
+    }
+
+    .correct-answer {
+        display: none;
+        margin-top: 15px;
+        padding: 15px;
+        background: #f1f8e9;
+        border-left: 6px solid var(--success);
+        border-radius: 8px;
+        font-size: 0.95em;
+    }
+
+    button {
+        width: 100%;
+        padding: 18px;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+    }
+</style>
 </head>
 
 <body>
 
-<header><strong>📝 Simulado Dissertativo – Ciências</strong></header>
+<header>📝 Ciências | Simulado Dissertativo</header>
 
 <div class="container">
-    <h1>Questões Dissertativas</h1>
-    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda todas as questões antes de finalizar.</p>
+<h1>Simulado Dissertativo 1</h1>
 
-    <div id="result"></div>
+<form id="quiz" action="https://formspree.io/f/xjgljzyd" method="POST">
 
-    <form id="discursiveQuiz">
+    <!-- QUESTÃO 1 -->
+    <div class="question">
+        <p><strong>1. Explique a diferença entre calor e temperatura.</strong></p>
+        <textarea name="q1" required></textarea>
 
-        <div class="question" id="div_q1">
-            <p>1. Explique como ocorre a digestão química dos alimentos na boca e qual é o papel da saliva nesse processo.</p>
-            <textarea name="q1" rows="4"></textarea>
+        <div class="correct-answer" id="ans1">
+            <strong>Resposta correta:</strong><br>
+            Calor é energia em trânsito entre corpos devido à diferença de temperatura.<br>
+            Temperatura é o grau de agitação das partículas.
         </div>
+    </div>
 
-        <div class="question" id="div_q2">
-            <p>2. Descreva o caminho percorrido pelo ar desde a entrada no corpo até chegar aos alvéolos pulmonares.</p>
-            <textarea name="q2" rows="4"></textarea>
+    <!-- QUESTÃO 2 -->
+    <div class="question">
+        <p><strong>2. Por que a irradiação térmica consegue ocorrer mesmo no vácuo?</strong></p>
+        <textarea name="q2" required></textarea>
+
+        <div class="correct-answer" id="ans2">
+            <strong>Resposta correta:</strong><br>
+            Porque ocorre por ondas eletromagnéticas, que não precisam de matéria para se propagar.
         </div>
+    </div>
 
-        <div class="question" id="div_q3">
-            <p>3. Explique por que o intestino delgado é o principal local de absorção de nutrientes no sistema digestório.</p>
-            <textarea name="q3" rows="4"></textarea>
+    <!-- QUESTÃO 3 -->
+    <div class="question">
+        <p><strong>3. O que é dilatação térmica e por que ela ocorre?</strong></p>
+        <textarea name="q3" required></textarea>
+
+        <div class="correct-answer" id="ans3">
+            <strong>Resposta correta:</strong><br>
+            É o aumento de volume de um corpo quando sua temperatura aumenta, devido ao aumento da vibração das partículas.
         </div>
+    </div>
 
-        <div class="question" id="div_q4">
-            <p>4. Detalhe como os sistemas respiratório e circulatório trabalham juntos para garantir que as células recebam oxigênio.</p>
-            <textarea name="q4" rows="4"></textarea>
+    <!-- QUESTÃO 4 -->
+    <div class="question">
+        <p><strong>4. Explique por que as angiospermas são consideradas o grupo vegetal mais evoluído.</strong></p>
+        <textarea name="q4" required></textarea>
+
+        <div class="correct-answer" id="ans4">
+            <strong>Resposta correta:</strong><br>
+            Porque possuem flores e frutos, que protegem as sementes e aumentam a eficiência reprodutiva.
         </div>
+    </div>
 
-        <div class="question" id="div_q5">
-            <p>5. Explique o papel do coração na circulação sanguínea e descreva como o sangue flui entre suas cavidades.</p>
-            <textarea name="q5" rows="4"></textarea>
+    <!-- QUESTÃO 5 -->
+    <div class="question">
+        <p><strong>5. Descreva o processo de fotossíntese de forma resumida.</strong></p>
+        <textarea name="q5" required></textarea>
+
+        <div class="correct-answer" id="ans5">
+            <strong>Resposta correta:</strong><br>
+            As plantas usam luz solar, água e gás carbônico para produzir glicose e liberar oxigênio, principalmente nos cloroplastos.
         </div>
+    </div>
 
-        <button type="button" onclick="finalizar()">Finalizar</button>
-
-    </form>
+    <button type="button" onclick="finalizar()">Finalizar</button>
+</form>
 </div>
 
 <script>
 function finalizar() {
-    const respostasAluno = {};
-    const respostasModelo = {
-        q1: "A digestão química na boca ocorre pela ação da amilase salivar, que inicia a quebra do amido. A saliva também umedece o alimento e facilita a formação do bolo alimentar.",
-        q2: "O ar entra pelas narinas, passa pela faringe, laringe, traqueia, brônquios, bronquíolos e chega aos alvéolos, onde ocorrem as trocas gasosas.",
-        q3: "O intestino delgado possui grande área de absorção devido às vilosidades e microvilosidades, além de receber enzimas digestivas que completam a digestão.",
-        q4: "O sistema respiratório oxigena o sangue nos alvéolos. O sistema circulatório transporta esse oxigênio até as células e traz o gás carbônico de volta aos pulmões.",
-        q5: "O coração bombeia sangue através de suas quatro cavidades: átrios recebem o sangue e ventrículos o enviam para os pulmões e para o corpo."
+
+    // Mostrar respostas corretas
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById("ans" + i).style.display = "block";
+    }
+
+    // Enviar ao Formspree
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    // Gabarito oficial
+    const gabarito = {
+        q1: "Calor = energia em trânsito; Temperatura = agitação das partículas.",
+        q2: "Irradiação ocorre por ondas eletromagnéticas, que não precisam de matéria.",
+        q3: "Dilatação é o aumento de volume por maior vibração das partículas.",
+        q4: "Angiospermas têm flores e frutos, aumentando a eficiência reprodutiva.",
+        q5: "Fotossíntese usa luz, água e CO2 para produzir glicose e liberar oxigênio."
     };
 
-    let preenchidas = true;
-
+    // Enviar gabarito junto
     for (let i = 1; i <= 5; i++) {
-        let campo = document.querySelector(`textarea[name="q${i}"]`);
-        if (!campo.value.trim()) {
-            alert("Responda a questão " + i);
-            preenchidas = false;
-            break;
-        }
-        respostasAluno["q" + i] = campo.value.trim();
+        formData.append(`gabarito_q${i}`, gabarito["q" + i]);
     }
 
-    if (!preenchidas) return;
-
-    let html = "<h2>Suas Respostas e Respostas Modelo</h2>";
-
-    for (let i = 1; i <= 5; i++) {
-        html += `
-            <p><strong>Questão ${i}:</strong></p>
-            <div class="answer-box"><strong>Sua resposta:</strong><br>${respostasAluno["q" + i]}</div>
-            <div class="answer-box"><strong>Resposta modelo:</strong><br>${respostasModelo["q" + i]}</div>
-            <hr>
-        `;
-    }
-
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = html;
-    resultDiv.style.display = "block";
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+    });
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
