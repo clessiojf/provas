@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglês – Simulado Objetivo – SELLEP (Units 4, 5, 6)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32; background: #f1f8e9; }
+        .wrong { border-color: #c62828; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📝 Inglês | Simulado Objetivo – SELLEP (Units 4, 5, 6)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Inglês – 20 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Unit 4 – Daily Routine (What time do you…?)</h2>
+
+        <div class="question" id="q1_div">
+            <p>1) What time does she get up?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) She gets up at night.</label>
+                <label><input type="radio" name="q1" value="B"> B) She gets up at 7:00 a.m.</label>
+                <label><input type="radio" name="q1" value="C"> C) She gets up always.</label>
+                <label><input type="radio" name="q1" value="D"> D) She gets up often.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q2_div">
+            <p>2) “I go to school at 6:30.” — What does this sentence express?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Frequency</label>
+                <label><input type="radio" name="q2" value="B"> B) Time of an action</label>
+                <label><input type="radio" name="q2" value="C"> C) Ability</label>
+                <label><input type="radio" name="q2" value="D"> D) Past routine</label>
+            </div>
+        </div>
+
+        <div class="question" id="q3_div">
+            <p>3) Which option is a correct daily routine sentence?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) He take a shower at 8:00.</label>
+                <label><input type="radio" name="q3" value="B"> B) He takes a shower at 8:00.</label>
+                <label><input type="radio" name="q3" value="C"> C) He taking a shower at 8:00.</label>
+                <label><input type="radio" name="q3" value="D"> D) He taken a shower at 8:00.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q4_div">
+            <p>4) Choose the correct question:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) What time you get up?</label>
+                <label><input type="radio" name="q4" value="B"> B) What time do you get up?</label>
+                <label><input type="radio" name="q4" value="C"> C) What time does you get up?</label>
+                <label><input type="radio" name="q4" value="D"> D) What time are you get up?</label>
+            </div>
+        </div>
+
+        <div class="question" id="q5_div">
+            <p>5) Which sentence is correct?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) She go to bed at 10:00.</label>
+                <label><input type="radio" name="q5" value="B"> B) She goes to bed at 10:00.</label>
+                <label><input type="radio" name="q5" value="C"> C) She going to bed at 10:00.</label>
+                <label><input type="radio" name="q5" value="D"> D) She gone to bed at 10:00.</label>
+            </div>
+        </div>
+
+        <h2>Unit 5 – Frequency (How often…?)</h2>
+
+        <div class="question" id="q6_div">
+            <p>6) “How often do they volunteer?” — What type of answer is expected?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) A time of day</label>
+                <label><input type="radio" name="q6" value="B"> B) A frequency</label>
+                <label><input type="radio" name="q6" value="C"> C) A place</label>
+                <label><input type="radio" name="q6" value="D"> D) A description</label>
+            </div>
+        </div>
+
+        <div class="question" id="q7_div">
+            <p>7) Choose the correct frequency expression:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) At 9:00</label>
+                <label><input type="radio" name="q7" value="B"> B) On weekends</label>
+                <label><input type="radio" name="q7" value="C"> C) Twice a week</label>
+                <label><input type="radio" name="q7" value="D"> D) Yesterday</label>
+            </div>
+        </div>
+
+        <div class="question" id="q8_div">
+            <p>8) Which sentence is correct?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) She always is late.</label>
+                <label><input type="radio" name="q8" value="B"> B) She is always late.</label>
+                <label><input type="radio" name="q8" value="C"> C) Always she is late.</label>
+                <label><input type="radio" name="q8" value="D"> D) She late always is.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q9_div">
+            <p>9) “They volunteer once a month.” — What does “once a month” mean?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Every day</label>
+                <label><input type="radio" name="q9" value="B"> B) One time per month</label>
+                <label><input type="radio" name="q9" value="C"> C) Two times per month</label>
+                <label><input type="radio" name="q9" value="D"> D) Never</label>
+            </div>
+        </div>
+
+        <div class="question" id="q10_div">
+            <p>10) Choose the correct question:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) How often do you goes?</label>
+                <label><input type="radio" name="q10" value="B"> B) How often you go?</label>
+                <label><input type="radio" name="q10" value="C"> C) How often do you go?</label>
+                <label><input type="radio" name="q10" value="D"> D) How often are you go?</label>
+            </div>
+        </div>
+
+        <h2>Unit 6 – Physical Description (He has long brown hair.)</h2>
+
+        <div class="question" id="q11_div">
+            <p>11) Which sentence describes hair correctly?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) He has long brown hair.</label>
+                <label><input type="radio" name="q11" value="B"> B) He is long brown hair.</label>
+                <label><input type="radio" name="q11" value="C"> C) He have long brown hair.</label>
+                <label><input type="radio" name="q11" value="D"> D) He has hair long brown.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q12_div">
+            <p>12) Choose the correct description:</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) She has blue eyes.</label>
+                <label><input type="radio" name="q12" value="B"> B) She is blue eyes.</label>
+                <label><input type="radio" name="q12" value="C"> C) She have blue eyes.</label>
+                <label><input type="radio" name="q12" value="D"> D) She has eyes blues.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q13_div">
+            <p>13) Which option describes height?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) She has curly hair.</label>
+                <label><input type="radio" name="q13" value="B"> B) She is tall.</label>
+                <label><input type="radio" name="q13" value="C"> C) She has green eyes.</label>
+                <label><input type="radio" name="q13" value="D"> D) She has short hair.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q14_div">
+            <p>14) “He has short black hair.” — What is being described?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) His clothes</label>
+                <label><input type="radio" name="q14" value="B"> B) His routine</label>
+                <label><input type="radio" name="q14" value="C"> C) His hair</label>
+                <label><input type="radio" name="q14" value="D"> D) His age</label>
+            </div>
+        </div>
+
+        <div class="question" id="q15_div">
+            <p>15) Choose the correct sentence:</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) They has brown eyes.</label>
+                <label><input type="radio" name="q15" value="B"> B) They have brown eyes.</label>
+                <label><input type="radio" name="q15" value="C"> C) They having brown eyes.</label>
+                <label><input type="radio" name="q15" value="D"> D) They has eyes brown.</label>
+            </div>
+        </div>
+
+        <h2>Mixed Review – Units 4, 5 and 6</h2>
+
+        <div class="question" id="q16_div">
+            <p>16) Which sentence is correct?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) What time do she study?</label>
+                <label><input type="radio" name="q16" value="B"> B) What time does she study?</label>
+                <label><input type="radio" name="q16" value="C"> C) What time she study?</label>
+                <label><input type="radio" name="q16" value="D"> D) What time is she study?</label>
+            </div>
+        </div>
+
+        <div class="question" id="q17_div">
+            <p>17) Choose the correct frequency adverb position:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) He goes always to school.</label>
+                <label><input type="radio" name="q17" value="B"> B) He always goes to school.</label>
+                <label><input type="radio" name="q17" value="C"> C) Always he goes to school.</label>
+                <label><input type="radio" name="q17" value="D"> D) He goes to school always in morning.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q18_div">
+            <p>18) Which option describes a person?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) He gets up early.</label>
+                <label><input type="radio" name="q18" value="B"> B) He volunteers twice a week.</label>
+                <label><input type="radio" name="q18" value="C"> C) He has straight black hair.</label>
+                <label><input type="radio" name="q18" value="D"> D) He goes to bed at 10:00.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q19_div">
+            <p>19) “She usually gets up at 6:00.” — What does “usually” indicate?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) Time</label>
+                <label><input type="radio" name="q19" value="B"> B) Frequency</label>
+                <label><input type="radio" name="q19" value="C"> C) Ability</label>
+                <label><input type="radio" name="q19" value="D"> D) Past action</label>
+            </div>
+        </div>
+
+        <div class="question" id="q20_div">
+            <p>20) Choose the correct sentence:</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) She has long hair brown.</label>
+                <label><input type="radio" name="q20" value="B"> B) She have long brown hair.</label>
+                <label><input type="radio" name="q20" value="C"> C) She has long brown hair.</label>
+                <label><input type="radio" name="q20" value="D"> D) She is long brown hair.</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+const gabarito = {
+    q1: "B",
+    q2: "B",
+    q3: "B",
+    q4: "B",
+    q5: "B",
+    q6: "B",
+    q7: "C",
+    q8: "B",
+    q9: "B",
+    q10: "C",
+    q11: "A",
+    q12: "A",
+    q13: "B",
+    q14: "C",
+    q15: "B",
+    q16: "B",
+    q17: "B",
+    q18: "C",
+    q19: "B",
+    q20: "C"
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 20;
+
+    // valida e corrige
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            div.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        const resposta = selecionado.value;
+        if (resposta === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+        }
+    }
+
+    const nota = ((acertos / total) * 10).toFixed(1);
+    const porcentagem = ((acertos / total) * 100).toFixed(0);
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Nota: <strong>${nota}</strong> | Aproveitamento: <strong>${porcentagem}%</strong></p>
+    `;
+    resultDiv.style.display = "block";
+
+    // desativar botão e inputs
+    const btn = document.querySelector("button[onclick='finalizar()']");
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach(i => i.disabled = true);
+
+    // envio ao Apps Script
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = document.querySelector("header").innerText.trim();
+    const agora = new Date();
+    const dataHora = agora.toLocaleString("pt-BR");
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", dataHora);
+    formData.append("acertos", acertos);
+    formData.append("nota", nota);
+    formData.append("porcentagem", porcentagem);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+// bloquear clique direito
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// bloquear teclas de inspeção
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+
+// bloquear cópia
+document.addEventListener("copy", e => e.preventDefault());
+
+// bloquear arrastar
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglês – Simulado Dissertativo – SELLEP (Units 4, 5, 6)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        textarea { width: 100%; min-height: 140px; padding: 10px; border-radius: 8px; border: 1px solid #cfd8dc; resize: vertical; font-family: inherit; font-size: 0.95em; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: left; background: #ffffff; border: 1px solid #a5d6a7; color: #263238; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📝 Inglês | Simulado Dissertativo – SELLEP (Units 4, 5, 6)</strong></header>
+
+<div class="container">
+    <h1>Simulado Dissertativo – 6 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda em inglês. Use frases completas.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Unit 4 – Daily Routine</h2>
+
+        <div class="question">
+            <p>1) Describe your morning routine using complete sentences. Include at least three actions and the times you do them.</p>
+            <textarea name="q1"></textarea>
+        </div>
+
+        <div class="question">
+            <p>2) Explain why having a consistent daily routine is important. Give examples.</p>
+            <textarea name="q2"></textarea>
+        </div>
+
+        <h2>Unit 5 – Frequency</h2>
+
+        <div class="question">
+            <p>3) Write about how often you do different activities during the week. Use frequency expressions.</p>
+            <textarea name="q3"></textarea>
+        </div>
+
+        <div class="question">
+            <p>4) Explain why frequency expressions are important when talking about habits.</p>
+            <textarea name="q4"></textarea>
+        </div>
+
+        <h2>Unit 6 – Physical Description</h2>
+
+        <div class="question">
+            <p>5) Describe a person you know (real or fictional). Include hair, eyes, height and build.</p>
+            <textarea name="q5"></textarea>
+        </div>
+
+        <div class="question">
+            <p>6) Explain the difference between using “to be” and “to have” in physical descriptions. Give examples.</p>
+            <textarea name="q6"></textarea>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+// Objective answer key (short, direct, comparable)
+const gabarito = {
+    1: "I wake up at 6:30. Then I get dressed at 6:40 and have breakfast at 7:00. After that, I brush my teeth and go to school at 7:20.",
+    2: "Having a routine helps me stay organized. I don’t forget my tasks, I sleep better, and I have more time to study. It also helps me feel less stressed.",
+    3: "I usually study every day. I exercise twice a week, and I sometimes help my parents at home. I never go to bed late on school days.",
+    4: "Frequency expressions show how often something happens. They make habits clearer, like saying ‘I always wake up early’ or ‘I sometimes play soccer.’",
+    5: "My friend Lucas has short black hair and brown eyes. He is tall and thin. He usually wears jeans and a T‑shirt.",
+    6: "We use ‘to be’ for adjectives, like ‘He is tall.’ We use ‘to have’ for features, like ‘She has long brown hair.’"
+};
+
+function finalizar() {
+    for (let i = 1; i <= 6; i++) {
+        const campo = document.querySelector(`textarea[name="q${i}"]`);
+        if (!campo.value.trim()) {
+            alert("Responda a questão " + i);
+            campo.focus();
+            return;
+        }
+    }
+
+    let html = "<h2>Test finished!</h2>";
+    html += "<p><strong>Your answers:</strong></p>";
+
+    for (let i = 1; i <= 6; i++) {
+        const resposta = document.querySelector(`textarea[name="q${i}"]`).value.trim();
+        html += `
+            <div style='margin-bottom:20px; padding:15px; background:#e3f2fd; border-left:5px solid #1565c0; border-radius:8px;'>
+                <strong>Question ${i} – Your answer:</strong><br>
+                ${resposta.replace(/\n/g, "<br>")}
+            </div>
+        `;
+    }
+
+    html += "<h2>Answer Key</h2>";
+
+    for (let i = 1; i <= 6; i++) {
+        html += `
+            <div style='margin-bottom:20px; padding:15px; background:#f1f8e9; border-left:5px solid #2e7d32; border-radius:8px;'>
+                <strong>Question ${i} – Model answer:</strong><br>
+                ${gabarito[i]}
+            </div>
+        `;
+    }
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    document.querySelectorAll("textarea").forEach(t => t.disabled = true);
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    formData.append("simulado", "Inglês – Dissertativo");
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+
+    fetch(form.action, { method: "POST", body: formData });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
