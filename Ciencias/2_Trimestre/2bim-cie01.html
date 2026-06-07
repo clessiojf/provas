@@ -259,6 +259,11 @@ function finalizar() {
     const form = document.getElementById("quiz");
     const formData = new FormData(form);
 
+    // Remover respostas individuais (q1, q2, q3...)
+    for (let i = 1; i <= 20; i++) {
+        formData.delete("q" + i);
+    }
+
     // Enviar apenas o necessário
     formData.append("porcentagem", nota.toFixed(1) + "%");
     formData.append("acertos", score);
@@ -269,6 +274,7 @@ function finalizar() {
         body: formData,
         headers: { "Accept": "text/plain" }
     });
+
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
