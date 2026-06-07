@@ -255,6 +255,15 @@ function finalizar() {
     resultDiv.innerHTML = `<h2>Você acertou ${nota.toFixed(1)}%</h2>`;
     resultDiv.style.display = "block";
 
+    // 🔒 DESATIVAR O BOTÃO DE FINALIZAR
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    document.querySelector("button[onclick='finalizar()']").style.opacity = "0.5";
+    document.querySelector("button[onclick='finalizar()']").style.cursor = "not-allowed";
+
+    // 🔒 BLOQUEAR ALTERAÇÃO DAS RESPOSTAS
+    const radios = document.querySelectorAll("input[type='radio']");
+    radios.forEach(r => r.disabled = true);
+
     // Envio ao Apps Script
     const form = document.getElementById("quiz");
     const formData = new FormData(form);
