@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espanhol – Simulado 2 – Clases 1 a 6</title>
+
+    <style>
+        :root { --primary: #00695c; --secondary: #00897b; --success: #2e7d32; --danger: #c62828; --bg: #e0f2f1; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        label { display: block; margin: 10px 0; cursor: pointer; padding: 12px; border-radius: 8px; border: 1px solid #eceff1; transition: 0.2s; }
+        label:hover { background: #f1f8e9; border-color: var(--secondary); }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+        .q-correct { border-left: 6px solid var(--success); background: #f1f8e9; }
+        .q-wrong { border-left: 6px solid var(--danger); background: #ffebee; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📝 Espanhol | Simulado 2 – Clases 1 a 6</strong></header>
+
+<div class="container">
+    <h1>Simulado 2 – 20 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda todas as questões antes de finalizar.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <!-- CLASE 1 – LA FÁBULA -->
+        <h2>Clase 1 – Interpretación de texto – La fábula</h2>
+
+        <div class="question" id="div_q1">
+            <p>1. En una fábula, los personajes suelen ser:</p>
+            <label><input type="radio" name="q1" value="A"> A) Personas reales</label>
+            <label><input type="radio" name="q1" value="B"> B) Animales con comportamientos humanos</label>
+            <label><input type="radio" name="q1" value="C"> C) Objetos que no hablan</label>
+            <label><input type="radio" name="q1" value="D"> D) Profesores y estudiantes</label>
+        </div>
+
+        <div class="question" id="div_q2">
+            <p>2. La función principal de la moraleja es:</p>
+            <label><input type="radio" name="q2" value="A"> A) Presentar a los personajes</label>
+            <label><input type="radio" name="q2" value="B"> B) Enseñar una lección</label>
+            <label><input type="radio" name="q2" value="C"> C) Describir el ambiente</label>
+            <label><input type="radio" name="q2" value="D"> D) Explicar el título</label>
+        </div>
+
+        <div class="question" id="div_q3">
+            <p>3. ¿Cuál de los siguientes elementos NO es típico de una fábula?</p>
+            <label><input type="radio" name="q3" value="A"> A) Animales que hablan</label>
+            <label><input type="radio" name="q3" value="B"> B) Datos científicos reales</label>
+            <label><input type="radio" name="q3" value="C"> C) Una enseñanza final</label>
+            <label><input type="radio" name="q3" value="D"> D) Un conflicto moral</label>
+        </div>
+
+        <div class="question" id="div_q4">
+            <p>4. Las fábulas suelen ser textos:</p>
+            <label><input type="radio" name="q4" value="A"> A) Largos y complicados</label>
+            <label><input type="radio" name="q4" value="B"> B) Breves y fáciles de entender</label>
+            <label><input type="radio" name="q4" value="C"> C) Escritos siempre en verso</label>
+            <label><input type="radio" name="q4" value="D"> D) Sin personajes</label>
+        </div>
+
+        <!-- CLASE 2 – IMPERATIVO NEGATIVO -->
+        <h2>Clase 2 – Consulta médica con consejos – Imperativo negativo</h2>
+
+        <div class="question" id="div_q5">
+            <p>5. ¿Cuál es un ejemplo correcto de imperativo negativo?</p>
+            <label><input type="radio" name="q5" value="A"> A) No comes dulces.</label>
+            <label><input type="radio" name="q5" value="B"> B) No comas dulces.</label>
+            <label><input type="radio" name="q5" value="C"> C) No comer dulces.</label>
+            <label><input type="radio" name="q5" value="D"> D) No come dulces.</label>
+        </div>
+
+        <div class="question" id="div_q6">
+            <p>6. El imperativo negativo se usa para:</p>
+            <label><input type="radio" name="q6" value="A"> A) Dar permiso</label>
+            <label><input type="radio" name="q6" value="B"> B) Prohibir acciones</label>
+            <label><input type="radio" name="q6" value="C"> C) Narrar historias</label>
+            <label><input type="radio" name="q6" value="D"> D) Describir hábitos</label>
+        </div>
+
+        <div class="question" id="div_q7">
+            <p>7. ¿Cuál frase está correctamente escrita en imperativo negativo?</p>
+            <label><input type="radio" name="q7" value="A"> A) No hablas tan rápido.</label>
+            <label><input type="radio" name="q7" value="B"> B) No hables tan rápido.</label>
+            <label><input type="radio" name="q7" value="C"> C) No hablar tan rápido.</label>
+            <label><input type="radio" name="q7" value="D"> D) No hablaste tan rápido.</label>
+        </div>
+
+        <div class="question" id="div_q8">
+            <p>8. En una consulta médica, el doctor podría decir:</p>
+            <label><input type="radio" name="q8" value="A"> A) No duermes tarde.</label>
+            <label><input type="radio" name="q8" value="B"> B) No duermas tarde.</label>
+            <label><input type="radio" name="q8" value="C"> C) No dormir tarde.</label>
+            <label><input type="radio" name="q8" value="D"> D) No dormiste tarde.</label>
+        </div>
+
+        <!-- CLASE 3 – PARTES DEL CUERPO / DOLER -->
+        <h2>Clase 3 – Partes del cuerpo – Verbo “doler”</h2>
+
+        <div class="question" id="div_q9">
+            <p>9. ¿Cuál de las siguientes NO es una parte del cuerpo?</p>
+            <label><input type="radio" name="q9" value="A"> A) Mano</label>
+            <label><input type="radio" name="q9" value="B"> B) Estómago</label>
+            <label><input type="radio" name="q9" value="C"> C) Pierna</label>
+            <label><input type="radio" name="q9" value="D"> D) Ventana</label>
+        </div>
+
+        <div class="question" id="div_q10">
+            <p>10. ¿Cómo se dice correctamente “A él le duele el brazo”?</p>
+            <label><input type="radio" name="q10" value="A"> A) Le duele el brazo.</label>
+            <label><input type="radio" name="q10" value="B"> B) Te duele el brazo.</label>
+            <label><input type="radio" name="q10" value="C"> C) Me duele el brazo.</label>
+            <label><input type="radio" name="q10" value="D"> D) Nos duele el brazo.</label>
+        </div>
+
+        <div class="question" id="div_q11">
+            <p>11. Para decir que varias partes del cuerpo duelen, usamos:</p>
+            <label><input type="radio" name="q11" value="A"> A) Me duele</label>
+            <label><input type="radio" name="q11" value="B"> B) Me dolió</label>
+            <label><input type="radio" name="q11" value="C"> C) Me duelen</label>
+            <label><input type="radio" name="q11" value="D"> D) Me doler</label>
+        </div>
+
+        <div class="question" id="div_q12">
+            <p>12. ¿Cuál frase está correctamente escrita?</p>
+            <label><input type="radio" name="q12" value="A"> A) Me duele los pies.</label>
+            <label><input type="radio" name="q12" value="B"> B) Me duelen los pies.</label>
+            <label><input type="radio" name="q12" value="C"> C) Me duele los pie.</label>
+            <label><input type="radio" name="q12" value="D"> D) Me dolen los pies.</label>
+        </div>
+
+        <!-- CLASE 4 – ALIMENTACIÓN / IMPERATIVOS -->
+        <h2>Clase 4 – La alimentación sana y perjudicial – Imperativos</h2>
+
+        <div class="question" id="div_q13">
+            <p>13. ¿Cuál es un consejo saludable?</p>
+            <label><input type="radio" name="q13" value="A"> A) Come verduras todos los días.</label>
+            <label><input type="radio" name="q13" value="B"> B) Come solo dulces.</label>
+            <label><input type="radio" name="q13" value="C"> C) No bebas agua nunca.</label>
+            <label><input type="radio" name="q13" value="D"> D) No comas frutas.</label>
+        </div>
+
+        <div class="question" id="div_q14">
+            <p>14. ¿Cuál opción muestra un hábito perjudicial?</p>
+            <label><input type="radio" name="q14" value="A"> A) Beber agua</label>
+            <label><input type="radio" name="q14" value="B"> B) Comer verduras</label>
+            <label><input type="radio" name="q14" value="C"> C) Consumir mucha comida rápida</label>
+            <label><input type="radio" name="q14" value="D"> D) Hacer ejercicio</label>
+        </div>
+
+        <div class="question" id="div_q15">
+            <p>15. ¿Cuál es un imperativo afirmativo correcto?</p>
+            <label><input type="radio" name="q15" value="A"> A) Come más frutas.</label>
+            <label><input type="radio" name="q15" value="B"> B) Comer más frutas.</label>
+            <label><input type="radio" name="q15" value="C"> C) No comes frutas.</label>
+            <label><input type="radio" name="q15" value="D"> D) No comer frutas.</label>
+        </div>
+
+        <div class="question" id="div_q16">
+            <p>16. ¿Cuál frase NO es un consejo saludable?</p>
+            <label><input type="radio" name="q16" value="A"> A) Bebe agua.</label>
+            <label><input type="radio" name="q16" value="B"> B) Haz ejercicio.</label>
+            <label><input type="radio" name="q16" value="C"> C) Come verduras.</label>
+            <label><input type="radio" name="q16" value="D"> D) Come mucha grasa.</label>
+        </div>
+
+        <!-- CLASE 5 – PRETÉRITO INDEFINIDO VS IMPERFECTO -->
+        <h2>Clase 5 – Contraste entre Pretérito indefinido e Imperfecto de indicativo</h2>
+
+        <div class="question" id="div_q17">
+            <p>17. ¿Cuál frase está en pretérito indefinido?</p>
+            <label><input type="radio" name="q17" value="A"> A) Yo caminaba todos los días.</label>
+            <label><input type="radio" name="q17" value="B"> B) Ayer caminé al colegio.</label>
+            <label><input type="radio" name="q17" value="C"> C) Siempre caminaba por el parque.</label>
+            <label><input type="radio" name="q17" value="D"> D) Caminaba mucho antes.</label>
+        </div>
+
+        <div class="question" id="div_q18">
+            <p>18. ¿Cuál frase está en imperfecto?</p>
+            <label><input type="radio" name="q18" value="A"> A) Ayer estudié para la prueba.</label>
+            <label><input type="radio" name="q18" value="B"> B) El año pasado viajé a Chile.</label>
+            <label><input type="radio" name="q18" value="C"> C) Cuando era pequeño, vivía en Madrid.</label>
+            <label><input type="radio" name="q18" value="D"> D) Terminé el trabajo anoche.</label>
+        </div>
+
+        <div class="question" id="div_q19">
+            <p>19. El pretérito imperfecto se usa para:</p>
+            <label><input type="radio" name="q19" value="A"> A) Acciones puntuales</label>
+            <label><input type="radio" name="q19" value="B"> B) Acciones repetidas o habituales</label>
+            <label><input type="radio" name="q19" value="C"> C) Acciones finalizadas</label>
+            <label><input type="radio" name="q19" value="D"> D) Eventos únicos</label>
+        </div>
+
+        <div class="question" id="div_q20">
+            <p>20. El pretérito indefinido se usa para:</p>
+            <label><input type="radio" name="q20" value="A"> A) Describir personas</label>
+            <label><input type="radio" name="q20" value="B"> B) Hablar de rutinas</label>
+            <label><input type="radio" name="q20" value="C"> C) Acciones concretas y terminadas</label>
+            <label><input type="radio" name="q20" value="D"> D) Hablar del futuro</label>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+function finalizar() {
+    const respostasCorretas = {
+        q1:'B', q2:'B', q3:'B', q4:'B',
+        q5:'B', q6:'B', q7:'B', q8:'B',
+        q9:'D', q10:'A', q11:'C', q12:'B',
+        q13:'A', q14:'C', q15:'A', q16:'D',
+        q17:'B', q18:'C', q19:'B', q20:'C'
+    };
+
+    // Validação obrigatória
+    for (let i = 1; i <= 20; i++) {
+        if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+            alert("Responda a questão " + i);
+            return;
+        }
+    }
+
+    let score = 0;
+    let erros = [];
+
+    // Correção visual + cálculo da nota + registro dos erros
+    for (let i = 1; i <= 20; i++) {
+        let div = document.getElementById("div_q" + i);
+        let respostaAluno = document.querySelector(`input[name="q${i}"]:checked`).value;
+        let respostaCorreta = respostasCorretas["q" + i];
+
+        if (respostaAluno === respostaCorreta) {
+            score++;
+            div.className = "question q-correct";
+        } else {
+            div.className = "question q-wrong";
+            erros.push(`- Questão ${i} (marcou ${respostaAluno}, correto ${respostaCorreta})`);
+        }
+    }
+
+    const nota = (score / 20) * 100;
+
+    // Exibe apenas a porcentagem
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `<h2>Você acertou ${nota.toFixed(1)}%</h2>`;
+    resultDiv.style.display = "block";
+
+    // Desativar botão e bloquear alterações
+    const btn = document.querySelector("button[onclick='finalizar()']");
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    const radios = document.querySelectorAll("input[type='radio']");
+    radios.forEach(r => r.disabled = true);
+
+    // Envio ao Apps Script
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    // Remover respostas individuais
+    for (let i = 1; i <= 20; i++) {
+        formData.delete("q" + i);
+    }
+
+    // Capturar o header da página
+    const tituloSimulado = document.querySelector("header").innerText.trim();
+
+    // Enviar apenas o necessário
+    formData.append("simulado", tituloSimulado);
+    formData.append("porcentagem", nota.toFixed(1) + "%");
+    formData.append("acertos", score);
+    formData.append("erros", erros.join("\n"));
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+// Bloquear clique direito
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
+
+// Bloquear teclas de inspeção
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false; // F12
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false; // Ctrl+Shift+J
+    if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+    if (e.ctrlKey && e.keyCode == 83) return false; // Ctrl+S
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false; // Ctrl+Shift+C
+};
+
+// Bloquear cópia
+document.addEventListener("copy", function(e){
+    e.preventDefault();
+});
+
+// Bloquear arrastar
+document.addEventListener("dragstart", function(e){
+    e.preventDefault();
+});
+</script>
+
+</body>
+</html>
