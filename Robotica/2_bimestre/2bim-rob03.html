@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica – Simulado Dissertativo – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        textarea { width: 100%; min-height: 140px; padding: 10px; border-radius: 8px; border: 1px solid #cfd8dc; resize: vertical; font-family: inherit; font-size: 0.95em; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: left; background: #ffffff; border: 1px solid #a5d6a7; color: #263238; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🤖 Robótica | Simulado Dissertativo 01 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado Dissertativo – 8 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda em português, com frases completas e explicações claras.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Módulo 3 – Scratch: Direção (Eixos X, Y e Coordenadas)</h2>
+
+        <div class="question">
+            <p>1) Explique com suas palavras como funcionam os eixos X e Y no Scratch. Descreva o que significa aumentar ou diminuir cada eixo e como isso afeta o movimento do sprite.</p>
+            <textarea name="q1"></textarea>
+        </div>
+
+        <div class="question">
+            <p>2) Imagine que você precisa mover um personagem até a posição (–50, 80). Explique quais blocos você usaria e por quê, descrevendo o caminho ou a lógica do movimento.</p>
+            <textarea name="q2"></textarea>
+        </div>
+
+        <h2>Módulo 4 – Scratch: Repetições (Loops e Animações)</h2>
+
+        <div class="question">
+            <p>3) Explique a diferença entre os blocos “repita 10 vezes” e “para sempre”. Mostre um exemplo de situação em que cada um seria mais adequado.</p>
+            <textarea name="q3"></textarea>
+        </div>
+
+        <div class="question">
+            <p>4) Descreva como criar uma animação simples usando troca de trajes e repetições. Explique o que acontece dentro do loop e como o sprite “ganha vida”.</p>
+            <textarea name="q4"></textarea>
+        </div>
+
+        <h2>Módulo 1 – Arduino: Introdução</h2>
+
+        <div class="question">
+            <p>5) Explique o que é o Arduino e para que ele serve. Inclua exemplos de projetos simples que podem ser feitos com ele.</p>
+            <textarea name="q5"></textarea>
+        </div>
+
+        <div class="question">
+            <p>6) Descreva a função dos pinos 5V, GND e dos pinos digitais. Explique para que cada um é usado em um circuito básico.</p>
+            <textarea name="q6"></textarea>
+        </div>
+
+        <h2>Módulo 2 – Dispositivos externos (Pisca LED e LED externo)</h2>
+
+        <div class="question">
+            <p>7) Explique como funciona o projeto “Pisca LED”. Descreva o papel do LED, do resistor e dos comandos usados no código.</p>
+            <textarea name="q7"></textarea>
+        </div>
+
+        <div class="question">
+            <p>8) Em um circuito com LED externo, por que é importante usar um resistor? Explique o que pode acontecer se o LED for ligado diretamente ao pino digital sem proteção.</p>
+            <textarea name="q8"></textarea>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+// gabarito objetivo – respostas modelo curtas, para comparação
+const gabarito = {
+    1: "No Scratch, o eixo X controla o movimento para a esquerda e direita, e o eixo Y controla o movimento para cima e para baixo. Aumentar X move o sprite para a direita, diminuir X move para a esquerda; aumentar Y faz o sprite subir e diminuir Y faz o sprite descer.",
+    2: "Eu usaria o bloco “vá para x: -50 y: 80” ou combinaria blocos de “mude X por” e “mude Y por” até chegar nessa posição. Assim, o sprite é levado diretamente ou passo a passo até as coordenadas (–50, 80).",
+    3: "“Repita 10 vezes” executa o bloco um número limitado de vezes, já “para sempre” repete sem parar até o programa ser interrompido. Por exemplo, usar “repita 10 vezes” para pular 10 vezes e “para sempre” para uma animação contínua de caminhada.",
+    4: "Para criar uma animação simples, uso um loop com o bloco “próximo traje” e movimento. Dentro do loop, o sprite troca de traje e se move um pouco, dando a impressão de que está andando ou se mexendo.",
+    5: "O Arduino é uma placa eletrônica programável usada para controlar componentes como LEDs, motores e sensores. Com ele, podemos fazer projetos simples como pisca LED, alarmes, semáforos e pequenos robôs.",
+    6: "O pino 5V fornece energia positiva estável para os componentes, o GND é o terra (referência negativa) e os pinos digitais servem para enviar ou receber sinais de 0 ou 1 (HIGH ou LOW) em um circuito.",
+    7: "No projeto Pisca LED, o LED é ligado a um pino digital com um resistor e ao GND. No código, usamos “digitalWrite” para ligar e desligar o LED e “delay” para controlar o tempo de aceso e apagado, fazendo o LED piscar.",
+    8: "O resistor limita a corrente que passa pelo LED. Sem resistor, a corrente pode ser muito alta, o LED pode queimar e o pino do Arduino pode ser danificado, por isso é importante usar o resistor como proteção."
+};
+
+function finalizar() {
+    for (let i = 1; i <= 8; i++) {
+        const campo = document.querySelector(`textarea[name="q${i}"]`);
+        if (!campo.value.trim()) {
+            alert("Responda a questão " + i);
+            campo.focus();
+            return;
+        }
+    }
+
+    let html = "<h2>Prova finalizada!</h2>";
+    html += "<p><strong>Suas respostas:</strong></p>";
+
+    for (let i = 1; i <= 8; i++) {
+        const resposta = document.querySelector(`textarea[name="q${i}"]`).value.trim();
+        html += `
+            <div style="margin-bottom:20px; padding:15px; background:#e3f2fd; border-left:5px solid #1565c0; border-radius:8px;">
+                <strong>Questão ${i} – Sua resposta:</strong><br>
+                ${resposta.replace(/\n/g, "<br>")}
+            </div>
+        `;
+    }
+
+    html += "<h2>Gabarito – Respostas modelo</h2>";
+
+    for (let i = 1; i <= 8; i++) {
+        html += `
+            <div style="margin-bottom:20px; padding:15px; background:#f1f8e9; border-left:5px solid #2e7d32; border-radius:8px;">
+                <strong>Questão ${i} – Resposta sugerida:</strong><br>
+                ${gabarito[i]}
+            </div>
+        `;
+    }
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = "block";
+
+    const btn = document.querySelector("button[onclick='finalizar()']");
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    const textareas = document.querySelectorAll("textarea");
+    textareas.forEach(t => t.disabled = true);
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    formData.append("simulado", "Robótica – Dissertativo");
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+
+    fetch(form.action, { method: "POST", body: formData });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>

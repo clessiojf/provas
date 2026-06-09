@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica – Simulado Dissertativo 2 – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        textarea { width: 100%; min-height: 140px; padding: 10px; border-radius: 8px; border: 1px solid #cfd8dc; resize: vertical; font-family: inherit; font-size: 0.95em; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: left; background: #ffffff; border: 1px solid #a5d6a7; color: #263238; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🤖 Robótica | Simulado Dissertativo 2 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado Dissertativo 2 – 8 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda em português, com frases completas.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Módulo 3 – Scratch: Direção (Eixos X, Y e Coordenadas)</h2>
+
+        <div class="question">
+            <p>1) Explique por que as coordenadas são importantes para controlar o movimento de um sprite no Scratch. Dê um exemplo de uso prático.</p>
+            <textarea name="q1"></textarea>
+        </div>
+
+        <div class="question">
+            <p>2) Descreva uma situação em que seria necessário usar o bloco “deslize para x: ___ y: ___”. Explique por que esse bloco é útil.</p>
+            <textarea name="q2"></textarea>
+        </div>
+
+        <h2>Módulo 4 – Scratch: Repetições (Loops e Animações)</h2>
+
+        <div class="question">
+            <p>3) Explique como o bloco “repita até que” pode ser usado para criar interações com o usuário, como parar um movimento quando o sprite tocar em um objeto.</p>
+            <textarea name="q3"></textarea>
+        </div>
+
+        <div class="question">
+            <p>4) Descreva como você criaria uma animação de um personagem pulando usando repetições e mudanças no eixo Y.</p>
+            <textarea name="q4"></textarea>
+        </div>
+
+        <h2>Módulo 1 – Arduino: Introdução</h2>
+
+        <div class="question">
+            <p>5) Explique a diferença entre entradas e saídas digitais no Arduino. Dê um exemplo de cada uma.</p>
+            <textarea name="q5"></textarea>
+        </div>
+
+        <div class="question">
+            <p>6) Descreva o processo básico de enviar um código do computador para o Arduino e o que acontece após o upload.</p>
+            <textarea name="q6"></textarea>
+        </div>
+
+        <h2>Módulo 2 – Dispositivos externos (Pisca LED e LED externo)</h2>
+
+        <div class="question">
+            <p>7) Explique como montar um circuito simples com LED e resistor no Arduino. Descreva a função de cada componente.</p>
+            <textarea name="q7"></textarea>
+        </div>
+
+        <div class="question">
+            <p>8) O que aconteceria se o comando “delay” fosse removido do código do Pisca LED? Explique o impacto no funcionamento do LED.</p>
+            <textarea name="q8"></textarea>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+// gabarito objetivo – respostas modelo curtas
+const gabarito = {
+    1: "As coordenadas permitem controlar exatamente onde o sprite deve estar no palco. Por exemplo, posso enviar o personagem para o topo usando y positivo.",
+    2: "O bloco de deslizar é útil quando queremos movimentos suaves, como fazer um personagem caminhar até um ponto específico.",
+    3: "O bloco 'repita até que' permite repetir ações até que uma condição aconteça, como parar o movimento quando o sprite tocar em um objeto.",
+    4: "Para animar um pulo, aumento o valor de Y para subir e depois diminuo para descer, repetindo isso dentro de um loop.",
+    5: "Entradas digitais recebem sinais como botões; saídas digitais enviam sinais como ligar um LED.",
+    6: "O código é enviado pelo cabo USB e gravado na memória do Arduino. Depois disso, ele começa a executar o programa automaticamente.",
+    7: "O LED é ligado ao pino digital e ao GND, com um resistor para limitar a corrente e evitar que o LED queime.",
+    8: "Sem o delay, o LED piscaria rápido demais, parecendo até ficar sempre aceso, pois o Arduino executa o código muito rápido."
+};
+
+function finalizar() {
+    for (let i = 1; i <= 8; i++) {
+        const campo = document.querySelector(`textarea[name="q${i}"]`);
+        if (!campo.value.trim()) {
+            alert("Responda a questão " + i);
+            campo.focus();
+            return;
+        }
+    }
+
+    let html = "<h2>Prova finalizada!</h2>";
+    html += "<p><strong>Suas respostas:</strong></p>";
+
+    for (let i = 1; i <= 8; i++) {
+        const resposta = document.querySelector(`textarea[name="q${i}"]`).value.trim();
+        html += `
+            <div style='margin-bottom:20px; padding:15px; background:#e3f2fd; border-left:5px solid #1565c0; border-radius:8px;'>
+                <strong>Questão ${i} – Sua resposta:</strong><br>
+                ${resposta.replace(/\n/g, "<br>")}
+            </div>
+        `;
+    }
+
+    html += "<h2>Gabarito – Respostas modelo</h2>";
+
+    for (let i = 1; i <= 8; i++) {
+        html += `
+            <div style='margin-bottom:20px; padding:15px; background:#f1f8e9; border-left:5px solid #2e7d32; border-radius:8px;'>
+                <strong>Questão ${i} – Resposta sugerida:</strong><br>
+                ${gabarito[i]}
+            </div>
+        `;
+    }
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    document.querySelectorAll("textarea").forEach(t => t.disabled = true);
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    formData.append("simulado", "Robótica – Dissertativo 2");
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+
+    fetch(form.action, { method: "POST", body: formData });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>

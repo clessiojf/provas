@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica – Simulado Objetivo 2 – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32; background: #f1f8e9; }
+        .wrong { border-color: #c62828; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🤖 Robótica | Simulado Objetivo 02 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Robótica 2 – 20 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Programação – Scratch (Módulo 3: Direção)</h2>
+
+        <div class="question" id="q1_div">
+            <p>1) Em Scratch, o ponto central do palco (centro da tela) tem coordenadas:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) (100, 100)</label>
+                <label><input type="radio" name="q1" value="B"> B) (0, 0)</label>
+                <label><input type="radio" name="q1" value="C"> C) (–100, –100)</label>
+                <label><input type="radio" name="q1" value="D"> D) (50, –50)</label>
+            </div>
+        </div>
+
+        <div class="question" id="q2_div">
+            <p>2) Se o sprite está em X = –50 e você usa “mude X por 20”, o novo valor será:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) –70</label>
+                <label><input type="radio" name="q2" value="B"> B) –30</label>
+                <label><input type="radio" name="q2" value="C"> C) 20</label>
+                <label><input type="radio" name="q2" value="D"> D) 70</label>
+            </div>
+        </div>
+
+        <div class="question" id="q3_div">
+            <p>3) Quando o valor de Y aumenta, o sprite:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Desce</label>
+                <label><input type="radio" name="q3" value="B"> B) Sobe</label>
+                <label><input type="radio" name="q3" value="C"> C) Gira</label>
+                <label><input type="radio" name="q3" value="D"> D) Some da tela</label>
+            </div>
+        </div>
+
+        <div class="question" id="q4_div">
+            <p>4) O bloco “aponte para a direção 90” faz o sprite apontar para:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Cima</label>
+                <label><input type="radio" name="q4" value="B"> B) Baixo</label>
+                <label><input type="radio" name="q4" value="C"> C) Direita</label>
+                <label><input type="radio" name="q4" value="D"> D) Esquerda</label>
+            </div>
+        </div>
+
+        <div class="question" id="q5_div">
+            <p>5) O bloco “deslize 1 segundo para x: ___ y: ___” faz o sprite:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Teletransportar instantaneamente</label>
+                <label><input type="radio" name="q5" value="B"> B) Mover-se suavemente até a posição</label>
+                <label><input type="radio" name="q5" value="C"> C) Mudar de traje</label>
+                <label><input type="radio" name="q5" value="D"> D) Repetir uma ação</label>
+            </div>
+        </div>
+
+        <h2>Programação – Scratch (Módulo 4: Repetições)</h2>
+
+        <div class="question" id="q6_div">
+            <p>6) O bloco “repita até que ___” executa ações:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Um número fixo de vezes</label>
+                <label><input type="radio" name="q6" value="B"> B) Até que uma condição seja verdadeira</label>
+                <label><input type="radio" name="q6" value="C"> C) Apenas uma vez</label>
+                <label><input type="radio" name="q6" value="D"> D) Para sempre</label>
+            </div>
+        </div>
+
+        <div class="question" id="q7_div">
+            <p>7) Para criar um movimento contínuo, usamos principalmente:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) “repita 5 vezes”</label>
+                <label><input type="radio" name="q7" value="B"> B) “para sempre”</label>
+                <label><input type="radio" name="q7" value="C"> C) “espere 5 segundos”</label>
+                <label><input type="radio" name="q7" value="D"> D) “apague tudo”</label>
+            </div>
+        </div>
+
+        <div class="question" id="q8_div">
+            <p>8) Em uma animação de corrida, qual bloco ajuda a alternar as poses do personagem?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) “mude tamanho por 10”</label>
+                <label><input type="radio" name="q8" value="B"> B) “próximo traje”</label>
+                <label><input type="radio" name="q8" value="C"> C) “aponte para a direção 0”</label>
+                <label><input type="radio" name="q8" value="D"> D) “toque som pop”</label>
+            </div>
+        </div>
+
+        <div class="question" id="q9_div">
+            <p>9) O bloco “espere 0,2 segundos” dentro de um loop serve para:</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Acelerar a animação</label>
+                <label><input type="radio" name="q9" value="B"> B) Controlar o ritmo da animação</label>
+                <label><input type="radio" name="q9" value="C"> C) Parar o programa</label>
+                <label><input type="radio" name="q9" value="D"> D) Mudar o fundo</label>
+            </div>
+        </div>
+
+        <div class="question" id="q10_div">
+            <p>10) Para repetir um movimento de vai e volta, usamos:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Apenas “mude X por 10”</label>
+                <label><input type="radio" name="q10" value="B"> B) “para sempre” + mudança positiva e negativa</label>
+                <label><input type="radio" name="q10" value="C"> C) Apenas “mude Y por –10”</label>
+                <label><input type="radio" name="q10" value="D"> D) Apenas “próximo traje”</label>
+            </div>
+        </div>
+
+        <h2>Robótica – Arduino (Módulo 1)</h2>
+
+        <div class="question" id="q11_div">
+            <p>11) O Arduino UNO é alimentado por:</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) Apenas pilhas</label>
+                <label><input type="radio" name="q11" value="B"> B) USB ou fonte externa</label>
+                <label><input type="radio" name="q11" value="C"> C) Energia solar</label>
+                <label><input type="radio" name="q11" value="D"> D) Bluetooth</label>
+            </div>
+        </div>
+
+        <div class="question" id="q12_div">
+            <p>12) O pino 5V do Arduino serve para:</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) Enviar energia estável para componentes</label>
+                <label><input type="radio" name="q12" value="B"> B) Receber dados de sensores</label>
+                <label><input type="radio" name="q12" value="C"> C) Controlar motores</label>
+                <label><input type="radio" name="q12" value="D"> D) Reiniciar a placa</label>
+            </div>
+        </div>
+
+        <div class="question" id="q13_div">
+            <p>13) O que significa “entrada digital”?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) Recebe apenas valores 0 ou 1</label>
+                <label><input type="radio" name="q13" value="B"> B) Recebe valores de 0 a 1023</label>
+                <label><input type="radio" name="q13" value="C"> C) Controla motores</label>
+                <label><input type="radio" name="q13" value="D"> D) Gera sons</label>
+            </div>
+        </div>
+
+        <div class="question" id="q14_div">
+            <p>14) O que significa “saída digital”?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) Envia apenas HIGH ou LOW</label>
+                <label><input type="radio" name="q14" value="B"> B) Envia valores analógicos</label>
+                <label><input type="radio" name="q14" value="C"> C) Mede temperatura</label>
+                <label><input type="radio" name="q14" value="D"> D) Lê sensores de luz</label>
+            </div>
+        </div>
+
+        <div class="question" id="q15_div">
+            <p>15) O Arduino é muito usado porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) É caro e difícil</label>
+                <label><input type="radio" name="q15" value="B"> B) É simples, barato e fácil de programar</label>
+                <label><input type="radio" name="q15" value="C"> C) Só funciona com peças especiais</label>
+                <label><input type="radio" name="q15" value="D"> D) Não permite usar sensores</label>
+            </div>
+        </div>
+
+        <h2>Robótica – Dispositivos externos (Módulo 2)</h2>
+
+        <div class="question" id="q16_div">
+            <p>16) Para ligar um LED corretamente, precisamos conectar:</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) LED + resistor + pino digital + GND</label>
+                <label><input type="radio" name="q16" value="B"> B) LED direto no 5V</label>
+                <label><input type="radio" name="q16" value="C"> C) LED direto no GND</label>
+                <label><input type="radio" name="q16" value="D"> D) LED no USB</label>
+            </div>
+        </div>
+
+        <div class="question" id="q17_div">
+            <p>17) A perna maior do LED é chamada de:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) Cátodo</label>
+                <label><input type="radio" name="q17" value="B"> B) Ânodo</label>
+                <label><input type="radio" name="q17" value="C"> C) Terra</label>
+                <label><input type="radio" name="q17" value="D"> D) Neutro</label>
+            </div>
+        </div>
+
+        <div class="question" id="q18_div">
+            <p>18) O comando “digitalWrite(8, LOW)” faz:</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Ligar o LED no pino 8</label>
+                <label><input type="radio" name="q18" value="B"> B) Desligar o LED no pino 8</label>
+                <label><input type="radio" name="q18" value="C"> C) Aumentar o brilho</label>
+                <label><input type="radio" name="q18" value="D"> D) Mudar a cor</label>
+            </div>
+        </div>
+
+        <div class="question" id="q19_div">
+            <p>19) O resistor no circuito do LED serve para:</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) Aumentar a corrente</label>
+                <label><input type="radio" name="q19" value="B"> B) Reduzir a corrente</label>
+                <label><input type="radio" name="q19" value="C"> C) Aumentar a tensão</label>
+                <label><input type="radio" name="q19" value="D"> D) Armazenar energia</label>
+            </div>
+        </div>
+
+        <div class="question" id="q20_div">
+            <p>20) No projeto Pisca LED, a sequência correta é:</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) HIGH → delay → HIGH → delay</label>
+                <label><input type="radio" name="q20" value="B"> B) LOW → LOW → HIGH → HIGH</label>
+                <label><input type="radio" name="q20" value="C"> C) HIGH → delay → LOW → delay</label>
+                <label><input type="radio" name="q20" value="D"> D) delay → delay → delay → delay</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+const gabarito = {
+    q1: "B",
+    q2: "B",
+    q3: "B",
+    q4: "C",
+    q5: "B",
+    q6: "B",
+    q7: "B",
+    q8: "B",
+    q9: "B",
+    q10: "B",
+    q11: "B",
+    q12: "A",
+    q13: "A",
+    q14: "A",
+    q15: "B",
+    q16: "A",
+    q17: "B",
+    q18: "B",
+    q19: "B",
+    q20: "C"
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 20;
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            div.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        const resposta = selecionado.value;
+        if (resposta === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+        }
+    }
+
+    const nota = ((acertos / total) * 10).toFixed(1);
+    const porcentagem = ((acertos / total) * 100).toFixed(0);
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Nota: <strong>${nota}</strong> | Aproveitamento: <strong>${porcentagem}%</strong></p>
+    `;
+    resultDiv.style.display = "block";
+
+    const btn = document.querySelector("button[onclick='finalizar()']");
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach(i => i.disabled = true);
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = document.querySelector("header").innerText.trim();
+    const agora = new Date();
+    const dataHora = agora.toLocaleString("pt-BR");
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", dataHora);
+    formData.append("acertos", acertos);
+    formData.append("nota", nota);
+    formData.append("porcentagem", porcentagem);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
