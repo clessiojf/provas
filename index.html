@@ -71,7 +71,7 @@
             font-size: 1.2em;
         }
 
-        /* Cores de destaque (opcional) */
+        /* Cores de destaque */
         .card:nth-child(1) { border-top: 5px solid #ff4757; } /* Matemática */
         .card:nth-child(2) { border-top: 5px solid #2ed573; } /* Português */
         .card:nth-child(3) { border-top: 5px solid #eccc68; } /* História */
@@ -79,6 +79,7 @@
         .card:nth-child(5) { border-top: 5px solid #ffa502; } /* Ciências */
         .card:nth-child(6) { border-top: 5px solid #3742fa; } /* Inglês */
         .card:nth-child(7) { border-top: 5px solid #5352ed; } /* Espanhol */
+        .card:nth-child(8) { border-top: 5px solid #20bf6b; } /* Robótica */
 
     </style>
 </head>
@@ -124,17 +125,24 @@
             <div class="icon">🇪🇸</div>
             <div class="materia-nome">Espanhol</div>
         </a>
+
+        <a href="Robotica/biimestres.html" class="card">
+            <div class="icon">🤖</div>
+            <div class="materia-nome">Robótica</div>
+        </a>
     </div>
+
 <script>
     // Bloqueia o clique direito
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // Bloqueia atalhos de desenvolvedor (F12, Ctrl+Shift+I, etc)
+    // Bloqueia atalhos de desenvolvedor
     document.onkeydown = function(e) {
-        if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+        if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
             return false;
         }
     }
 </script>
+
 </body>
 </html>
