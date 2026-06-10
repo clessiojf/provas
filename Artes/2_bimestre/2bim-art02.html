@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte – Simulado Objetivo 2 – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #8e44ad; --secondary: #9b59b6; --success: #2e7d32; --danger: #c62828; --bg: #f3e9fb; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f7ecff; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32; background: #f1f8e9; }
+        .wrong { border-color: #c62828; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🎨 Arte | Simulado Objetivo 02 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Arte 02 – 20 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Módulo 4 – As artes do corpo</h2>
+
+        <div class="question" id="q1_div">
+            <p>1) A arte do corpo envolve principalmente:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Objetos inanimados</label>
+                <label><input type="radio" name="q1" value="B"> B) O corpo como meio de expressão</label>
+                <label><input type="radio" name="q1" value="C"> C) Apenas esculturas</label>
+                <label><input type="radio" name="q1" value="D"> D) Apenas pinturas</label>
+            </div>
+        </div>
+
+        <div class="question" id="q2_div">
+            <p>2) A pintura corporal é um exemplo de:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Arte do corpo</label>
+                <label><input type="radio" name="q2" value="B"> B) Arte digital</label>
+                <label><input type="radio" name="q2" value="C"> C) Arte arquitetônica</label>
+                <label><input type="radio" name="q2" value="D"> D) Arte sonora</label>
+            </div>
+        </div>
+
+        <div class="question" id="q3_div">
+            <p>3) O corpo humano pode expressar significados por meio de:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Gestos e movimentos</label>
+                <label><input type="radio" name="q3" value="B"> B) Apenas palavras</label>
+                <label><input type="radio" name="q3" value="C"> C) Apenas objetos</label>
+                <label><input type="radio" name="q3" value="D"> D) Apenas sons</label>
+            </div>
+        </div>
+
+        <div class="question" id="q4_div">
+            <p>4) A arte do corpo está presente em manifestações como:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Dança, teatro e performance</label>
+                <label><input type="radio" name="q4" value="B"> B) Apenas cinema</label>
+                <label><input type="radio" name="q4" value="C"> C) Apenas escultura</label>
+                <label><input type="radio" name="q4" value="D"> D) Apenas pintura</label>
+            </div>
+        </div>
+
+        <h2>Módulo 5 – Movimento</h2>
+
+        <div class="question" id="q5_div">
+            <p>5) Movimento estático ocorre quando:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) O corpo está parado</label>
+                <label><input type="radio" name="q5" value="B"> B) O corpo está correndo</label>
+                <label><input type="radio" name="q5" value="C"> C) O corpo está saltando</label>
+                <label><input type="radio" name="q5" value="D"> D) O corpo está girando</label>
+            </div>
+        </div>
+
+        <div class="question" id="q6_div">
+            <p>6) Movimento dinâmico envolve:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Deslocamento e energia</label>
+                <label><input type="radio" name="q6" value="B"> B) Imobilidade</label>
+                <label><input type="radio" name="q6" value="C"> C) Apenas equilíbrio</label>
+                <label><input type="radio" name="q6" value="D"> D) Apenas respiração</label>
+            </div>
+        </div>
+
+        <div class="question" id="q7_div">
+            <p>7) Intensidade do movimento está ligada a:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Força aplicada</label>
+                <label><input type="radio" name="q7" value="B"> B) Apenas velocidade</label>
+                <label><input type="radio" name="q7" value="C"> C) Apenas equilíbrio</label>
+                <label><input type="radio" name="q7" value="D"> D) Apenas respiração</label>
+            </div>
+        </div>
+
+        <div class="question" id="q8_div">
+            <p>8) Níveis do movimento se referem a:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Altura dos movimentos</label>
+                <label><input type="radio" name="q8" value="B"> B) Apenas força</label>
+                <label><input type="radio" name="q8" value="C"> C) Apenas ritmo</label>
+                <label><input type="radio" name="q8" value="D"> D) Apenas respiração</label>
+            </div>
+        </div>
+
+        <div class="question" id="q9_div">
+            <p>9) Fluxo contínuo é caracterizado por:</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Movimentos suaves e conectados</label>
+                <label><input type="radio" name="q9" value="B"> B) Movimentos interrompidos</label>
+                <label><input type="radio" name="q9" value="C"> C) Ausência de movimento</label>
+                <label><input type="radio" name="q9" value="D"> D) Apenas força</label>
+            </div>
+        </div>
+
+        <div class="question" id="q10_div">
+            <p>10) Fluxo interrompido é quando:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Há pausas e quebras no movimento</label>
+                <label><input type="radio" name="q10" value="B"> B) O movimento é contínuo</label>
+                <label><input type="radio" name="q10" value="C"> C) O corpo está parado</label>
+                <label><input type="radio" name="q10" value="D"> D) O movimento é sempre rápido</label>
+            </div>
+        </div>
+
+        <h2>Módulo 5 – Proporção, Articulação, Ritmo e Tempo</h2>
+
+        <div class="question" id="q11_div">
+            <p>11) Proporção corporal influencia:</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) A forma como o corpo se movimenta</label>
+                <label><input type="radio" name="q11" value="B"> B) Apenas a aparência</label>
+                <label><input type="radio" name="q11" value="C"> C) Apenas a respiração</label>
+                <label><input type="radio" name="q11" value="D"> D) Apenas a força</label>
+            </div>
+        </div>
+
+        <div class="question" id="q12_div">
+            <p>12) Articulação permite:</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) Flexibilidade e variedade de movimentos</label>
+                <label><input type="radio" name="q12" value="B"> B) Apenas rigidez</label>
+                <label><input type="radio" name="q12" value="C"> C) Apenas equilíbrio</label>
+                <label><input type="radio" name="q12" value="D"> D) Apenas força</label>
+            </div>
+        </div>
+
+        <div class="question" id="q13_div">
+            <p>13) Ritmo pode ser percebido por:</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) Repetição e organização dos movimentos</label>
+                <label><input type="radio" name="q13" value="B"> B) Apenas silêncio</label>
+                <label><input type="radio" name="q13" value="C"> C) Apenas força</label>
+                <label><input type="radio" name="q13" value="D"> D) Apenas respiração</label>
+            </div>
+        </div>
+
+        <div class="question" id="q14_div">
+            <p>14) Tempo lento indica:</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) Movimentos suaves e demorados</label>
+                <label><input type="radio" name="q14" value="B"> B) Movimentos acelerados</label>
+                <label><input type="radio" name="q14" value="C"> C) Ausência de movimento</label>
+                <label><input type="radio" name="q14" value="D"> D) Apenas equilíbrio</label>
+            </div>
+        </div>
+
+        <div class="question" id="q15_div">
+            <p>15) Tempo rápido indica:</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) Movimentos acelerados</label>
+                <label><input type="radio" name="q15" value="B"> B) Movimentos lentos</label>
+                <label><input type="radio" name="q15" value="C"> C) Ausência de movimento</label>
+                <label><input type="radio" name="q15" value="D"> D) Apenas equilíbrio</label>
+            </div>
+        </div>
+
+        <h2>Interpretação e Expressão</h2>
+
+        <div class="question" id="q16_div">
+            <p>16) A dança é considerada uma linguagem porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) Comunica ideias e emoções</label>
+                <label><input type="radio" name="q16" value="B"> B) Usa apenas palavras</label>
+                <label><input type="radio" name="q16" value="C"> C) Não possui significado</label>
+                <label><input type="radio" name="q16" value="D"> D) É sempre improvisada</label>
+            </div>
+        </div>
+
+        <div class="question" id="q17_div">
+            <p>17) Expressão corporal envolve:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) Gestos, posturas e movimentos</label>
+                <label><input type="radio" name="q17" value="B"> B) Apenas palavras</label>
+                <label><input type="radio" name="q17" value="C"> C) Apenas objetos</label>
+                <label><input type="radio" name="q17" value="D"> D) Apenas sons</label>
+            </div>
+        </div>
+
+        <div class="question" id="q18_div">
+            <p>18) O corpo pode transmitir emoções por meio de:</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Expressões faciais e movimentos</label>
+                <label><input type="radio" name="q18" value="B"> B) Apenas palavras</label>
+                <label><input type="radio" name="q18" value="C"> C) Apenas objetos</label>
+                <label><input type="radio" name="q18" value="D"> D) Apenas silêncio</label>
+            </div>
+        </div>
+
+        <div class="question" id="q19_div">
+            <p>19) A dança utiliza o corpo como:</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) Ferramenta de comunicação</label>
+                <label><input type="radio" name="q19" value="B"> B) Objeto estático</label>
+                <label><input type="radio" name="q19" value="C"> C) Apenas instrumento esportivo</label>
+                <label><input type="radio" name="q19" value="D"> D) Apenas forma de descanso</label>
+            </div>
+        </div>
+
+        <div class="question" id="q20_div">
+            <p>20) A expressão corporal é importante porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) Ajuda a comunicar sentimentos e intenções</label>
+                <label><input type="radio" name="q20" value="B"> B) Serve apenas para exercícios físicos</label>
+                <label><input type="radio" name="q20" value="C"> C) Não tem relação com arte</label>
+                <label><input type="radio" name="q20" value="D"> D) É usada apenas em esportes</label>
+            </div>
+        </div>
+
+        <button type="button" onclick
