@@ -33,10 +33,10 @@
 
 <body>
 
-<header><strong>🎨 Arte | Simulado Objetivo 02 – 7º Ano (Objetivo)</strong></header>
+<header><strong>🎨 Arte | Simulado Objetivo 2 – 7º Ano (Objetivo)</strong></header>
 
 <div class="container">
-    <h1>Simulado de Arte 02 – 20 Questões</h1>
+    <h1>Simulado de Arte – 20 Questões (Versão 2)</h1>
     <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
 
     <div id="result"></div>
@@ -251,4 +251,87 @@
             </div>
         </div>
 
-        <button type="button" onclick
+                <button type="button" onclick="corrigir()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+const gabarito = {
+    q1: "B",
+    q2: "A",
+    q3: "A",
+    q4: "A",
+    q5: "A",
+    q6: "A",
+    q7: "A",
+    q8: "A",
+    q9: "A",
+    q10: "A",
+    q11: "A",
+    q12: "A",
+    q13: "A",
+    q14: "A",
+    q15: "A",
+    q16: "A",
+    q17: "A",
+    q18: "A",
+    q19: "A",
+    q20: "A"
+};
+
+function corrigir() {
+    let acertos = 0;
+    let total = 20;
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const div = document.getElementById(nome + "_div");
+        const marcada = document.querySelector(`input[name="${nome}"]:checked`);
+
+        div.classList.remove("correct", "wrong");
+
+        if (!marcada) {
+            alert("Você não respondeu a questão " + i);
+            return;
+        }
+
+        if (marcada.value === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+        }
+    }
+
+    const nota = (acertos / total) * 10;
+    const resultDiv = document.getElementById("result");
+    resultDiv.style.display = "block";
+    resultDiv.innerHTML = `Você acertou ${acertos} de ${total} questões. <br>Nota: ${nota.toFixed(1)} / 10`;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+    formData.append("simulado", "Arte – Objetivo 2");
+    formData.append("acertos", acertos);
+    formData.append("nota", nota.toFixed(1));
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+
+    fetch(form.action, { method: "POST", body: formData });
+
+    document.querySelector("button[onclick='corrigir()']").disabled = true;
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
