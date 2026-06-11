@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira | Simulado 03 – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32; background: #f1f8e9; }
+        .wrong { border-color: #c62828; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📘 Educação Financeira | Simulado 03 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado 3 – Educação Financeira</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz">
+
+        <h2>Unidade 1 – Vida Financeira Saudável</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) O que significa ter controle financeiro?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Saber exatamente quanto se ganha e quanto se gasta.</label>
+                <label><input type="radio" name="q1" value="B"> B) Gastar sem limites.</label>
+                <label><input type="radio" name="q1" value="C"> C) Comprar tudo o que deseja.</label>
+                <label><input type="radio" name="q1" value="D"> D) Nunca anotar nada.</label>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) O que é uma despesa não essencial?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Gastos com lazer ou itens supérfluos.</label>
+                <label><input type="radio" name="q2" value="B"> B) Gastos com alimentação básica.</label>
+                <label><input type="radio" name="q2" value="C"> C) Gastos com moradia.</label>
+                <label><input type="radio" name="q2" value="D"> D) Gastos com saúde.</label>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) O que é um objetivo financeiro?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Algo que você deseja alcançar com planejamento.</label>
+                <label><input type="radio" name="q3" value="B"> B) Algo que deve ser comprado imediatamente.</label>
+                <label><input type="radio" name="q3" value="C"> C) Uma dívida obrigatória.</label>
+                <label><input type="radio" name="q3" value="D"> D) Algo que não precisa ser pensado.</label>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Qual atitude ajuda a evitar dívidas?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Planejar gastos antes de comprar.</label>
+                <label><input type="radio" name="q4" value="B"> B) Comprar tudo parcelado.</label>
+                <label><input type="radio" name="q4" value="C"> C) Usar crédito sem controle.</label>
+                <label><input type="radio" name="q4" value="D"> D) Não olhar o extrato bancário.</label>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) O que é uma despesa variável?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Um gasto que muda de valor, como conta de luz.</label>
+                <label><input type="radio" name="q5" value="B"> B) Um gasto que nunca muda.</label>
+                <label><input type="radio" name="q5" value="C"> C) Um gasto que não precisa ser pago.</label>
+                <label><input type="radio" name="q5" value="D"> D) Um gasto fixo mensal.</label>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) O que é consumo consciente?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Comprar avaliando necessidade, impacto e custo.</label>
+                <label><input type="radio" name="q6" value="B"> B) Comprar tudo o que vê pela frente.</label>
+                <label><input type="radio" name="q6" value="C"> C) Comprar apenas produtos caros.</label>
+                <label><input type="radio" name="q6" value="D"> D) Comprar sem pensar.</label>
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) O que é uma compra por impulso?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Comprar sem planejamento ou necessidade.</label>
+                <label><input type="radio" name="q7" value="B"> B) Comprar após pesquisar muito.</label>
+                <label><input type="radio" name="q7" value="C"> C) Comprar apenas itens essenciais.</label>
+                <label><input type="radio" name="q7" value="D"> D) Comprar com desconto.</label>
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) O que é renda?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Todo dinheiro que entra para uma pessoa ou família.</label>
+                <label><input type="radio" name="q8" value="B"> B) Apenas o dinheiro gasto.</label>
+                <label><input type="radio" name="q8" value="C"> C) Apenas o dinheiro das crianças.</label>
+                <label><input type="radio" name="q8" value="D"> D) Apenas o dinheiro dos pais.</label>
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) O que é uma despesa essencial?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Gastos com alimentação, saúde e moradia.</label>
+                <label><input type="radio" name="q9" value="B"> B) Gastos com lazer.</label>
+                <label><input type="radio" name="q9" value="C"> C) Gastos supérfluos.</label>
+                <label><input type="radio" name="q9" value="D"> D) Gastos invisíveis.</label>
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) O que é desperdício financeiro?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Gastar com coisas que não são usadas ou necessárias.</label>
+                <label><input type="radio" name="q10" value="B"> B) Guardar dinheiro.</label>
+                <label><input type="radio" name="q10" value="C"> C) Planejar compras.</label>
+                <label><input type="radio" name="q10" value="D"> D) Comprar apenas o essencial.</label>
+            </div>
+        </div>
+        <h2>Unidade 2 – Economia Doméstica</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) O que é economia doméstica?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) Organização dos gastos e recursos dentro de uma casa.</label>
+                <label><input type="radio" name="q11" value="B"> B) Economia usada apenas por empresas.</label>
+                <label><input type="radio" name="q11" value="C"> C) Controle de gastos do governo.</label>
+                <label><input type="radio" name="q11" value="D"> D) Apenas controle de compras no mercado.</label>
+            </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Qual é um exemplo de despesa fixa?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) Conta de luz.</label>
+                <label><input type="radio" name="q12" value="B"> B) Aluguel.</label>
+                <label><input type="radio" name="q12" value="C"> C) Compra de roupas.</label>
+                <label><input type="radio" name="q12" value="D"> D) Gastos com lazer.</label>
+            </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) O que significa comparar preços antes de comprar?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) Escolher o produto mais caro.</label>
+                <label><input type="radio" name="q13" value="B"> B) Verificar diferentes opções para escolher a melhor compra.</label>
+                <label><input type="radio" name="q13" value="C"> C) Comprar sem pensar.</label>
+                <label><input type="radio" name="q13" value="D"> D) Comprar apenas pela marca.</label>
+            </div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) O que é desperdício doméstico?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) Jogar fora alimentos, água ou energia sem necessidade.</label>
+                <label><input type="radio" name="q14" value="B"> B) Comprar apenas o necessário.</label>
+                <label><input type="radio" name="q14" value="C"> C) Guardar dinheiro.</label>
+                <label><input type="radio" name="q14" value="D"> D) Planejar compras.</label>
+            </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question" id="q15_div">
+            <p>15) O que é consumo sustentável?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) Comprar sem pensar no impacto ambiental.</label>
+                <label><input type="radio" name="q15" value="B"> B) Comprar produtos descartáveis.</label>
+                <label><input type="radio" name="q15" value="C"> C) Consumir pensando no meio ambiente e no futuro.</label>
+                <label><input type="radio" name="q15" value="D"> D) Comprar apenas produtos caros.</label>
+            </div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="question" id="q16_div">
+            <p>16) Qual atitude ajuda a economizar água?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) Tomar banhos longos.</label>
+                <label><input type="radio" name="q16" value="B"> B) Deixar a torneira aberta ao escovar os dentes.</label>
+                <label><input type="radio" name="q16" value="C"> C) Reutilizar água sempre que possível.</label>
+                <label><input type="radio" name="q16" value="D"> D) Lavar calçadas com mangueira.</label>
+            </div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="question" id="q17_div">
+            <p>17) O que é planejamento doméstico?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) Comprar tudo sem lista.</label>
+                <label><input type="radio" name="q17" value="B"> B) Gastar sem controle.</label>
+                <label><input type="radio" name="q17" value="C"> C) Organizar gastos e compras da casa com antecedência.</label>
+                <label><input type="radio" name="q17" value="D"> D) Comprar apenas produtos caros.</label>
+            </div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="question" id="q18_div">
+            <p>18) O que é receita familiar?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Todo dinheiro que entra na família.</label>
+                <label><input type="radio" name="q18" value="B"> B) Todo dinheiro que sai.</label>
+                <label><input type="radio" name="q18" value="C"> C) Apenas o dinheiro das crianças.</label>
+                <label><input type="radio" name="q18" value="D"> D) Apenas o dinheiro dos pais.</label>
+            </div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="question" id="q19_div">
+            <p>19) O que é uma despesa essencial?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) Gastos com lazer.</label>
+                <label><input type="radio" name="q19" value="B"> B) Gastos supérfluos.</label>
+                <label><input type="radio" name="q19" value="C"> C) Gastos necessários, como alimentação.</label>
+                <label><input type="radio" name="q19" value="D"> D) Gastos invisíveis.</label>
+            </div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="question" id="q20_div">
+            <p>20) O que significa evitar desperdício doméstico?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) Usar mais água e luz.</label>
+                <label><input type="radio" name="q20" value="B"> B) Comprar mais do que precisa.</label>
+                <label><input type="radio" name="q20" value="C"> C) Aproveitar bem os recursos e evitar excessos.</label>
+                <label><input type="radio" name="q20" value="D"> D) Jogar comida fora.</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+/* GABARITO 100% EQUILIBRADO (5 A, 5 B, 5 C, 5 D) */
+const gabarito = {
+    q1: "A",
+    q2: "B",
+    q3: "C",
+    q4: "B",
+    q5: "C",
+    q6: "A",
+    q7: "D",
+    q8: "A",
+    q9: "C",
+    q10: "D",
+
+    q11: "A",
+    q12: "B",
+    q13: "B",
+    q14: "D",
+    q15: "C",
+    q16: "D",
+    q17: "D",
+    q18: "A",
+    q19: "B",
+    q20: "C"
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 20;
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            div.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        const resposta = selecionado.value;
+        if (resposta === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+        }
+    }
+
+    const nota = ((acertos / total) * 10).toFixed(1);
+    const porcentagem = ((acertos / total) * 100).toFixed(0);
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Nota: <strong>${nota}</strong> | Aproveitamento: <strong>${porcentagem}%</strong></p>
+    `;
+    resultDiv.style.display = "block";
+
+    const btn = document.querySelector("button[onclick='finalizar()']");
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach(i => i.disabled = true);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* BLOQUEIOS DE SEGURANÇA */
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
