@@ -21,6 +21,16 @@
 
         .options label { display: block; margin-bottom: 5px; cursor: pointer; }
 
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+        }
+
         #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
 
         button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
@@ -41,7 +51,7 @@
 
     <div id="result"></div>
 
-    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+    <form id="quiz">
 
         <h2>Módulos 5 e 6 – Números racionais e operações</h2>
 
@@ -54,6 +64,7 @@
                 <label><input type="radio" name="q1" value="C"> C) <sup>3</sup>/<sub>4</sub></label>
                 <label><input type="radio" name="q1" value="D"> D) <sup>11</sup>/<sub>8</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
         </div>
 
         <!-- Q2 -->
@@ -65,6 +76,7 @@
                 <label><input type="radio" name="q2" value="C"> C) 7,7</label>
                 <label><input type="radio" name="q2" value="D"> D) 0,7</label>
             </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
         </div>
 
         <!-- Q3 -->
@@ -76,6 +88,7 @@
                 <label><input type="radio" name="q3" value="C"> C) <sup>3</sup>/<sub>6</sub></label>
                 <label><input type="radio" name="q3" value="D"> D) <sup>5</sup>/<sub>12</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
         </div>
 
         <!-- Q4 -->
@@ -87,6 +100,7 @@
                 <label><input type="radio" name="q4" value="C"> C) 3</label>
                 <label><input type="radio" name="q4" value="D"> D) –3</label>
             </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
         </div>
 
         <!-- Q5 -->
@@ -98,6 +112,7 @@
                 <label><input type="radio" name="q5" value="C"> C) <sup>5</sup>/<sub>3</sub></label>
                 <label><input type="radio" name="q5" value="D"> D) <sup>1</sup>/<sub>6</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
         </div>
 
         <!-- Q6 -->
@@ -109,6 +124,7 @@
                 <label><input type="radio" name="q6" value="C"> C) –<sup>24</sup>/<sub>36</sub></label>
                 <label><input type="radio" name="q6" value="D"> D) –<sup>1</sup>/<sub>3</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
         </div>
 
         <!-- Q7 -->
@@ -120,6 +136,7 @@
                 <label><input type="radio" name="q7" value="C"> C) <sup>4</sup>/<sub>5</sub></label>
                 <label><input type="radio" name="q7" value="D"> D) <sup>1</sup>/<sub>5</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
         </div>
 
         <!-- Q8 -->
@@ -131,6 +148,7 @@
                 <label><input type="radio" name="q8" value="C"> C) 9</label>
                 <label><input type="radio" name="q8" value="D"> D) 18</label>
             </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
         </div>
 
         <!-- Q9 -->
@@ -142,6 +160,7 @@
                 <label><input type="radio" name="q9" value="C"> C) 4</label>
                 <label><input type="radio" name="q9" value="D"> D) 7</label>
             </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
         </div>
 
         <!-- Q10 -->
@@ -153,7 +172,9 @@
                 <label><input type="radio" name="q10" value="C"> C) <sup>6</sup>/<sub>4</sub></label>
                 <label><input type="radio" name="q10" value="D"> D) <sup>9</sup>/<sub>6</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
         </div>
+
         <!-- Q11 -->
         <div class="question" id="q11_div">
             <p>11) –8 ÷ (–2)</p>
@@ -163,6 +184,7 @@
                 <label><input type="radio" name="q11" value="C"> C) –6</label>
                 <label><input type="radio" name="q11" value="D"> D) 6</label>
             </div>
+            <div class="correct-answer-box" id="ans_q11"></div>
         </div>
 
         <!-- Q12 -->
@@ -174,6 +196,7 @@
                 <label><input type="radio" name="q12" value="C"> C) <sup>6</sup>/<sub>8</sub></label>
                 <label><input type="radio" name="q12" value="D"> D) <sup>9</sup>/<sub>12</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q12"></div>
         </div>
 
         <!-- Q13 -->
@@ -185,8 +208,8 @@
                 <label><input type="radio" name="q13" value="C"> C) –11,3</label>
                 <label><input type="radio" name="q13" value="D"> D) 11,3</label>
             </div>
+            <div class="correct-answer-box" id="ans_q13"></div>
         </div>
-
         <!-- Q14 -->
         <div class="question" id="q14_div">
             <p>14) <sup>11</sup>/<sub>6</sub> – <sup>5</sup>/<sub>12</sub></p>
@@ -196,6 +219,7 @@
                 <label><input type="radio" name="q14" value="C"> C) <sup>3</sup>/<sub>4</sub></label>
                 <label><input type="radio" name="q14" value="D"> D) <sup>1</sup>/<sub>2</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q14"></div>
         </div>
 
         <!-- Q15 -->
@@ -207,6 +231,7 @@
                 <label><input type="radio" name="q15" value="C"> C) <sup>9</sup>/<sub>16</sub></label>
                 <label><input type="radio" name="q15" value="D"> D) <sup>12</sup>/<sub>16</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q15"></div>
         </div>
 
         <!-- Q16 -->
@@ -218,6 +243,7 @@
                 <label><input type="radio" name="q16" value="C"> C) –<sup>1</sup>/<sub>3</sub></label>
                 <label><input type="radio" name="q16" value="D"> D) <sup>1</sup>/<sub>3</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q16"></div>
         </div>
 
         <!-- Q17 -->
@@ -229,6 +255,7 @@
                 <label><input type="radio" name="q17" value="C"> C) 8</label>
                 <label><input type="radio" name="q17" value="D"> D) 0,8</label>
             </div>
+            <div class="correct-answer-box" id="ans_q17"></div>
         </div>
 
         <!-- Q18 -->
@@ -240,6 +267,7 @@
                 <label><input type="radio" name="q18" value="C"> C) –8</label>
                 <label><input type="radio" name="q18" value="D"> D) 8</label>
             </div>
+            <div class="correct-answer-box" id="ans_q18"></div>
         </div>
 
         <!-- Q19 -->
@@ -251,6 +279,7 @@
                 <label><input type="radio" name="q19" value="C"> C) –8</label>
                 <label><input type="radio" name="q19" value="D"> D) 8</label>
             </div>
+            <div class="correct-answer-box" id="ans_q19"></div>
         </div>
 
         <!-- Q20 -->
@@ -262,6 +291,7 @@
                 <label><input type="radio" name="q20" value="C"> C) –<sup>1</sup>/<sub>27</sub></label>
                 <label><input type="radio" name="q20" value="D"> D) <sup>1</sup>/<sub>27</sub></label>
             </div>
+            <div class="correct-answer-box" id="ans_q20"></div>
         </div>
 
         <button type="button" onclick="finalizar()">Finalizar Prova</button>
@@ -269,38 +299,32 @@
 </div>
 
 <script>
-/* GABARITO EQUILIBRADO (5 A, 5 B, 5 C, 5 D) */
+/* GABARITO CORRIGIDO */
 const gabarito = {
-    q1: "A",
-    q2: "B",
-    q3: "A",
-    q4: "C",
-    q5: "C",
-    q6: "B",
-    q7: "B",
-    q8: "C",
-    q9: "A",
-    q10: "B",
-    q11: "B",
-    q12: "A",
-    q13: "A",
-    q14: "B",
-    q15: "C",
-    q16: "A",
-    q17: "D",
-    q18: "B",
-    q19: "A",
-    q20: "C"
+    q1: "A", q2: "B", q3: "B", q4: "C", q5: "A",
+    q6: "B", q7: "B", q8: "C", q9: "A", q10: "B",
+    q11: "B", q12: "A", q13: "A", q14: "B", q15: "C",
+    q16: "C", q17: "D", q18: "B", q19: "A", q20: "C"
+};
+
+/* TEXTOS DAS RESPOSTAS CORRETAS */
+const respostasTextuais = {
+    q1: "9/8", q2: "-7,7", q3: "2/6 (ou 1/3)", q4: "3", q5: "3/2",
+    q6: "-2/3", q7: "4/25", q8: "9", q9: "4/7", q10: "3/2",
+    q11: "4", q12: "3/4", q13: "-4,3", q14: "17/12", q15: "9/16",
+    q16: "-1/3", q17: "0,8", q18: "15", q19: "-16", q20: "-1/27"
 };
 
 function finalizar() {
     let acertos = 0;
     const total = 20;
+    let errosLista = [];
 
     for (let i = 1; i <= total; i++) {
         const nome = "q" + i;
         const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
         const div = document.getElementById(nome + "_div");
+        const box = document.getElementById("ans_" + nome);
 
         if (!selecionado) {
             alert("Responda a questão " + i);
@@ -309,45 +333,50 @@ function finalizar() {
         }
 
         const resposta = selecionado.value;
+
         if (resposta === gabarito[nome]) {
             acertos++;
             div.classList.add("correct");
         } else {
             div.classList.add("wrong");
+
+            errosLista.push(
+                `Q${i} – Marcou: ${resposta} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`
+            );
         }
+
+        /* EXIBE A RESPOSTA CORRETA */
+        box.style.display = "block";
+        box.innerHTML = `<strong>Resposta correta:</strong> ${gabarito[nome]}) ${respostasTextuais[nome]}`;
     }
 
-    const nota = ((acertos / total) * 10).toFixed(1);
-    const porcentagem = ((acertos / total) * 100).toFixed(0);
+    const porcentagem = ((acertos / total) * 100).toFixed(0) + "%";
 
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = `
         <h2>Prova finalizada!</h2>
         <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
-        <p>Nota: <strong>${nota}</strong> | Aproveitamento: <strong>${porcentagem}%</strong></p>
+        <p>Aproveitamento: <strong>${porcentagem}</strong></p>
     `;
     resultDiv.style.display = "block";
 
-    const btn = document.querySelector("button[onclick='finalizar()']");
-    btn.disabled = true;
-    btn.style.opacity = "0.5";
-    btn.style.cursor = "not-allowed";
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
 
     const inputs = document.querySelectorAll("input[type='radio']");
     inputs.forEach(i => i.disabled = true);
 
+    /* ENVIO PARA GOOGLE APPS SCRIPT */
     const form = document.getElementById("quiz");
-    const formData = new FormData(form);
+    const formData = new FormData();
 
     const tituloSimulado = document.querySelector("header").innerText.trim();
-    const agora = new Date();
-    const dataHora = agora.toLocaleString("pt-BR");
+    const agora = new Date().toLocaleString("pt-BR");
 
     formData.append("simulado", tituloSimulado);
-    formData.append("data_hora", dataHora);
+    formData.append("data_hora", agora);
     formData.append("acertos", acertos);
-    formData.append("nota", nota);
     formData.append("porcentagem", porcentagem);
+    formData.append("erros", errosLista.join("\n"));
 
     fetch(form.action, {
         method: "POST",
@@ -359,9 +388,9 @@ function finalizar() {
 }
 </script>
 
+
 <script>
 document.addEventListener("contextmenu", e => e.preventDefault());
-
 document.onkeydown = function(e) {
     if (e.keyCode == 123) return false;
     if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
@@ -370,7 +399,6 @@ document.onkeydown = function(e) {
     if (e.ctrlKey && e.keyCode == 83) return false;
     if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
 };
-
 document.addEventListener("copy", e => e.preventDefault());
 document.addEventListener("dragstart", e => e.preventDefault());
 </script>
