@@ -321,43 +321,74 @@ function finalizar() {
 
     for (let i = 1; i <= total; i++) {
         const nome = "q" + i;
-        const sel = document.querySelector(`input[name="${nome}"]:checked`);
-        const div = document.getElementById(nome + "_div");
-        const box = document.getElementById("ans_" + nome);
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
 
-        if (!sel) {
+        if (!selecionado) {
             alert("Responda a questão " + i);
-            div.scrollIntoView({behavior:"smooth", block:"center"});
             return;
         }
 
-        if (sel.value === gabarito[nome]) {
-            acertos++;
-            div.classList.add("correct");
-        } else {
-            div.classList.add("wrong");
-            erros.push(`Q${i} – Marcou: ${sel.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
-        }
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
 
-        box.style.display = "block";
-        box.innerHTML = `<strong>Resposta correta:</strong> ${gabarito[nome]}) ${respostasTextuais[nome]}`;
+            // Remove estilos anteriores
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        // CORRETA
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        // ERRADA
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
     }
 
-    const perc = ((acertos/total)*100).toFixed(0) + "%";
+    const perc = ((acertos / total) * 100).toFixed(0) + "%";
+
     const result = document.getElementById("result");
     result.innerHTML = `
         <h2>Prova finalizada!</h2>
-        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong>.</p>
         <p>Aproveitamento: <strong>${perc}</strong></p>
-        ${erros.length ? `<p style="margin-top:15px; font-size:0.9em;">Erros:<br>${erros.join("<br>")}</p>` : ""}
     `;
     result.style.display = "block";
 
-    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    // Desabilita tudo
     document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
 
-    window.scrollTo({top:0, behavior:"smooth"});
+    // ENVIO PARA GOOGLE APPS SCRIPT
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = document.querySelector("header").innerText.trim();
+    const agora = new Date().toLocaleString("pt-BR");
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", erros.join("\n"));
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 /* BLOQUEIOS DE SEGURANÇA */
 document.addEventListener("contextmenu", e => e.preventDefault());
 
