@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História – Simulado Dissertativo 2 – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #6a1b9a; --secondary: #8e24aa; --bg: #f3e5f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #ede7f6; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        textarea { width: 100%; min-height: 140px; padding: 10px; border-radius: 8px; border: 1px solid #cfd8dc; resize: vertical; font-family: inherit; font-size: 0.95em; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: left; background: #ffffff; border: 1px solid #a5d6a7; color: #263238; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📘 História | Simulado Dissertativo 2 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado Dissertativo 2 – 6 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda em português, com frases completas.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Grandes Navegações – Questões Dissertativas</h2>
+
+        <div class="question">
+            <p>1) Explique como a rivalidade entre Portugal e Espanha influenciou o processo das Grandes Navegações e a disputa por novas terras.</p>
+            <textarea name="q1"></textarea>
+        </div>
+
+        <div class="question">
+            <p>2) Descreva como o avanço das técnicas de cartografia contribuiu para o sucesso das expedições marítimas europeias.</p>
+            <textarea name="q2"></textarea>
+        </div>
+
+        <div class="question">
+            <p>3) Analise como o comércio de escravizados africanos se relacionou com o desenvolvimento econômico das colônias americanas.</p>
+            <textarea name="q3"></textarea>
+        </div>
+
+        <div class="question">
+            <p>4) Explique por que as Grandes Navegações são consideradas um marco no processo de globalização.</p>
+            <textarea name="q4"></textarea>
+        </div>
+
+        <div class="question">
+            <p>5) Descreva como a chegada dos europeus impactou o meio ambiente nas regiões colonizadas, citando pelo menos dois exemplos.</p>
+            <textarea name="q5"></textarea>
+        </div>
+
+        <div class="question">
+            <p>6) Compare os objetivos econômicos dos portugueses e dos espanhóis durante as Grandes Navegações.</p>
+            <textarea name="q6"></textarea>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+// Gabarito modelo (respostas sugeridas)
+const gabarito = {
+    1: "Portugal e Espanha competiam pela expansão marítima e pela posse de novas terras, o que levou a acordos como o Tratado de Tordesilhas.",
+    2: "A cartografia mais precisa permitiu planejar rotas, registrar descobertas e reduzir riscos durante as viagens.",
+    3: "O trabalho escravizado sustentou plantações e minas, gerando riqueza para as colônias e para a Europa.",
+    4: "As navegações conectaram continentes, promoveram trocas culturais e iniciaram redes econômicas globais.",
+    5: "Houve desmatamento, introdução de espécies invasoras e exploração intensiva de recursos naturais.",
+    6: "Portugal buscava rotas comerciais para o Oriente; a Espanha focava na conquista territorial e exploração de metais preciosos."
+};
+
+function finalizar() {
+    for (let i = 1; i <= 6; i++) {
+        const campo = document.querySelector(`textarea[name="q${i}"]`);
+        if (!campo.value.trim()) {
+            alert("Responda a questão " + i);
+            campo.focus();
+            return;
+        }
+    }
+
+    let html = "<h2>Prova finalizada!</h2>";
+    html += "<p><strong>Suas respostas:</strong></p>";
+
+    for (let i = 1; i <= 6; i++) {
+        const resposta = document.querySelector(`textarea[name="q${i}"]`).value.trim();
+        html += `
+            <div style='margin-bottom:20px; padding:15px; background:#ede7f6; border-left:5px solid #6a1b9a; border-radius:8px;'>
+                <strong>Questão ${i} – Sua resposta:</strong><br>
+                ${resposta.replace(/\n/g, "<br>")}
+            </div>
+        `;
+    }
+
+    html += "<h2>Gabarito – Respostas modelo</h2>";
+
+    for (let i = 1; i <= 6; i++) {
+        html += `
+            <div style='margin-bottom:20px; padding:15px; background:#f1f8e9; border-left:5px solid #2e7d32; border-radius:8px;'>
+                <strong>Questão ${i} – Resposta sugerida:</strong><br>
+                ${gabarito[i]}
+            </div>
+        `;
+    }
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    document.querySelectorAll("textarea").forEach(t => t.disabled = true);
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    formData.append("simulado", "História – Dissertativo 2");
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+
+    fetch(form.action, { method: "POST", body: formData });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>

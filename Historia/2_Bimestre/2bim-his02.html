@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>História | Grandes Navegações | Simulado 02 | 7º Ano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root { --primary:#6a1b9a; --secondary:#8e24aa; --success:#2e7d32; --danger:#c62828; --bg:#f3e5f5; }
+        body { font-family:'Segoe UI',sans-serif; background:var(--bg); margin:0; padding-top:80px; color:#263238; }
+        header { position:fixed; top:0; width:100%; background:var(--primary); color:#fff; text-align:center; padding:15px 0; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:1000; }
+        .container { max-width:900px; margin:20px auto; background:#fff; padding:30px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
+        h1 { text-align:center; color:var(--primary); margin-bottom:5px; }
+        h2 { color:var(--secondary); margin-top:30px; border-left:5px solid var(--secondary); padding-left:15px; background:#ede7f6; padding:10px 15px; border-radius:0 8px 8px 0; }
+        .question { margin-bottom:20px; padding:15px; border-radius:10px; border:1px solid #eee; background:#fff; }
+        .question p { font-weight:bold; margin-top:0; }
+        .options label { display:block; margin-bottom:5px; cursor:pointer; }
+        .correct-answer-box { margin-top:10px; padding:10px; background:#e3f2fd; border-left:4px solid var(--primary); border-radius:6px; font-size:0.9em; display:none; }
+        #result { display:none; padding:20px; border-radius:12px; margin-bottom:30px; text-align:center; font-weight:bold; background:#e8f5e9; border:1px solid #a5d6a7; color:var(--success); }
+        button { width:100%; padding:18px; background:var(--secondary); color:#fff; border:none; border-radius:10px; font-size:1.1em; font-weight:bold; cursor:pointer; margin-top:20px; }
+        button:hover { background:var(--primary); }
+        .correct { border-color:var(--success); background:#f1f8e9; }
+        .wrong { border-color:var(--danger); background:#ffebee; }
+    </style>
+</head>
+<body>
+
+<header><strong>📗 História | Grandes Navegações | Simulado 02 | 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de História – Grandes Navegações</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz">
+
+        <h2>Grandes Navegações e contatos dos europeus com outros povos</h2>
+
+        <!-- QUESTÕES GERADAS -->
+        <!-- 1 -->
+        <div class="question" id="q1_div">
+            <p>1) Uma das principais razões para o início das Grandes Navegações foi:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) A criação de novos reinos europeus.</label>
+                <label><input type="radio" name="q1" value="B"> B) A expansão do feudalismo.</label>
+                <label><input type="radio" name="q1" value="C"> C) A fuga de epidemias na Europa.</label>
+                <label><input type="radio" name="q1" value="D"> D) A busca de novas rotas para chegar ao Oriente.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- 2 -->
+        <div class="question" id="q2_div">
+            <p>2) A expansão marítima europeia foi possível graças a avanços como:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) O uso da bússola e do astrolábio.</label>
+                <label><input type="radio" name="q2" value="B"> B) A invenção do motor a vapor.</label>
+                <label><input type="radio" name="q2" value="C"> C) A criação do avião.</label>
+                <label><input type="radio" name="q2" value="D"> D) A descoberta da pólvora.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- 3 -->
+        <div class="question" id="q3_div">
+            <p>3) A economia europeia do século XV tinha grande interesse nas especiarias porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Eram usadas como moeda.</label>
+                <label><input type="radio" name="q3" value="B"> B) Eram produtos raros e muito valorizados.</label>
+                <label><input type="radio" name="q3" value="C"> C) Substituíam metais preciosos.</label>
+                <label><input type="radio" name="q3" value="D"> D) Serviam como combustível.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- 4 -->
+        <div class="question" id="q4_div">
+            <p>4) A chegada dos portugueses ao litoral africano resultou inicialmente em:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Trocas comerciais e instalação de feitorias.</label>
+                <label><input type="radio" name="q4" value="B"> B) Conquista militar imediata.</label>
+                <label><input type="radio" name="q4" value="C"> C) Domínio total do continente.</label>
+                <label><input type="radio" name="q4" value="D"> D) Fim do comércio africano.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- 5 -->
+        <div class="question" id="q5_div">
+            <p>5) A conquista espanhola na América foi facilitada por:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Apoio militar africano.</label>
+                <label><input type="radio" name="q5" value="B"> B) Maior número de soldados espanhóis.</label>
+                <label><input type="radio" name="q5" value="C"> C) Armas de fogo, cavalos e alianças com povos rivais.</label>
+                <label><input type="radio" name="q5" value="D"> D) Superioridade naval indígena.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+
+        <!-- 6 -->
+        <div class="question" id="q6_div">
+            <p>6) Uma consequência da chegada europeia à América foi:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) A expansão das religiões indígenas na Europa.</label>
+                <label><input type="radio" name="q6" value="B"> B) A queda populacional indígena devido a doenças.</label>
+                <label><input type="radio" name="q6" value="C"> C) O fim da agricultura nativa.</label>
+                <label><input type="radio" name="q6" value="D"> D) A unificação dos povos americanos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- 7 -->
+        <div class="question" id="q7_div">
+            <p>7) O Tratado de Tordesilhas estabeleceu:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) A divisão da África entre França e Inglaterra.</label>
+                <label><input type="radio" name="q7" value="B"> B) A divisão das terras descobertas entre Portugal e Espanha.</label>
+                <label><input type="radio" name="q7" value="C"> C) A separação da Europa entre católicos e protestantes.</label>
+                <label><input type="radio" name="q7" value="D"> D) A criação de fronteiras na Ásia.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- 8 -->
+        <div class="question" id="q8_div">
+            <p>8) A escravidão africana nas Américas foi impulsionada principalmente por:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Demanda de mão de obra nas plantações e minas.</label>
+                <label><input type="radio" name="q8" value="B"> B) Interesses religiosos.</label>
+                <label><input type="radio" name="q8" value="C"> C) Acordos voluntários entre povos africanos.</label>
+                <label><input type="radio" name="q8" value="D"> D) Falta de trabalhadores europeus.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- 9 -->
+        <div class="question" id="q9_div">
+            <p>9) Uma consequência do tráfico de africanos escravizados foi:</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Fortalecimento das sociedades africanas.</label>
+                <label><input type="radio" name="q9" value="B"> B) Desorganização de reinos africanos e violência generalizada.</label>
+                <label><input type="radio" name="q9" value="C"> C) Aumento da população africana na Europa.</label>
+                <label><input type="radio" name="q9" value="D"> D) Fim da escravidão nas colônias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- 10 -->
+        <div class="question" id="q10_div">
+            <p>10) Os europeus buscavam na Ásia principalmente:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Especiarias, seda e porcelana.</label>
+                <label><input type="radio" name="q10" value="B"> B) Ferro e carvão.</label>
+                <label><input type="radio" name="q10" value="C"> C) Trigo e milho.</label>
+                <label><input type="radio" name="q10" value="D"> D) Gado e lã.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <!-- 11 -->
+        <div class="question" id="q11_div">
+            <p>11) A chegada dos europeus à Ásia foi marcada por:</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) Conquista de todos os territórios.</label>
+                <label><input type="radio" name="q11" value="B"> B) Domínio militar imediato.</label>
+                <label><input type="radio" name="q11" value="C"> C) Relações comerciais com impérios fortes.</label>
+                <label><input type="radio" name="q11" value="D"> D) Expulsão total dos europeus.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- 12 -->
+        <div class="question" id="q12_div">
+            <p>12) Uma consequência cultural das Grandes Navegações foi:</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) Fim das diferenças culturais.</label>
+                <label><input type="radio" name="q12" value="B"> B) Trocas de alimentos, plantas e animais entre continentes.</label>
+                <label><input type="radio" name="q12" value="C"> C) Desaparecimento das línguas indígenas.</label>
+                <label><input type="radio" name="q12" value="D"> D) Proibição de contatos culturais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- 13 -->
+        <div class="question" id="q13_div">
+            <p>13) A burguesia teve papel importante nas navegações porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) Proibia o uso de navios.</label>
+                <label><input type="radio" name="q13" value="B"> B) Era contra o comércio marítimo.</label>
+                <label><input type="radio" name="q13" value="C"> C) Defendia o isolamento europeu.</label>
+                <label><input type="radio" name="q13" value="D"> D) Financiava expedições em busca de lucro.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- 14 -->
+        <div class="question" id="q14_div">
+            <p>14) A expansão marítima fortaleceu os Estados Modernos porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) Reduziu o poder militar.</label>
+                <label><input type="radio" name="q14" value="B"> B) Eliminou os impostos.</label>
+                <label><input type="radio" name="q14" value="C"> C) Enfraqueceu o comércio.</label>
+                <label><input type="radio" name="q14" value="D"> D) Aumentou a riqueza e o poder dos reis.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <!-- 15 -->
+        <div class="question" id="q15_div">
+            <p>15) Os povos indígenas reagiram à chegada europeia de diversas formas, como:</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) Aceitação imediata da dominação.</label>
+                <label><input type="radio" name="q15" value="B"> B) Resistência armada, alianças e negociações.</label>
+                <label><input type="radio" name="q15" value="C"> C) Abandono total de suas culturas.</label>
+                <label><input type="radio" name="q15" value="D"> D) Migração em massa para a Europa.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q15"></div>
+        </div>
+
+        <!-- 16 -->
+        <div class="question" id="q16_div">
+            <p>16) A conquista espanhola do Império Inca foi facilitada por:</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) Apoio militar português.</label>
+                <label><input type="radio" name="q16" value="B"> B) Superioridade numérica espanhola.</label>
+                <label><input type="radio" name="q16" value="C"> C) Conflitos internos entre os próprios incas.</label>
+                <label><input type="radio" name="q16" value="D"> D) Uso de navios de guerra.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q16"></div>
+        </div>
+
+        <!-- 17 -->
+        <div class="question" id="q17_div">
+            <p>17) A economia europeia se beneficiou das navegações porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) Obteve novos produtos e ampliou mercados.</label>
+                <label><input type="radio" name="q17" value="B"> B) Passou a depender menos do comércio.</label>
+                <label><input type="radio" name="q17" value="C"> C) Eliminou a circulação de moedas.</label>
+                <label><input type="radio" name="q17" value="D"> D) Substituiu o comércio marítimo pelo terrestre.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q17"></div>
+        </div>
+
+        <!-- 18 -->
+        <div class="question" id="q18_div">
+            <p>18) A expansão marítima alterou a visão europeia do mundo porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Provou que todos os povos eram iguais culturalmente.</label>
+                <label><input type="radio" name="q18" value="B"> B) Confirmou que a Terra era plana.</label>
+                <label><input type="radio" name="q18" value="C"> C) Mostrou que não havia vida fora da Europa.</label>
+                <label><input type="radio" name="q18" value="D"> D) Revelou novos povos, culturas e territórios.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q18"></div>
+        </div>
+
+        <!-- 19 -->
+        <div class="question" id="q19_div">
+            <p>19) Uma das motivações religiosas das navegações foi:</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) Difundir o islamismo na Europa.</label>
+                <label><input type="radio" name="q19" value="B"> B) Impedir a conversão de povos.</label>
+                <label><input type="radio" name="q19" value="C"> C) Expandir o cristianismo para outros continentes.</label>
+                <label><input type="radio" name="q19" value="D"> D) Proibir contatos culturais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q19"></div>
+        </div>
+
+        <!-- 20 -->
+        <div class="question" id="q20_div">
+            <p>20) As Grandes Navegações marcaram o início de:</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) A unificação política mundial.</label>
+                <label><input type="radio" name="q20" value="B"> B) Um período de isolamento europeu.</label>
+                <label><input type="radio" name="q20" value="C"> C) A extinção do comércio marítimo.</label>
+                <label><input type="radio" name="q20" value="D"> D) Um processo de integração global entre continentes.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q20"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+/* GABARITO */
+const gabarito = {
+    q1:"D", q2:"A", q3:"B", q4:"A", q5:"C",
+    q6:"B", q7:"B", q8:"A", q9:"B", q10:"A",
+    q11:"C", q12:"B", q13:"D", q14:"D", q15:"B",
+    q16:"C", q17:"A", q18:"D", q19:"C", q20:"D"
+};
+
+/* TEXTOS DAS RESPOSTAS CORRETAS */
+const respostasTextuais = {
+    q1:"Busca de novas rotas para o Oriente",
+    q2:"Uso da bússola e do astrolábio",
+    q3:"Eram produtos raros e valorizados",
+    q4:"Trocas comerciais e instalação de feitorias",
+    q5:"Armas de fogo, cavalos e alianças",
+    q6:"Queda populacional indígena por doenças",
+    q7:"Divisão das terras entre Portugal e Espanha",
+    q8:"Demanda de mão de obra nas plantações e minas",
+    q9:"Desorganização de reinos africanos",
+    q10:"Especiarias, seda e porcelana",
+    q11:"Relações comerciais com impérios fortes",
+    q12:"Trocas de alimentos, plantas e animais",
+    q13:"Financiava expedições em busca de lucro",
+    q14:"Aumento da riqueza e poder dos reis",
+    q15:"Resistência armada, alianças e negociações",
+    q16:"Conflitos internos entre os incas",
+    q17:"Novos produtos e ampliação de mercados",
+    q18:"Revelou novos povos e territórios",
+    q19:"Expandir o cristianismo",
+    q20:"Início da integração global"
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 20;
+    const erros = [];
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const sel = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+        const box = document.getElementById("ans_" + nome);
+
+        if (!sel) {
+            alert("Responda a questão " + i);
+            div.scrollIntoView({behavior:"smooth", block:"center"});
+            return;
+        }
+
+        if (sel.value === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+            erros.push(`Q${i} – Marcou: ${sel.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        }
+
+        box.style.display = "block";
+        box.innerHTML = `<strong>Resposta correta:</strong> ${gabarito[nome]}) ${respostasTextuais[nome]}`;
+    }
+
+    const perc = ((acertos/total)*100).toFixed(0) + "%";
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Aproveitamento: <strong>${perc}</strong></p>
+        ${erros.length ? `<p style="margin-top:15px; font-size:0.9em;">Erros:<br>${erros.join("<br>")}</p>` : ""}
+    `;
+    result.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
