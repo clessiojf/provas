@@ -364,7 +364,6 @@ function finalizar() {
         const nome = "q" + i;
         const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
         const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
-        const box = document.getElementById(`ans_${nome}`);
 
         if (!selecionado) {
             alert("Responda a questão " + i);
@@ -380,12 +379,10 @@ function finalizar() {
         correta.parentElement.style.color = "#2e7d32";
         correta.parentElement.style.fontWeight = "bold";
 
-        box.style.display = "block";
-        box.innerHTML = `<strong>Resposta correta:</strong> ${gabarito[i]} – ${respostasTextuais[nome]}`;
-
         if (selecionado.value !== gabarito[i]) {
             selecionado.parentElement.style.color = "#c62828";
             selecionado.parentElement.style.fontWeight = "bold";
+
             erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[i]} (${respostasTextuais[nome]})`);
         } else {
             acertos++;
@@ -417,6 +414,7 @@ function finalizar() {
 
     fetch(form.action, { method: "POST", body: formData });
 }
+
 
 /* BLOQUEIOS */
 document.addEventListener("contextmenu", e => e.preventDefault());

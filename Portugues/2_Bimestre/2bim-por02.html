@@ -257,55 +257,95 @@ const gabarito = {
     16: "D", 17: "B", 18: "A", 19: "D", 20: "A"
 };
 
+/* EXPLICAÇÕES CURTAS */
+const respostasTextuais = {
+    q1:"Indicam ações que devem ser realizadas.",
+    q2:"É uma advertência ao consumidor.",
+    q3:"Ensinar como usar um produto.",
+    q4:"Representa a capital no mapa.",
+    q5:"Mostra distâncias reais proporcionalmente.",
+    q6:"Ilustrar formas de consumo.",
+    q7:"Apresentar ações em sequência.",
+    q8:"Indicar os pontos cardeais.",
+    q9:"Do maior para o menor quantidade.",
+    q10:"Ser objetiva e clara.",
+    q11:"Organizar os acontecimentos.",
+    q12:"Criar humor pelo contraste.",
+    q13:"Indicar pensamentos do personagem.",
+    q14:"Aproximar os interlocutores.",
+    q15:"Fazer crítica social ou política.",
+    q16:"Destacar a expressão do personagem.",
+    q17:"Economizar tempo e tornar a comunicação rápida.",
+    q18:"Criar emoções e atmosferas.",
+    q19:"Apresentar o clímax ou a piada.",
+    q20:"Ajudar a expressar emoções."
+};
+
+/* FUNÇÃO FINALIZAR (modelo avançado, sem caixas extras) */
 function finalizar() {
+    let acertos = 0;
+    const erros = [];
+
     for (let i = 1; i <= 20; i++) {
-        const marcada = document.querySelector(`input[name="q${i}"]:checked`);
+        const nome = "q" + i;
+        const marcada = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+
         if (!marcada) {
             alert("Marque uma alternativa na questão " + i);
             return;
         }
-    }
 
-    let acertos = 0;
-    let html = "<h2>Prova finalizada!</h2>";
-    html += "<p><strong>Resultado:</strong></p>";
+        alternativas.forEach(alt => {
+            alt.parentElement.style.color = "";
+            alt.parentElement.style.fontWeight = "";
+        });
 
-    for (let i = 1; i <= 20; i++) {
-        const marcada = document.querySelector(`input[name="q${i}"]:checked`).value;
         const correta = gabarito[i];
-        const certo = marcada === correta;
-        if (certo) acertos++;
+        const corretaInput = document.querySelector(`input[name="${nome}"][value="${correta}"]`);
 
-        html += `
-            <div style='margin-bottom:15px; padding:12px; background:${certo ? "#e8f5e9" : "#ffebee"}; border-left:5px solid ${certo ? "#2e7d32" : "#c62828"}; border-radius:8px;'>
-                <strong>Questão ${i}:</strong><br>
-                Sua resposta: ${marcada} | Correta: ${correta}
-            </div>
-        `;
+        corretaInput.parentElement.style.color = "#2e7d32";
+        corretaInput.parentElement.style.fontWeight = "bold";
+
+        if (marcada.value !== correta) {
+            marcada.parentElement.style.color = "#c62828";
+            marcada.parentElement.style.fontWeight = "bold";
+
+            erros.push(`Q${i} – Marcou: ${marcada.value} | Correto: ${correta} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
     }
 
-    html += `<p><strong>Você acertou ${acertos} de 20 questões.</strong></p>`;
+    const perc = ((acertos / 20) * 100).toFixed(0) + "%";
 
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = html;
-    resultDiv.style.display = "block";
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>20</strong>.</p>
+        <p>Aproveitamento: <strong>${perc}</strong></p>
+        <p><strong>Erros:</strong><br>${erros.join("<br>")}</p>
+    `;
+    result.style.display = "block";
 
-    document.querySelector("button[onclick='finalizar()']").disabled = true;
     document.querySelectorAll("input[type='radio']").forEach(r => r.disabled = true);
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
 
     const form = document.getElementById("quiz");
     const formData = new FormData(form);
 
-    formData.append("simulado", "Língua Portuguesa – Objetivo – Unidade 2 – Simulado 02");
-    formData.append("acertos", acertos);
+    formData.append("simulado", document.querySelector("header").innerText.trim());
     formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", erros.join("\n"));
 
     fetch(form.action, { method: "POST", body: formData });
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-/* BLOQUEIOS DE SEGURANÇA */
+/* BLOQUEIOS */
 document.addEventListener("contextmenu", e => e.preventDefault());
 document.onkeydown = function(e) {
     if (e.keyCode == 123) return false;
