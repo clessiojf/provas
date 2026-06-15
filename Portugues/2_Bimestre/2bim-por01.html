@@ -357,16 +357,15 @@ const respostasTextuais = {
 /* FUNÇÃO FINALIZAR (modelo avançado) */
 function finalizar() {
     let acertos = 0;
-    const total = 20;
     const erros = [];
 
-    for (let i = 1; i <= total; i++) {
+    for (let i = 1; i <= 20; i++) {
         const nome = "q" + i;
-        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const marcada = document.querySelector(`input[name="${nome}"]:checked`);
         const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
 
-        if (!selecionado) {
-            alert("Responda a questão " + i);
+        if (!marcada) {
+            alert("Marque uma alternativa na questão " + i);
             return;
         }
 
@@ -375,32 +374,34 @@ function finalizar() {
             alt.parentElement.style.fontWeight = "";
         });
 
-        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[i]}"]`);
-        correta.parentElement.style.color = "#2e7d32";
-        correta.parentElement.style.fontWeight = "bold";
+        const correta = gabarito[i];
+        const corretaInput = document.querySelector(`input[name="${nome}"][value="${correta}"]`);
 
-        if (selecionado.value !== gabarito[i]) {
-            selecionado.parentElement.style.color = "#c62828";
-            selecionado.parentElement.style.fontWeight = "bold";
+        corretaInput.parentElement.style.color = "#2e7d32";
+        corretaInput.parentElement.style.fontWeight = "bold";
 
-            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[i]} (${respostasTextuais[nome]})`);
+        if (marcada.value !== correta) {
+            marcada.parentElement.style.color = "#c62828";
+            marcada.parentElement.style.fontWeight = "bold";
+
+            erros.push(`Q${i} – Marcou: ${marcada.value} | Correto: ${correta} (${respostasTextuais[nome]})`);
         } else {
             acertos++;
         }
     }
 
-    const perc = ((acertos / total) * 100).toFixed(0) + "%";
+    const perc = ((acertos / 20) * 100).toFixed(0) + "%";
 
     const result = document.getElementById("result");
     result.innerHTML = `
         <h2>Prova finalizada!</h2>
-        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong>.</p>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>20</strong>.</p>
         <p>Aproveitamento: <strong>${perc}</strong></p>
         <p><strong>Erros:</strong><br>${erros.join("<br>")}</p>
     `;
     result.style.display = "block";
 
-    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    document.querySelectorAll("input[type='radio']").forEach(r => r.disabled = true);
     document.querySelector("button[onclick='finalizar()']").disabled = true;
 
     const form = document.getElementById("quiz");
@@ -413,7 +414,10 @@ function finalizar() {
     formData.append("erros", erros.join("\n"));
 
     fetch(form.action, { method: "POST", body: formData });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 
 
 /* BLOQUEIOS */
