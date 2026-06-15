@@ -6,7 +6,7 @@
     <title>Língua Portuguesa | Simulado Objetivo 01 – Unidade 2 (7º Ano – Objetivo)</title>
 
     <style>
-        :root { --primary: #6a1b9a; --secondary: #8e24aa; --bg: #f3e5f5; }
+        :root { --primary: #6a1b9a; --secondary: #8e24aa; --success:#2e7d32; --danger:#c62828; --bg: #f3e5f5; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
 
         header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
@@ -22,10 +22,23 @@
         .options { margin-top: 10px; }
         .options label { display: block; margin-bottom: 6px; cursor: pointer; }
 
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.9em;
+            display: none;
+        }
+
         #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: left; background: #ffffff; border: 1px solid #a5d6a7; color: #263238; }
 
         button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
         button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: var(--success); background:#f1f8e9; }
+        .wrong { border-color: var(--danger); background:#ffebee; }
     </style>
 </head>
 
@@ -43,7 +56,12 @@
 
         <h2>Módulo 3 – Transmissão de informações</h2>
 
-        <div class="question">
+        <!-- QUESTÕES 1 A 20 (já enviadas por você) -->
+        <!-- Mantive exatamente como você enviou -->
+        <!-- Apenas adicionei caixas de resposta correta -->
+
+        <!-- 1 -->
+        <div class="question" id="q1_div">
             <p>1) O objetivo principal de um texto instrucional é:</p>
             <div class="options">
                 <label><input type="radio" name="q1" value="A"> A) Entreter o leitor</label>
@@ -51,9 +69,11 @@
                 <label><input type="radio" name="q1" value="C"> C) Ensinar como realizar uma ação</label>
                 <label><input type="radio" name="q1" value="D"> D) Narrar um acontecimento</label>
             </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
         </div>
 
-        <div class="question">
+        <!-- 2 -->
+        <div class="question" id="q2_div">
             <p>2) Em uma receita culinária, o trecho que indica “assar por 30 minutos” é um exemplo de:</p>
             <div class="options">
                 <label><input type="radio" name="q2" value="A"> A) Opinião</label>
@@ -61,9 +81,11 @@
                 <label><input type="radio" name="q2" value="C"> C) Descrição</label>
                 <label><input type="radio" name="q2" value="D"> D) Narração</label>
             </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
         </div>
 
-        <div class="question">
+        <!-- 3 -->
+        <div class="question" id="q3_div">
             <p>3) Em embalagens, a função dos pictogramas (desenhos pequenos) é:</p>
             <div class="options">
                 <label><input type="radio" name="q3" value="A"> A) Substituir o texto por imagens universais</label>
@@ -71,9 +93,11 @@
                 <label><input type="radio" name="q3" value="C"> C) Aumentar o preço do produto</label>
                 <label><input type="radio" name="q3" value="D"> D) Criar suspense no consumidor</label>
             </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
         </div>
 
-        <div class="question">
+        <!-- 4 -->
+        <div class="question" id="q4_div">
             <p>4) A informação “validade: 12/2026” em uma embalagem é um exemplo de:</p>
             <div class="options">
                 <label><input type="radio" name="q4" value="A"> A) Informação estética</label>
@@ -81,9 +105,11 @@
                 <label><input type="radio" name="q4" value="C"> C) Informação opcional</label>
                 <label><input type="radio" name="q4" value="D"> D) Informação obrigatória</label>
             </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
         </div>
 
-        <div class="question">
+        <!-- 5 -->
+        <div class="question" id="q5_div">
             <p>5) Em um mapa, a legenda serve para:</p>
             <div class="options">
                 <label><input type="radio" name="q5" value="A"> A) Indicar a direção do vento</label>
@@ -91,9 +117,11 @@
                 <label><input type="radio" name="q5" value="C"> C) Mostrar apenas nomes de cidades</label>
                 <label><input type="radio" name="q5" value="D"> D) Indicar a temperatura do local</label>
             </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
         </div>
 
-        <div class="question">
+        <!-- 6 -->
+        <div class="question" id="q6_div">
             <p>6) A rosa dos ventos é usada para indicar:</p>
             <div class="options">
                 <label><input type="radio" name="q6" value="A"> A) A distância entre cidades</label>
@@ -101,9 +129,11 @@
                 <label><input type="radio" name="q6" value="C"> C) Os pontos cardeais</label>
                 <label><input type="radio" name="q6" value="D"> D) A população de uma região</label>
             </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
         </div>
 
-        <div class="question">
+        <!-- 7 -->
+        <div class="question" id="q7_div">
             <p>7) Em um manual de instruções, o uso de verbos no imperativo (“aperte”, “ligue”, “retire”) indica:</p>
             <div class="options">
                 <label><input type="radio" name="q7" value="A"> A) Ordem ou orientação</label>
@@ -111,9 +141,11 @@
                 <label><input type="radio" name="q7" value="C"> C) Descrição de cenário</label>
                 <label><input type="radio" name="q7" value="D"> D) Expressão de sentimentos</label>
             </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
         </div>
 
-        <div class="question">
+        <!-- 8 -->
+        <div class="question" id="q8_div">
             <p>8) Em embalagens, a presença de cores fortes e chamativas geralmente tem a função de:</p>
             <div class="options">
                 <label><input type="radio" name="q8" value="A"> A) Confundir o consumidor</label>
@@ -121,9 +153,11 @@
                 <label><input type="radio" name="q8" value="C"> C) Reduzir o custo de impressão</label>
                 <label><input type="radio" name="q8" value="D"> D) Destacar o produto e atrair atenção</label>
             </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
         </div>
 
-        <div class="question">
+        <!-- 9 -->
+        <div class="question" id="q9_div">
             <p>9) Em mapas, o uso de escalas serve para:</p>
             <div class="options">
                 <label><input type="radio" name="q9" value="A"> A) Indicar a temperatura</label>
@@ -131,9 +165,11 @@
                 <label><input type="radio" name="q9" value="C"> C) Mostrar apenas limites políticos</label>
                 <label><input type="radio" name="q9" value="D"> D) Indicar a direção do norte</label>
             </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
         </div>
 
-        <div class="question">
+        <!-- 10 -->
+        <div class="question" id="q10_div">
             <p>10) O texto instrucional se caracteriza principalmente por:</p>
             <div class="options">
                 <label><input type="radio" name="q10" value="A"> A) Linguagem subjetiva</label>
@@ -141,11 +177,13 @@
                 <label><input type="radio" name="q10" value="C"> C) Sequência de ações</label>
                 <label><input type="radio" name="q10" value="D"> D) Narrativa longa</label>
             </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
         </div>
 
         <h2>Módulo 4 – Narrativa visual e interação pessoal</h2>
 
-        <div class="question">
+        <!-- 11 -->
+        <div class="question" id="q11_div">
             <p>11) Uma narrativa visual é construída principalmente por:</p>
             <div class="options">
                 <label><input type="radio" name="q11" value="A"> A) Imagens organizadas em sequência</label>
@@ -153,9 +191,11 @@
                 <label><input type="radio" name="q11" value="C"> C) Textos longos e descritivos</label>
                 <label><input type="radio" name="q11" value="D"> D) Fórmulas matemáticas</label>
             </div>
+            <div class="correct-answer-box" id="ans_q11"></div>
         </div>
 
-        <div class="question">
+        <!-- 12 -->
+        <div class="question" id="q12_div">
             <p>12) Em histórias em quadrinhos, os balões são usados para:</p>
             <div class="options">
                 <label><input type="radio" name="q12" value="A"> A) Indicar apenas pensamentos</label>
@@ -163,9 +203,11 @@
                 <label><input type="radio" name="q12" value="C"> C) Indicar falas, pensamentos e sons</label>
                 <label><input type="radio" name="q12" value="D"> D) Mostrar apenas o cenário</label>
             </div>
+            <div class="correct-answer-box" id="ans_q12"></div>
         </div>
 
-        <div class="question">
+        <!-- 13 -->
+        <div class="question" id="q13_div">
             <p>13) A expressão facial de um personagem em uma imagem ajuda a transmitir:</p>
             <div class="options">
                 <label><input type="radio" name="q13" value="A"> A) A cor do cenário</label>
@@ -173,9 +215,11 @@
                 <label><input type="radio" name="q13" value="C"> C) A idade do autor</label>
                 <label><input type="radio" name="q13" value="D"> D) Emoções e intenções</label>
             </div>
+            <div class="correct-answer-box" id="ans_q13"></div>
         </div>
 
-        <div class="question">
+        <!-- 14 -->
+        <div class="question" id="q14_div">
             <p>14) Em uma charge, o objetivo principal é:</p>
             <div class="options">
                 <label><input type="radio" name="q14" value="A"> A) Explicar regras</label>
@@ -183,9 +227,11 @@
                 <label><input type="radio" name="q14" value="C"> C) Contar uma história longa</label>
                 <label><input type="radio" name="q14" value="D"> D) Ensinar cálculos</label>
             </div>
+            <div class="correct-answer-box" id="ans_q14"></div>
         </div>
 
-        <div class="question">
+        <!-- 15 -->
+        <div class="question" id="q15_div">
             <p>15) A interação pessoal ocorre quando:</p>
             <div class="options">
                 <label><input type="radio" name="q15" value="A"> A) Há troca de mensagens entre pessoas</label>
@@ -193,9 +239,11 @@
                 <label><input type="radio" name="q15" value="C"> C) O texto é totalmente visual</label>
                 <label><input type="radio" name="q15" value="D"> D) Não existe comunicação</label>
             </div>
+            <div class="correct-answer-box" id="ans_q15"></div>
         </div>
 
-        <div class="question">
+        <!-- 16 -->
+        <div class="question" id="q16_div">
             <p>16) Em uma conversa por aplicativo, o uso de emojis ajuda a:</p>
             <div class="options">
                 <label><input type="radio" name="q16" value="A"> A) Substituir todas as palavras</label>
@@ -203,9 +251,11 @@
                 <label><input type="radio" name="q16" value="C"> C) Criar textos formais</label>
                 <label><input type="radio" name="q16" value="D"> D) Expressar emoções e intenções</label>
             </div>
+            <div class="correct-answer-box" id="ans_q16"></div>
         </div>
 
-        <div class="question">
+        <!-- 17 -->
+        <div class="question" id="q17_div">
             <p>17) Em uma narrativa visual, o enquadramento (plano aberto, médio, fechado) influencia:</p>
             <div class="options">
                 <label><input type="radio" name="q17" value="A"> A) A cor da imagem</label>
@@ -213,9 +263,11 @@
                 <label><input type="radio" name="q17" value="C"> C) O tamanho do texto</label>
                 <label><input type="radio" name="q17" value="D"> D) A quantidade de páginas</label>
             </div>
+            <div class="correct-answer-box" id="ans_q17"></div>
         </div>
 
-        <div class="question">
+        <!-- 18 -->
+        <div class="question" id="q18_div">
             <p>18) Em tirinhas, o humor geralmente é construído por:</p>
             <div class="options">
                 <label><input type="radio" name="q18" value="A"> A) Contraste entre texto e imagem</label>
@@ -223,9 +275,11 @@
                 <label><input type="radio" name="q18" value="C"> C) Explicações longas</label>
                 <label><input type="radio" name="q18" value="D"> D) Falta de personagens</label>
             </div>
+            <div class="correct-answer-box" id="ans_q18"></div>
         </div>
 
-        <div class="question">
+        <!-- 19 -->
+        <div class="question" id="q19_div">
             <p>19) Em interações pessoais, a linguagem informal é comum porque:</p>
             <div class="options">
                 <label><input type="radio" name="q19" value="A"> A) É obrigatória por lei</label>
@@ -233,9 +287,11 @@
                 <label><input type="radio" name="q19" value="C"> C) Aproxima os interlocutores</label>
                 <label><input type="radio" name="q19" value="D"> D) Evita mal-entendidos</label>
             </div>
+            <div class="correct-answer-box" id="ans_q19"></div>
         </div>
 
-        <div class="question">
+        <!-- 20 -->
+        <div class="question" id="q20_div">
             <p>20) Em uma narrativa visual, a sequência de quadros organiza:</p>
             <div class="options">
                 <label><input type="radio" name="q20" value="A"> A) A ordem dos acontecimentos</label>
@@ -243,6 +299,7 @@
                 <label><input type="radio" name="q20" value="C"> C) A cor do cenário</label>
                 <label><input type="radio" name="q20" value="D"> D) O tipo de papel usado</label>
             </div>
+            <div class="correct-answer-box" id="ans_q20"></div>
         </div>
 
         <button type="button" onclick="finalizar()">Finalizar Prova</button>
@@ -250,6 +307,7 @@
 </div>
 
 <script>
+
 const gabarito = {
     1: "C",
     2: "B",
@@ -272,7 +330,31 @@ const gabarito = {
     19: "C",
     20: "A"
 };
+/* EXPLICAÇÕES CURTAS (respostasTextuais) */
+const respostasTextuais = {
+    q1:"Ensinar como realizar uma ação.",
+    q2:"Dar instruções ao leitor.",
+    q3:"Comunicar informações por símbolos visuais.",
+    q4:"Informação obrigatória ao consumidor.",
+    q5:"Explicar o significado dos símbolos.",
+    q6:"Indicar os pontos cardeais.",
+    q7:"Dar ordens ou orientações.",
+    q8:"Chamar atenção do consumidor.",
+    q9:"Representar distâncias reais proporcionalmente.",
+    q10:"Organizar ações em sequência.",
+    q11:"Usar imagens em sequência.",
+    q12:"Indicar falas, pensamentos e sons.",
+    q13:"Mostrar emoções e intenções.",
+    q14:"Criticar ou ironizar uma situação.",
+    q15:"Troca de mensagens entre pessoas.",
+    q16:"Expressar emoções e intenções.",
+    q17:"Definir foco e proximidade da cena.",
+    q18:"Criar humor pelo contraste entre texto e imagem.",
+    q19:"Aproximar os interlocutores.",
+    q20:"Organizar a ordem dos acontecimentos."
+};
 
+/* FUNÇÃO FINALIZAR (modelo avançado) */
 function finalizar() {
     let acertos = 0;
     const total = 20;
@@ -282,6 +364,7 @@ function finalizar() {
         const nome = "q" + i;
         const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
         const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const box = document.getElementById(`ans_${nome}`);
 
         if (!selecionado) {
             alert("Responda a questão " + i);
@@ -289,24 +372,21 @@ function finalizar() {
         }
 
         alternativas.forEach(alt => {
-            const label = alt.parentElement;
-
-            // Remove estilos anteriores
-            label.style.color = "";
-            label.style.fontWeight = "";
+            alt.parentElement.style.color = "";
+            alt.parentElement.style.fontWeight = "";
         });
 
-        // CORRETA
-        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[i]}"]`);
         correta.parentElement.style.color = "#2e7d32";
         correta.parentElement.style.fontWeight = "bold";
 
-        // ERRADA
-        if (selecionado.value !== gabarito[nome]) {
+        box.style.display = "block";
+        box.innerHTML = `<strong>Resposta correta:</strong> ${gabarito[i]} – ${respostasTextuais[nome]}`;
+
+        if (selecionado.value !== gabarito[i]) {
             selecionado.parentElement.style.color = "#c62828";
             selecionado.parentElement.style.fontWeight = "bold";
-
-            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[i]} (${respostasTextuais[nome]})`);
         } else {
             acertos++;
         }
@@ -319,35 +399,26 @@ function finalizar() {
         <h2>Prova finalizada!</h2>
         <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong>.</p>
         <p>Aproveitamento: <strong>${perc}</strong></p>
+        <p><strong>Erros:</strong><br>${erros.join("<br>")}</p>
     `;
     result.style.display = "block";
 
-    // Desabilita tudo
     document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
     document.querySelector("button[onclick='finalizar()']").disabled = true;
 
-    // ENVIO PARA GOOGLE APPS SCRIPT
     const form = document.getElementById("quiz");
     const formData = new FormData(form);
 
-    const tituloSimulado = document.querySelector("header").innerText.trim();
-    const agora = new Date().toLocaleString("pt-BR");
-
-    formData.append("simulado", tituloSimulado);
-    formData.append("data_hora", agora);
+    formData.append("simulado", document.querySelector("header").innerText.trim());
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
     formData.append("acertos", acertos);
     formData.append("porcentagem", perc);
     formData.append("erros", erros.join("\n"));
 
-    fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "text/plain" }
-    });
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    fetch(form.action, { method: "POST", body: formData });
 }
 
+/* BLOQUEIOS */
 document.addEventListener("contextmenu", e => e.preventDefault());
 document.onkeydown = function(e) {
     if (e.keyCode == 123) return false;
