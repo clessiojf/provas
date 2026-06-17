@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geografia - Selecione o Trimestre</title>
+    <title>Geografia - Selecione o Trimestre/Bimestre</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -84,6 +84,7 @@
     </style>
 </head>
 <body>
+    
 
     <header>
         <h2>Geografia</h2>
@@ -91,28 +92,36 @@
     </header>
 
     <div class="container">
+        <!-- Links relativos mantidos conforme sua estrutura de pastas no GitHub -->
         <a href="1_Trimestre/lista_provas.html" class="card-trimestre">
             <div class="numero">01</div>
             <div class="texto">1º Trimestre</div>
         </a>
 
-        <a href="2_Trimestre/lista_provas.html" class="card-trimestre">
+        <a href="2_Bimestre/lista_provas.html" class="card-trimestre">
             <div class="numero">02</div>
-            <div class="texto">2º Trimestre</div>
+            <div class="texto">2º Bimestre</div>
         </a>
 
-        <a href="3_Trimestre/lista_provas.html" class="card-trimestre">
+        <a href="3_Bimestre/lista_provas.html" class="card-trimestre">
             <div class="numero">03</div>
-            <div class="texto">3º Trimestre</div>
+            <div class="texto">3º Bimestre</div>
+        </a>
+
+        <a href="4_Bimestre/lista_provas.html" class="card-trimestre">
+            <div class="numero">04</div>
+            <div class="texto">4º Bimestre</div>
         </a>
     </div>
 
+    <!-- Caminho relativo para voltar ao index na raiz do repositório -->
     <a href="../index.html" class="btn-voltar">⬅ Voltar para o Início</a>
+
 <script>
     // Bloqueia o clique direito
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // Bloqueia atalhos de desenvolvedor (F12, Ctrl+Shift+I, etc)
+    // Bloqueia atalhos de desenvolvedor
     document.onkeydown = function(e) {
         if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
             return false;
@@ -121,4 +130,3 @@
 </script>
 </body>
 </html>
-

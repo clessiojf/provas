@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia – Simulado Dissertativo – Unidade 2 (7º Ano)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e3f2fd; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 25px; padding: 20px; border-radius: 10px; background: #fff; border: 1px solid #eee; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        textarea { width: 100%; height: 120px; padding: 10px; border-radius: 8px; border: 1px solid #bbb; resize: vertical; font-size: 1em; }
+
+        #result { display: none; padding: 25px; border-radius: 12px; margin-bottom: 30px; background: #ffffff; border: 1px solid #a5d6a7; color: #263238; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🌎 Geografia | Simulado Dissertativo – Unidade 2 – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado Dissertativo – População do Brasil (8 Questões)</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Responda com suas próprias palavras.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+
+        <h2>Módulo 3 – A formação do povo brasileiro</h2>
+
+        <div class="question">
+            <p>1) Explique quem eram os povos indígenas que habitavam o território brasileiro antes da chegada dos portugueses e como viviam.</p>
+            <textarea name="q1"></textarea>
+        </div>
+
+        <div class="question">
+            <p>2) Descreva dois impactos negativos causados pelo contato entre indígenas e portugueses após 1500.</p>
+            <textarea name="q2"></textarea>
+        </div>
+
+        <div class="question">
+            <p>3) Explique por que a escravidão africana foi utilizada no Brasil colonial e como ela influenciou a formação da sociedade brasileira.</p>
+            <textarea name="q3"></textarea>
+        </div>
+
+        <div class="question">
+            <p>4) Após a abolição da escravidão, quais dificuldades os ex-escravizados enfrentaram? Cite pelo menos duas.</p>
+            <textarea name="q4"></textarea>
+        </div>
+
+        <h2>Módulo 4 – A dinâmica populacional do Brasil</h2>
+
+        <div class="question">
+            <p>5) O que é população absoluta? Dê um exemplo usando uma cidade ou estado brasileiro.</p>
+            <textarea name="q5"></textarea>
+        </div>
+
+        <div class="question">
+            <p>6) O que é densidade demográfica (população relativa)? Explique com suas próprias palavras.</p>
+            <textarea name="q6"></textarea>
+        </div>
+
+        <div class="question">
+            <p>7) Por que a população brasileira é mais concentrada no litoral do que no interior? Cite dois motivos.</p>
+            <textarea name="q7"></textarea>
+        </div>
+
+        <div class="question">
+            <p>8) Explique o que é migração interna e dê um exemplo comum no Brasil.</p>
+            <textarea name="q8"></textarea>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+
+<script>
+const respostas = {
+    q1: "Os povos indígenas eram os primeiros habitantes do Brasil, vivendo da caça, pesca, agricultura e com forte relação com a natureza.",
+    q2: "Os impactos negativos incluíram doenças trazidas pelos europeus e conflitos que reduziram drasticamente a população indígena.",
+    q3: "A escravidão africana foi usada como mão de obra forçada e influenciou a cultura, economia e sociedade brasileira.",
+    q4: "Após a abolição, os ex-escravizados enfrentaram falta de moradia, trabalho, educação e inclusão social.",
+    q5: "População absoluta é o número total de habitantes de um lugar. Ex.: São Paulo tem mais de 12 milhões de habitantes.",
+    q6: "Densidade demográfica é a relação entre população e área, mostrando quantas pessoas vivem por km².",
+    q7: "A população se concentra no litoral por causa da colonização portuguesa e pela maior oferta de empregos e serviços.",
+    q8: "Migração interna é a mudança dentro do país, como pessoas que saem do Nordeste para trabalhar no Sudeste."
+};
+
+function finalizar() {
+    const campos = document.querySelectorAll("textarea");
+    for (let campo of campos) {
+        if (campo.value.trim() === "") {
+            alert("Responda todas as questões antes de finalizar.");
+            return;
+        }
+    }
+
+    let html = "<h2>Prova finalizada!</h2>";
+    html += "<p><strong>Respostas sugeridas:</strong></p>";
+
+    for (let i = 1; i <= 8; i++) {
+        html += `
+            <div style='margin-bottom:15px; padding:12px; background:#e3f2fd; border-left:5px solid #1565c0; border-radius:8px;'>
+                <strong>Questão ${i}:</strong><br>
+                ${respostas["q" + i]}
+            </div>
+        `;
+    }
+
+    const result = document.getElementById("result");
+    result.innerHTML = html;
+    result.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    document.querySelectorAll("textarea").forEach(t => t.disabled = true);
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    formData.append("simulado", "Geografia – Dissertativo – Unidade 2");
+    formData.append("data_hora", new Date().toLocaleString("pt-BR"));
+
+    fetch(form.action, { method: "POST", body: formData });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* BLOQUEIOS */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
