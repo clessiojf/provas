@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática – Simulado Objetivo 03 – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32; background: #f1f8e9; }
+        .wrong { border-color: #c62828; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📘 Matemática | Simulado Objetivo 03 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Matemática – 20 Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://google.com" method="POST">
+
+        <h2>Módulo 9 – Sequências, Razão, Proporção, GDP, GIP e Regra de Três</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Identifique o padrão da sequência numérica (5, 9, 13, 17, ...) e determine o próximo termo:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) 20</label>
+                <label><input type="radio" name="q1" value="B"> B) 21</label>
+                <label><input type="radio" name="q1" value="C"> C) 22</label>
+                <label><input type="radio" name="q1" value="D"> D) 23</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Em uma maquete escolar de um prédio, a escala utilizada é de 1 : 50. Se a altura do prédio real é de 20 metros (2000 cm), qual será a altura da maquete em centímetros?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) 20 cm</label>
+                <label><input type="radio" name="q2" value="B"> B) 30 cm</label>
+                <label><input type="radio" name="q2" value="C"> C) 40 cm</label>
+                <label><input type="radio" name="q2" value="D"> D) 50 cm</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Uma caixa contém 12 bolinhas vermelhas e 18 bolinhas azuis. Qual é a razão simplificada entre o número de bolinhas vermelhas e o número total de bolinhas na caixa?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) <sup>2</sup>/<sub>3</sub></label>
+                <label><input type="radio" name="q3" value="B"> B) <sup>3</sup>/<sub>5</sub></label>
+                <label><input type="radio" name="q3" value="C"> C) <sup>2</sup>/<sub>5</sub></label>
+                <label><input type="radio" name="q3" value="D"> D) <sup>4</sup>/<sub>5</sub></label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Encontre o valor do termo desconhecido x na seguinte proporção: <sup>x</sup>/<sub>15</sub> = <sup>4</sup>/<sub>6</sub></p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) x = 8</label>
+                <label><input type="radio" name="q4" value="B"> B) x = 10</label>
+                <label><input type="radio" name="q4" value="C"> C) x = 12</label>
+                <label><input type="radio" name="q4" value="D"> D) x = 14</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Uma impressora produz 150 panfletos em 5 minutos. Mantendo o mesmo ritmo de trabalho, quantos minutos ela levará para produzir 450 panfletos? (Grandezas Diretamente Proporcionais - GDP)</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) 10 minutos</label>
+                <label><input type="radio" name="q5" value="B"> B) 12 minutos</label>
+                <label><input type="radio" name="q5" value="C"> C) 15 minutos</label>
+                <label><input type="radio" name="q5" value="D"> D) 18 minutos</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Viajando a uma velocidade média de 60 km/h, um ônibus faz um percurso em exatamente 4 horas. Se ele aumentasse sua velocidade média para 80 km/h, quanto tempo levaria para fazer o mesmo trajeto? (Grandezas Inversamente Proporcionais - GIP)</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) 2 horas</label>
+                <label><input type="radio" name="q6" value="B"> B) 3 horas</label>
+                <label><input type="radio" name="q6" value="C"> C) 3,5 horas</label>
+                <label><input type="radio" name="q6" value="D"> D) 5 horas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Com 4 kg de ração, um criador consegue alimentar seus cães por 14 dias. Quantos quilos de ração serão necessários para alimentá-los por 35 dias?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) 8 kg</label>
+                <label><input type="radio" name="q7" value="B"> B) 9 kg</label>
+                <label><input type="radio" name="q7" value="C"> C) 10 kg</label>
+                <label><input type="radio" name="q7" value="D"> D) 12 kg</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Para esvaziar um reservatório de água, 3 bombas idênticas trabalham juntas por 8 horas. Se fossem utilizadas 4 dessas mesmas bombas, em quanto tempo o reservatório seria completamente esvaziado?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) 5 horas</label>
+                <label><input type="radio" name="q8" value="B"> B) 6 horas</label>
+                <label><input type="radio" name="q8" value="C"> C) 10 horas</label>
+                <label><input type="radio" name="q8" value="D"> D) 11 horas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Em uma receita de bolo, a razão entre a quantidade de açúcar e a quantidade de farinha é de 2 para 3. Se forem utilizadas 6 xícaras de farinha, quantas xícaras de açúcar devem ser colocadas?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) 3 xícaras</label>
+                <label><input type="radio" name="q9" value="B"> B) 4 xícaras</label>
+                <label><input type="radio" name="q9" value="C"> C) 5 xícaras</label>
+                <label><input type="radio" name="q9" value="D"> D) 9 xícaras</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Uma equipe de 6 pintores consegue pintar uma escola em 10 dias. Quantos dias seriam necessários se a equipe contasse com 12 pintores trabalhando no mesmo ritmo?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) 5 dias</label>
+                <label><input type="radio" name="q10" value="B"> B) 8 dias</label>
+                <label><input type="radio" name="q10" value="C"> C) 15 dias</label>
+                <label><input type="radio" name="q10" value="D"> D) 20 dias</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Módulo 10 – Transformações Geométricas no Plano Cartesiano</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) No plano cartesiano, um ponto que possui a abscissa negativa e a ordenada positiva (-, +) está localizado em qual quadrante?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) 1º quadrante</label>
+                <label><input type="radio" name="q11" value="B"> B) 2º quadrante</label>
+                <label><input type="radio" name="q11" value="C"> C) 3º quadrante</label>
+                <label><input type="radio" name="q11" value="D"> D) 4º quadrante</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Se multiplicarmos as coordenadas de todos os vértices de um triângulo por 3, o que ocorrerá com a nova figura gerada no plano cartesiano?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) Será reduzida à terça parte do tamanho original.</label>
+                <label><input type="radio" name="q12" value="B"> B) Sofrerá uma translação de 3 unidades para a direita.</label>
+                <label><input type="radio" name="q12" value="C"> C) Será ampliada, ficando com os lados 3 vezes maiores.</label>
+                <label><input type="radio" name="q12" value="D"> D) Ficará exatamente com o mesmo tamanho.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Um triângulo tem um de seus vértices localizado no ponto A(2, 5). Se multiplicarmos as coordenadas desse vértice pelo número -1, quais serão as novas coordenadas do ponto A'?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) (-2, -5)</label>
+                <label><input type="radio" name="q13" value="B"> B) (-2, 5)</label>
+                <label><input type="radio" name="q13" value="C"> C) (2, -5)</label>
+                <label><input type="radio" name="q13" value="D"> D) (5, 2)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Qual é o ponto simétrico do ponto P(3, -4) quando realizamos uma reflexão em relação ao eixo das ordenadas (eixo y)?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) (3, 4)</label>
+                <label><input type="radio" name="q14" value="B"> B) (-3, 4)</label>
+                <label><input type="radio" name="q14" value="C"> C) (-3, -4)</label>
+                <label><input type="radio" name="q14" value="D"> D) (4, -3)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question" id="q15_div">
+            <p>15) Ao efetuar uma reflexão do ponto K(-2, -7) em relação ao eixo das abscissas (eixo x), quais serão as coordenadas do novo ponto obtido?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) (2, -7)</label>
+                <label><input type="radio" name="q15" value="B"> B) (-2, 7)</label>
+                <label><input type="radio" name="q15" value="C"> C) (2, 7)</label>
+                <label><input type="radio" name="q15" value="D"> D) (-7, -2)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q15"></div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="question" id="q16_div">
+            <p>16) Um ponto M(1, 3) sofre uma rotação de 90° no sentido anti-horário em torno da origem (0,0). Seguindo a regra de transformação de coordenadas para essa rotação, qual será a nova posição de M?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) (-3, 1)</label>
+                <label><input type="radio" name="q16" value="B"> B) (3, -1)</label>
+                <label><input type="radio" name="q16" value="C"> C) (-1, -3)</label>
+                <label><input type="radio" name="q16" value="D"> D) (3, 1)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q16"></div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="question" id="q17_div">
+            <p>17) Um ponto A(2, 4) sofre uma translação que desloca a figura 5 unidades para a direita e 3 unidades para baixo. Quais serão as coordenadas finais do ponto transladado?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) (7, 7)</label>
+                <label><input type="radio" name="q17" value="B"> B) (-3, 1)</label>
+                <label><input type="radio" name="q17" value="C"> C) (7, 1)</label>
+                <label><input type="radio" name="q17" value="D"> D) (2, 1)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q17"></div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="question" id="q18_div">
+            <p>18) Se um polígono sofre uma translação de modo que sua posição mude no plano cartesiano, o que acontece com as medidas dos seus lados internos e dos seus ângulos?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Os lados dobram de tamanho e os ângulos continuam iguais.</label>
+                <label><input type="radio" name="q18" value="B"> B) As medidas dos lados e dos ângulos permanecem inalteradas.</label>
+                <label><input type="radio" name="q18" value="C"> C) Os lados continuam iguais, mas os ângulos mudam de valor.</label>
+                <label><input type="radio" name="q18" value="D"> D) A figura distorce completamente mudando de formato.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q18"></div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="question" id="q19_div">
+            <p>19) No plano cartesiano, a origem do sistema onde os eixos x e y se cruzam perpendicularmente é representada pelo par ordenado:</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) (1, 1)</label>
+                <label><input type="radio" name="q19" value="B"> B) (0, 1)</label>
+                <label><input type="radio" name="q19" value="C"> C) (1, 0)</label>
+                <label><input type="radio" name="q19" value="D"> D) (0, 0)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q19"></div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="question" id="q20_div">
+            <p>20) Um quadrilátero possui vértices com coordenadas todas localizadas no 1º quadrante. Se realizarmos uma rotação de 180° dessa figura em torno da origem, para qual quadrante ela será deslocada?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) 2º quadrante</label>
+                <label><input type="radio" name="q20" value="B"> B) 3º quadrante</label>
+                <label><input type="radio" name="q20" value="C"> C) 4º quadrante</label>
+                <label><input type="radio" name="q20" value="D"> D) Permanecerá no 1º quadrante</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q20"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+const gabarito = {
+    q1: "B", q2: "C", q3: "C", q4: "B", q5: "C",
+    q6: "B", q7: "C", q8: "B", q9: "B", q10: "A",
+    q11: "B", q12: "C", q13: "A", q14: "C", q15: "B",
+    q16: "A", q17: "C", q18: "B", q19: "D", q20: "B"
+};
+
+const resolucoesDetalhadas = {
+    q1: "B) 21<br><strong>Resolução:</strong> Subtraindo os termos consecutivos (9 - 5 = 4; 13 - 9 = 4), descobrimos que a razão do padrão é somar 4. O termo posterior a 17 será: 17 + 4 = 21.",
+    q2: "C) 40 cm<br><strong>Resolução:</strong> A escala 1:50 indica que cada 1 cm na maquete representa 50 cm reais. Dividindo a altura real pelo fator da escala: 2000 cm ÷ 50 = 40 cm.",
+    q3: "C) 2/5<br><strong>Resolução:</strong> O total de bolinhas é 12 + 18 = 30. A razão pedida é 12/30. Dividindo o numerador e o denominador por 6 (simplificação), obtemos 2/5.",
+    q4: "B) x = 10<br><strong>Resolução:</strong> Aplicando a propriedade fundamental das proporções (multiplicação cruzada): 6 * x = 15 * 4 -> 6x = 60 -> x = 60 ÷ 6 = 10.",
+    q5: "C) 15 minutos<br><strong>Resolução:</strong> Como a quantidade de panfletos triplicou (de 150 para 450), o tempo necessário também triplica, pois são grandezas diretamente proporcioneis: 5 minutos * 3 = 15 minutos.",
+    q6: "B) 3 horas<br><strong>Resolução:</strong> Velocidade e tempo são grandezas inversamente proporcionais. Multiplicamos as condições iniciais: 60 km/h * 4h = 240 km totais. Dividindo pela nova velocidade: 240 km ÷ 80 km/h = 3 horas.",
+    q7: "C) 10 kg<br><strong>Resolução:</strong> Regra de três direta: 4 kg / 14 dias = x / 35 dias. Multiplicando cruzado: 14x = 4 * 35 -> 14x = 140 -> x = 140 ÷ 14 = 10 kg.",
+    q8: "B) 6 horas<br><strong>Resolução:</strong> Bombas e tempo são grandezas inversamente proporcionais. Multiplicando as condições iniciais: 3 bombas * 8h = 24. Dividindo pelo novo número de bombas: 24 ÷ 4 bombas = 6 horas.",
+    q9: "B) 4 xícaras<br><strong>Resolução:</strong> A proporção de açúcar para farinha é 2/3. Se usamos 6 xícaras de farinha, montamos: 2/3 = x/6. Multiplicando cruzado: 3x = 12 -> x = 12 ÷ 3 = 4 xícaras.",
+    q10: "A) 5 dias<br><strong>Resolução:</strong> O número de pintores dobrou (de 6 para 12). Como a quantidade de operários e o tempo são inversamente proporcionais, o tempo cai pela metade: 10 dias ÷ 2 = 5 dias.",
+    q11: "B) 2º quadrante<br><strong>Resolução:</strong> No plano cartesiano, os quadrantes seguem o sentido anti-horário. O 2º quadrante compreende a região superior esquerda, onde os valores de x são menores que zero (negativos) e os de y são maiores que zero (positivos).",
+    q12: "C) Será ampliada, ficando com os lados 3 vezes maiores.<br><strong>Resolução:</strong> Ao multiplicar as coordenadas cartesianas de um polígono por um número real maior que 1, realizamos uma homotetia (ampliação uniforme em relação à origem).",
+    q13: "A) (-2, -5)<br><strong>Resolução:</strong> Multiplicar ambas as coordenadas por -1 inverte os sinais numéricos de cada eixo do ponto: x' = 2 * (-1) = -2 e y' = 5 * (-1) = -5.",
+    q14: "C) (-3, -4)<br><strong>Resolução:</strong> Na reflexão em relação ao eixo vertical (y), a distância até o eixo se mantém, invertendo apenas o sinal da abscissa (x), enquanto a ordenada (y) permanece a mesma.",
+    q15: "B) (-2, 7)<br><strong>Resolução:</strong> Na reflexão em relação ao eixo horizontal (x), mantemos fixa a coordenada da abscissa (x) e invertemos o sinal geométrico da ordenada (y). Logo, de -7 passa a ser 7.",
+    q16: "A) (-3, 1)<br><strong>Resolução:</strong> A regra analítica para uma rotação de 90° no sentido anti-horário ao redor da origem mapeia qualquer par ordenado (x, y) em (-y, x). Aplicando a (1, 3), obtemos (-3, 1).",
+    q17: "C) (7, 1)<br><strong>Resolução:</strong> Na translação, somamos as alterações diretamente no ponto. Para a direita: x = 2 + 5 = 7. Para baixo: y = 4 - 3 = 1. Coordenada final: (7, 1).",
+    q18: "B) As medidas dos lados e dos ângulos permanecem inalteradas.<br><strong>Resolução:</strong> A translação é uma transformação isométrica rígida. Ela altera apenas a posição geográfica da figura no plano, preservando integralmente suas dimensões e ângulos internos.",
+    q19: "D) (0, 0)<br><strong>Resolução:</strong> A origem é o marco zero absoluto do sistema de coordenadas cartesianas, indicando o ponto exato onde a reta numérica horizontal intercepta a vertical.",
+    q20: "B) 3º quadrante<br><strong>Resolução:</strong> Rotacionar 180° equivale a rebater a figura simetricamente em relação à origem (mudar o sinal de x e y). Pontos (+, +) do 1º quadrante tornam-se (-, -), migrando para o 3º quadrante."
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 20;
+    let errosLista = [];
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+        const box = document.getElementById("ans_" + nome);
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            div.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        const resposta = selecionado.value;
+
+        if (resposta === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+            errosLista.push(`Q${i} – Marcou: ${resposta} | Gabarito: ${gabarito[nome]}`);
+        }
+
+        box.style.display = "block";
+        box.innerHTML = `<strong>Resposta e Explicação:</strong><br>${resolucoesDetalhadas[nome]}`;
+    }
+
+    const porcentagem = ((acertos / total) * 100).toFixed(0) + "%";
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Aproveitamento: <strong>${porcentagem}</strong></p>
+    `;
+    resultDiv.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach(i => i.disabled = true);
+
+    const formData = new FormData();
+    const tituloSimulado = document.querySelector("header").innerText.trim();
+    const agora = new Date().toLocaleString("pt-BR");
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", porcentagem);
+    formData.append("erros", errosLista.join("\n"));
+
+    fetch("https://google.com", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>

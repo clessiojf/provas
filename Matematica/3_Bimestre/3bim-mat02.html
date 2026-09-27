@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática – Simulado Objetivo 04 – 7º Ano (Objetivo)</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32; background: #f1f8e9; }
+        .wrong { border-color: #c62828; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📘 Matemática | Simulado Objetivo 04 – 7º Ano (Objetivo)</strong></header>
+
+<div class="container">
+    <h1>Simulado de Matemática – 20 Questões (Versão B)</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://google.com" method="POST">
+
+        <h2>Módulo 9 – Sequências, Razão, Proporção, GDP, GIP e Regra de Três</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Uma sequência numérica começa em 2 e cada novo termo é obtido multiplicando o termo anterior por 3, gerando os valores (2, 6, 18, 54, ...). Qual é o quinto termo dessa sequência?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) 108</label>
+                <label><input type="radio" name="q1" value="B"> B) 162</label>
+                <label><input type="radio" name="q1" value="C"> C) 216</label>
+                <label><input type="radio" name="q1" value="D"> D) 486</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Em um mapa rodoviário comercial, a distância entre duas capitais estaduais mede 8 cm. Sabendo que a escala do mapa é de 1 : 5.000.000, qual é a distância real em quilômetros entre essas cidades? (Dica: 1 km = 100.000 cm)</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) 40 km</label>
+                <label><input type="radio" name="q2" value="B"> B) 80 km</label>
+                <label><input type="radio" name="q2" value="C"> C) 400 km</label>
+                <label><input type="radio" name="q2" value="D"> D) 800 km</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Na horta de um colégio agrícola, foram colhidos 15 pés de alface crespa e 20 pés de alface lisa. Qual é a razão simplificada entre o número de alfaces crespas e o número de alfaces lisas colhidas?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) <sup>3</sup>/<sub>4</sub></label>
+                <label><input type="radio" name="q3" value="B"> B) <sup>4</sup>/<sub>3</sub></label>
+                <label><input type="radio" name="q3" value="C"> C) <sup>3</sup>/<sub>7</sub></label>
+                <label><input type="radio" name="q3" value="D"> D) <sup>5</sup>/<sub>4</sub></label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Determine o valor da incógnita y para que a igualdade entre as razões a seguir forme uma proporção legítima: <sup>3</sup>/<sub>8</sub> = <sup>9</sup>/<sub>y</sub></p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) y = 16</label>
+                <label><input type="radio" name="q4" value="B"> B) y = 18</label>
+                <label><input type="radio" name="q4" value="C"> C) y = 24</label>
+                <label><input type="radio" name="q4" value="D"> D) y = 27</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Uma moto consome 4 litros de gasolina para percorrer uma distância de 140 km. Mantendo as mesmas condições de consumo (GDP), quantos litros serão necessários para percorrer 350 km?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) 8 litros</label>
+                <label><input type="radio" name="q5" value="B"> B) 10 litros</label>
+                <label><input type="radio" name="q5" value="C"> C) 12 litros</label>
+                <label><input type="radio" name="q5" value="D"> D) 14 litros</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Três torneiras idênticas e totalmente abertas enchem uma piscina em 12 horas. Se abrirmos mais 3 torneiras iguais a essas, totalizando 6 torneiras funcionando juntas (GIP), em quanto tempo a piscina ficará cheia?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) 4 horas</label>
+                <label><input type="radio" name="q6" value="B"> B) 6 horas</label>
+                <label><input type="radio" name="q6" value="C"> C) 8 horas</label>
+                <label><input type="radio" name="q6" value="D"> D) 24 horas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Com uma jornada diária de trabalho estável, uma confecção têxtil produz 80 camisas em 2 dias. Utilizando uma regra de três simples direta, quantas camisas essa mesma confecção produzirá ao longo de uma semana completa (7 dias) de trabalho?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) 240 camisas</label>
+                <label><input type="radio" name="q7" value="B"> B) 280 camisas</label>
+                <label><input type="radio" name="q7" value="C"> C) 320 camisas</label>
+                <label><input type="radio" name="q7" value="D"> D) 560 camisas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Um navio cargueiro com uma tripulação estável possui mantimentos suficientes para durar exatamente 20 dias. Se o número de tripulantes a bordo for duplicado antes da partida, por quantos dias esses mesmos mantimentos vão durar?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) 10 dias</label>
+                <label><input type="radio" name="q8" value="B"> B) 15 dias</label>
+                <label><input type="radio" name="q8" value="C"> C) 30 dias</label>
+                <label><input type="radio" name="q8" value="D"> D) 40 dias</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Em um suco de frutas concentrado, a mistura recomendada pelo fabricante mantém a razão de 3 partes de suco para 7 partes de água. Se uma lanchonete utilizar 9 litros de suco puro, quantos litros de água deve adicionar?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) 14 litros</label>
+                <label><input type="radio" name="q9" value="B"> B) 18 litros</label>
+                <label><input type="radio" name="q9" value="C"> C) 21 litros</label>
+                <label><input type="radio" name="q9" value="D"> D) 27 litros</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Para realizar a colheita de uma plantação de soja, 4 colheitadeiras trabalhando no mesmo ritmo levam 9 dias. Caso o fazendeiro decida utilizar 6 colheitadeiras idênticas, em quantos dias o serviço será concluído?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) 5 dias</label>
+                <label><input type="radio" name="q10" value="B"> B) 6 dias</label>
+                <label><input type="radio" name="q10" value="C"> C) 12 dias</label>
+                <label><input type="radio" name="q10" value="D"> D) 13,5 dias</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Módulo 10 – Transformações Geométricas no Plano Cartesiano</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) No sistema de eixos cartesianos ortogonais, se um ponto possui a abscissa positiva e a ordenada negativa (+, -), em qual quadrante ele se localiza?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) 1º quadrante</label>
+                <label><input type="radio" name="q11" value="B"> B) 2º quadrante</label>
+                <label><input type="radio" name="q11" value="C"> C) 3º quadrante</label>
+                <label><input type="radio" name="q11" value="D"> D) 4º quadrante</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Se multiplicarmos as coordenadas cartesianas de todos os vértices de uma figura plana pelo número racional 0,5, o que ocorrerá com a nova figura gerada no plano?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) Sofrerá uma redução, ficando com a metade do tamanho dos lados originais.</label>
+                <label><input type="radio" name="q12" value="B"> B) Será ampliada, dobrando o comprimento de todos os seus lados.</label>
+                <label><input type="radio" name="q12" value="C"> C) Ficará exatamente com as mesmas dimensões, mudando apenas de quadrante.</label>
+                <label><input type="radio" name="q12" value="D"> D) Sofrerá uma rotação rígida de 90° ao redor do ponto central.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Um ponto geométrico Q(-3, 4) sofre uma multiplicação completa de suas coordenadas pelo fator constante -1. Quais serão as coordenadas do novo ponto Q' obtido?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) (3, 4)</label>
+                <label><input type="radio" name="q13" value="B"> B) (-3, -4)</label>
+                <label><input type="radio" name="q13" value="C"> C) (3, -4)</label>
+                <label><input type="radio" name="q13" value="D"> D) (4, -3)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Qual é a coordenada do ponto simétrico ao ponto B(-5, 2) quando realizamos uma reflexão geométrica plana em relação ao eixo das ordenadas (eixo y)?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) (-5, -2)</label>
+                <label><input type="radio" name="q14" value="B"> B) (5, 2)</label>
+                <label><input type="radio" name="q14" value="C"> C) (5, -2)</label>
+                <label><input type="radio" name="q14" value="D"> D) (2, -5)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question" id="q15_div">
+            <p>15) Determine as novas coordenadas de um ponto de vértice V(4, 3) após sofrer uma reflexão ortogonal em relação ao eixo das abscissas (eixo x):</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) (-4, 3)</label>
+                <label><input type="radio" name="q15" value="B"> B) (4, -3)</label>
+                <label><input type="radio" name="q15" value="C"> C) (-4, -3)</label>
+                <label><input type="radio" name="q15" value="D"> D) (3, 4)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q15"></div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="question" id="q16_div">
+            <p>16) Um ponto A(4, 1) sofre uma rotação de 90° no sentido anti-horário em torno da origem (0,0) do sistema. Qual par ordenado representará a nova posição do ponto?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) (-1, 4)</label>
+                <label><input type="radio" name="q16" value="B"> B) (1, -4)</label>
+                <label><input type="radio" name="q16" value="C"> C) (-4, 1)</label>
+                <label><input type="radio" name="q16" value="D"> D) (-1, -4)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q16"></div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="question" id="q17_div">
+            <p>17) Ao aplicar uma translação plana sobre o ponto P(-1, 2) que reduza 3 unidades da coordenada x e adicione 4 unidades à coordenada y, qual ponto será gerado?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) (2, 6)</label>
+                <label><input type="radio" name="q17" value="B"> B) (-4, 6)</label>
+                <label><input type="radio" name="q17" value="C"> C) (-4, -2)</label>
+                <label><input type="radio" name="q17" value="D"> D) (2, -2)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q17"></div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="question" id="q18_div">
+            <p>18) Quando um polígono completo sofre uma reflexão ou rotação no plano cartesiano, dizemos que essas transformações são isométricas porque preservam:</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Apenas a posição inicial da figura em relação aos eixos.</label>
+                <label><input type="radio" name="q18" value="B"> B) O formato, as distâncias dos lados e os ângulos internos originais.</label>
+                <label><input type="radio" name="q18" value="C"> C) As coordenadas absolutas de todos os seus vértices.</label>
+                <label><input type="radio" name="q18" value="D"> D) O quadrante em que a figura estava desenhada.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q18"></div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="question" id="q19_div">
+            <p>19) Qualquer ponto localizado exatamente sobre o eixo das abscissas (eixo x) possui obrigatoriamente qual característica em suas coordenadas?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) A sua ordenada (y) é igual a zero.</label>
+                <label><input type="radio" name="q19" value="B"> B) A sua abscissa (x) é igual a zero.</label>
+                <label><input type="radio" name="q19" value="C"> C) Ambas as coordenadas são números negativos.</label>
+                <label><input type="radio" name="q19" value="D"> D) O valor de x é igual ao valor de y.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q19"></div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="question" id="q20_div">
+            <p>20) Um ponto com coordenadas (3, -2) está situado no 4º quadrante. Se aplicarmos uma rotação rígida de 180° com centro na origem, para qual quadrante ele irá?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) 1º quadrante</label>
+                <label><input type="radio" name="q20" value="B"> B) 2º quadrante</label>
+                <label><input type="radio" name="q20" value="C"> C) 3º quadrante</label>
+                <label><input type="radio" name="q20" value="D"> D) Permanecerá no 4º quadrante</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q20"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "C", q5: "B",
+    q6: "B", q7: "B", q8: "A", q9: "C", q10: "B",
+    q11: "D", q12: "A", q13: "C", q14: "B", q15: "B",
+    q16: "A", q17: "B", q18: "B", q19: "A", q20: "B"
+};
+
+const resolucoesDetalhadas = {
+    q1: "B) 162<br><strong>Resolução:</strong> Seguindo a regra multiplicativa por 3 dada pelo enunciado: 1º termo = 2; 2º = 6; 3º = 18; 4º = 54; 5º termo = 54 * 3 = 162.",
+    q2: "C) 400 km<br><strong>Resolução:</strong> Na escala de 1:5.000.000, 8 cm correspondem a: 8 * 5.000.000 = 40.000.000 cm. Convertendo para quilômetros, eliminamos 5 zeros: 400 km.",
+    q3: "A) 3/4<br><strong>Resolução:</strong> A razão entre crespas (15) e lisas (20) monta a fração 15/20. Dividindo os dois termos da fração pelo divisor comum 5, obtemos a forma simplificada 3/4.",
+    q4: "C) y = 24<br><strong>Resolução:</strong> Pela propriedade das proporções (multiplicação em cruz): 3 * y = 8 * 9 -> 3y = 72 -> y = 72 ÷ 3 = 24.",
+    q5: "B) 10 litros<br><strong>Resolução:</strong> Montando a razão de proporcionalidade direta (GDP): 4 litros / 140 km = x litros / 350 km. Cruzando os dados: 140x = 1400 -> x = 1400 ÷ 140 = 10 litros.",
+    q6: "B) 6 horas<br><strong>Resolução:</strong> O número de torneiras atuantes dobrou (de 3 para 6). Sendo grandezas inversamente proporcionais (GIP), o tempo de enchimento será dividido pela metade: 12h ÷ 2 = 6 horas.",
+    q7: "B) 280 camisas<br><strong>Resolução:</strong> Regra de três simples direta: 80 camisas / 2 dias = x camisas / 7 dias. Multiplicando em cruz: 2x = 560 -> x = 560 ÷ 2 = 280 camisas.",
+    q8: "A) 10 dias<br><strong>Resolução:</strong> Como a quantidade de tripulantes a bordo dobrou, o consumo diário duplica. Tratando-se de grandezas inversamente proporcionais, o tempo de duração cai pela metade: 20 dias ÷ 2 = 10 dias.",
+    q9: "C) 21 litros<br><strong>Resolução:</strong> Razão de suco para água = 3/7. Para 9 litros de suco concentrado puro, montamos a proporção: 3/7 = 9/x. Multiplicando cruzado: 3x = 63 -> x = 63 ÷ 3 = 21 litros.",
+    q10: "B) 6 dias<br><strong>Resolução:</strong> Operários/máquinas e tempo são inversamente proporcionais (GIP). Multiplicamos o cenário inicial: 4 máquinas * 9 dias = 36. Dividindo pela nova frota: 36 ÷ 6 colheitadeiras = 6 dias.",
+    q11: "D) 4º quadrante<br><strong>Resolução:</strong> No plano cartesiano, os sinais (+, -) indicam um ponto localizado à direita do eixo vertical y (positivo em x) e abaixo do eixo horizontal x (negativo em y), caracterizando o 4º quadrante.",
+    q12: "A) Sofrerá uma redução, ficando com a metade do tamanho dos lados originais.<br><strong>Resolução:</strong> Multiplicar por um fator constante positivo menor do que 1 (como 0,5) gera uma redução proporcional linear em todas as medidas geométricas do desenho.",
+    q13: "C) (3, -4)<br><strong>Resolução:</strong> Multiplicar por -1 altera simetricamente os sinais das coordenadas. A abscissa passa de -3 para 3, e a ordenada passa de 4 para -4, originando o ponto (3, -4).",
+    q14: "B) (5, 2)<br><strong>Resolução:</strong> A reflexão em relação ao eixo y altera apenas a orientação horizontal. Assim, inverte-se exclusivamente o sinal algébrico da abscissa (x), mantendo a ordenada intacta: de -5 vira 5.",
+    q15: "B) (4, -3)<br><strong>Resolução:</strong> A reflexão sobre o eixo horizontal x atua invertendo unicamente o sentido vertical da ordenada (y), mantendo fixa a abscissa x. Logo, a ordenada muda de 3 para -3.",
+    q16: "A) (-1, 4)<br><strong>Resolução:</strong> Pela regra geométrica da rotação de 90° anti-horária a partir da origem, o par ordenado (x, y) é transformado em (-y, x). Aplicando ao ponto (4, 1), chegamos a (-1, 4).",
+    q17: "B) (-4, 6)<br><strong>Resolução:</strong> Operando a translação indicada: para x subtraímos 3 (-1 - 3 = -4) e para y somamos 4 (2 + 4 = 6). O par ordenado resultante é (-4, 6).",
+    q18: "B) O formato, as distâncias dos lados e os ângulos internos originais.<br><strong>Resolução:</strong> As isometrias planas (reflexão, rotação e translação) realizam movimentos rígidos que alteram apenas as posições espaciais da figura, preservando suas propriedades métricas e forma.",
+    q19: "A) A sua ordenada (y) é igual a zero.<br><strong>Resolução:</strong> Para que um ponto esteja posicionado sobre o próprio eixo horizontal x, ele não pode possuir nenhum deslocamento vertical, o que significa que sua altura y vale zero (x, 0).",
+    q20: "B) 2º quadrante<br><strong>Resolução:</strong> Uma rotação de 180° inverte ambos os sinais das coordenadas. O ponto (3, -2) do 4º quadrante passa a ter coordenadas (-3, 2), posicionando-se no 2º quadrante."
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 20;
+    let errosLista = [];
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+        const box = document.getElementById("ans_" + nome);
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            div.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        const resposta = selecionado.value;
+
+        if (resposta === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+            errosLista.push(`Q${i} – Marcou: ${resposta} | Gabarito: ${gabarito[nome]}`);
+        }
+
+        box.style.display = "block";
+        box.innerHTML = `<strong>Resposta e Explicação:</strong><br>${resolucoesDetalhadas[nome]}`;
+    }
+
+    const porcentagem = ((acertos / total) * 100).toFixed(0) + "%";
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+        <h2>Prova finalizada!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.</p>
+        <p>Aproveitamento: <strong>${porcentagem}</strong></p>
+    `;
+    resultDiv.style.display = "block";
+
+    document.querySelector("button[onclick='finalizar()']").disabled = true;
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach(i => i.disabled = true);
+
+    const formData = new FormData();
+    const tituloSimulado = document.querySelector("header").innerText.trim();
+    const agora = new Date().toLocaleString("pt-BR");
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", porcentagem);
+    formData.append("erros", errosLista.join("\n"));
+
+    fetch("https://google.com", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+    if (e.ctrlKey && e.keyCode == 83) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+};
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
