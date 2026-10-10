@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática – Recuperação - Prova 04</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .graph-container { margin: 15px 0; text-align: center; background: #fafafa; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; display: inline-block; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32 !important; background: #f1f8e9; }
+        .wrong { border-color: #c62828 !important; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📘 Matemática | Quarto Simulado Inédito – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Matemática – 10 Novas Questões</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Marque apenas uma alternativa em cada questão.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" onsubmit="event.preventDefault(); finalizar();">
+
+        <h2>Módulo 9 – Sequências, Razão, Proporção, GDP, GIP e Regra de Três</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Para realizar o levantamento topográfico de uma área, uma equipe de 3 engenheiros trabalhando no mesmo ritmo gasta exatamente 10 dias. Se a empresa decidir reforçar o time contratando mais 2 engenheiros de mesma capacidade produtiva, em quantos dias o levantamento completo da área será finalizado?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) 5 dias</label>
+                <label><input type="radio" name="q1" value="B"> B) 6 dias</label>
+                <label><input type="radio" name="q1" value="C"> C) 7 dias</label>
+                <label><input type="radio" name="q1" value="D"> D) 8 dias</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) O estoque de embalagens recicláveis de uma distribuidora cresce de forma linear a cada mês seguindo uma PA. O comportamento do armazenamento é definido pela lei de formação analítica: a<sub>n</sub> = 50 + (n - 1) · 15. Determine a quantidade exata de embalagens estocadas no oitavo mês (a<sub>8</sub>):</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) 140 embalagens</label>
+                <label><input type="radio" name="q2" value="B"> B) 155 embalagens</label>
+                <label><input type="radio" name="q2" value="C"> C) 170 embalagens</label>
+                <label><input type="radio" name="q2" value="D"> D) 185 embalagens</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Um laboratório fotográfico gasta R$ 110,00 para comprar insumos químicos necessários para revelar 4,0 kg de películas especiais de acetato. Mantendo a mesma proporção de preço e custos operacionais, quanto o laboratório pagaria se comprasse apenas 2,0 kg desse mesmo insumo?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) R$ 45,00</label>
+                <label><input type="radio" name="q3" value="B"> B) R$ 55,00</label>
+                <label><input type="radio" name="q3" value="C"> C) R$ 60,00</label>
+                <label><input type="radio" name="q3" value="D"> D) R$ 65,00</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Uma bomba hidráulica industrial gasta exatamente 18 minutos para escoar 90 litros de água residuária para um tanque de decantação. Mantendo um fluxo contínuo e sem interrupções por um período de 3 horas operacionais diárias, qual será o volume total de água transferido?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 720 litros</label>
+                <label><input type="radio" name="q4" value="B"> B) 900 litros</label>
+                <label><input type="radio" name="q4" value="C"> C) 1050 litros</label>
+                <label><input type="radio" name="q4" value="D"> D) 1200 litros</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Um avião bimotor realiza o voo postal de rotina entre duas bases aéreas mantendo uma velocidade média constante de 180 km/h, completando o percurso em exatamente 4 horas. Se o piloto precisasse reduzir o ritmo de voo por questões meteorológicas para uma velocidade média constante de 120 km/h, qual seria o novo tempo total de viagem necessário?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) 5 horas</label>
+                <label><input type="radio" name="q5" value="B"> B) 6 horas</label>
+                <label><input type="radio" name="q5" value="C"> C) 7 horas</label>
+                <label><input type="radio" name="q5" value="D"> D) 8 horas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Um centro de distribuição utiliza 6 esteiras rolantes idênticas e de mesma capacidade para descarregar um contêiner de mercadorias em exatamente 4 horas. Se o centro de distribuição decidir ativar mais 2 esteiras idênticas no mesmo ritmo, em quanto tempo o contêiner será totalmente descarregado?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) 2h 30min</label>
+                <label><input type="radio" name="q6" value="B"> B) 3h 00min</label>
+                <label><input type="radio" name="q6" value="C"> C) 3h 15min</label>
+                <label><input type="radio" name="q6" value="D"> D) 3h 30min</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <h2>Módulo 10 – Transformações Geométricas no Plano Cartesiano</h2>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) No segundo quadrante do plano cartesiano abaixo, foram plotados os pontos coordenados V(-2, 3) and W(-2, 7), que formam um dos lados verticais de um quadrado com lado medindo 4 cm. Para que este polígono fique situado totalmente contido no segundo quadrante, determine os pares ordenados correspondentes aos vértices opostos X e Y:</p>
+            
+            <div class="graph-container">
+                <svg width="250" height="250" viewBox="-8 -1 10 9" xmlns="http://w3.org" style="background:#fafafa;">
+                    <path d="M -8,1 L 2,1 M -8,2 L 2,2 M -8,3 L 2,3 M -8,4 L 2,4 M -8,5 L 2,5 M -8,6 L 2,6 M -8,7 L 2,7" fill="none" stroke="#e8e8e8" stroke-width="0.04"/>
+                    <path d="M -7,-1 L -7,8 M -6,-1 L -6,8 M -5,-1 L -5,8 M -4,-1 L -4,8 M -3,-1 L -3,8 M -2,-1 L -2,8 M -1,-1 L -1,8 M 1,-1 L 1,8" fill="none" stroke="#e8e8e8" stroke-width="0.04"/>
+                    <line x1="-8" y1="0" x2="2" y2="0" stroke="#000" stroke-width="0.08"/>
+                    <line x1="0" y1="-1" x2="0" y2="8" stroke="#000" stroke-width="0.08"/>
+                    <text x="-6.2" y="-0.2" font-size="0.4">-6</text><text x="-2.2" y="-0.2" font-size="0.4">-2</text>
+                    <text x="0.2" y="3.1" font-size="0.4">3</text><text x="0.2" y="7.1" font-size="0.4">7</text>
+                    <circle cx="-2" cy="3" r="0.15" fill="#1565c0"/><text x="-1.7" y="2.9" font-size="0.45" font-weight="bold">V</text>
+                    <circle cx="-2" cy="7" r="0.15" fill="#1565c0"/><text x="-1.7" y="6.9" font-size="0.45" font-weight="bold">W</text>
+                    <line x1="-2" y1="3" x2="-2" y2="7" stroke="#1565c0" stroke-width="0.08"/>
+                </svg>
+            </div>
+
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) X(-6, 3) e Y(-6, 7)</label>
+                <label><input type="radio" name="q7" value="B"> B) X(2, 3) e Y(2, 7)</label>
+                <label><input type="radio" name="q7" value="C"> C) X(-6, 0) e Y(-6, 4)</label>
+                <label><input type="radio" name="q7" value="D"> D) X(-2, -1) e Y(-2, -5)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Um paralelogramo desenhado no plano cartesiano possui seus vértices definidos nas coordenadas cartesianas A(-4, -1), B(-2, -3), C(0, -1) e D(-2, 1). Se realizarmos uma reflexão em relação ao eixo y (eixo das ordenadas), quais serão as novas coordenadas obtidas correspondentes aos pontos transformados A<sub>1</sub>, B<sub>1</sub>, C<sub>1</sub> e D<sub>1</sub>?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) A<sub>1</sub>(-4, 1), B<sub>1</sub>(-2, 3), C<sub>1</sub>(0, 1), D<sub>1</sub>(-2, -1)</label>
+                <label><input type="radio" name="q8" value="B"> B) A<sub>1</sub>(4, -1), B<sub>1</sub>(2, -3), C<sub>1</sub>(0, -1), D<sub>1</sub>(2, 1)</label>
+                <label><input type="radio" name="q8" value="C"> C) A<sub>1</sub>(4, 1), B<sub>1</sub>(2, 3), C<sub>1</sub>(0, 1), D<sub>1</sub>(2, -1)</label>
+                <label><input type="radio" name="q8" value="D"> D) A<sub>1</sub>(-1, -4), B<sub>1</sub>(-3, -2), C<sub>1</sub>(-1, 0), D<sub>1</sub>(1, -2)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) O polígono triangular representado abaixo possui vértices posicionados em A(-1, 2), B(-2, -1) e C(1, 0). Após aplicar uma transformação geométrica de ampliação com fator de escala 2, quais passarão a ser as coordenadas dos pontos ampliados A', B' e C'?</p>
+            
+            <div class="graph-container">
+                <svg width="250" height="250" viewBox="-4 -3 8 6" xmlns="http://w3.org" style="background:#fafafa;">
+                    <path d="M -4,-2 L 4,-2 M -4,-1 L 4,-1 M -4,1 L 4,1 M -4,2 L 4,2" fill="none" stroke="#e8e8e8" stroke-width="0.03"/>
+                    <path d="M -3,-3 L -3,3 M -2,-3 L -2,3 M -1,-3 L -1,3 M 1,-3 L 1,3 M 2,-3 L 2,3 M 3,-3 L 3,3" fill="none" stroke="#e8e8e8" stroke-width="0.03"/>
+                    <line x1="-4" y1="0" x2="4" y2="0" stroke="#000" stroke-width="0.05"/>
+                    <line x1="0" y1="-3" x2="0" y2="3" stroke="#000" stroke-width="0.05"/>
+                    <text x="-2.2" y="-0.2" font-size="0.25">-2</text><text x="-1.2" y="-0.2" font-size="0.25">-1</text><text x="1" y="-0.2" font-size="0.25">1</text><text x="2" y="-0.2" font-size="0.25">2</text>
+                    <text x="0.1" y="1.1" font-size="0.25">1</text><text x="0.1" y="2.1" font-size="0.25">2</text>
+                    <polygon points="-1,2 -2,-1 1,0" fill="#3f51b5" fill-opacity="0.25" stroke="#303f9f" stroke-width="0.06"/>
+                    <circle cx="-1" cy="2" r="0.1" fill="#000"/><text x="-1.4" y="2.3" font-size="0.3" font-weight="bold">A</text>
+                    <circle cx="-2" cy="-1" r="0.1" fill="#000"/><text x="-2.5" y="-0.8" font-size="0.3" font-weight="bold">B</text>
+                    <circle cx="1" cy="0" r="0.1" fill="#000"/><text x="1.2" y="0.4" font-size="0.3" font-weight="bold">C</text>
+                </svg>
+            </div>
+
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) A'(-2, 4), B'(-4, -2), C'(2, 0)</label>
+                <label><input type="radio" name="q9" value="B"> B) A'(-3, 4), B'(-4, -2), C'(3, 0)</label>
+                <label><input type="radio" name="q9" value="C"> C) A'(-2, 2), B'(-4, -1), C'(2, 0)</label>
+                <label><input type="radio" name="q9" value="D"> D) A'(-1, 4), B'(-2, -2), C'(1, 0)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Uma pipa foi modelada geometricamente sobre eixos cartesianos ortogonais coordenados conforme ilustrado a seguir. Analise os vértices que estruturam a pipa e assinale a alternativa que indica o par ordenado que representa corretamente o ponto C:</p>
+            
+            <div class="graph-container">
+                <svg width="250" height="250" viewBox="-4 -3 8 8" xmlns="http://w3.org" style="background:#fafafa;">
+                    <path d="M -4,-2 L 4,-2 M -4,-1 L 4,-1 M -4,1 L 4,1 M -4,2 L 4,2 M -4,3 L 4,3 M -4,4 L 4,4" fill="none" stroke="#e8e8e8" stroke-width="0.04"/>
+                    <path d="M -3,-3 L -3,5 M -2,-3 L -2,5 M -1,-3 L -1,5 M 1,-3 L 1,5 M 2,-3 L 2,5 M 3,-3 L 3,5" fill="none" stroke="#e8e8e8" stroke-width="0.04"/>
+                    <line x1="-4" y1="0" x2="4" y2="0" stroke="#000" stroke-width="0.06"/>
+                    <line x1="0" y1="-3" x2="0" y2="5" stroke="#000" stroke-width="0.06"/>
+                    <text x="-2.2" y="-0.2" font-size="0.3">-2</text><text x="2" y="-0.2" font-size="0.3">2</text>
+                    <text x="0.1" y="4.2" font-size="0.3">4</text><text x="0.1" y="-2.2" font-size="0.3">-2</text>
+                    <polygon points="0,4 2,2 0,-2 -2,2" fill="#009688" fill-opacity="0.3" stroke="#004d40" stroke-width="0.06"/>
+                    <line x1="-2" y1="2" x2="2" y2="2" stroke="#004d40" stroke-width="0.04" stroke-dasharray="0.1,0.1"/>
+                    <line x1="0" y1="4" x2="0" y2="-2" stroke="#004d40" stroke-width="0.04" stroke-dasharray="0.1,0.1"/>
+                    <circle cx="0" cy="4" r="0.1" fill="#004d40"/><text x="0.2" y="4.3" font-size="0.35" font-weight="bold">A</text>
+                    <circle cx="2" cy="2" r="0.1" fill="#004d40"/><text x="2.3" y="2.3" font-size="0.35" font-weight="bold">B</text>
+                    <circle cx="0" cy="-2" r="0.1" fill="#004d40"/><text x="0.2" y="-1.7" font-size="0.35" font-weight="bold">C</text>
+                    <circle cx="-2" cy="2" r="0.1" fill="#004d40"/><text x="-2.6" y="2.3" font-size="0.35" font-weight="bold">D</text>
+                </svg>
+            </div>
+
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) C(0, 4)</label>
+                <label><input type="radio" name="q10" value="B"> B) C(2, 2)</label>
+                <label><input type="radio" name="q10" value="C"> C) C(0, -2)</label>
+                <label><input type="radio" name="q10" value="D"> D) C(-2, 0)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+const gabarito = {
+    q1: "B", q2: "B", q3: "B", q4: "B", q5: "B",
+    q6: "B", q7: "A", q8: "B", q9: "A", q10: "C"
+};
+
+const resolucoesDetalhadas = {
+    q1: "B) 6 dias<br><strong>Resolução:</strong> O número de engenheiros e os dias de trabalho são grandezas inversamente proporcionais (mais engenheiros farão o serviço em menos tempo). A equipe original ganhou mais 2 membros, passando de 3 para 5. Multiplicamos as condições de partida: 3 engenheiros × 10 dias = 30. Dividindo pela nova quantidade: 30 ÷ 5 = 6 dias.",
+    q2: "B) 155 embalagens<br><strong>Resolução:</strong> Substituindo n = 8 na fórmula linear dada: a<sub>8</sub> = 50 + (8 - 1) · 15 → a<sub>8</sub> = 50 + 7 · 15 → a<sub>8</sub> = 50 + 105 = 155 embalagens.",
+    q3: "B) R\$ 55,00<br><strong>Resolução:</strong> O peso dos insumos e o preço pago são grandezas diretamente proporcionais. Como 2,0 kg representa exatamente a metade do peso inicial comprado (4,0 kg), o valor total da compra cai proporcionalmente pela metade: R\$ 110,00 ÷ 2 = R\$ 55,00.",
+    q4: "B) 900 litros<br><strong>Resolução:</strong> Convertendo o tempo total para minutos: 3 horas × 60 = 180 minutos. Sendo grandezas diretamente proporcionais, montamos a regra de três direta: 90 litros / 18 minutos = x / 180 minutos. Multiplicando cruzado: 18x = 90 × 180 → 18x = 16200 → x = 16200 ÷ 18 = 900 litros.",
+    q5: "B) 6 horas<br><strong>Resolução:</strong> Velocidade média e tempo de viagem são grandezas inversamente proporcionais. Multiplicamos as condições iniciais para encontrar a distância total entre as bases: 180 km/h × 4h = 720 km. Dividindo pela nova velocidade devido ao mau tempo: 720 km ÷ 120 km/h = 6 horas.",
+    q6: "B) 3h 00min<br><strong>Resolução:</strong> A quantidade de esteiras ativadas e o tempo gasto no descarregamento são grandezas inversamente proporcionais. A equipe de esteiras passou de 6 para 8. Multiplicamos as condições de partida: 6 esteiras × 4 horas = 24. Dividindo pela nova quantidade ativa: 24 ÷ 8 = 3 horas.",
+    q7: "A) X(-6, 3) e Y(-6, 7)<br><strong>Resolução:</strong> Para construir o quadrado com lado medindo 4 cm inteiramente no segundo quadrante (x negativo e y positivo), devemos projetar seus vértices opostos 4 unidades para a <strong>esquerda</strong> partindo de x = -2. Logo, x = -2 - 4 = -6, mantendo as alturas intactas em y = 3 e y = 7.<br><br><div class='graph-container'><svg width='240' height='240' viewBox='-8 -1 10 9' xmlns='http://w3.org' style='background:#fff;'><path d='M -8,1 L 2,1 M -8,2 L 2,2 M -8,3 L 2,3 M -8,4 L 2,4 M -8,5 L 2,5 M -8,6 L 2,6 M -8,7 L 2,7' fill='none' stroke='#eee' stroke-width='0.04'/><path d='M -7,-1 L -7,8 M -6,-1 L -6,8 M -5,-1 L -5,8 M -4,-1 L -4,8 M -3,-1 L -3,8 M -2,-1 L -2,8 M -1,-1 L -1,8 M 1,-1 L 1,8' fill='none' stroke='#eee' stroke-width='0.04'/><line x1='-8' y1='0' x2='2' y2='0' stroke='#000' stroke-width='0.08'/><line x1='0' y1='-1' x2='0' y2='8' stroke='#000' stroke-width='0.08'/><text x='-6.3' y='-0.2' font-size='0.4'>-6</text><text x='-2.3' y='-0.2' font-size='0.4'>-2</text><text x='0.2' y='3.1' font-size='0.4'>3</text><text x='0.2' y='7.1' font-size='0.4'>7</text><rect x='-6' y='3' width='4' height='4' fill='#2e7d32' fill-opacity='0.2' stroke='#2e7d32' stroke-width='0.08'/><circle cx='-2' cy='3' r='0.12' fill='#1565c0'/><circle cx='-2' cy='7' r='0.12' fill='#1565c0'/><circle cx='-6' cy='3' r='0.12' fill='#2e7d32'/><text x='-7.5' y='2.9' font-size='0.35' font-weight='bold' fill='#2e7d32'>X(-6,3)</text><circle cx='-6' cy='7' r='0.12' fill='#2e7d32'/><text x='-7.5' y='6.6' font-size='0.35' font-weight='bold' fill='#2e7d32'>Y(-6,7)</text></svg></div>",
+    q8: "B) A<sub>1</sub>(4, -1), B<sub>1</sub>(2, -3), C<sub>1</sub>(0, -1), D<sub>1</sub>(2, 1)<br><strong>Resolução:</strong> Na reflexão geométrica em relação ao eixo vertical y, as ordenadas y mantêm-se exatamente com os mesmos valores e invertemos os sinais correspondentes das abscissas x (valores de negativo mudam para positivo, espelhando a figura horizontalmente).<br><br><div class='graph-container'><svg width='240' height='240' viewBox='-6 -4 12 9' xmlns='http://w3.org' style='background:#fff;'><line x1='-6' y1='0' x2='6' y2='0' stroke='#000' stroke-width='0.08'/><line x1='0' y1='-4' x2='0' y2='5' stroke='#000' stroke-width='0.08'/><polygon points='-4,-1 -2,-3 0,-1 -2,1' fill='#bdc3c7' fill-opacity='0.4' stroke='#7f8c8d' stroke-width='0.06'/><polygon points='4,-1 2,-3 0,-1 2,1' fill='#c62828' fill-opacity='0.25' stroke='#c62828' stroke-width='0.08'/><text x='-5' y='-0.7' font-size='0.4'>A</text><text x='4.3' y='-0.7' font-size='0.4' font-weight='bold' fill='#c62828'>A1(4,-1)</text><path d='M -4,-1 L 4,-1 M -2,-3 L 2,-3 M -2,1 L 2,1' stroke='#b71c1c' stroke-width='0.03' stroke-dasharray='0.1,0.1'/></svg></div>",
+    q9: "A) A'(-2, 4), B'(-4, -2), C'(2, 0)<br><strong>Resolução:</strong> Para aplicar a ampliação com fator de escala igual a 2, multiplicamos de forma distributiva as coordenadas de todos os vértices originais pelo número 2: A'(-1·2, 2·2) → A'(-2, 4); B'(-2·2, -1·2) → B'(-4, -2); C'(1·2, 0·2) → C'(2, 0).<br><br><div class='graph-container'><svg width='240' height='240' viewBox='-5 -3 10 8' xmlns='http://w3.org' style='background:#fff;'><line x1='-5' y1='0' x2='5' y2='0' stroke='#000' stroke-width='0.06'/><line x1='0' y1='-3' x2='0' y2='5' stroke='#000' stroke-width='0.06'/><polygon points='-1,2 -2,-1 1,0' fill='#bdc3c7' fill-opacity='0.4' stroke='#7f8c8d' stroke-width='0.04'/><polygon points='-2,4 -4,-2 2,0' fill='#3f51b5' fill-opacity='0.15' stroke='#303f9f' stroke-width='0.08'/><text x='-1.3' y='1.7' font-size='0.4'>A</text><text x='-2.5' y='4.5' font-size='0.45' font-weight='bold' fill='#303f9f'>A'(-2,4)</text></svg></div>",
+    q10: "C) C(0, -2)<br><strong>Resolução:</strong> Localizando o ponto C na estrutura inferior da pipa, notamos que o vértice está posicionado exatamente sobre a linha do eixo vertical y. Como não há inclinação ou desvio lateral, sua abscissa é zero (x = 0). Sua profundidade corresponde a 2 unidades para baixo do ponto central. Portanto, seu par ordenado é C(0, -2).<br><br><div class='graph-container'><svg width='240' height='240' viewBox='-3 -3 6 7' xmlns='http://w3.org' style='background:#fff;'><line x1='-3' y1='0' x2='3' y2='0' stroke='#000' stroke-width='0.05'/><line x1='0' y1='-3' x2='0' y2='4' stroke='#000' stroke-width='0.05'/><polygon points='0,4 2,2 0,-2 -2,2' fill='#009688' fill-opacity='0.2' stroke='#004d40' stroke-width='0.05'/><circle cx='0' cy='-2' r='0.12' fill='#c62828'/><text x='0.3' y='-1.6' font-size='0.45' font-weight='bold' fill='#c62828'>C(0,-2)</text></svg></div>"
+};
+
+function finalizar() {
+    let acertos = 0;
+    const total = 10;
+
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const div = document.getElementById(nome + "_div");
+        const box = document.getElementById("ans_" + nome);
+
+        if (!selecionado) {
+            alert("Por favor, responda a questão " + i);
+            div.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        const resposta = selecionado.value;
+        div.classList.remove("correct", "wrong");
+
+        if (resposta === gabarito[nome]) {
+            acertos++;
+            div.classList.add("correct");
+        } else {
+            div.classList.add("wrong");
+        }
+
+        box.style.display = "block";
+        box.innerHTML = `<strong>Resposta e Explicação:</strong><br>${resolucoesDetalhadas[nome]}`;
+    }
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.style.display = "block";
+    resultDiv.innerHTML = `Simulado Concluído! Você acertou ${acertos} de ${total} questões (${((acertos / total) * 100).toFixed(0)}%).`;
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
