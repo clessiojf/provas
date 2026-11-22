@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte – 2º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #6a1b9a; --secondary: #8e24aa; --success: #2e7d32; --danger: #c62828; --bg: #f3e5f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fce4ec; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #f3e5f5;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🎨 Arte | 2º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Arte – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano B)" required>
+        </div>
+        <h2>Questões Objetivas – Módulo 9: O Desafio do Desconhecido (9.1 e 9.2)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No cotidiano, costumamos olhar para objetos, paisagens e imagens de maneira rápida e automática, sem prestar atenção aos detalhes. No Módulo 9.1 (<em>O estranhamento</em>), como a arte utiliza o recurso do estranhamento para romper com essa "automatização do olhar"?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Repetindo exatamente as mesmas imagens publicitárias que já vemos na televisão todos os dias.</label>
+                <label><input type="radio" name="q1" value="B"> B) Transformando elementos familiares, alterando suas proporções, cores ou contextos para provocar surpresa e fazer o espectador olhar com mais atenção.</label>
+                <label><input type="radio" name="q1" value="C"> C) Escondendo todas as obras em salas fechadas onde ninguém pode observá-las.</label>
+                <label><input type="radio" name="q1" value="D"> D) Proibindo o uso da imaginação e exigindo que o público apenas memorize datas históricas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) No movimento surrealista (como nas pinturas de René Magritte e Salvador Dalí), objetos comuns aparecem em situações impossíveis ou combinados de forma inesperada — por exemplo, um cachimbo pintado com a frase <em>"Isto não é um cachimbo"</em>. Qual efeito esse recurso provoca no público?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Provoca um estranhamento intelectual e visual, levando o espectador a distinguir a imagem representada do objeto real.</label>
+                <label><input type="radio" name="q2" value="B"> B) Comprova que os pintores surrealistas não sabiam escrever corretamente em sua própria língua.</label>
+                <label><input type="radio" name="q2" value="C"> C) Mostra que a pintura deve servir apenas como catálogo comercial para vender objetos.</label>
+                <label><input type="radio" name="q2" value="D"> D) Elimina qualquer possibilidade de interpretação ou debate sobre o significado da obra.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Em 1917, quando a artista brasileira Anita Malfatti realizou uma exposição em São Paulo com pinturas de cores intensas e formas deformadas (influenciadas pelo Expressionismo), parte da crítica conservadora atacou duramente suas obras por considerá-las "estranhas" e fora dos padrões acadêmicos. O que esse episódio histórico revela?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Que a arte moderna no Brasil já nasceu totalmente aceita sem nenhuma resistência cultural.</label>
+                <label><input type="radio" name="q3" value="B"> B) Que as obras de Anita Malfatti eram cópias idênticas das pinturas acadêmicas europeias do século XVIII.</label>
+                <label><input type="radio" name="q3" value="C"> C) Que o estranhamento diante de novas linguagens artísticas pode gerar resistência inicial, mas também abre caminho para a renovação cultural (como a Semana de Arte Moderna de 1922).</label>
+                <label><input type="radio" name="q3" value="D"> D) Que o público brasileiro preferia apenas esculturas abstratas feitas por computadores.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) No teatro contemporâneo, o dramaturgo Bertolt Brecht criou o conceito de <strong>"efeito de distanciamento" (ou estranhamento teatral)</strong>, no qual os atores interrompem a cena para conversar com a plateia ou exibem cartazes explicativos. Qual é o objetivo desse recurso?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Fazer com que a plateia durma durante a apresentação sem prestar atenção ao enredo.</label>
+                <label><input type="radio" name="q4" value="B"> B) Esconder que a peça é uma encenação, fazendo o público acreditar que tudo é real.</label>
+                <label><input type="radio" name="q4" value="C"> C) Substituir todos os atores humanos por gravações de áudio sem iluminação.</label>
+                <label><input type="radio" name="q4" value="D"> D) Impedir que o espectador apenas se emocione passivamente, estimulando-o a refletir criticamente sobre os problemas sociais mostrados na peça.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Por que o sentimento de "estranhamento" diante de uma obra de arte não deve ser confundido com a ideia de que a obra é "ruim" ou "sem valor"?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Porque o objetivo da arte nem sempre é agradar ou decorar, mas sim provocar inquietação, diálogo e novas formas de perceber o mundo.</label>
+                <label><input type="radio" name="q5" value="B"> B) Porque toda obra considerada estranha é automaticamente obrigatória em todas as casas.</label>
+                <label><input type="radio" name="q5" value="C"> C) Porque os artistas nunca se preocupam com a reação ou o pensamento do público.</label>
+                <label><input type="radio" name="q5" value="D"> D) Porque apenas obras feias e incompreensíveis têm permissão para serem expostas em galerias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No Módulo 9.2 (<em>O desconhecido</em>), vemos que a arte muitas vezes aborda temas, lugares ou realidades distantes do nosso cotidiano imediato (como culturas ancestrais, mundos imaginários ou questões sociais invisibilizadas). Como a arte nos ajuda a lidar com o desconhecido?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Criando medo e afastando as pessoas de qualquer cultura diferente da sua.</label>
+                <label><input type="radio" name="q6" value="B"> B) Funcionando como uma ponte simbólica que aproxima o espectador de outras realidades, despertando empatia e compreensão.</label>
+                <label><input type="radio" name="q6" value="C"> C) Substituindo os livros de História e Geografia por desenhos sem nenhum contexto.</label>
+                <label><input type="radio" name="q6" value="D"> D) Impondo que todos os artistas do mundo representem apenas paisagens europeias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Quando entramos em contato com a arte indígena brasileira (como a pintura corporal, a arte plumária e a cerâmica marajoara), muitas vezes nos deparamos com padrões gráficos e significados simbólicos desconhecidos da cultura urbana ocidental. Qual é a postura adequada para apreciar criticamente essas produções?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Classificá-las apenas como "artesanato simples" inferior às pinturas em tela.</label>
+                <label><input type="radio" name="q7" value="B"> B) Ignorar seu significado espiritual e social, avaliando apenas pelo preço de mercado.</label>
+                <label><input type="radio" name="q7" value="C"> C) Reconhecê-las como expressões artísticas complexas e ricas em saberes, respeitando os valores e a visão de mundo dos povos que as criaram.</label>
+                <label><input type="radio" name="q7" value="D"> D) Exigir que os povos indígenas abandonem suas tradições para pintar apenas retratos acadêmicos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Na arte contemporânea, o uso de tecnologias digitais, videoarte, realidade virtual e inteligência artificial trouxe linguagens antes desconhecidas para museus e galerias. Qual desafio essas novas mídias propõem ao público?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Ampliar a noção de suporte artístico e refletir criticamente sobre como a tecnologia transforma nossa percepção e convivência.</label>
+                <label><input type="radio" name="q8" value="B"> B) Eliminar definitivamente o desenho, a pintura, a música e a dança tradicionais.</label>
+                <label><input type="radio" name="q8" value="C"> C) Tornar a arte acessível apenas para engenheiros de computação.</label>
+                <label><input type="radio" name="q8" value="D"> D) Impedir que o espectador sinta emoções ou formule interpretações pessoais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Muitas vezes, diante de uma linguagem artística desconhecida (como a arte abstrata, que não representa figuras reconhecíveis do mundo real), o espectador pergunta: <em>"O que isso significa?"</em>. Qual orientação ajuda a superar esse bloqueio diante do abstrato?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Desistir de olhar a obra caso não apareça nenhuma pessoa ou paisagem desenhada.</label>
+                <label><input type="radio" name="q9" value="B"> B) Perceber que linhas, cores, formas, texturas e ritmos também comunicam sensações, ideias e emoções sem precisar copiar objetos reais.</label>
+                <label><input type="radio" name="q9" value="C"> C) Acreditar que obras abstratas são feitas ao acaso sem nenhuma intenção ou estudo do artista.</label>
+                <label><input type="radio" name="q9" value="D"> D) Procurar sempre uma fotografia escondida atrás da tela para entender a pintura.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Tanto o <strong>estranhamento</strong> (Módulo 9.1) quanto o encontro com o <strong>desconhecido</strong> (Módulo 9.2) são ferramentas fundamentais na formação do espectador crítico porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Confirmam todas as opiniões prontas que já tínhamos antes de conhecer a obra.</label>
+                <label><input type="radio" name="q10" value="B"> B) Mostram que apenas obras antigas de museus europeus merecem ser estudadas na escola.</label>
+                <label><input type="radio" name="q10" value="C"> C) Provam que não existe relação entre arte, sociedade e diversidade cultural.</label>
+                <label><input type="radio" name="q10" value="D"> D) Desacomodam o olhar habitual, estimulam a curiosidade investigativa e nos ensinam a dialogar com o diferente sem preconceitos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "A", q3: "C", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Transformar elementos familiares para provocar surpresa e atenção",
+    q2: "Provocar estranhamento intelectual e distinguir imagem representada do objeto real",
+    q3: "Gerar resistência inicial, mas abrir caminho para renovação cultural (Semana de 1922)",
+    q4: "Estimular a plateia a refletir criticamente sobre problemas sociais",
+    q5: "Provocar inquietação, diálogo e novas formas de perceber o mundo",
+    q6: "Funcionar como ponte simbólica que aproxima de outras realidades e desperta empatia",
+    q7: "Reconhecer como expressões artísticas complexas e respeitar os povos criadores",
+    q8: "Ampliar a noção de suporte artístico e refletir sobre o impacto da tecnologia",
+    q9: "Perceber que linhas, cores e formas comunicam sensações sem copiar objetos reais",
+    q10: "Desacomodar o olhar habitual e dialogar com o diferente sem preconceitos"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "B) Transformando elementos familiares, alterando suas proporções, cores ou contextos para provocar surpresa e fazer o espectador olhar com mais atenção.<br><strong>Explicação:</strong> O estranhamento rompe o olhar automático do dia a dia e convida o público a observar com profundidade.",
+    q2: "A) Provoca um estranhamento intelectual e visual, levando o espectador a distinguir a imagem representada do objeto real.<br><strong>Explicação:</strong> Na obra <em>A Traição das Imagens</em>, Magritte mostra que a pintura de um cachimbo é uma representação artística, e não o objeto físico.",
+    q3: "C) Que o estranhamento diante de novas linguagens artísticas pode gerar resistência inicial, mas também abre caminho para a renovação cultural (como a Semana de Arte Moderna de 1922).<br><strong>Explicação:</strong> A exposição de Anita Malfatti em 1917 chocou os acadêmicos, mas tornou-se o estopim do Modernismo brasileiro.",
+    q4: "D) Impedir que o espectador apenas se emocione passivamente, estimulando-o a refletir criticamente sobre os problemas sociais mostrados na peça.<br><strong>Explicação:</strong> O distanciamento brechtiano lembra ao público que está diante de uma obra construída para provocar pensamento crítico.",
+    q5: "A) Porque o objetivo da arte nem sempre é agradar ou decorar, mas sim provocar inquietação, diálogo e novas formas de perceber o mundo.<br><strong>Explicação:</strong> Obras que causam estranhamento ampliam o repertório estético e questionam padrões estabelecidos.",
+    q6: "B) Funcionando como uma ponte simbólica que aproxima o espectador de outras realidades, despertando empatia e compreensão.<br><strong>Explicação:</strong> A arte permite conhecer vivências, culturas e épocas distantes do nosso cotidiano.",
+    q7: "C) Reconhecê-las como expressões artísticas complexas e ricas em saberes, respeitando os valores e a visão de mundo dos povos que as criaram.<br><strong>Explicação:</strong> A arte indígena possui códigos estéticos, simbólicos e sociais próprios que exigem respeito e leitura cultural.",
+    q8: "A) Ampliar a noção de suporte artístico e refletir criticamente sobre como a tecnologia transforma nossa percepção e convivência.<br><strong>Explicação:</strong> Novas mídias incorporam recursos contemporâneos para dialogar com o mundo digital atual.",
+    q9: "B) Perceber que linhas, cores, formas, texturas e ritmos também comunicam sensações, ideias e emoções sem precisar copiar objetos reais.<br><strong>Explicação:</strong> Na arte abstrata, os elementos visuais têm expressividade própria, dispensando a figuração.",
+    q10: "D) Desacomodam o olhar habitual, estimulam a curiosidade investigativa e nos ensinam a dialogar com o diferente sem preconceitos.<br><strong>Explicação:</strong> A percepção crítica da arte desenvolve abertura cultural, sensibilidade e pensamento autônomo."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🎨 Arte | 2º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

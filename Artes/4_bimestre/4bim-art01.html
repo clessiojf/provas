@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte – 1º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #6a1b9a; --secondary: #8e24aa; --success: #2e7d32; --danger: #c62828; --bg: #f3e5f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fce4ec; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #f3e5f5;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🎨 Arte | 1º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Arte – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano A)" required>
+        </div>
+        <h2>Questões Objetivas – Módulo 9: O Desafio do Desconhecido (9.1 e 9.2)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No estudo da percepção crítica da arte (Módulo 9.1), o conceito de <strong>"estranhamento"</strong> ocorre quando uma obra rompe com os padrões tradicionais a que o público está acostumado. Qual é a principal intenção do artista ao provocar o estranhamento no espectador?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Garantir que todas as obras sejam cópias idênticas da realidade fotográfica.</label>
+                <label><input type="radio" name="q1" value="B"> B) Despertar a reflexão, tirar o observador da comodidade do olhar automático e fazê-lo questionar o que vê.</label>
+                <label><input type="radio" name="q1" value="C"> C) Impedir que o público visite museus, teatros ou exposições culturais.</label>
+                <label><input type="radio" name="q1" value="D"> D) Provar que a arte só pode ser compreendida por historiadores especializados.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Ao longo da história da arte, muitas obras causaram forte estranhamento e rejeição no momento em que foram apresentadas ao público (como ocorreu com o Impressionismo, o Cubismo e o Surrealismo), mas hoje são consideradas obras-primas. O que esse fenômeno histórico demonstra sobre a percepção artística?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Que o gosto estético é imutável e nunca sofre influência da época ou da cultura.</label>
+                <label><input type="radio" name="q2" value="B"> B) Que as obras antigas eram tecnicamente inferiores às produções digitais atuais.</label>
+                <label><input type="radio" name="q2" value="C"> C) Que o estranhamento inicial costuma acontecer diante do novo, mas com o tempo e a ampliação do repertório cultural o olhar do público se transforma.</label>
+                <label><input type="radio" name="q2" value="D"> D) Que apenas as pinturas renascentistas podem ser consideradas arte verdadeira.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No século XX, o artista Marcel Duchamp causou enorme polêmica e estranhamento ao apresentar objetos comuns do cotidiano (como uma roda de bicicleta ou um urinol assinado como <em>"Fonte"</em>) dentro de espaços expositivos, criando os chamados <strong>ready-mades</strong>. Qual questionamento essa atitude provocou?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Fez o público repensar o próprio conceito de arte, deslocando o foco da habilidade manual tradicional para a ideia e a escolha do artista.</label>
+                <label><input type="radio" name="q3" value="B"> B) Incentivou os museus a venderem móveis usados e ferramentas industriais no lugar de quadros.</label>
+                <label><input type="radio" name="q3" value="C"> C) Demonstrou que a pintura a óleo havia sido proibida pelos governos europeus.</label>
+                <label><input type="radio" name="q3" value="D"> D) Provou que objetos industriais valem mais do que qualquer escultura clássica de mármore.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) O estranhamento na arte não acontece apenas nas artes visuais, mas também na música, na dança e no teatro. Quando um compositor utiliza sons do cotidiano (como buzinas, passos ou ruídos de máquinas) ou escalas musicais diferentes do padrão tradicional, ele está:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Cometendo um erro técnico por desconhecer os instrumentos musicais clássicos.</label>
+                <label><input type="radio" name="q4" value="B"> B) Copiando fielmente as sinfonias europeias do século XVIII sem nenhuma inovação.</label>
+                <label><input type="radio" name="q4" value="C"> C) Evitando qualquer contato com a realidade sonora do mundo contemporâneo.</label>
+                <label><input type="radio" name="q4" value="D"> D) Explorando novas possibilidades sonoras e provocando o estranhamento auditivo para ampliar a experiência estética do ouvinte.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Diante de uma obra de arte que causa estranhamento, qual atitude caracteriza uma <strong>percepção crítica</strong> por parte do espectador?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Observar com atenção, pesquisar o contexto da obra, formular perguntas e buscar compreender os sentidos propostos antes de julgá-la.</label>
+                <label><input type="radio" name="q5" value="B"> B) Rejeitar imediatamente a obra dizendo "isso não é arte" apenas porque ela não parece bonita ou familiar.</label>
+                <label><input type="radio" name="q5" value="C"> C) Ignorar completamente a obra e repetir apenas a opinião pronta de outras pessoas.</label>
+                <label><input type="radio" name="q5" value="D"> D) Exigir que o artista refaça a obra seguindo estritamente as regras acadêmicas antigas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No Módulo 9.2 (<em>O desconhecido</em>), discute-se como o contato com expressões artísticas de outras culturas, povos ou épocas (como a arte indígena, africana ou contemporânea) muitas vezes provoca reação de rejeição inicial. Qual é a principal causa dessa rejeição diante do desconhecido?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) O fato de o público já conhecer profundamente todas as técnicas artísticas do mundo.</label>
+                <label><input type="radio" name="q6" value="B"> B) A tendência de julgar tudo apenas a partir dos nossos próprios padrões culturais habituais, sem abertura para conhecer outras formas de expressão.</label>
+                <label><input type="radio" name="q6" value="C"> C) A proibição legal de estudar manifestações artísticas fora do continente europeu.</label>
+                <label><input type="radio" name="q6" value="D"> D) A ausência total de significado simbólico nas artes produzidas por povos não europeus.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Quando os artistas europeus do início do século XX (como Pablo Picasso) entraram em contato com as máscaras e esculturas tradicionais africanas — até então vistas como "desconhecidas" ou exóticas pela Europa —, qual foi o impacto desse encontro na história da arte?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Levou os artistas europeus a abandonar definitivamente a pintura e a escultura.</label>
+                <label><input type="radio" name="q7" value="B"> B) Provocou o fechamento de todos os museus de arte moderna em Paris.</label>
+                <label><input type="radio" name="q7" value="C"> C) Inspirou profundas transformações estéticas e a criação de movimentos modernos (como o Cubismo), mostrando a riqueza da diversidade cultural.</label>
+                <label><input type="radio" name="q7" value="D"> D) Comprovou que a arte africana era uma cópia das esculturas gregas antigas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) As chamadas <strong>instalações artísticas</strong> e <strong>performances</strong> contemporâneas costumam causar surpresa por não serem apenas quadros pendurados na parede, mas obras que ocupam espaços inteiros e convidam o público a entrar, caminhar ou interagir. Como esse tipo de linguagem se relaciona com o tema "o desafio do desconhecido"?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Desafia o espectador a abandonar a postura passiva de simples observador e vivenciar a arte com todo o corpo e os sentidos.</label>
+                <label><input type="radio" name="q8" value="B"> B) Impede que qualquer pessoa se aproxime ou interaja com o espaço da exposição.</label>
+                <label><input type="radio" name="q8" value="C"> C) Restringe a arte exclusivamente a desenhos feitos a lápis em folhas de papel pequenas.</label>
+                <label><input type="radio" name="q8" value="D"> D) Elimina completamente a participação da imaginação e da criatividade do público.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Para um artista, enfrentar o "desconhecido" no processo de criação significa:</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Repetir exatamente as mesmas fórmulas seguras para nunca correr o risco de errar.</label>
+                <label><input type="radio" name="q9" value="B"> B) Experimentar novos materiais, suportes, sons, movimentos e ideias, assumindo o risco da pesquisa e da descoberta criativa.</label>
+                <label><input type="radio" name="q9" value="C"> C) Copiar obras famosas já consagradas sem acrescentar nenhuma interpretação pessoal.</label>
+                <label><input type="radio" name="q9" value="D"> D) Recusar qualquer diálogo com as transformações tecnológicas e sociais de seu tempo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao concluirmos o estudo do Módulo 9 (<em>O estranhamento</em> e <em>O desconhecido</em>), podemos afirmar que desenvolver uma percepção crítica diante do novo na arte contribui para:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Impor um único modelo de beleza como regra obrigatória para toda a sociedade.</label>
+                <label><input type="radio" name="q10" value="B"> B) Eliminar as diferenças culturais entre os povos para que todos produzam arte igual.</label>
+                <label><input type="radio" name="q10" value="C"> C) Reduzir a arte apenas a produtos comerciais padronizados para decoração.</label>
+                <label><input type="radio" name="q10" value="D"> D) Combater preconceitos estéticos e culturais, ampliando a empatia, a curiosidade e a capacidade de interpretar diferentes visões de mundo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Despertar a reflexão e tirar o observador da comodidade do olhar automático",
+    q2: "Com o tempo e a ampliação do repertório cultural, o olhar do público se transforma diante do novo",
+    q3: "Repensar o conceito de arte, deslocando o foco para a ideia e a escolha do artista",
+    q4: "Explorar novas possibilidades sonoras e provocar o estranhamento auditivo",
+    q5: "Observar com atenção, pesquisar o contexto e formular perguntas antes de julgar",
+    q6: "Julgar tudo apenas pelos nossos próprios padrões culturais habituais sem abertura",
+    q7: "Inspirou transformações estéticas e movimentos modernos como o Cubismo",
+    q8: "Desafia o espectador a abandonar a postura passiva e vivenciar a arte com os sentidos",
+    q9: "Experimentar novos materiais, suportes e ideias, assumindo o risco da descoberta criativa",
+    q10: "Combater preconceitos estéticos e culturais, ampliando a empatia e a visão de mundo"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "B) Despertar a reflexão, tirar o observador da comodidade do olhar automático e fazê-lo questionar o que vê.<br><strong>Explicação:</strong> O estranhamento rompe o hábito visual/sensorial para estimular uma leitura crítica da obra e da realidade.",
+    q2: "C) Que o estranhamento inicial costuma acontecer diante do novo, mas com o tempo e a ampliação do repertório cultural o olhar do público se transforma.<br><strong>Explicação:</strong> A percepção estética é histórica e cultural; o que hoje parece familiar já causou choque no passado.",
+    q3: "A) Fez o público repensar o próprio conceito de arte, deslocando o foco da habilidade manual tradicional para a ideia e a escolha do artista.<br><strong>Explicação:</strong> Os ready-mades de Duchamp inauguraram a arte conceitual ao questionar o que define uma obra de arte.",
+    q4: "D) Explorando novas possibilidades sonoras e provocando o estranhamento auditivo para ampliar a experiência estética do ouvinte.<br><strong>Explicação:</strong> Na música contemporânea e experimental, ruídos e novas escalas ampliam a escuta além das melodias tradicionais.",
+    q5: "A) Observar com atenção, pesquisar o contexto da obra, formular perguntas e buscar compreender os sentidos propostos antes de julgá-la.<br><strong>Explicação:</strong> A percepção crítica exige abertura, curiosidade e investigação em vez de julgamentos apressados.",
+    q6: "B) A tendência de julgar tudo apenas a partir dos nossos próprios padrões culturais habituais, sem abertura para conhecer outras formas de expressão.<br><strong>Explicação:</strong> O etnocentrismo estético leva à rejeição do que foge aos códigos culturais já conhecidos.",
+    q7: "C) Inspirou profundas transformações estéticas e a criação de movimentos modernos (como o Cubismo), mostrando a riqueza da diversidade cultural.<br><strong>Explicação:</strong> O diálogo com a arte africana rompeu com a perspectiva tradicional europeia e revolucionou a arte moderna.",
+    q8: "A) Desafia o espectador a abandonar a postura passiva de simples observador e vivenciar a arte com todo o corpo e os sentidos.<br><strong>Explicação:</strong> Instalações e performances convidam o público a participar ativamente da obra no espaço e no tempo.",
+    q9: "B) Experimentar novos materiais, suportes, sons, movimentos e ideias, assumindo o risco da pesquisa e da descoberta criativa.<br><strong>Explicação:</strong> Criar envolve investigar territórios desconhecidos e ir além das fórmulas já prontas.",
+    q10: "D) Combater preconceitos estéticos e culturais, ampliando a empatia, a curiosidade e a capacidade de interpretar diferentes visões de mundo.<br><strong>Explicação:</strong> O contato crítico com o estranho e o desconhecido forma espectadores mais sensíveis, respeitosos e reflexivos."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🎨 Arte | 1º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

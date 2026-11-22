@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte – 3º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #6a1b9a; --secondary: #8e24aa; --success: #2e7d32; --danger: #c62828; --bg: #f3e5f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fce4ec; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #f3e5f5;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🎨 Arte | 3º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Arte – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano C)" required>
+        </div>
+        <h2>Questões Objetivas – Módulo 9: O Desafio do Desconhecido (9.1 e 9.2)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No Módulo 9.1 (<em>O estranhamento</em>), estudamos que muitas obras de arte modernas e contemporâneas desconstroem a figura humana ou a paisagem tradicional, apresentando rostos fragmentados, cores irreais ou perspectivas distorcidas (como no Cubismo e no Expressionismo). Qual é o efeito estético buscado por essas deformações?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Provar que os artistas modernos perderam a capacidade de desenhar objetos proporcionais.</label>
+                <label><input type="radio" name="q1" value="B"> B) Substituir completamente a pintura por fotografias científicas em preto e branco.</label>
+                <label><input type="radio" name="q1" value="C"> C) Expressar emoções intensas, múltiplos pontos de vista e ideias subjetivas que uma cópia fiel da aparência externa não conseguiria transmitir.</label>
+                <label><input type="radio" name="q1" value="D"> D) Impedir que o público sinta qualquer tipo de curiosidade ou emoção diante da tela.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Quando um artista utiliza objetos cotidianos fora de sua função original — como transformar sucatas metálicas, plásticos reciclados ou roupas usadas em uma grande escultura urbana —, ele provoca estranhamento no observador porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Ressignifica materiais banais do dia a dia, convidando o público a refletir sobre consumo, descarte e novos sentidos poéticos.</label>
+                <label><input type="radio" name="q2" value="B"> B) Obriga os visitantes da exposição a comprarem todos os materiais reciclados expostos.</label>
+                <label><input type="radio" name="q2" value="C"> C) Demonstra que esculturas de mármore e bronze foram proibidas nos museus.</label>
+                <label><input type="radio" name="q2" value="D"> D) Esconde totalmente a origem dos objetos para que ninguém reconheça nenhum material.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Na dança contemporânea, muitos coreógrafos abandonam os passos clássicos simétricos do balé tradicional e incorporam movimentos cotidianos (como caminhar, cair, correr, ficar imóvel em silêncio ou repetir gestos simples). Como essa escolha dialoga com o conceito de estranhamento?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Mostra que os bailarinos não precisam ensaiar nem estudar o movimento corporal.</label>
+                <label><input type="radio" name="q3" value="B"> B) Quebra a expectativa de virtuosismo acrobático do público e chama atenção para a expressividade do corpo real no espaço.</label>
+                <label><input type="radio" name="q3" value="C"> C) Proíbe o uso de música, iluminação ou figurino em qualquer espetáculo de dança.</label>
+                <label><input type="radio" name="q3" value="D"> D) Restringe os espetáculos de dança apenas a competições esportivas olímpicas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) O escritor e teórico russo Viktor Chklovski definiu o conceito de "estranhamento" na arte afirmando que a função da linguagem artística é <em>"devolver a sensação da vida, fazer sentir os objetos, fazer da pedra pedra"</em>. O que essa afirmação significa na prática?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Que a arte deve apenas fabricar pedras artificiais para construções arquitetônicas.</label>
+                <label><input type="radio" name="q4" value="B"> B) Que o público deve ignorar as sensações e analisar apenas o preço comercial das obras.</label>
+                <label><input type="radio" name="q4" value="C"> C) Que apenas esculturas feitas de pedra natural possuem verdadeiro valor estético.</label>
+                <label><input type="radio" name="q4" value="D"> D) Que a arte nos tira do hábito mecânico de apenas reconhecer coisas rapidamente, fazendo-nos perceber novamente suas formas, texturas e significados.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Muitas vezes, diante de uma obra provocadora que causa estranhamento, surgem reações baseadas no senso comum (como <em>"até uma criança faria isso"</em>). Por que essa reação superficial impede uma leitura crítica da obra?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Porque reduz a avaliação artística apenas à dificuldade técnica visível, ignorando a pesquisa, a intenção poética e o contexto histórico do artista.</label>
+                <label><input type="radio" name="q5" value="B"> B) Porque crianças são proibidas de produzir desenhos ou visitar exposições de arte.</label>
+                <label><input type="radio" name="q5" value="C"> C) Porque nenhum artista contemporâneo estuda história da arte ou técnicas visuais.</label>
+                <label><input type="radio" name="q5" value="D"> D) Porque todas as obras modernas são feitas exclusivamente por crianças pequenas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No Módulo 9.2 (<em>O desconhecido</em>), refletimos sobre como a arte frequentemente nos coloca diante de culturas, estéticas e visões de mundo que não fazem parte da nossa rotina. Qual é o principal ganho formativo de entrar em contato com expressões artísticas desconhecidas?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Confirmar que a nossa própria cultura é a única capaz de produzir obras de valor.</label>
+                <label><input type="radio" name="q6" value="B"> B) Expandir o repertório cultural, desenvolver a escuta sensível e superar o medo ou o preconceito diante do que é diferente.</label>
+                <label><input type="radio" name="q6" value="C"> C) Substituir completamente todas as tradições locais por modismos estrangeiros.</label>
+                <label><input type="radio" name="q6" value="D"> D) Aprender apenas regras rígidas para reprodução comercial de imagens.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) A arte afro-brasileira e as manifestações culturais de matriz africana (como o maracatu, o jongo, a capoeira e as esculturas simbólicas) foram durante muito tempo marginalizadas ou tratadas como "desconhecidas" e exóticas pela elite acadêmica. Reconhecer o valor dessas expressões significa:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Restringir essas manifestações apenas a livros antigos sem prática viva nas comunidades.</label>
+                <label><input type="radio" name="q7" value="B"> B) Separar a música e a dança de qualquer contexto histórico ou identidade cultural.</label>
+                <label><input type="radio" name="q7" value="C"> C) Valorizar a pluralidade de matrizes que formam a identidade artística do Brasil e combater o preconceito cultural.</label>
+                <label><input type="radio" name="q7" value="D"> D) Impor padrões estéticos europeus sobre as festas e rituais tradicionais brasileiros.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Em muitas exposições de arte contemporânea, o público encontra obras abertas à interpretação (sem um único significado fechado ou legenda explicativa pronta). Como o espectador deve agir diante desse "desconhecido interpretativo"?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Assumir um papel ativo na leitura da obra, relacionando os elementos visuais ou sonoros às suas próprias experiências e ao contexto apresentado.</label>
+                <label><input type="radio" name="q8" value="B"> B) Recusar-se a olhar qualquer obra que não traga um resumo escrito explicando o que sentir.</label>
+                <label><input type="radio" name="q8" value="C"> C) Acreditar que a ausência de legenda significa que o artista não teve nenhuma ideia ao criar.</label>
+                <label><input type="radio" name="q8" value="D"> D) Exigir que todas as galerias tenham apenas retratos históricos com textos longos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) A chamada <strong>Land Art (Arte da Terra)</strong> utiliza paisagens naturais remotas — como desertos, montanhas, praias ou florestas — e materiais da própria natureza (pedras, terra, galhos, gelo) para criar obras efêmeras muitas vezes distantes dos museus tradicionais. Por que essa linguagem representa um desafio ao olhar convencional?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Porque destrói permanentemente as florestas para construir prédios comerciais.</label>
+                <label><input type="radio" name="q9" value="B"> B) Porque desloca a arte dos espaços fechados tradicionais para a própria natureza, questionando a ideia de obra como objeto permanente de coleção.</label>
+                <label><input type="radio" name="q9" value="C"> C) Porque proíbe o registro fotográfico ou audiovisual das intervenções na paisagem.</label>
+                <label><input type="radio" name="q9" value="D"> D) Porque utiliza exclusivamente tintas plásticas industriais sobre telas pequenas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao enfrentar o desconhecido na arte e na cultura, a atitude de <strong>curiosidade investigativa</strong> opõe-se diretamente ao preconceito porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Elimina a necessidade de estudar a história e o contexto das diferentes manifestações artísticas.</label>
+                <label><input type="radio" name="q10" value="B"> B) Garante que todas as pessoas tenham exatamente a mesma opinião sobre cada obra.</label>
+                <label><input type="radio" name="q10" value="C"> C) Prova que apenas obras antigas têm capacidade de emocionar o ser humano.</label>
+                <label><input type="radio" name="q10" value="D"> D) Substitui a rejeição imediata pelo desejo de conhecer, perguntar, compreender e dialogar com novas formas de expressão.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "C", q2: "A", q3: "B", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Expressar emoções intensas, múltiplos pontos de vista e ideias subjetivas",
+    q2: "Ressignificar materiais banais e convidar à reflexão sobre consumo e sentidos poéticos",
+    q3: "Quebrar a expectativa de virtuosismo e destacar a expressividade do corpo real",
+    q4: "Tirar do hábito mecânico e fazer perceber novamente formas, texturas e significados",
+    q5: "Reduz a avaliação à dificuldade técnica visível, ignorando pesquisa e contexto",
+    q6: "Expandir o repertório cultural e superar o medo ou preconceito diante do diferente",
+    q7: "Valorizar a pluralidade de matrizes da identidade brasileira e combater preconceitos",
+    q8: "Assumir papel ativo na leitura, relacionando elementos às próprias experiências",
+    q9: "Deslocar a arte para a natureza e questionar a obra como objeto permanente de coleção",
+    q10: "Substituir a rejeição imediata pelo desejo de conhecer, perguntar e dialogar"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "C) Expressar emoções intensas, múltiplos pontos de vista e ideias subjetivas que uma cópia fiel da aparência externa não conseguiria transmitir.<br><strong>Explicação:</strong> Movimentos como o Cubismo e o Expressionismo usam a distorção e a fragmentação para revelar novas dimensões da realidade.",
+    q2: "A) Ressignifica materiais banais do dia a dia, convidando o público a refletir sobre consumo, descarte e novos sentidos poéticos.<br><strong>Explicação:</strong> Ao tirar o objeto de sua função utilitária comum, o artista provoca um novo olhar crítico sobre o cotidiano.",
+    q3: "B) Quebra a expectativa de virtuosismo acrobático do público e chama atenção para a expressividade do corpo real no espaço.<br><strong>Explicação:</strong> A dança contemporânea amplia o conceito de movimento artístico ao incorporar gestos humanos comuns.",
+    q4: "D) Que a arte nos tira do hábito mecânico de apenas reconhecer coisas rapidamente, fazendo-nos perceber novamente suas formas, texturas e significados.<br><strong>Explicação:</strong> Para Chklovski, o estranhamento devolve densidade e frescor à percepção diante do que já parecia automático.",
+    q5: "A) Porque reduz a avaliação artística apenas à dificuldade técnica visível, ignorando a pesquisa, a intenção poética e o contexto histórico do artista.<br><strong>Explicação:</strong> A leitura crítica da arte vai além do julgamento superficial e investiga o sentido por trás da escolha formal.",
+    q6: "B) Expandir o repertório cultural, desenvolver a escuta sensível e superar o medo ou o preconceito diante do que é diferente.<br><strong>Explicação:</strong> O contato aberto com o desconhecido transforma o estranhamento inicial em aprendizado e empatia.",
+    q7: "C) Valorizar a pluralidade de matrizes que formam a identidade artística do Brasil e combater o preconceito cultural.<br><strong>Explicação:</strong> A arte brasileira é formada pelo diálogo entre matrizes indígenas, africanas e europeias.",
+    q8: "A) Assumir um papel ativo na leitura da obra, relacionando os elementos visuais ou sonoros às suas próprias experiências e ao contexto apresentado.<br><strong>Explicação:</strong> Na arte contemporânea, o espectador participa da construção dos sentidos da obra.",
+    q9: "B) Porque desloca a arte dos espaços fechados tradicionais para a própria natureza, questionando a ideia de obra como objeto permanente de coleção.<br><strong>Explicação:</strong> A Land Art integra a intervenção artística à paisagem natural e à passagem do tempo.",
+    q10: "D) Substitui a rejeição imediata pelo desejo de conhecer, perguntar, compreender e dialogar com novas formas de expressão.<br><strong>Explicação:</strong> A curiosidade investigativa é o caminho para uma percepção crítica, ética e plural da arte."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🎨 Arte | 3º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

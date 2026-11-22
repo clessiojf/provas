@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte – 4º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #6a1b9a; --secondary: #8e24aa; --success: #2e7d32; --danger: #c62828; --bg: #f3e5f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fce4ec; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #f3e5f5;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🎨 Arte | 4º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Arte – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano D)" required>
+        </div>
+        <h2>Questões Objetivas – Módulo 9: O Desafio do Desconhecido (9.1 e 9.2)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No Módulo 9.1 (<em>O estranhamento</em>), vemos que a arte muitas vezes desloca elementos de seu ambiente esperado — como colocar uma escultura gigante no meio de uma praça movimentada ou pintar um muro cinza com cores vibrantes. Qual é a principal consequência dessa intervenção no espaço urbano?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Interromper a pressa rotineira dos passantes, provocando surpresa, curiosidade e um novo olhar sobre a cidade.</label>
+                <label><input type="radio" name="q1" value="B"> B) Impedir que os moradores circulem pelas ruas e praças públicas do bairro.</label>
+                <label><input type="radio" name="q1" value="C"> C) Substituir todas as placas de trânsito por pinturas abstratas sem significado.</label>
+                <label><input type="radio" name="q1" value="D"> D) Garantir que apenas turistas estrangeiros possam observar as obras nas ruas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na literatura e nas artes visuais, o recurso do <strong>insólito</strong> (aquilo que é incomum, inesperado ou aparentemente absurdo) é muito usado para gerar estranhamento. Por que os artistas recorrem ao insólito em suas criações?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Porque desconhecem completamente as regras básicas de desenho e escrita.</label>
+                <label><input type="radio" name="q2" value="B"> B) Para questionar verdades consideradas óbvias, estimular a imaginação e revelar aspectos ocultos da realidade humana.</label>
+                <label><input type="radio" name="q2" value="C"> C) Para tornar as obras totalmente incompreensíveis e afastar qualquer leitor ou visitante.</label>
+                <label><input type="radio" name="q2" value="D"> D) Porque as leis de direitos autorais proíbem representar cenas reais do cotidiano.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No campo da música, o compositor norte-americano John Cage criou em 1952 a famosa peça <em>4'33"</em>, na qual o pianista permanece sentado diante do instrumento durante quatro minutos e trinta e três segundos sem tocar nenhuma nota. Qual estranhamento essa obra provoca no público?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Mostra que o piano estava quebrado e não havia outro instrumento disponível no teatro.</label>
+                <label><input type="radio" name="q3" value="B"> B) Prova que compositores modernos não precisam estudar teoria musical nem ritmo.</label>
+                <label><input type="radio" name="q3" value="C"> C) Desafia a ideia tradicional de que a música é feita apenas de notas escritas, fazendo a plateia escutar o silêncio e os sons ambientes da sala como parte da obra.</label>
+                <label><input type="radio" name="q3" value="D"> D) Proíbe o público de respirar ou fazer qualquer movimento durante todos os concertos clássicos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Quando um espectador diz que uma obra lhe causou "estranhamento", mas decide pesquisar sobre a vida do artista, o momento histórico em que foi criada e os materiais utilizados, ele está praticando:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) A censura estética, tentando proibir a exibição de obras diferentes do padrão.</label>
+                <label><input type="radio" name="q4" value="B"> B) O consumo passivo, aceitando sem pensar qualquer opinião divulgada na internet.</label>
+                <label><input type="radio" name="q4" value="C"> C) A cópia mecânica, reproduzindo a obra sem compreender seu significado.</label>
+                <label><input type="radio" name="q4" value="D"> D) A fruição estética ativa e a leitura contextualizada, fundamentais para desenvolver o senso crítico em arte.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) O estranhamento na arte também pode ocorrer por meio do <strong>contraste</strong> — por exemplo, retratar um tema sério ou dramático usando cores alegres de quadrinhos (como na <em>Pop Art</em>) ou materiais delicados. Esse contraste serve para:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Evitar que o espectador tenha uma reação emocional previsível e fazê-lo pensar nas contradições da sociedade.</label>
+                <label><input type="radio" name="q5" value="B"> B) Esconder completamente o tema da obra para que ninguém perceba a crítica social.</label>
+                <label><input type="radio" name="q5" value="C"> C) Transformar todas as obras de arte em embalagens comerciais de supermercado.</label>
+                <label><input type="radio" name="q5" value="D"> D) Eliminar a necessidade de escolher cores e materiais adequados ao projeto artístico.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No Módulo 9.2 (<em>O desconhecido</em>), analisamos como o contato com formas de arte que fogem ao nosso repertório cotidiano pode gerar insegurança inicial. Por que o ser humano costuma sentir desconforto diante do desconhecido na arte?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Porque o desconhecido exige esforço de interpretação e questiona as referências seguras que já conhecíamos.</label>
+                <label><input type="radio" name="q6" value="B"> B) Porque o cérebro humano é incapaz de aprender novos códigos visuais ou sonoros após a infância.</label>
+                <label><input type="radio" name="q6" value="C"> C) Porque todas as obras desconhecidas são criadas com o objetivo de assustar o público.</label>
+                <label><input type="radio" name="q6" value="D"> D) Porque os museus proíbem que os visitantes façam perguntas aos educadores.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Quando estudamos as artes tradicionais da Ásia (como a pintura sumi-ê japonesa, o teatro kabuki ou as mandalas tibetanas), encontramos regras de composição, tempo e espiritualidade muito diferentes da arte ocidental. Como esse estudo contribui para a formação do aluno no 7º ano?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Comprova que a perspectiva geométrica europeia é o único método correto de desenhar.</label>
+                <label><input type="radio" name="q7" value="B"> B) Mostra que existem múltiplas maneiras de representar o mundo, o espaço e o sagrado, combatendo a visão etnocêntrica.</label>
+                <label><input type="radio" name="q7" value="C"> C) Obriga os estudantes a abandonarem completamente a cultura brasileira e latino-americana.</label>
+                <label><input type="radio" name="q7" value="D"> D) Demonstra que as artes orientais não possuem história nem técnicas próprias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Na arte contemporânea, muitos artistas trabalham com <strong>arte efêmera</strong> (como esculturas de gelo, desenhos na areia da praia ou intervenções com folhas secas) que desaparecem com o passar do tempo. Qual reflexão essa linguagem desconhecida do mercado tradicional propõe?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Que o valor da arte está na experiência vivida e na transformação da natureza, e não apenas na posse material de um objeto eterno.</label>
+                <label><input type="radio" name="q8" value="B"> B) Que os artistas não sabem utilizar tintas resistentes nem materiais duráveis.</label>
+                <label><input type="radio" name="q8" value="C"> C) Que todas as pinturas em tela dos museus devem ser destruídas imediatamente.</label>
+                <label><input type="radio" name="q8" value="D"> D) Que a fotografia e o vídeo não podem registrar nenhuma manifestação artística.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) O que significa dizer que a arte funciona como um "espaço de experimentação do desconhecido" tanto para quem cria quanto para quem aprecia?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Que a arte segue fórmulas matemáticas rígidas onde o resultado final já é totalmente previsível antes de começar.</label>
+                <label><input type="radio" name="q9" value="B"> B) Que apenas cientistas em laboratórios podem experimentar novas linguagens estéticas.</label>
+                <label><input type="radio" name="q9" value="C"> C) Que a arte permite imaginar outros mundos possíveis, testar novos caminhos e descobrir sensibilidades que ainda não conhecíamos em nós mesmos.</label>
+                <label><input type="radio" name="q9" value="D"> D) Que o público deve assistir às apresentações artísticas sem pensar ou sentir nada novo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao visitar uma exposição com obras experimentais e desconhecidas, qual atitude demonstra maturidade estética e pensamento crítico?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Rir das obras diferentes e ir embora imediatamente sem ler nenhuma informação da mostra.</label>
+                <label><input type="radio" name="q10" value="B"> B) Exigir que o curador retire todas as obras que não sejam retratos realistas.</label>
+                <label><input type="radio" name="q10" value="C"> C) Repetir apenas a frase "não entendi nada" sem tentar observar os detalhes formais da obra.</label>
+                <label><input type="radio" name="q10" value="D"> D) Manter-se aberto ao diálogo com a obra, observar seus elementos, ler textos curatoriais e construir sua própria interpretação fundamentada.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "A", q2: "B", q3: "C", q4: "D", q5: "A",
+    q6: "A", q7: "B", q8: "A", q9: "C", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Interromper a pressa rotineira dos passantes, provocando surpresa e novo olhar sobre a cidade",
+    q2: "Questionar verdades óbvias, estimular a imaginação e revelar aspectos ocultos da realidade",
+    q3: "Desafiar a ideia tradicional de música, fazendo escutar o silêncio e os sons ambientes",
+    q4: "Fruição estética ativa e leitura contextualizada para desenvolver senso crítico",
+    q5: "Evitar reação previsível e fazer pensar nas contradições da sociedade",
+    q6: "O desconhecido exige esforço de interpretação e questiona referências seguras",
+    q7: "Mostrar múltiplas maneiras de representar o mundo e combater a visão etnocêntrica",
+    q8: "O valor está na experiência vivida e na transformação, não apenas na posse material",
+    q9: "Imaginar outros mundos possíveis e descobrir novas sensibilidades",
+    q10: "Manter-se aberto ao diálogo, ler textos curatoriais e construir interpretação fundamentada"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "A) Interromper a pressa rotineira dos passantes, provocando surpresa, curiosidade e um novo olhar sobre a cidade.<br><strong>Explicação:</strong> A intervenção urbana tira o espaço público da invisibilidade cotidiana por meio do estranhamento.",
+    q2: "B) Para questionar verdades consideradas óbvias, estimular a imaginação e revelar aspectos ocultos da realidade humana.<br><strong>Explicação:</strong> O insólito rompe a lógica comum e convida o espectador a pensar além das aparências.",
+    q3: "C) Desafia a ideia tradicional de que a música é feita apenas de notas escritas, fazendo a plateia escutar o silêncio e os sons ambientes da sala como parte da obra.<br><strong>Explicação:</strong> Em <em>4'33\"</em>, John Cage transforma a escuta atenta do ambiente na própria experiência musical.",
+    q4: "D) A fruição estética ativa e a leitura contextualizada, fundamentais para desenvolver o senso crítico em arte.<br><strong>Explicação:</strong> Pesquisar o contexto e as intenções do artista transforma o estranhamento inicial em compreensão crítica.",
+    q5: "A) Evitar que o espectador tenha uma reação emocional previsível e fazê-lo pensar nas contradições da sociedade.<br><strong>Explicação:</strong> O choque entre uma forma leve/colorida e um tema profundo gera reflexão crítica.",
+    q6: "A) Porque o desconhecido exige esforço de interpretação e questiona as referências seguras que já conhecíamos.<br><strong>Explicação:</strong> Sair da zona de conforto estético provoca insegurança inicial, mas é essencial para ampliar o repertório.",
+    q7: "B) Mostra que existem múltiplas maneiras de representar o mundo, o espaço e o sagrado, combatendo a visão etnocêntrica.<br><strong>Explicação:</strong> Conhecer estéticas não ocidentais ensina que não existe um único padrão universal de beleza ou técnica.",
+    q8: "A) Que o valor da arte está na experiência vivida e na transformação da natureza, e não apenas na posse material de um objeto eterno.<br><strong>Explicação:</strong> Na arte efêmera, o processo, o encontro com o público e a passagem do tempo são partes centrais da obra.",
+    q9: "C) Que a arte permite imaginar outros mundos possíveis, testar novos caminhos e descobrir sensibilidades que ainda não conhecíamos em nós mesmos.<br><strong>Explicação:</strong> A criação e a apreciação artística funcionam como espaços livres de descoberta e invenção.",
+    q10: "D) Manter-se aberto ao diálogo com a obra, observar seus elementos, ler textos curatoriais e construir sua própria interpretação fundamentada.<br><strong>Explicação:</strong> A atitude crítica combina sensibilidade, informação e respeito diante de linguagens desconhecidas."
+};
+
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🎨 Arte | 4º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
