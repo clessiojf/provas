@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica – 1º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #311b92; --secondary: #512da8; --success: #2e7d32; --danger: #c62828; --bg: #ede7f6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #ede7f6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🤖 Robótica | 1º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Robótica (Scratch) – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano A)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No <strong>Módulo 7 (Variáveis)</strong> da linguagem de programação Scratch, utilizamos variáveis de memória (como <em>Pontos</em>, <em>Vidas</em> ou <em>Tempo</em>) para armazenar informações durante a execução de um jogo. Qual é a diferença funcional entre os blocos <strong>"mude [Pontos] para 10"</strong> e <strong>"adicione 10 a [Pontos]"</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Ambos fazem exatamente a mesma coisa: sempre somam 10 ao valor atual da variável.</label>
+                <label><input type="radio" name="q1" value="B"> B) "Mude para 10" substitui o valor anterior pelo número 10, enquanto "adicione 10" soma 10 ao valor que já estava guardado na variável.</label>
+                <label><input type="radio" name="q1" value="C"> C) "Mude para 10" apaga o ator da tela, enquanto "adicione 10" muda a cor do cenário.</label>
+                <label><input type="radio" name="q1" value="D"> D) "Adicione 10" funciona apenas com palavras e nunca pode ser usado com números.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na categoria <strong>Operadores</strong> (blocos verdes no Scratch), encontramos blocos matemáticos (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), relacionais (<code>&gt;</code>, <code>&lt;</code>, <code>=</code>) e lógicos (<code>e</code>, <code>ou</code>, <code>não</code>). Considere uma variável <strong>Nota = 7</strong> e uma variável <strong>Faltas = 2</strong>. Qual será o resultado lógico da expressão:<br>
+            <code>(Nota &gt; 6) e (Faltas &lt; 5)</code>?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Falso, porque 7 é menor que 6.</label>
+                <label><input type="radio" name="q2" value="B"> B) Falso, porque o operador "e" exige que pelo menos uma condição seja falsa.</label>
+                <label><input type="radio" name="q2" value="C"> C) Verdadeiro, pois ambas as comparações (7 &gt; 6 e 2 &lt; 5) são verdadeiras simultaneamente.</label>
+                <label><input type="radio" name="q2" value="D"> D) O resultado será o número 9 (soma de 7 + 2).</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Para criar interação com o usuário no Scratch, utilizamos o bloco azul-claro <strong>"pergunte [Qual é o seu nome?] e espere"</strong> (categoria Sensores) em conjunto com o bloco <strong>"resposta"</strong>. Onde fica armazenado o texto digitado pelo usuário após pressionar Enter?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Fica armazenado automaticamente no bloco sensor <strong>resposta</strong> até que uma nova pergunta seja feita.</label>
+                <label><input type="radio" name="q3" value="B"> B) Fica guardado apenas no nome do arquivo do projeto e não pode ser usado em cálculos.</label>
+                <label><input type="radio" name="q3" value="C"> C) É apagado imediatamente antes que qualquer outro bloco consiga lê-lo.</label>
+                <label><input type="radio" name="q3" value="D"> D) Vai automaticamente para o bloco de som "toque o som Miau".</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Observe a sequência de blocos abaixo montada no Scratch:<br>
+            1. <code>pergunte [Digite um número:] e espere</code><br>
+            2. <code>mude [Dobro] para (resposta * 2)</code><br>
+            3. <code>diga (Dobro)</code><br>
+            Se o usuário digitar o número <strong>15</strong> quando a pergunta aparecer na tela, o que o ator dirá ao final da execução?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 15</label>
+                <label><input type="radio" name="q4" value="B"> B) 17</label>
+                <label><input type="radio" name="q4" value="C"> C) 2</label>
+                <label><input type="radio" name="q4" value="D"> D) 30</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) O palco do Scratch funciona como um plano cartesiano onde o centro exato possui coordenadas <strong>(x = 0, y = 0)</strong>, o eixo <strong>X</strong> controla a posição horizontal (de -240 na esquerda até +240 na direita) e o eixo <strong>Y</strong> controla a posição vertical (de -180 embaixo até +180 em cima). Se um ator está na posição <code>(x = 120, y = 50)</code> e executa o bloco <strong>"mude x para -100"</strong>, qual será sua nova coordenada?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) (x = -100, y = 50)</label>
+                <label><input type="radio" name="q5" value="B"> B) (x = 20, y = 50)</label>
+                <label><input type="radio" name="q5" value="C"> C) (x = 120, y = -100)</label>
+                <label><input type="radio" name="q5" value="D"> D) (x = -100, y = -100)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Ao programar o controle de um personagem utilizando as <strong>setas do teclado</strong> no Scratch (<em>PROGRAMANDO SETAS</em>), precisamos alterar suas coordenadas <strong>X</strong> e <strong>Y</strong> corretamente conforme a direção pressionada. Qual combinação de comandos movimenta o ator corretamente nas quatro direções?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Seta para cima: adicione -10 a y | Seta para baixo: adicione 10 a y | Seta para direita: adicione -10 a x | Seta para esquerda: adicione 10 a x.</label>
+                <label><input type="radio" name="q6" value="B"> B) Seta para cima: adicione 10 a y | Seta para baixo: adicione -10 a y | Seta para direita: adicione 10 a x | Seta para esquerda: adicione -10 a x.</label>
+                <label><input type="radio" name="q6" value="C"> C) Seta para cima: adicione 10 a x | Seta para baixo: adicione -10 a x | Seta para direita: adicione 10 a y | Seta para esquerda: adicione -10 a y.</label>
+                <label><input type="radio" name="q6" value="D"> D) Todas as quatro setas devem usar o bloco "mude x para 0" e "mude y para 0".</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Em jogos estilo <em>Pong</em> ou <em>Arkanoid</em> no Scratch, queremos que a raquete na parte inferior da tela acompanhe apenas o movimento horizontal do ponteiro do mouse do jogador, mantendo sua altura fixa (<code>y = -150</code>). Qual bloco devemos colocar dentro de um laço <strong>SEMPRE</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) <code>mude y para (posição x do mouse)</code></label>
+                <label><input type="radio" name="q7" value="B"> B) <code>mude x para (posição y do mouse)</code></label>
+                <label><input type="radio" name="q7" value="C"> C) <code>mude x para (posição x do mouse)</code></label>
+                <label><input type="radio" name="q7" value="D"> D) <code>vá para (posição aleatória)</code></label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) No <strong>Módulo 8 (Estruturas condicionais – SE e SE/SENÃO)</strong>, utilizamos blocos de decisão para que o programa escolha caminhos diferentes conforme o resultado de um teste lógico. Qual é a diferença principal entre o bloco <strong>"se &lt;condição&gt; então"</strong> e o bloco <strong>"se &lt;condição&gt; então ... senão"</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) O bloco "se ... então" só executa ações quando a condição é verdadeira (não fazendo nada se for falsa), enquanto o "se ... então ... senão" oferece uma ação alternativa específica para quando a condição for falsa.</label>
+                <label><input type="radio" name="q8" value="B"> B) O bloco "se ... então ... senão" executa os dois blocos de comandos (verdadeiro e falso) ao mesmo tempo em todas as jogadas.</label>
+                <label><input type="radio" name="q8" value="C"> C) O bloco "se ... então" funciona apenas para repetir ações infinitamente sem parar.</label>
+                <label><input type="radio" name="q8" value="D"> D) Não existe nenhuma diferença entre os dois blocos na lógica de programação.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Analise o algoritmo condicional abaixo construído no Scratch:<br>
+            <code>se &lt;Senha = "1234"&gt; então</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Acesso liberado!]</code><br>
+            <code>senão</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Senha incorreta!]</code><br>
+            Se a variável <strong>Senha</strong> estiver guardando o texto <strong>"4321"</strong>, o que acontecerá quando esse bloco for executado?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) O ator dirá "Acesso liberado!" e depois dirá "Senha incorreta!".</label>
+                <label><input type="radio" name="q9" value="B"> B) O ator dirá apenas "Senha incorreta!", pois a condição (Senha = "1234") é falsa.</label>
+                <label><input type="radio" name="q9" value="C"> C) O ator dirá "Acesso liberado!", pois os dois textos têm quatro dígitos.</label>
+                <label><input type="radio" name="q9" value="D"> D) O programa travará e não exibirá nenhuma mensagem na tela.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) No <strong>Módulo 9 (Repetições – REPITA e SEMPRE)</strong>, aprendemos a evitar a repetição manual de blocos idênticos usando laços de repetição. Se um ator começa no centro <code>(x = 0, y = 0)</code> e executa o bloco:<br>
+            <code>repita (4) vezes</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>mova (100) passos</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>gire 90 graus para a direita</code><br>
+            Qual figura geométrica o ator desenhará no palco (com a caneta baixada) e quantas vezes o laço será executado ao todo?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Um triângulo equilátero, executando o bloco 3 vezes.</label>
+                <label><input type="radio" name="q10" value="B"> B) Um círculo completo, executando o bloco infinitamente sem parar.</label>
+                <label><input type="radio" name="q10" value="C"> C) Uma linha reta de 400 passos sem virar nenhuma vez.</label>
+                <label><input type="radio" name="q10" value="D"> D) Um quadrado de lado 100 passos, executando os comandos internos exatamente 4 vezes.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique com suas palavras o que é uma <strong>variável de memória</strong> no Scratch (Módulo 7) e dê um exemplo prático de como ela pode ser utilizada em um jogo ou aplicativo:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Descreva a sequência lógica de blocos necessária no Scratch para perguntar a idade do usuário, guardar esse valor na variável <strong>Idade</strong> e verificar se ele tem 12 anos ou mais (<code>Idade &gt;= 12</code> ou <code>Idade &gt; 11</code>) usando uma estrutura condicional <strong>SE / SENÃO</strong>:</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Descreva os blocos e a condição utilizada..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Explique qual é a diferença entre o laço de repetição <strong>REPITA (n) VEZES</strong> e o laço de repetição <strong>SEMPRE</strong> no Scratch (Módulo 9), citando um exemplo de uso para cada um:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Explique a diferença e dê um exemplo para cada bloco..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Um aluno quer programar um foguete no Scratch para que, ao pressionar a <strong>seta para cima</strong>, o foguete suba 15 unidades no eixo vertical e, ao pressionar a <strong>seta para a esquerda</strong>, ele se mova 15 unidades para a esquerda. Quais blocos de coordenadas (<code>adicione ... a x</code> ou <code>adicione ... a y</code>) devem ser usados em cada caso?</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Indique os blocos exatos para cada seta..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "'Mude para 10' substitui o valor anterior; 'adicione 10' soma 10 ao valor atual",
+    q2: "Verdadeiro, pois ambas as comparações (7 > 6 e 2 < 5) são verdadeiras simultaneamente",
+    q3: "Armazenado automaticamente no bloco sensor 'resposta' até a próxima pergunta",
+    q4: "30 (resposta 15 * 2 = 30)",
+    q5: "(x = -100, y = 50) (apenas o eixo X é alterado)",
+    q6: "Cima: +10 em y | Baixo: -10 em y | Direita: +10 em x | Esquerda: -10 em x",
+    q7: "mude x para (posição x do mouse)",
+    q8: "'se...então' executa apenas se verdadeiro; 'se...então...senão' trata também o falso",
+    q9: "Apenas 'Senha incorreta!', pois a condição (Senha = '1234') é falsa",
+    q10: "Um quadrado de lado 100 passos, executando os comandos internos 4 vezes"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "B) \"Mude para 10\" substitui o valor anterior pelo número 10, enquanto \"adicione 10\" soma 10 ao valor que já estava guardado na variável.<br><strong>Explicação:</strong> <em>Mude para</em> define um valor fixo (ideal para iniciar ou zerar placares); <em>adicione</em> incrementa ou decrementa o valor existente.",
+    q2: "C) Verdadeiro, pois ambas as comparações (7 &gt; 6 e 2 &lt; 5) são verdadeiras simultaneamente.<br><strong>Explicação:</strong> O operador lógico <strong>e</strong> retorna verdadeiro somente quando as duas condições conectadas são verdadeiras ao mesmo tempo.",
+    q3: "A) Fica armazenado automaticamente no bloco sensor <strong>resposta</strong> até que uma nova pergunta seja feita.<br><strong>Explicação:</strong> O bloco <em>resposta</em> guarda a última entrada digitada pelo usuário após o bloco <em>pergunte ... e espere</em>.",
+    q4: "D) 30<br><strong>Explicação:</strong> A variável <em>resposta</em> recebe 15, o operador calcula 15 × 2 = 30, guarda em <em>Dobro</em> e o ator exibe <strong>30</strong>.",
+    q5: "A) (x = -100, y = 50)<br><strong>Explicação:</strong> O bloco <em>mude x para -100</em> altera exclusivamente a coordenada horizontal (X), mantendo a vertical (Y = 50) intacta.",
+    q6: "B) Seta para cima: adicione 10 a y | Seta para baixo: adicione -10 a y | Seta para direita: adicione 10 a x | Seta para esquerda: adicione -10 a x.<br><strong>Explicação:</strong> No plano cartesiano, subir/direita somam valores positivos em Y/X, e descer/esquerda subtraem (valores negativos).",
+    q7: "C) <code>mude x para (posição x do mouse)</code><br><strong>Explicação:</strong> Esse bloco sincroniza a coordenada horizontal (X) da raquete com a posição horizontal do cursor, sem alterar a altura (Y).",
+    q8: "A) O bloco \"se ... então\" só executa ações quando a condição é verdadeira (não fazendo nada se for falsa), enquanto o \"se ... então ... senão\" oferece uma ação alternativa específica para quando a condição for falsa.<br><strong>Explicação:</strong> Trata-se da diferença entre estrutura condicional simples (<em>SE</em>) e composta (<em>SE/SENÃO</em>).",
+    q9: "B) O ator dirá apenas \"Senha incorreta!\", pois a condição (Senha = \"1234\") é falsa.<br><strong>Explicação:</strong> Como \"4321\" é diferente de \"1234\", o fluxo desvia diretamente para o bloco <em>senão</em>.",
+    q10: "D) Um quadrado de lado 100 passos, executando os comandos internos exatamente 4 vezes.<br><strong>Explicação:</strong> Quatro lados iguais de 100 passos com giros de 90° formam um quadrado perfeito.",
+    q11: "<strong>Resposta Esperada:</strong> Uma <strong>variável de memória</strong> é um espaço reservado na memória do computador (identificado por um nome) usado para guardar valores que podem mudar durante a execução do programa. <strong>Exemplos:</strong> contagem de pontos (<em>Pontos</em>), número de vidas (<em>Vidas</em>), cronômetro (<em>Tempo</em>) ou nome do jogador.",
+    q12: "<strong>Resposta Esperada:</strong><br>1. <code>pergunte [Qual é a sua idade?] e espere</code><br>2. <code>mude [Idade] para (resposta)</code><br>3. <code>se &lt;Idade &gt; 11&gt; então</code> → <code>diga [Entrada permitida!]</code><br>4. <code>senão</code> → <code>diga [Acesso restrito a menores de 12 anos.]</code>",
+    q13: "<strong>Resposta Esperada:</strong> O bloco <strong>REPITA (n) VEZES</strong> é uma repetição controlada que executa os blocos internos um número exato e finito de vezes (ex.: repetir 4 vezes para desenhar um quadrado). Já o bloco <strong>SEMPRE</strong> é um laço infinito que mantém os comandos rodando continuamente enquanto o programa estiver ativo (ex.: verificar a todo instante se o personagem tocou em um obstáculo ou na borda).",
+    q14: "<strong>Resposta Esperada:</strong><br>• <strong>Seta para cima:</strong> <code>adicione 15 a y</code> (aumenta a coordenada vertical Y).<br>• <strong>Seta para a esquerda:</strong> <code>adicione -15 a x</code> (diminui a coordenada horizontal X)."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🤖 Robótica | 1º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

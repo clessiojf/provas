@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica – 3º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #311b92; --secondary: #512da8; --success: #2e7d32; --danger: #c62828; --bg: #ede7f6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #ede7f6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🤖 Robótica | 3º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Robótica (Scratch) – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano C)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No <strong>Módulo 7 (Variáveis)</strong> do Scratch, durante a execução de um jogo de plataforma, a variável <strong>Pontuação</strong> começa com <strong>0</strong>. Primeiro o jogador pega uma estrela azul (+15 pontos), depois cai em uma armadilha (-5 pontos) e, por fim, pega um troféu dourado (+25 pontos). Qual valor estará armazenado na variável <strong>Pontuação</strong> ao final dessas três ações?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) 25</label>
+                <label><input type="radio" name="q1" value="B"> B) 45</label>
+                <label><input type="radio" name="q1" value="C"> C) 35</label>
+                <label><input type="radio" name="q1" value="D"> D) 15</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na categoria <strong>Operadores</strong> do Scratch, o bloco booleano <strong><code>não &lt;condição&gt;</code></strong> inverte o resultado lógico de uma comparação (transformando verdadeiro em falso e falso em verdadeiro). Considere a variável <strong>Energia = 100</strong>. Qual será o resultado lógico da expressão:<br>
+            <code>não &lt;Energia = 0&gt;</code>?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Verdadeiro, porque 100 = 0 é falso, e o operador "não" inverte falso para verdadeiro.</label>
+                <label><input type="radio" name="q2" value="B"> B) Falso, porque 100 é igual a 0.</label>
+                <label><input type="radio" name="q2" value="C"> C) O número -100.</label>
+                <label><input type="radio" name="q2" value="D"> D) Falso, porque o operador "não" sempre resulta em falso.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Um aluno programou um assistente virtual no Scratch que faz duas perguntas seguidas usando o bloco <strong>PERGUNTE / RESPOSTA</strong>:<br>
+            1. <code>pergunte [Digite seu primeiro nome:] e espere</code><br>
+            2. <code>pergunte [Digite sua idade:] e espere</code><br>
+            3. <code>diga (resposta)</code><br>
+            Se o usuário digitou <strong>Lucas</strong> na primeira pergunta e <strong>13</strong> na segunda, o que aparecerá no balão de fala do ator no passo 3 (já que o primeiro valor não foi salvo em uma variável antes da segunda pergunta)?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Lucas</label>
+                <label><input type="radio" name="q3" value="B"> B) Lucas 13</label>
+                <label><input type="radio" name="q3" value="C"> C) Digite sua idade:</label>
+                <label><input type="radio" name="q3" value="D"> D) 13, pois a segunda pergunta sobrescreve o conteúdo do bloco sensor <strong>resposta</strong>.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Na categoria <strong>Operadores</strong> do Scratch, o bloco <strong><code>número aleatório entre (1) e (6)</code></strong> é muito utilizado para simular o lançamento de um dado comum em jogos de tabuleiro digitais. Se executarmos esse bloco, qual dos resultados abaixo é <strong>impossível</strong> de ser sorteado?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 1</label>
+                <label><input type="radio" name="q4" value="B"> B) 6</label>
+                <label><input type="radio" name="q4" value="C"> C) 7</label>
+                <label><input type="radio" name="q4" value="D"> D) 4</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Em um jogo de corrida lateral no Scratch, o carro do jogador está na posição <code>(x = -180, y = -90)</code>. Quando o jogador pressiona a barra de espaço para dar um "turbo", o código executa o bloco <strong><code>mude x para 0</code></strong>. Para onde o carro se deslocará no palco?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Para o centro horizontal da tela <code>(x = 0, y = -90)</code>, mantendo a mesma altura vertical.</label>
+                <label><input type="radio" name="q5" value="B"> B) Para o centro exato da tela <code>(x = 0, y = 0)</code>.</label>
+                <label><input type="radio" name="q5" value="C"> C) Para a borda direita extrema <code>(x = 240, y = -90)</code>.</label>
+                <label><input type="radio" name="q5" value="D"> D) Para o topo superior da tela <code>(x = -180, y = 180)</code>.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Existem duas formas principais de programar o movimento pelas setas no Scratch (<em>PROGRAMANDO SETAS</em>): usando blocos de evento <code>quando a tecla [...] for pressionada</code> ou colocando blocos condicionais <code>se &lt;tecla [...] pressionada?&gt; então</code> dentro de um laço <code>sempre</code>. Qual é a grande vantagem de usar a segunda técnica (<code>sempre</code> + <code>se tecla pressionada?</code>) em jogos de ação?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Permite movimentação contínua, suave e até diagonal (pressionando duas setas ao mesmo tempo, como cima e direita), sem o atraso inicial do teclado.</label>
+                <label><input type="radio" name="q6" value="B"> B) Faz com que o personagem se mova sozinho sem que o jogador precise tocar no teclado.</label>
+                <label><input type="radio" name="q6" value="C"> C) Desativa completamente as teclas de seta para cima e para baixo.</label>
+                <label><input type="radio" name="q6" value="D"> D) Apaga o cenário automaticamente toda vez que uma seta é apertada.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Em um jogo de defesa espacial no Scratch, a nave do jogador acompanha horizontalmente o cursor usando <code>mude x para (posição x do mouse)</code> dentro de um laço <code>sempre</code>. Se o jogador posicionar o cursor exatamente no meio horizontal da tela, qual valor o bloco <strong><code>posição x do mouse</code></strong> informará para a nave?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) -240</label>
+                <label><input type="radio" name="q7" value="B"> B) 0</label>
+                <label><input type="radio" name="q7" value="C"> C) 240</label>
+                <label><input type="radio" name="q7" value="D"> D) 180</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) No <strong>Módulo 8 (Estruturas condicionais – SE e SE/SENÃO)</strong>, podemos encadear condições para criar sistemas de classificação (por exemplo, medalhas em um jogo). Observe o código:<br>
+            <code>se &lt;Pontos &gt;= 100&gt; então</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Medalha de Ouro!]</code><br>
+            <code>senão</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>se &lt;Pontos &gt;= 50&gt; então</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Medalha de Prata!]</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>senão</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Tente novamente!]</code><br>
+            Se um jogador terminar a partida com <strong>75 pontos</strong>, qual mensagem será exibida?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Medalha de Ouro!</label>
+                <label><input type="radio" name="q8" value="B"> B) Tente novamente!</label>
+                <label><input type="radio" name="q8" value="C"> C) Medalha de Prata!</label>
+                <label><input type="radio" name="q8" value="D"> D) Nenhuma mensagem, pois 75 não é igual a 100 nem a 50.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Em um jogo de labirinto no Scratch, queremos que, ao tocar na porta de saída (ator <em>Portal</em>), o personagem mude para o próximo cenário e exiba a mensagem <em>"Fase concluída!"</em>. Qual estrutura condicional simples (<strong>Módulo 8 – SE</strong>) deve ser usada dentro do laço <code>sempre</code> do personagem?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) <code>se &lt;tocando em [Portal]?&gt; então</code> → <code>próximo cenário</code> + <code>diga [Fase concluída!] por 2 segundos</code></label>
+                <label><input type="radio" name="q9" value="B"> B) <code>se &lt;não &lt;tocando em [Portal]?&gt;&gt; então</code> → <code>próximo cenário</code></label>
+                <label><input type="radio" name="q9" value="C"> C) <code>mude [Portal] para 0</code> sem nenhuma condição.</label>
+                <label><input type="radio" name="q9" value="D"> D) <code>pare todos</code> antes mesmo de tocar no Portal.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) No <strong>Módulo 9 (Repetições – REPITA e SEMPRE)</strong>, um aluno quer programar um efeito de piscar para um ator (fazendo-o desaparecer, esperar 0.5 segundo, aparecer novamente e esperar 0.5 segundo) exatamente <strong>6 vezes</strong> seguidas e depois parar. Qual combinação de blocos realiza essa tarefa corretamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Usar o bloco <code>sempre</code> contendo <code>esconda</code> e <code>mostre</code>.</label>
+                <label><input type="radio" name="q10" value="B"> B) Usar o bloco <code>repita (6) vezes</code> contendo <code>esconda</code>, <code>espere 0.5 seg</code>, <code>mostre</code> e <code>espere 0.5 seg</code>.</label>
+                <label><input type="radio" name="q10" value="C"> C) Usar o bloco <code>repita até que</code> sem nenhuma condição dentro.</label>
+                <label><input type="radio" name="q10" value="D"> D) Colocar apenas <code>esconda</code> uma única vez sem repetição.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Qual é a diferença entre os operadores lógicos <strong><code>e</code></strong> e <strong><code>ou</code></strong> no Scratch (Módulo 7)? Dê um exemplo de situação em um jogo onde cada um deles seria utilizado:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Explique a diferença e dê um exemplo para cada operador..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Um programa no Scratch precisa fazer duas perguntas ao usuário (<em>Nome</em> e <em>Cidade</em>) e exibir a frase completa: <em>"Olá, [Nome] de [Cidade]!"</em>. Explique por que devemos guardar o valor de <strong><code>resposta</code></strong> em uma variável logo após a primeira pergunta antes de fazer a segunda pergunta:</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Explique o motivo e como resolver usando variáveis..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Escreva a lógica de blocos do Scratch usando uma estrutura condicional <strong>SE / SENÃO</strong> (Módulo 8) para verificar se o jogador ficou sem vidas (<code>Vidas &lt;= 0</code> ou <code>Vidas = 0</code>): caso seja verdadeiro, o ator deve dizer <em>"Game Over!"</em> e parar tudo (<code>pare todos</code>); caso contrário, deve dizer <em>"Continue jogando!"</em>:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva a estrutura SE / SENÃO..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Explique o que o trecho de código abaixo faz no palco do Scratch (Módulo 9 – Repetições):<br>
+            <code>vá para x: -200 y: 0</code><br>
+            <code>repita (8) vezes</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>adicione 50 a x</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>espere (0.5) segundos</code><br>
+            Qual será a coordenada final <code>(x, y)</code> do ator ao terminar a execução?</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Explique o movimento e calcule a coordenada final (x, y)..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "C", q2: "A", q3: "D", q4: "C", q5: "A",
+    q6: "A", q7: "B", q8: "C", q9: "A", q10: "B"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "35 (0 + 15 - 5 + 25 = 35)",
+    q2: "Verdadeiro, porque 100 = 0 é falso e o operador 'não' inverte para verdadeiro",
+    q3: "13, pois a segunda pergunta sobrescreve o conteúdo do bloco sensor 'resposta'",
+    q4: "7 (está fora do intervalo sorteado entre 1 e 6)",
+    q5: "Para o centro horizontal da tela (x = 0, y = -90), mantendo a altura vertical",
+    q6: "Permite movimentação contínua, suave e diagonal sem atraso do teclado",
+    q7: "0 (centro horizontal do eixo X no palco do Scratch)",
+    q8: "Medalha de Prata! (75 não é >= 100, cai no senão e satisfaz >= 50)",
+    q9: "se <tocando na cor/ator [Portal]?> então -> próximo cenário + diga [Fase concluída!]",
+    q10: "repita (6) vezes contendo esconda, espere 0.5 seg, mostre e espere 0.5 seg"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "C) 35<br><strong>Explicação:</strong> Partindo de 0: 0 + 15 = 15 → 15 − 5 = 10 → 10 + 25 = <strong>35</strong>.",
+    q2: "A) Verdadeiro, porque 100 = 0 é falso, e o operador \"não\" inverte falso para verdadeiro.<br><strong>Explicação:</strong> Como <em>Energia</em> vale 100, a comparação <code>100 = 0</code> é falsa; o bloco <code>não</code> inverte o resultado para <strong>verdadeiro</strong>.",
+    q3: "D) 13, pois a segunda pergunta sobrescreve o conteúdo do bloco sensor <strong>resposta</strong>.<br><strong>Explicação:</strong> O bloco <em>resposta</em> guarda apenas a última entrada digitada; para preservar dados anteriores, é preciso salvá-los em variáveis.",
+    q4: "C) 7<br><strong>Explicação:</strong> O bloco <code>número aleatório entre (1) e (6)</code> sorteia apenas números inteiros de 1 a 6 (1, 2, 3, 4, 5 ou 6).",
+    q5: "A) Para o centro horizontal da tela <code>(x = 0, y = -90)</code>, mantendo a mesma altura vertical.<br><strong>Explicação:</strong> O comando <em>mude x para 0</em> altera exclusivamente a coordenada X para o centro horizontal (0), sem modificar Y (-90).",
+    q6: "A) Permite movimentação contínua, suave e até diagonal (pressionando duas setas ao mesmo tempo, como cima e direita), sem o atraso inicial do teclado.<br><strong>Explicação:</strong> Dentro do laço <em>sempre</em>, o Scratch verifica o estado das teclas a cada quadro (frame), tornando a jogabilidade fluida.",
+    q7: "B) 0<br><strong>Explicação:</strong> No plano cartesiano do palco do Scratch, o meio horizontal corresponde exatamente a <strong>x = 0</strong>.",
+    q8: "C) Medalha de Prata!<br><strong>Explicação:</strong> Como 75 não é maior ou igual a 100, o fluxo entra no primeiro <em>senão</em>; lá, testa <code>75 &gt;= 50</code>, que é verdadeiro, exibindo <strong>Medalha de Prata!</strong>.",
+    q9: "A) <code>se &lt;tocando em [Portal]?&gt; então</code> → <code>próximo cenário</code> + <code>diga [Fase concluída!] por 2 segundos</code><br><strong>Explicação:</strong> Essa estrutura condicional simples detecta o contato com o objetivo e avança a fase.",
+    q10: "B) Usar o bloco <code>repita (6) vezes</code> contendo <code>esconda</code>, <code>espere 0.5 seg</code>, <code>mostre</code> e <code>espere 0.5 seg</code>.<br><strong>Explicação:</strong> Como a ação tem um número exato de repetições (6 vezes), utiliza-se o laço controlado <em>repita (6) vezes</em>.",
+    q11: "<strong>Resposta Esperada:</strong> O operador <strong><code>e</code></strong> exige que <strong>todas</strong> as condições conectadas sejam verdadeiras ao mesmo tempo (ex.: <code>&lt;Chave = \"sim\"&gt; e &lt;Pontos &gt;= 50&gt;</code> para abrir a fase final). Já o operador <strong><code>ou</code></strong> retorna verdadeiro se <strong>pelo menos uma</strong> das condições for verdadeira (ex.: <code>&lt;tocando em [Espinho]?&gt; ou &lt;Tempo = 0&gt;</code> para perder uma vida).",
+    q12: "<strong>Resposta Esperada:</strong> Porque o bloco sensor <strong><code>resposta</code></strong> armazena apenas a última digitação do usuário; quando a segunda pergunta é feita, ela apaga e substitui a resposta anterior. Por isso, logo após a primeira pergunta, devemos usar <code>mude [Nome] para (resposta)</code> antes de fazer a segunda pergunta.",
+    q13: "<strong>Resposta Esperada:</strong><br><code>se &lt;Vidas &lt;= 0&gt; então</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Game Over!] por 2 segundos</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>pare [todos]</code><br><code>senão</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Continue jogando!] por 2 segundos</code>",
+    q14: "<strong>Resposta Esperada:</strong> O ator começa na esquerda em <code>(-200, 0)</code> e dá 8 saltos para a direita de 50 pixels cada, esperando 0,5 segundo entre cada movimento (total de 4 segundos). Deslocamento total em X: <code>8 × 50 = +400</code>. Coordenada final: <code>x = -200 + 400 = +200</code> e <code>y = 0</code> → <strong>(x = 200, y = 0)</strong>."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🤖 Robótica | 3º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

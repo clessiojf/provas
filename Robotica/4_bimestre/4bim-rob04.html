@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica – 4º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #311b92; --secondary: #512da8; --success: #2e7d32; --danger: #c62828; --bg: #ede7f6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #ede7f6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🤖 Robótica | 4º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Robótica (Scratch) – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano D)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No <strong>Módulo 7 (Variáveis)</strong> do Scratch, um aluno criou um cronômetro regressivo que começa em <strong>60 segundos</strong> e diminui 1 segundo a cada segundo passado. Qual sequência de blocos faz essa contagem regressiva funcionar corretamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) <code>mude [Tempo] para 0</code> → <code>repita (60) vezes</code> { <code>espere 1 seg</code> + <code>adicione 1 a [Tempo]</code> }</label>
+                <label><input type="radio" name="q1" value="B"> B) <code>mude [Tempo] para 60</code> → <code>repita (60) vezes</code> { <code>espere 1 seg</code> + <code>adicione -1 a [Tempo]</code> }</label>
+                <label><input type="radio" name="q1" value="C"> C) <code>adicione 60 a [Tempo]</code> → <code>sempre</code> { <code>mude [Tempo] para -1</code> }</label>
+                <label><input type="radio" name="q1" value="D"> D) <code>mude [Tempo] para 60</code> → <code>repita (1) vez</code> { <code>adicione -60 a [Tempo]</code> }</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na categoria <strong>Operadores</strong> do Scratch, utilizamos blocos relacionais (<code>&gt;</code>, <code>&lt;</code>, <code>=</code>) e aritméticos (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>). Considere uma loja virtual dentro de um jogo onde o jogador tem <strong>Ouro = 45</strong> e o escudo custa <strong>Preço = 50</strong>. Qual será o resultado lógico da expressão:<br>
+            <code>(Ouro &gt;= Preço)</code>?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Verdadeiro, porque 45 é maior que 50.</label>
+                <label><input type="radio" name="q2" value="B"> B) O número 5 (diferença entre 50 e 45).</label>
+                <label><input type="radio" name="q2" value="C"> C) Falso, pois 45 não é maior nem igual a 50.</label>
+                <label><input type="radio" name="q2" value="D"> D) Verdadeiro, pois qualquer número positivo é aceito na compra.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Em um jogo educativo de tabuada no Scratch usando <strong>PERGUNTE / RESPOSTA</strong>, o programa exibe a pergunta <em>"Quanto é 7 x 8?"</em>. Qual condição deve ser colocada dentro do bloco <code>se &lt;...&gt; então</code> para verificar se o aluno acertou o cálculo?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) <code>resposta = 56</code></label>
+                <label><input type="radio" name="q3" value="B"> B) <code>resposta = 15</code></label>
+                <label><input type="radio" name="q3" value="C"> C) <code>pergunte = 56</code></label>
+                <label><input type="radio" name="q3" value="D"> D) <code>resposta &gt; 100</code></label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Observe a sequência de blocos abaixo montada no Scratch para calcular o perímetro de um quadrado cujo lado foi digitado pelo usuário:<br>
+            1. <code>pergunte [Digite a medida do lado do quadrado:] e espere</code><br>
+            2. <code>mude [Lado] para (resposta)</code><br>
+            3. <code>mude [Perímetro] para (Lado * 4)</code><br>
+            4. <code>diga (Perímetro)</code><br>
+            Se o usuário digitar <strong>9</strong>, qual valor será exibido no final?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 13</label>
+                <label><input type="radio" name="q4" value="B"> B) 81</label>
+                <label><input type="radio" name="q4" value="C"> C) 18</label>
+                <label><input type="radio" name="q4" value="D"> D) 36</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) No palco do Scratch, um personagem está na coordenada <code>(x = -60, y = 110)</code>. Se ele executar primeiro <strong><code>mude x para 140</code></strong> e logo em seguida <strong><code>adicione -40 a x</code></strong>, qual será sua posição final <code>(x, y)</code>?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) (x = 100, y = 110)</label>
+                <label><input type="radio" name="q5" value="B"> B) (x = -100, y = 110)</label>
+                <label><input type="radio" name="q5" value="C"> C) (x = 40, y = 110)</label>
+                <label><input type="radio" name="q5" value="D"> D) (x = 100, y = 70)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Ao programar a movimentação de um submarino no Scratch utilizando as setas do teclado (<em>PROGRAMANDO SETAS</em>), um aluno percebeu que, ao apertar a <strong>seta para baixo</strong>, o submarino estava subindo em vez de descer. Qual erro ele provavelmente cometeu no bloco de coordenada?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Usou <code>adicione -10 a y</code> em vez de <code>adicione 10 a y</code>.</label>
+                <label><input type="radio" name="q6" value="B"> B) Usou <code>adicione 10 a y</code> (valor positivo) em vez de <code>adicione -10 a y</code> (valor negativo).</label>
+                <label><input type="radio" name="q6" value="C"> C) Usou <code>adicione -10 a x</code> em vez de <code>adicione 10 a x</code>.</label>
+                <label><input type="radio" name="q6" value="D"> D) Colocou o bloco <code>mostre</code> antes do movimento.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Em um jogo de pintura interativa no Scratch, um lápis virtual segue o movimento horizontal do ponteiro do mouse na parte superior da tela (<code>y = 140</code>) usando <strong>POSIÇÃO X DO MOUSE</strong>. Qual é a diferença entre usar <code>mude x para (posição x do mouse)</code> e usar <code>vá para [ponteiro do mouse]</code>?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) <code>vá para [ponteiro do mouse]</code> move o ator apenas para a esquerda, enquanto <code>mude x para (posição x do mouse)</code> move apenas para cima.</label>
+                <label><input type="radio" name="q7" value="B"> B) Não há diferença alguma; ambos travam o eixo Y em 140.</label>
+                <label><input type="radio" name="q7" value="C"> C) <code>mude x para (posição x do mouse)</code> altera apenas a coordenada horizontal (X), mantendo o lápis na linha fixa (y = 140), enquanto <code>vá para [ponteiro do mouse]</code> altera tanto X quanto Y livremente pela tela inteira.</label>
+                <label><input type="radio" name="q7" value="D"> D) <code>mude x para (posição x do mouse)</code> funciona apenas quando o teclado está desconectado.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) No <strong>Módulo 8 (Estruturas condicionais – SE e SE/SENÃO)</strong>, observe o código de um semáforo inteligente programado no Scratch:<br>
+            <code>se &lt;Cor = "verde"&gt; então</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Pode atravessar!]</code><br>
+            <code>senão</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Aguarde na calçada!]</code><br>
+            Se a variável <strong>Cor</strong> estiver com o valor <strong>"amarelo"</strong>, o que acontecerá?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) O ator dirá "Aguarde na calçada!", pois a condição (Cor = "verde") é falsa e o fluxo segue para o bloco senão.</label>
+                <label><input type="radio" name="q8" value="B"> B) O ator dirá "Pode atravessar!", pois amarelo e verde são cores próximas.</label>
+                <label><input type="radio" name="q8" value="C"> C) O programa exibirá erro de sintaxe e fechará o Scratch.</label>
+                <label><input type="radio" name="q8" value="D"> D) O ator ficará em silêncio sem executar nenhum bloco.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Em um jogo de corrida no Scratch, queremos impedir que o carro ultrapasse a parede direita da pista (<code>x &gt; 210</code>), fazendo-o recuar 10 unidades sempre que tentar passar desse limite. Qual estrutura condicional (<strong>Módulo 8 – SE</strong>) deve ser colocada dentro do laço <code>sempre</code>?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) <code>se &lt;posição x &lt; 210&gt; então</code> → <code>adicione 10 a x</code></label>
+                <label><input type="radio" name="q9" value="B"> B) <code>se &lt;posição x &gt; 210&gt; então</code> → <code>adicione -10 a x</code></label>
+                <label><input type="radio" name="q9" value="C"> C) <code>se &lt;posição y &gt; 210&gt; então</code> → <code>mude y para 0</code></label>
+                <label><input type="radio" name="q9" value="D"> D) <code>mude x para 250</code> sem nenhuma condição.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) No <strong>Módulo 9 (Repetições – REPITA e SEMPRE)</strong>, um aluno criou uma animação em que um gato gira e aumenta de tamanho dentro de um laço controlado:<br>
+            <code>repita (10) vezes</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>gire 36 graus para a direita</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>adicione 5 ao tamanho</code><br>
+            Ao final das 10 repetições, quantos graus ao todo o gato terá girado e quanto terá aumentado no seu tamanho?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Girou 36 graus e aumentou 5 no tamanho.</label>
+                <label><input type="radio" name="q10" value="B"> B) Girou 360 graus (uma volta completa) e aumentou 50 no tamanho.</label>
+                <label><input type="radio" name="q10" value="C"> C) Girou 180 graus e aumentou 15 no tamanho.</label>
+                <label><input type="radio" name="q10" value="D"> D) Girou 3600 graus e aumentou 500 no tamanho.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique a diferença entre um <strong>operador aritmético</strong> e um <strong>operador relacional</strong> na categoria Operadores do Scratch (Módulo 7), citando exemplos de blocos para cada tipo:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Descreva a sequência lógica de blocos necessária no Scratch para pedir uma senha ao usuário usando <strong>PERGUNTE / RESPOSTA</strong> e verificar se a digitação foi exatamente igual a <strong>"scratch123"</strong> usando <strong>SE / SENÃO</strong> (exibindo <em>"Bem-vindo!"</em> se acertar ou <em>"Acesso negado!"</em> se errar):</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Descreva os blocos e a condição utilizada..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Ao programar as setas do teclado no Scratch (<em>PROGRAMANDO SETAS</em>), quais blocos exatos de coordenadas (<code>adicione ... a x</code> ou <code>adicione ... a y</code>) devem ser utilizados para mover um personagem <strong>12 unidades para a direita</strong> e <strong>12 unidades para baixo</strong>, respectivamente?</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Indique os blocos exatos para cada direção..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Explique o que acontece durante a execução do código abaixo no Scratch (Módulos 8 e 9):<br>
+            <code>sempre</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>se &lt;Pontos = 100&gt; então</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>diga [Você venceu!]</code><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>pare [todos]</code></p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Explique o funcionamento do laço sempre e da condição..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "B"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "mude [Tempo] para 60 -> repita (60) vezes { espere 1 seg + adicione -1 a [Tempo] }",
+    q2: "Falso, pois 45 não é maior nem igual a 50",
+    q3: "resposta = 56",
+    q4: "36 (Lado 9 * 4 = 36)",
+    q5: "(x = 100, y = 110) (muda x para 140 e depois soma -40, resultando em 100)",
+    q6: "Usou adicione 10 a y (positivo) em vez de adicione -10 a y (negativo)",
+    q7: "mude x para (posição x do mouse) altera apenas X (mantendo y = 140), enquanto vá para [ponteiro do mouse] altera X e Y",
+    q8: "Aguarde na calçada!, pois a condição (Cor = 'verde') é falsa e segue para o senão",
+    q9: "se <posição x > 210> então -> adicione -10 a x",
+    q10: "Girou 360 graus (10 * 36) e aumentou 50 no tamanho (10 * 5)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "B) <code>mude [Tempo] para 60</code> → <code>repita (60) vezes</code> { <code>espere 1 seg</code> + <code>adicione -1 a [Tempo]</code> }<br><strong>Explicação:</strong> Iniciamos a variável em 60 com <em>mude para</em> e subtraímos 1 a cada segundo usando <em>adicione -1</em>.",
+    q2: "C) Falso, pois 45 não é maior nem igual a 50.<br><strong>Explicação:</strong> Como <em>Ouro</em> (45) é menor que <em>Preço</em> (50), a comparação <code>45 &gt;= 50</code> resulta em <strong>falso</strong>.",
+    q3: "A) <code>resposta = 56</code><br><strong>Explicação:</strong> O resultado de 7 × 8 é 56, e o valor digitado pelo jogador fica armazenado no bloco sensor <em>resposta</em>.",
+    q4: "D) 36<br><strong>Explicação:</strong> O perímetro do quadrado é 4 vezes o lado: <code>9 × 4 = 36</code>.",
+    q5: "A) (x = 100, y = 110)<br><strong>Explicação:</strong> Primeiro X vai para 140; depois soma-se -40 (<code>140 - 40 = 100</code>). A coordenada Y permanece 110.",
+    q6: "B) Usou <code>adicione 10 a y</code> (valor positivo) em vez de <code>adicione -10 a y</code> (valor negativo).<br><strong>Explicação:</strong> No eixo vertical Y do Scratch, valores positivos movem o ator para cima e valores negativos movem para baixo.",
+    q7: "C) <code>mude x para (posição x do mouse)</code> altera apenas a coordenada horizontal (X), mantendo o lápis na linha fixa (y = 140), enquanto <code>vá para [ponteiro do mouse]</code> altera tanto X quanto Y livremente pela tela inteira.<br><strong>Explicação:</strong> Usar <em>mude x para</em> trava o movimento vertical e acompanha apenas o eixo horizontal.",
+    q8: "A) O ator dirá \"Aguarde na calçada!\", pois a condição (Cor = \"verde\") é falsa e o fluxo segue para o bloco senão.<br><strong>Explicação:</strong> Como \"amarelo\" não é igual a \"verde\", o programa executa o ramo <em>senão</em>.",
+    q9: "B) <code>se &lt;posição x &gt; 210&gt; então</code> → <code>adicione -10 a x</code><br><strong>Explicação:</strong> Quando X ultrapassa 210 (limite direito), adicionar -10 empurra o carro de volta para a esquerda.",
+    q10: "B) Girou 360 graus (uma volta completa) e aumentou 50 no tamanho.<br><strong>Explicação:</strong> Em 10 repetições: <code>10 × 36° = 360°</code> e <code>10 × 5 = +50</code> no tamanho.",
+    q11: "<strong>Resposta Esperada:</strong> Um <strong>operador aritmético</strong> realiza cálculos matemáticos retornando um número (ex.: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> para somar pontos ou calcular média). Já um <strong>operador relacional</strong> compara dois valores e retorna verdadeiro ou falso (ex.: <code>&gt;</code>, <code>&lt;</code>, <code>=</code> para testar se <code>Pontos &gt;= 100</code>).",
+    q12: "<strong>Resposta Esperada:</strong><br>1. <code>pergunte [Digite a senha:] e espere</code><br>2. <code>se &lt;resposta = \"scratch123\"&gt; então</code> → <code>diga [Bem-vindo!]</code><br>3. <code>senão</code> → <code>diga [Acesso negado!]</code>",
+    q13: "<strong>Resposta Esperada:</strong><br>• <strong>Seta para direita:</strong> <code>adicione 12 a x</code> (move para a direita no eixo horizontal X).<br>• <strong>Seta para baixo:</strong> <code>adicione -12 a y</code> (move para baixo no eixo vertical Y).",
+    q14: "<strong>Resposta Esperada:</strong> O laço <strong>SEMPRE</strong> mantém os blocos internos rodando continuamente durante toda a execução do projeto, verificando sem parar se o jogador atingiu <strong>100 pontos</strong>; no instante em que <code>Pontos = 100</code> (ou <code>Pontos &gt;= 100</code>) se torna verdadeiro, o ator exibe <em>\"Você venceu!\"</em> e o bloco <code>pare [todos]</code> encerra o jogo."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🤖 Robótica | 4º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
