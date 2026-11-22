@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglês – 2º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #0d47a1; --secondary: #1976d2; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #e8f5e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🇺🇸 Inglês | 2º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Inglês – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano B)" required>
+        </div>
+        <h2>Part I – Objective Questions (Multiple Choice)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) In <strong>Unit 10</strong> (<em>"I was born in São Paulo. And you?"</em>), we ask and answer questions about the past using <strong>was</strong> and <strong>were</strong>. Choose the option that correctly completes the dialogue:<br>
+            — __________ your brother at home yesterday afternoon?<br>
+            — No, he __________. He and his friends __________ at the library.</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Were / weren't / was</label>
+                <label><input type="radio" name="q1" value="B"> B) Was / wasn't / were</label>
+                <label><input type="radio" name="q1" value="C"> C) Was / weren't / were</label>
+                <label><input type="radio" name="q1" value="D"> D) Were / wasn't / was</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Read the biographical clues about two famous people from Unit 10 and choose the option that completes both sentences correctly:<br>
+            I. Santos Dumont __________ born in Minas Gerais, Brazil, in 1873.<br>
+            II. Marie and Pierre Curie __________ famous scientists who discovered radium and polonium.</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) were / was</label>
+                <label><input type="radio" name="q2" value="B"> B) wasn't / wasn't</label>
+                <label><input type="radio" name="q2" value="C"> C) was / were</label>
+                <label><input type="radio" name="q2" value="D"> D) were / were</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) In <strong>Unit 11</strong> (<em>"What did you do last Saturday?"</em>), regular verbs ending in consonant + vowel + consonant (CVC) double the final consonant before adding <em>-ed</em> (for example: <em>stop → stopped</em>), whereas verbs ending in vowel + <em>y</em> simply add <em>-ed</em> (<em>play → played</em>). Choose the option in which all three verbs are spelled <strong>correctly</strong> in the Simple Past:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) stopped / played / planned</label>
+                <label><input type="radio" name="q3" value="B"> B) stoped / plaied / planed</label>
+                <label><input type="radio" name="q3" value="C"> C) stopped / plaied / planned</label>
+                <label><input type="radio" name="q3" value="D"> D) stoped / played / planed</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Complete the text about Bruno's Sunday using the correct <strong>irregular Simple Past</strong> forms of the verbs <em>wake up, drink,</em> and <em>write</em>:<br>
+            <em>"Last Sunday, Bruno __________ at 9 a.m., __________ a glass of orange juice, and __________ an email to his cousin in Canada."</em></p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) waked up / drinked / writed</label>
+                <label><input type="radio" name="q4" value="B"> B) wake up / drink / write</label>
+                <label><input type="radio" name="q4" value="C"> C) woken up / drunk / written</label>
+                <label><input type="radio" name="q4" value="D"> D) woke up / drank / wrote</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Choose the option that transforms the affirmative sentence below into a grammatically <strong>correct negative sentence</strong> in the Simple Past:<br>
+            Affirmative: <em>"Maya bought a new jacket at the shopping center yesterday."</em></p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Maya didn't bought a new jacket at the shopping center yesterday.</label>
+                <label><input type="radio" name="q5" value="B"> B) Maya didn't buy a new jacket at the shopping center yesterday.</label>
+                <label><input type="radio" name="q5" value="C"> C) Maya wasn't buy a new jacket at the shopping center yesterday.</label>
+                <label><input type="radio" name="q5" value="D"> D) Maya doesn't bought a new jacket at the shopping center yesterday.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Look at the short answers in the Simple Past and choose the option that completes the dialogue <strong>correctly</strong>:<br>
+            — Did your cousins travel to Argentina during the school break?<br>
+            — No, __________. They stayed in Brazil and visited Bonito.</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) they did</label>
+                <label><input type="radio" name="q6" value="B"> B) they didn't</label>
+                <label><input type="radio" name="q6" value="C"> C) they weren't</label>
+                <label><input type="radio" name="q6" value="D"> D) they didn't traveled</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) In <strong>Unit 12</strong> (<em>"How was your vacation?"</em>), we ask questions about companions and transportation in the past using <strong>Wh- words</strong>. Choose the option that correctly completes the conversation:<br>
+            — __________ did you go to Salvador with?<br>
+            — I went with my parents and my sister.<br>
+            — __________ did you get there?<br>
+            — By plane.</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Where / What</label>
+                <label><input type="radio" name="q7" value="B"> B) When / Why</label>
+                <label><input type="radio" name="q7" value="C"> C) Who / How</label>
+                <label><input type="radio" name="q7" value="D"> D) How long / Where</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Read Lucas's travel blog post about his last vacation:<br>
+            <em>"Last July, I went camping in the mountains with my scout group. During the day, we hiked along forest trails and swam in a cold waterfall. At night, we made a campfire, told stories, and looked at the stars. There was no Wi-Fi, so we didn't use our cell phones at all!"</em><br>
+            According to the text, why didn't Lucas and his friends use their cell phones?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Because there was no Wi-Fi in the mountains.</label>
+                <label><input type="radio" name="q8" value="B"> B) Because they forgot all their cell phones on the school bus.</label>
+                <label><input type="radio" name="q8" value="C"> C) Because it rained every single day and broke their phones.</label>
+                <label><input type="radio" name="q8" value="D"> D) Because they stayed at a five-star hotel in the city center.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) In <strong>Unit 12</strong>, we use adjectives to express negative or positive opinions about past trips. Choose the adjective that best completes the sentence:<br>
+            <em>"Our flight was delayed for six hours, the hotel room was noisy, and it rained every day. Honestly, the trip was __________."</em></p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) fantastic</label>
+                <label><input type="radio" name="q9" value="B"> B) terrible</label>
+                <label><input type="radio" name="q9" value="C"> C) wonderful</label>
+                <label><input type="radio" name="q9" value="D"> D) exciting</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Read the four sentences below and identify the only one that is <strong>grammatically correct</strong> in the Simple Past:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Where did you went last weekend?</label>
+                <label><input type="radio" name="q10" value="B"> B) We didn't saw any dolphins at the beach.</label>
+                <label><input type="radio" name="q10" value="C"> C) Were you tired after the long bus trip?</label>
+                <label><input type="radio" name="q10" value="D"> D) How was your parents during the flight?</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Part II – Written Questions (Dissertativas)</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Complete the sentences below using <strong>was, wasn't, were</strong>, or <strong>weren't</strong> (Unit 10):<br>
+            a) Ayrton Senna __________ a famous Brazilian Formula 1 driver.<br>
+            b) My friends and I __________ at school yesterday because it __________ Sunday.</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Write the completed sentences or the exact words in order..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Write the <strong>Simple Past</strong> form of the following <strong>regular verbs</strong> (pay attention to spelling rules – Unit 11):<br>
+            a) stop → ____________________<br>
+            b) cry → ____________________<br>
+            c) play → ____________________<br>
+            d) arrive → ____________________</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Write the four regular past forms..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Read the answers below and write the corresponding <strong>Wh- questions</strong> in the Simple Past (Unit 12):<br>
+            a) Question: _______________________________________________________?<br>
+               Answer: <em>I went to Rio de Janeiro on my vacation.</em><br>
+            b) Question: _______________________________________________________?<br>
+               Answer: <em>It was amazing!</em></p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Write the two questions in English..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Answer in English (2 complete sentences) about what you did last weekend (Unit 11 – <em>"What did you do last Saturday?"</em>):<br>
+            <em>Mention one thing you did and one thing you didn't do last weekend.</em></p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Write two complete sentences in English..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "D", q5: "B",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "C"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Was (your brother) / wasn't (he) / were (He and his friends)",
+    q2: "was (Santos Dumont) / were (Marie and Pierre Curie)",
+    q3: "stopped / played / planned (CVC doubles final consonant; vowel + y adds -ed)",
+    q4: "woke up / drank / wrote (irregular Simple Past forms)",
+    q5: "Maya didn't buy a new jacket (didn't + base form)",
+    q6: "they didn't (short negative answer in the Simple Past)",
+    q7: "Who (companion) / How (means of transportation)",
+    q8: "Because there was no Wi-Fi in the mountains",
+    q9: "terrible (negative adjective matching flight delay and bad weather)",
+    q10: "Were you tired after the long bus trip? (correct Simple Past question with to be)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "B) Was / wasn't / were<br><strong>Explanation:</strong> <em>Your brother / he</em> is singular (<em>Was / wasn't</em>); <em>He and his friends</em> is plural (<em>were</em>).",
+    q2: "C) was / were<br><strong>Explanation:</strong> <em>Santos Dumont</em> is singular (<em>was</em>); <em>Marie and Pierre Curie</em> is plural (<em>were</em>).",
+    q3: "A) stopped / played / planned<br><strong>Explanation:</strong> One-syllable CVC verbs double the final consonant (<em>stop → stopped</em>, <em>plan → planned</em>), while vowel + <em>y</em> verbs just add <em>-ed</em> (<em>play → played</em>).",
+    q4: "D) woke up / drank / wrote<br><strong>Explanation:</strong> Irregular Simple Past forms: <em>wake up → woke up</em>, <em>drink → drank</em>, <em>write → wrote</em>.",
+    q5: "B) Maya didn't buy a new jacket at the shopping center yesterday.<br><strong>Explanation:</strong> In Simple Past negative sentences, use <em>didn't</em> + base form of the verb (<em>buy</em>, not <em>bought</em>).",
+    q6: "B) they didn't<br><strong>Explanation:</strong> Questions starting with <em>Did your cousins...?</em> take the negative short answer <em>No, they didn't</em>.",
+    q7: "C) Who / How<br><strong>Explanation:</strong> <em>Who... with?</em> asks about companions, and <em>How...?</em> asks about the means of transportation (<em>By plane</em>).",
+    q8: "A) Because there was no Wi-Fi in the mountains.<br><strong>Explanation:</strong> Explicitly stated at the end of Lucas's blog post.",
+    q9: "B) terrible<br><strong>Explanation:</strong> A six-hour flight delay, a noisy room, and constant rain describe a negative experience (<em>terrible</em>).",
+    q10: "C) Were you tired after the long bus trip?<br><strong>Explanation:</strong> Option A should be <em>did you go</em>; option B should be <em>didn't see</em>; option D should be <em>How were your parents</em>.",
+    q11: "<strong>Expected Answer:</strong><br>a) Ayrton Senna <strong>was</strong> a famous Brazilian Formula 1 driver.<br>b) My friends and I <strong>weren't</strong> at school yesterday because it <strong>was</strong> Sunday.",
+    q12: "<strong>Expected Answer:</strong><br>a) stop → <strong>stopped</strong> (CVC: doubles final consonant <em>p</em>)<br>b) cry → <strong>cried</strong> (consonant + <em>y</em>: changes <em>y</em> to <em>-ied</em>)<br>c) play → <strong>played</strong> (vowel + <em>y</em>: adds <em>-ed</em>)<br>d) arrive → <strong>arrived</strong> (ends in <em>-e</em>: adds <em>-d</em>)",
+    q13: "<strong>Expected Answer:</strong><br>a) <em><strong>Where did you go</strong> on your vacation?</em><br>b) <em><strong>How was</strong> your vacation?</em> (or <em><strong>How was</strong> it?</em>)",
+    q14: "<strong>Expected Answer (example):</strong> <em>Last weekend, I <strong>watched</strong> a movie and <strong>played</strong> video games with my brother. I <strong>didn't study</strong> for any tests.</em>"
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explanation / Explicação:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🇺🇸 Inglês | 2º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
