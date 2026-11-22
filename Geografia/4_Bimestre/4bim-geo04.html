@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia – 4º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #bf360c; --secondary: #e64a19; --success: #2e7d32; --danger: #c62828; --bg: #fbe9e7; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fff3e0; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #fff3e0;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🌎 Geografia | 4º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Geografia – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano D)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Nas últimas décadas, observou-se no Brasil um forte crescimento do número de trabalhadores ocupados no comércio, nos transportes, na educação, na saúde e nos aplicativos digitais. Esse fenômeno econômico de expansão das atividades de comércio e serviços é chamado de:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Terceirização ou hipertrofia do Setor Terciário</label>
+                <label><input type="radio" name="q1" value="B"> B) Ruralização do Setor Primário</label>
+                <label><input type="radio" name="q1" value="C"> C) Extrativismo mineral contínuo</label>
+                <label><input type="radio" name="q1" value="D"> D) Desindustrialização agrícola</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) No estudo da estrutura fundiária brasileira, o índice de Gini é frequentemente utilizado para medir o grau de desigualdade na posse da terra (variando de 0 a 1, onde valores próximos de 1 indicam extrema concentração). Historicamente, o índice de Gini fundiário do Brasil apresenta valores elevados (acima de 0,80), o que demonstra:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Divisão igualitária de todas as propriedades rurais entre os trabalhadores do campo.</label>
+                <label><input type="radio" name="q2" value="B"> B) Grande concentração de terras nas mãos de poucos proprietários (latifúndios), enquanto milhões de pequenos produtores ocupam uma pequena parcela da área total.</label>
+                <label><input type="radio" name="q2" value="C"> C) Ausência completa de propriedades privadas nas zonas rurais do país.</label>
+                <label><input type="radio" name="q2" value="D"> D) Predomínio absoluto de minifúndios familiares ocupando 90% do território nacional.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) A pecuária extensiva ainda ocupa extensas áreas no Brasil, especialmente em regiões de fronteira agropecuária. Qual é o principal problema ambiental associado à expansão desordenada de pastagens extensivas na Amazônia e no Cerrado?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Reflorestamento nativo acelerado e aumento das reservas indígenas.</label>
+                <label><input type="radio" name="q3" value="B"> B) Desmatamento de grandes áreas florestais, queimadas para limpeza de pasto e compactação do solo pelo pisoteio do gado.</label>
+                <label><input type="radio" name="q3" value="C"> C) Redução imediata das emissões de gás metano na atmosfera.</label>
+                <label><input type="radio" name="q3" value="D"> D) Diminuição da necessidade de terras devido ao confinamento em pequenos galpões.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Além da soja, da cana-de-açúcar e do café, o Brasil lidera a produção e exportação mundial de suco de laranja concentrado. Qual estado brasileiro concentra a maior parte dos pomares de laranja e das indústrias processadoras desse produto (o chamado "cinturão citrícola")?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Pará</label>
+                <label><input type="radio" name="q4" value="B"> B) Ceará</label>
+                <label><input type="radio" name="q4" value="C"> C) São Paulo</label>
+                <label><input type="radio" name="q4" value="D"> D) Acre</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) A agricultura orgânica e a agroecologia vêm ganhando espaço no campo brasileiro como alternativas sustentáveis ao modelo agrícola convencional. Qual prática caracteriza esse sistema de produção?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Uso intensivo de agrotóxicos sintéticos, sementes transgênicas e monocultura extensiva.</label>
+                <label><input type="radio" name="q5" value="B"> B) Cultivo sem agrotóxicos ou fertilizantes químicos sintéticos, priorizando adubação natural, controle biológico de pragas e preservação do solo.</label>
+                <label><input type="radio" name="q5" value="C"> C) Queimada anual da vegetação nativa antes de cada plantio para eliminar nutrientes do solo.</label>
+                <label><input type="radio" name="q5" value="D"> D) Irrigação com resíduos industriais químicos para acelerar a colheita.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Durante o governo de Juscelino Kubitschek (1956–1961), o Plano de Metas ("50 anos em 5") acelerou a industrialização brasileira com forte entrada de empresas multinacionais. Qual ramo industrial liderou essa fase de expansão no Sudeste brasileiro?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Indústria automobilística e de bens de consumo duráveis (eletrodomésticos).</label>
+                <label><input type="radio" name="q6" value="B"> B) Indústria exclusivamente artesanal de cerâmica e tecelagem manual.</label>
+                <label><input type="radio" name="q6" value="C"> C) Indústria espacial de satélites de comunicação interplanetária.</label>
+                <label><input type="radio" name="q6" value="D"> D) Indústria extrativa de borracha nativa na Amazônia.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) A industrialização tardia do Brasil foi marcada pela política de "substituição de importações", adotada principalmente entre as décadas de 1930 e 1950. Em que consistia essa estratégia econômica?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Fechar todas as fábricas nacionais para comprar 100% dos produtos industrializados no exterior.</label>
+                <label><input type="radio" name="q7" value="B"> B) Desenvolver indústrias no próprio território brasileiro para produzir mercadorias que antes precisavam ser compradas (importadas) de outros países.</label>
+                <label><input type="radio" name="q7" value="C"> C) Substituir toda a produção de aço e petróleo por exportação exclusiva de pau-brasil.</label>
+                <label><input type="radio" name="q7" value="D"> D) Proibir a entrada de máquinas industriais e energia elétrica nas capitais brasileiras.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Atualmente, mais de 85% da população brasileira vive em áreas urbanas. Sobre as diferenças regionais no processo de urbanização do Brasil, assinale a alternativa correta:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) A Região Nordeste apresenta a maior taxa de urbanização do país, superando os 95%.</label>
+                <label><input type="radio" name="q8" value="B"> B) Todas as cinco regiões brasileiras possuem exatamente o mesmo percentual de população urbana.</label>
+                <label><input type="radio" name="q8" value="C"> C) A Região Sudeste é a mais urbanizada do Brasil (acima de 90%), enquanto o Nordeste e o Norte apresentam as menores taxas relativas de urbanização.</label>
+                <label><input type="radio" name="q8" value="D"> D) A Região Centro-Oeste ainda possui mais de 70% de sua população morando isolada nas zonas rurais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Na rede urbana brasileira, muitas cidades próximas às grandes capitais cresceram oferecendo terrenos e aluguéis mais baratos, abrigando trabalhadores que se deslocam diariamente para trabalhar na metrópole central e voltam apenas para dormir. Como são chamadas essas cidades?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Cidades-dormitório</label>
+                <label><input type="radio" name="q9" value="B"> B) Cidades históricas coloniais</label>
+                <label><input type="radio" name="q9" value="C"> C) Cidades-gêmeas de fronteira</label>
+                <label><input type="radio" name="q9" value="D"> D) Cidades portuárias de exportação</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Na base da hierarquia urbana brasileira definida pelo IBGE encontram-se os municípios de pequeno porte cuja influência restringe-se praticamente aos seus próprios limites territoriais, oferecendo apenas comércio e serviços básicos à população local. Como são classificados esses municípios?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Capitais Regionais</label>
+                <label><input type="radio" name="q10" value="B"> B) Centros Sub-regionais</label>
+                <label><input type="radio" name="q10" value="C"> C) Centros Locais</label>
+                <label><input type="radio" name="q10" value="D"> D) Metrópoles Nacionais</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique o que é o agronegócio e cite dois fatores que explicam a alta produtividade da agropecuária moderna no Brasil:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) O que significa a concentração fundiária no Brasil e como ela se relaciona com os conflitos pela posse da terra no campo?</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Explique o que é a desconcentração industrial no Brasil e cite dois motivos que levam fábricas a se instalarem fora dos grandes centros tradicionais do Sudeste:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Cite dois problemas socioambientais comuns nas grandes metrópoles brasileiras causados pela urbanização rápida e sem planejamento:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "B", q3: "B", q4: "C", q5: "B",
+    q6: "A", q7: "B", q8: "C", q9: "A", q10: "C"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Terceirização ou hipertrofia do Setor Terciário",
+    q2: "Grande concentração de terras nas mãos de poucos proprietários",
+    q3: "Desmatamento, queimadas e compactação do solo",
+    q4: "São Paulo",
+    q5: "Cultivo sem agrotóxicos ou fertilizantes sintéticos",
+    q6: "Indústria automobilística e de bens de consumo duráveis",
+    q7: "Desenvolver indústrias nacionais para produzir o que antes era importado",
+    q8: "Região Sudeste é a mais urbanizada; Nordeste e Norte têm menores taxas",
+    q9: "Cidades-dormitório",
+    q10: "Centros Locais"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) Terceirização ou hipertrofia do Setor Terciário.<br><strong>Explicação:</strong> É o fenômeno de expansão acelerada das atividades de comércio e prestação de serviços na economia urbana.",
+    q2: "B) Grande concentração de terras nas mãos de poucos proprietários (latifúndios), enquanto milhões de pequenos produtores ocupam uma pequena parcela da área total.<br><strong>Explicação:</strong> Um índice de Gini próximo de 1 indica forte desigualdade fundiária no campo brasileiro.",
+    q3: "B) Desmatamento de grandes áreas florestais, queimadas para limpeza de pasto e compactação do solo pelo pisoteio do gado.<br><strong>Explicação:</strong> A abertura extensiva de pastagens sem manejo adequado degrada a vegetação nativa e o solo.",
+    q4: "C) São Paulo.<br><strong>Explicação:</strong> O interior de São Paulo concentra os maiores pomares comerciais e fábricas exportadoras de suco de laranja do mundo.",
+    q5: "B) Cultivo sem agrotóxicos ou fertilizantes químicos sintéticos, priorizando adubação natural, controle biológico de pragas e preservação do solo.<br><strong>Explicação:</strong> A agricultura orgânica busca produzir alimentos saudáveis mantendo o equilíbrio ecológico.",
+    q6: "A) Indústria automobilística e de bens de consumo duráveis (eletrodomésticos).<br><strong>Explicação:</strong> O Plano de Metas de JK atraiu montadoras estrangeiras para o ABC Paulista e impulsionou bens de consumo duráveis.",
+    q7: "B) Desenvolver indústrias no próprio território brasileiro para produzir mercadorias que antes precisavam ser compradas (importadas) de outros países.<br><strong>Explicação:</strong> Essa política fortaleceu o parque industrial nacional para reduzir a dependência de produtos estrangeiros.",
+    q8: "C) A Região Sudeste é a mais urbanizada do Brasil (acima de 90%), enquanto o Nordeste e o Norte apresentam as menores taxas relativas de urbanização.<br><strong>Explicação:</strong> A industrialização precoce do Sudeste acelerou sua urbanização em relação às regiões Norte e Nordeste.",
+    q9: "A) Cidades-dormitório.<br><strong>Explicação:</strong> Municípios periféricos das regiões metropolitanas onde os trabalhadores residem, mas dependem da metrópole para emprego e serviços.",
+    q10: "C) Centros Locais.<br><strong>Explicação:</strong> Segundo o IBGE, são as cidades menores na base da hierarquia urbana, que atendem apenas às necessidades básicas de seus próprios habitantes.",
+    q11: "<strong>Resposta Esperada:</strong> Agronegócio é a rede integrada que une a produção agropecuária às indústrias de insumos, processamento e exportação. Fatores de alta produtividade: mecanização avançada (tratores e colheitadeiras), uso de sementes selecionadas, fertilizantes e pesquisa científica (como a Embrapa).",
+    q12: "<strong>Resposta Esperada:</strong> Significa que a maior parte das terras agrícolas pertence a uma minoria de grandes proprietários (latifundiários), deixando milhões de trabalhadores rurais sem terra ou com áreas insuficientes, o que gera disputas, ocupações e tensão social no campo.",
+    q13: "<strong>Resposta Esperada:</strong> É a saída de indústrias dos grandes centros saturados do Sudeste em direção a outras regiões e cidades médias do interior. Motivos: incentivos fiscais (isenção de impostos), terrenos mais baratos e menor custo de mão de obra.",
+    q14: "<strong>Resposta Esperada:</strong> 1) Déficit habitacional e favelização (ocupação de encostas e áreas de risco); 2) Falta de saneamento básico, poluição dos rios urbanos, enchentes e congestionamentos."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🌎 Geografia | 4º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

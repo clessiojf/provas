@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia – 1º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #bf360c; --secondary: #e64a19; --success: #2e7d32; --danger: #c62828; --bg: #fbe9e7; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fff3e0; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #fff3e0;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🌎 Geografia | 1º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Geografia – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano A)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) As atividades econômicas de um país são divididas em três setores principais. Qual setor engloba a agricultura, a pecuária e o extrativismo (vegetal, animal e mineral), responsáveis por fornecer alimentos e matérias-primas?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Setor Secundário</label>
+                <label><input type="radio" name="q1" value="B"> B) Setor Terciário</label>
+                <label><input type="radio" name="q1" value="C"> C) Setor Primário</label>
+                <label><input type="radio" name="q1" value="D"> D) Setor Quaternário</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) A estrutura fundiária brasileira é marcada historicamente por uma forte concentração de terras. Como são chamadas as grandes propriedades rurais, muitas vezes voltadas à monocultura de exportação ou improdutivas, que ocupam a maior parte da área agrícola do país?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Minifúndios familiares</label>
+                <label><input type="radio" name="q2" value="B"> B) Latifúndios</label>
+                <label><input type="radio" name="q2" value="C"> C) Assentamentos agroecológicos</label>
+                <label><input type="radio" name="q2" value="D"> D) Terras devolutas urbanas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No Brasil, a criação de gado pode ser praticada de duas formas distintas conforme o nível de investimento e tecnologia. Qual característica define corretamente a pecuária intensiva?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Gado criado solto em grandes áreas de pastagens naturais, sem acompanhamento veterinário ou ração balanceada.</label>
+                <label><input type="radio" name="q3" value="B"> B) Baixa produtividade por hectare e uso exclusivo de mão de obra familiar não remunerada.</label>
+                <label><input type="radio" name="q3" value="C"> C) Gado criado em regime de confinamento ou semiconfinamento, com ração, vacinação, seleção genética e alta produtividade.</label>
+                <label><input type="radio" name="q3" value="D"> D) Criação exclusiva de animais silvestres em áreas de preservação permanente sem fins comerciais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) O Brasil destaca-se entre os maiores produtores e exportadores mundiais de commodities agrícolas. Qual produto lidera atualmente as exportações do agronegócio brasileiro, com forte expansão na Região Centro-Oeste e na fronteira agrícola do Matopiba?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Soja</label>
+                <label><input type="radio" name="q4" value="B"> B) Trigo</label>
+                <label><input type="radio" name="q4" value="C"> C) Maçã</label>
+                <label><input type="radio" name="q4" value="D"> D) Azeite de oliva</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Apesar de ocupar uma parcela menor das terras agrícolas do país em comparação aos grandes latifúndios, qual é o papel fundamental da agricultura familiar praticada nas pequenas propriedades (minifúndios) brasileiras?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Produzir exclusivamente biocombustíveis para exportação marítima.</label>
+                <label><input type="radio" name="q5" value="B"> B) Abastecer o mercado interno com grande parte dos alimentos básicos consumidos diariamente pela população (como feijão, mandioca, hortaliças e leite).</label>
+                <label><input type="radio" name="q5" value="C"> C) Concentrar a maior parte dos maquinários pesados importados e dos silos graneleiros do país.</label>
+                <label><input type="radio" name="q5" value="D"> D) Eliminar completamente o uso do trabalho humano no campo por meio de satélites autônomos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) A industrialização brasileira ganhou forte impulso a partir da década de 1930, durante o governo de Getúlio Vargas, com a criação de grandes estatais (como a Companhia Siderúrgica Nacional e a Petrobras). Qual tipo de indústria caracteriza esses empreendimentos voltados à transformação de matérias-primas brutas para abastecer outras fábricas?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Indústria de bens de consumo não duráveis (alimentos e vestuário).</label>
+                <label><input type="radio" name="q6" value="B"> B) Indústria de bens de produção ou de base (siderúrgica, metalúrgica e petroquímica).</label>
+                <label><input type="radio" name="q6" value="C"> C) Indústria de bens de consumo duráveis (eletrodomésticos e automóveis).</label>
+                <label><input type="radio" name="q6" value="D"> D) Indústria artesanal doméstica sem uso de energia elétrica.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) As indústrias de bens de consumo fabricam mercadorias destinadas diretamente ao consumidor final e são divididas em duráveis e não duráveis. Assinale a alternativa que apresenta apenas exemplos de indústrias de bens de consumo duráveis:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Indústria alimentícia, de bebidas e de medicamentos.</label>
+                <label><input type="radio" name="q7" value="B"> B) Indústria têxtil (roupas), de calçados e de cosméticos.</label>
+                <label><input type="radio" name="q7" value="C"> C) Indústria automobilística, de eletrodomésticos, de móveis e de eletrônicos.</label>
+                <label><input type="radio" name="q7" value="D"> D) Indústria siderúrgica (aço), de cimento e de extração de minério de ferro.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Atualmente, o espaço rural e o espaço urbano brasileiros mantêm uma relação de profunda interdependência e integração econômica. Qual exemplo ilustra corretamente essa integração campo-cidade?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) O campo é totalmente autossuficiente e não utiliza máquinas, fertilizantes ou softwares desenvolvidos nas cidades.</label>
+                <label><input type="radio" name="q8" value="B"> B) O campo fornece alimentos e matérias-primas agropecuárias para as cidades, enquanto as cidades fornecem máquinas agrícolas, insumos químicos, tecnologia e serviços ao campo.</label>
+                <label><input type="radio" name="q8" value="C"> C) As cidades produzem toda a carne bovina e os grãos consumidos no país dentro dos centros comerciais.</label>
+                <label><input type="radio" name="q8" value="D"> D) Não existe fluxo de mercadorias, capitais ou transportes conectando as zonas rurais às áreas urbanas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) O crescimento acelerado de várias cidades próximas umas das outras pode fazer com que suas manchas urbanas se expandam até se unirem fisicamente, formando uma única área contínua de construções e vias. Como é chamado esse fenômeno urbano?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Conurbação</label>
+                <label><input type="radio" name="q9" value="B"> B) Êxodo urbano</label>
+                <label><input type="radio" name="q9" value="C"> C) Reforma agrária</label>
+                <label><input type="radio" name="q9" value="D"> D) Gentrificação rural</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Na rede urbana brasileira, as cidades organizam-se em uma hierarquia conforme sua capacidade de oferecer bens, serviços especializados, universidades, hospitais e sedes de grandes empresas. Qual cidade ocupa o topo dessa hierarquia no Brasil, sendo classificada como a única Grande Metrópole Nacional?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Manaus (AM)</label>
+                <label><input type="radio" name="q10" value="B"> B) Florianópolis (SC)</label>
+                <label><input type="radio" name="q10" value="C"> C) São Paulo (SP)</label>
+                <label><input type="radio" name="q10" value="D"> D) Campo Grande (MS)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique a diferença entre a pecuária extensiva e a pecuária intensiva praticadas no espaço rural brasileiro:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) O que é a reforma agrária e por que ela é debatida como uma medida importante para diminuir os conflitos no campo brasileiro?</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Diferencie as indústrias de bens de produção (de base) das indústrias de bens de consumo, dando um exemplo de cada:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Explique o que significa o fenômeno da conurbação e como ele se relaciona com a formação das regiões metropolitanas no Brasil:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "C", q2: "B", q3: "C", q4: "A", q5: "B",
+    q6: "B", q7: "C", q8: "B", q9: "A", q10: "C"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Setor Primário",
+    q2: "Latifúndios",
+    q3: "Confinamento com ração, vacinação, genética e alta produtividade",
+    q4: "Soja",
+    q5: "Abastecer o mercado interno com alimentos básicos",
+    q6: "Indústria de bens de produção ou de base",
+    q7: "Automobilística, eletrodomésticos, móveis e eletrônicos",
+    q8: "Campo fornece alimentos/matérias-primas; cidade fornece máquinas/tecnologia",
+    q9: "Conurbação",
+    q10: "São Paulo (SP)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "C) Setor Primário.<br><strong>Explicação:</strong> O setor primário reúne as atividades ligadas diretamente à exploração dos recursos naturais: agricultura, pecuária e extrativismo.",
+    q2: "B) Latifúndios.<br><strong>Explicação:</strong> Latifúndios são propriedades rurais de grande extensão territorial, frequentemente associadas à concentração fundiária e à monocultura.",
+    q3: "C) Gado criado em regime de confinamento ou semiconfinamento, com ração, vacinação, seleção genética e alta produtividade.<br><strong>Explicação:</strong> A pecuária intensiva utiliza alta tecnologia e manejo veterinário para obter maior rendimento em áreas menores.",
+    q4: "A) Soja.<br><strong>Explicação:</strong> A soja é o principal produto agrícola de exportação do Brasil, liderando a pauta do agronegócio nacional.",
+    q5: "B) Abastecer o mercado interno com grande parte dos alimentos básicos consumidos diariamente pela população.<br><strong>Explicação:</strong> A agricultura familiar garante a segurança alimentar do país ao produzir a maior parte da comida que chega à mesa dos brasileiros.",
+    q6: "B) Indústria de bens de produção ou de base (siderúrgica, metalúrgica e petroquímica).<br><strong>Explicação:</strong> Essas indústrias transformam matérias-primas brutas (como minério de ferro e petróleo) em insumos básicos para outras indústrias.",
+    q7: "C) Indústria automobilística, de eletrodomésticos, de móveis e de eletrônicos.<br><strong>Explicação:</strong> Bens de consumo duráveis são produtos destinados ao consumidor final que possuem longa vida útil e não se esgotam no primeiro uso.",
+    q8: "B) O campo fornece alimentos e matérias-primas agropecuárias para as cidades, enquanto as cidades fornecem máquinas agrícolas, insumos químicos, tecnologia e serviços ao campo.<br><strong>Explicação:</strong> Campo e cidade são interdependentes, mantendo trocas constantes de produtos, capitais e serviços.",
+    q9: "A) Conurbação.<br><strong>Explicação:</strong> A conurbação ocorre quando duas ou mais cidades crescem horizontalmente até que seus limites urbanos se encontrem e formem uma mancha urbana contínua.",
+    q10: "C) São Paulo (SP).<br><strong>Explicação:</strong> Segundo o IBGE, São Paulo ocupa o topo da hierarquia urbana brasileira como a única Grande Metrópole Nacional, exercendo influência econômica e financeira sobre todo o país.",
+    q11: "<strong>Resposta Esperada:</strong> Na pecuária extensiva, o gado é criado solto em grandes pastagens naturais, com pouco investimento tecnológico e menor produtividade. Na pecuária intensiva, o gado é criado confinado ou semiconfinado, com ração, vacinas e genética avançada, gerando alta produtividade.",
+    q12: "<strong>Resposta Esperada:</strong> É a política pública de redistribuição de terras improdutivas (latifúndios) para trabalhadores rurais sem terra. Ela reduz os conflitos fundiários ao dar acesso à moradia, gerar emprego no campo e ampliar a produção de alimentos.",
+    q13: "<strong>Resposta Esperada:</strong> Indústrias de base transformam matérias-primas brutas para abastecer outras fábricas (ex.: siderúrgica, petroquímica). Indústrias de bens de consumo fabricam produtos prontos para o consumidor final (ex.: automobilística, alimentícia).",
+    q14: "<strong>Resposta Esperada:</strong> Conurbação é a união física das manchas urbanas de cidades vizinhas devido ao seu crescimento. Esse processo integra transportes, serviços e trabalhadores, originando as regiões metropolitanas lideradas por uma metrópole."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🌎 Geografia | 1º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
