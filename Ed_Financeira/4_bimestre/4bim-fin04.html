@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira – 4º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1b5e20; --secondary: #2e7d32; --success: #2e7d32; --danger: #c62828; --bg: #e8f5e9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>💰 Educação Financeira | 4º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Educação Financeira – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano D)" required>
+        </div>
+        <h2>Questões Objetivas – Módulos 06 e 07 (Consumo e Planilhas Eletrônicas)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No item <strong>6.1 (Consumir é preciso!)</strong>, analisamos a chamada <strong>pegada ecológica</strong> e os impactos das nossas escolhas diárias de consumo. Qual atitude doméstica contribui diretamente para reduzir o desperdício de recursos naturais e diminuir as despesas mensais da família?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Tomar banhos demorados de 30 minutos e deixar a torneira aberta enquanto escova os dentes.</label>
+                <label><input type="radio" name="q1" value="B"> B) Planejar as refeições da semana para evitar que alimentos estraguem na geladeira e apagar as luzes ao sair dos cômodos.</label>
+                <label><input type="radio" name="q1" value="C"> C) Comprar roupas novas toda semana e descartar as antigas no lixo comum.</label>
+                <label><input type="radio" name="q1" value="D"> D) Manter o ar-condicionado ligado com as janelas abertas durante toda a tarde.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Muitas pessoas confundem <strong>preço</strong> com <strong>valor</strong> na hora de consumir. De acordo com o consumo consciente estudado no Módulo 06, o que significa dizer que um produto tem bom "custo-benefício"?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Que ele é sempre o item mais barato da prateleira, mesmo que quebre no primeiro dia de uso.</label>
+                <label><input type="radio" name="q2" value="B"> B) Que ele é o produto mais caro da loja, independentemente de sua utilidade.</label>
+                <label><input type="radio" name="q2" value="C"> C) Que ele apresenta equilíbrio entre um preço justo que cabe no orçamento e boa qualidade, durabilidade e utilidade real.</label>
+                <label><input type="radio" name="q2" value="D"> D) Que ele vem acompanhado de uma embalagem luxuosa, mesmo sem funcionar direito.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No item <strong>6.2 (Consumo planejado)</strong>, aprendemos a regra prática da <strong>"pausa de 24 horas"</strong> (ou regra de esperar antes de comprar) quando sentimos vontade súbita de adquirir algo não planejado. Qual é o efeito financeiro dessa estratégia?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Permite que a emoção momentânea passe, ajudando o consumidor a perceber se realmente precisa do item ou se era apenas impulso.</label>
+                <label><input type="radio" name="q3" value="B"> B) Faz com que todos os produtos da loja fiquem automaticamente gratuitos no dia seguinte.</label>
+                <label><input type="radio" name="q3" value="C"> C) Obriga o consumidor a comprar o dobro da quantidade no dia seguinte.</label>
+                <label><input type="radio" name="q3" value="D"> D) Impede que o consumidor pesquise preços na internet ou em outras lojas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Gabriel quer comprar um tênis esportivo que custa <strong>R$ 240,00</strong>. Ele possui R$ 180,00 guardados em seu cofrinho e recebe <strong>R$ 40,00</strong> de mesada mensal, conseguindo poupar metade dela (R$ 20,00 por mês). Em quantos meses de poupança planejada Gabriel completará o valor exato para comprar o tênis à vista?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 1 mês</label>
+                <label><input type="radio" name="q4" value="B"> B) 2 meses</label>
+                <label><input type="radio" name="q4" value="C"> C) 4 meses</label>
+                <label><input type="radio" name="q4" value="D"> D) 3 meses</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Durante grandes liquidações (como a <em>Black Friday</em>), algumas lojas anunciam <em>"50% de desconto"</em>, mas aumentaram o preço do produto dias antes (prática conhecida popularmente como "metade do dobro"). Como o consumidor planejado se protege desse tipo de armadilha?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Acompanhando o histórico de preços do produto semanas antes da promoção e comparando valores em diferentes lojas.</label>
+                <label><input type="radio" name="q5" value="B"> B) Comprando qualquer produto que tenha uma etiqueta vermelha gigante escrita "OFERTA".</label>
+                <label><input type="radio" name="q5" value="C"> C) Comprando três unidades do mesmo item para aproveitar o desconto sem olhar o valor unitário.</label>
+                <label><input type="radio" name="q5" value="D"> D) Ignorando completamente o valor final da compra na hora de passar no caixa.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No item <strong>6.3 (Consumo colaborativo)</strong>, estudamos diferentes modalidades de economia compartilhada, como brechós, bibliotecas, caronas solidárias e bancos de tempo. Qual alternativa descreve corretamente o funcionamento de um <strong>banco de tempo</strong> ou troca de habilidades?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) As pessoas trocam serviços e conhecimentos entre si (por exemplo: um aluno ajuda o colega em Matemática e o colega ensina violão), sem precisar gastar dinheiro.</label>
+                <label><input type="radio" name="q6" value="B"> B) Um cofre onde se guardam relógios antigos para vender com juros altos no futuro.</label>
+                <label><input type="radio" name="q6" value="C"> C) Um aplicativo que cobra multas de quem conversa com os vizinhos no condomínio.</label>
+                <label><input type="radio" name="q6" value="D"> D) Uma loja que aceita apenas cartões de crédito internacionais para compras de luxo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Três famílias vizinhas vão viajar de carro para a mesma cidade no feriado prolongado (distância total ida e volta com gasto estimado de <strong>R$ 300,00</strong> em combustível e pedágios por carro). Se as três famílias decidirem ir juntas em um único carro de 7 lugares e dividir igualmente as despesas da viagem, quanto cada família economizará?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) R$ 100,00</label>
+                <label><input type="radio" name="q7" value="B"> B) R$ 150,00</label>
+                <label><input type="radio" name="q7" value="C"> C) R$ 200,00</label>
+                <label><input type="radio" name="q7" value="D"> D) R$ 300,00</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Na <strong>Unidade 4 – Módulo 07 (Item 7.1 – Elaborando planilhas)</strong>, aprendemos que toda planilha eletrônica é composta por uma grade organizada de linhas e colunas. Onde exatamente o usuário digita os textos, datas e valores numéricos dentro de uma planilha?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Nas <strong>células</strong>, que são os retângulos formados pelo cruzamento de uma coluna com uma linha.</label>
+                <label><input type="radio" name="q8" value="B"> B) Apenas na barra de título superior onde aparece o nome do programa.</label>
+                <label><input type="radio" name="q8" value="C"> C) Somente no botão de fechar a janela do computador.</label>
+                <label><input type="radio" name="q8" value="D"> D) Fora da área de trabalho, na lixeira do sistema operacional.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Ao elaborar uma planilha de controle financeiro pessoal no item <strong>7.1</strong>, qual é a boa prática recomendada para que os dados sejam confiáveis e realmente ajudem no planejamento?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Registrar apenas as receitas e esconder todas as despesas variáveis para não se preocupar.</label>
+                <label><input type="radio" name="q9" value="B"> B) Atualizar a planilha com frequência (semanal ou mensalmente), incluindo tanto os gastos maiores quanto as pequenas despesas diárias.</label>
+                <label><input type="radio" name="q9" value="C"> C) Preencher a planilha uma única vez por ano usando valores inventados.</label>
+                <label><input type="radio" name="q9" value="D"> D) Misturar receitas e despesas na mesma coluna sem indicar qual valor entra e qual valor sai.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Observe o planejamento financeiro de uma turma do 7º ano para a festa de encerramento do bimestre registrado em planilha (Item 7.1):<br>
+            • <strong>Meta de arrecadação:</strong> R$ 500,00<br>
+            • <strong>Arrecadado até o momento (Célula D2):</strong> R$ 340,00<br>
+            • <strong>Despesas já pagas (Célula D3):</strong> R$ 190,00<br>
+            Com base nesses dados, quanto ainda falta arrecadar para atingir a meta de R$ 500,00 e qual é o saldo atual disponível em caixa (Arrecadado − Despesas pagas), respectivamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Faltam R$ 310,00 e o saldo atual é R$ 340,00.</label>
+                <label><input type="radio" name="q10" value="B"> B) Faltam R$ 150,00 e o saldo atual é R$ 160,00.</label>
+                <label><input type="radio" name="q10" value="C"> C) Faltam R$ 160,00 e o saldo atual é R$ 310,00.</label>
+                <label><input type="radio" name="q10" value="D"> D) Faltam R$ 160,00 e o saldo atual é R$ 150,00.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "D", q5: "A",
+    q6: "A", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Planejar refeições da semana para evitar desperdício e apagar luzes ao sair",
+    q2: "Equilíbrio entre preço justo que cabe no orçamento e qualidade, durabilidade e utilidade",
+    q3: "Permite que a emoção passe, avaliando se há necessidade real ou apenas impulso",
+    q4: "3 meses (faltam R$ 60,00; poupando R$ 20,00/mês: R$ 60 / R$ 20 = 3 meses)",
+    q5: "Acompanhar o histórico de preços semanas antes e comparar valores entre lojas",
+    q6: "Troca de serviços e conhecimentos entre pessoas sem precisar gastar dinheiro",
+    q7: "R$ 200,00 (cada família paga R$ 100,00 em vez de R$ 300,00 sozinha)",
+    q8: "Nas células (retângulos formados pelo cruzamento de uma coluna com uma linha)",
+    q9: "Atualizar a planilha com frequência, incluindo gastos maiores e pequenas despesas diárias",
+    q10: "Faltam R$ 160,00 (R$ 500 - R$ 340) e o saldo atual é R$ 150,00 (R$ 340 - R$ 190)"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "B) Planejar as refeições da semana para evitar que alimentos estraguem na geladeira e apagar as luzes ao sair dos cômodos.<br><strong>Explicação:</strong> Reduzir o desperdício de alimentos e energia elétrica protege o meio ambiente e diminui as contas mensais da família.",
+    q2: "C) Que ele apresenta equilíbrio entre um preço justo que cabe no orçamento e boa qualidade, durabilidade e utilidade real.<br><strong>Explicação:</strong> Bom custo-benefício significa pagar um valor adequado por um produto durável e realmente útil.",
+    q3: "A) Permite que a emoção momentânea passe, ajudando o consumidor a perceber se realmente precisa do item ou se era apenas impulso.<br><strong>Explicação:</strong> Esperar 24 horas reduz a influência do apelo emocional das vitrines e propagandas.",
+    q4: "D) 3 meses<br><strong>Explicação:</strong> Valor que falta = R$ 240,00 − R$ 180,00 = <strong>R$ 60,00</strong>. Poupando R$ 20,00 por mês, Gabriel precisará de R$ 60,00 ÷ R$ 20,00 = <strong>3 meses</strong>.",
+    q5: "A) Acompanhando o histórico de preços do produto semanas antes da promoção e comparando valores em diferentes lojas.<br><strong>Explicação:</strong> Pesquisar preços com antecedência permite identificar se o desconto anunciado é real ou maquiado.",
+    q6: "A) As pessoas trocam serviços e conhecimentos entre si (por exemplo: um aluno ajuda o colega em Matemática e o colega ensina violão), sem precisar gastar dinheiro.<br><strong>Explicação:</strong> Nos bancos de tempo, o tempo e o conhecimento de cada pessoa funcionam como moeda de troca solidária.",
+    q7: "C) R$ 200,00<br><strong>Explicação:</strong> Viajando em carros separados, cada família gastaria <strong>R$ 300,00</strong>. Dividindo um único carro, cada família paga R$ 300,00 ÷ 3 = <strong>R$ 100,00</strong>. Economia: R$ 300,00 − R$ 100,00 = <strong>R$ 200,00</strong>.",
+    q8: "A) Nas <strong>células</strong>, que são os retângulos formados pelo cruzamento de uma coluna com uma linha.<br><strong>Explicação:</strong> As células são as unidades básicas onde inserimos textos, números e fórmulas na planilha.",
+    q9: "B) Atualizar a planilha com frequência (semanal ou mensalmente), incluindo tanto os gastos maiores quanto as pequenas despesas diárias.<br><strong>Explicação:</strong> Pequenos gastos diários somados ao longo do mês impactam fortemente o saldo final.",
+    q10: "D) Faltam R$ 160,00 e o saldo atual é R$ 150,00.<br><strong>Explicação:</strong> Falta para a meta = R$ 500,00 − R$ 340,00 = <strong>R$ 160,00</strong>. Saldo atual em caixa = R$ 340,00 − R$ 190,00 = <strong>R$ 150,00</strong>."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "💰 Educação Financeira | 4º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

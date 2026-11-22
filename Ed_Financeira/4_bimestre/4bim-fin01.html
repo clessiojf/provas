@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira – 1º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1b5e20; --secondary: #2e7d32; --success: #2e7d32; --danger: #c62828; --bg: #e8f5e9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>💰 Educação Financeira | 1º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Educação Financeira – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano A)" required>
+        </div>
+        <h2>Questões Objetivas – Módulos 06 e 07 (Consumo e Planilhas Eletrônicas)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No item <strong>6.1 (Consumir é preciso!)</strong>, estudamos a diferença fundamental entre <strong>necessidade</strong> e <strong>desejo</strong> para praticar o consumo consciente. Assinale a alternativa que apresenta corretamente um exemplo de <strong>necessidade básica</strong> e um exemplo de <strong>desejo de consumo</strong>, respectivamente:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Comprar o tênis de edição limitada mais caro da loja / pagar a conta de água da residência.</label>
+                <label><input type="radio" name="q1" value="B"> B) Alimentação saudável e moradia / trocar de celular apenas porque lançou um modelo com cor nova.</label>
+                <label><input type="radio" name="q1" value="C"> C) Assinar cinco serviços diferentes de streaming / comprar medicamentos essenciais.</label>
+                <label><input type="radio" name="q1" value="D"> D) Colecionar figurinhas raras / ter acesso à energia elétrica e transporte básico.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Considere a frase: <em>"Consumir é preciso para viver, mas o consumismo pode comprometer o orçamento familiar e o meio ambiente."</em> Qual é a principal diferença entre <strong>consumo consciente</strong> e <strong>consumismo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) O consumo consciente consiste em gastar todo o salário antes do fim do mês para estimular o comércio.</label>
+                <label><input type="radio" name="q2" value="B"> B) O consumismo ocorre apenas quando uma pessoa compra alimentos naturais na feira.</label>
+                <label><input type="radio" name="q2" value="C"> C) O consumo consciente avalia a real necessidade, o impacto ambiental e a capacidade financeira antes da compra, enquanto o consumismo é o ato impulsivo e exagerado de comprar sem necessidade.</label>
+                <label><input type="radio" name="q2" value="D"> D) Não existe nenhuma diferença entre os dois conceitos, pois ambos significam economizar dinheiro.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No item <strong>6.2 (Consumo planejado)</strong>, aprendemos estratégias para evitar as compras por impulso. Antes de adquirir um produto de maior valor (como uma bicicleta ou um computador), qual deve ser a primeira atitude de um consumidor planejado?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Verificar o orçamento disponível, pesquisar preços em diferentes lojas e avaliar se o gasto cabe sem gerar dívidas.</label>
+                <label><input type="radio" name="q3" value="B"> B) Comprar na primeira loja visitada para aproveitar a emoção do momento, sem olhar o preço final.</label>
+                <label><input type="radio" name="q3" value="C"> C) Parcelar no maior número possível de vezes sem verificar os juros embutidos nas parcelas.</label>
+                <label><input type="radio" name="q3" value="D"> D) Pedir dinheiro emprestado com juros altos antes mesmo de saber quanto custa o produto.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Mariana quer comprar um fone de ouvido que custa <strong>R$ 200,00</strong>. A loja oferece duas opções de pagamento:<br>
+            • <strong>Opção 1 (à vista):</strong> desconto de 10% sobre o valor total.<br>
+            • <strong>Opção 2 (a prazo):</strong> 4 parcelas iguais de R$ 55,00.<br>
+            Comparando as duas opções dentro do planejamento financeiro, quanto Mariana economizará se optar pelo pagamento <strong>à vista</strong> em vez do pagamento <strong>a prazo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) R$ 20,00</label>
+                <label><input type="radio" name="q4" value="B"> B) R$ 10,00</label>
+                <label><input type="radio" name="q4" value="C"> C) R$ 30,00</label>
+                <label><input type="radio" name="q4" value="D"> D) R$ 40,00</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Muitas campanhas publicitárias utilizam gatilhos como <em>"Só hoje! Últimas unidades!"</em> para estimular a compra imediata. Qual pergunta reflexiva o material de Educação Financeira recomenda fazer antes de concluir uma compra?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) <em>"Eu realmente preciso disso agora, tenho dinheiro para pagar e já pesquisei outras opções?"</em></label>
+                <label><input type="radio" name="q5" value="B"> B) <em>"Meus colegas de turma vão ficar com inveja se eu mostrar esse produto amanhã?"</em></label>
+                <label><input type="radio" name="q5" value="C"> C) <em>"Qual é a parcela mais cara que consigo assumir sem contar aos meus pais?"</em></label>
+                <label><input type="radio" name="q5" value="D"> D) <em>"Como posso gastar toda a minha mesada em menos de dez minutos?"</em></label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No item <strong>6.3 (Consumo colaborativo)</strong>, conhecemos práticas baseadas no compartilhamento, na troca, no empréstimo e na reutilização de bens e serviços. Qual das situações abaixo representa um exemplo prático de <strong>consumo colaborativo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Comprar uma furadeira elétrica cara para usar apenas uma vez ao ano e deixá-la guardada na garagem.</label>
+                <label><input type="radio" name="q6" value="B"> B) Participar de uma feira de troca de livros e jogos usados entre colegas da escola ou alugar uma bicicleta compartilhada.</label>
+                <label><input type="radio" name="q6" value="C"> C) Jogar fora roupas em perfeito estado toda vez que muda a estação do ano para comprar tudo novo.</label>
+                <label><input type="radio" name="q6" value="D"> D) Cada morador da mesma rua viajar sozinho em seu próprio carro para o mesmo local de trabalho.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Quais são os principais benefícios econômicos e socioambientais do <strong>consumo colaborativo</strong> para as famílias e para a sociedade?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Aumenta o acúmulo de objetos sem uso em casa e eleva os gastos mensais das famílias.</label>
+                <label><input type="radio" name="q7" value="B"> B) Impede que as pessoas conversem ou cooperem umas com as outras no bairro.</label>
+                <label><input type="radio" name="q7" value="C"> C) Reduz despesas financeiras, evita o desperdício de recursos naturais, diminui a geração de lixo e fortalece a cooperação comunitária.</label>
+                <label><input type="radio" name="q7" value="D"> D) Obriga todas as fábricas a fecharem e proíbe qualquer tipo de comércio novo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Na <strong>Unidade 4 – Módulo 07 (Item 7.1 – Elaborando planilhas)</strong>, estudamos o funcionamento das planilhas eletrônicas (como Excel e Google Planilhas) para organizar informações financeiras. Como é identificado o endereço de uma <strong>célula</strong> em uma planilha eletrônica?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Pela combinação da letra da coluna com o número da linha (por exemplo: <strong>B4</strong>, que fica na coluna B e na linha 4).</label>
+                <label><input type="radio" name="q8" value="B"> B) Apenas pelo nome completo do arquivo salvo na pasta do computador.</label>
+                <label><input type="radio" name="q8" value="C"> C) Pela soma de todos os números digitados na primeira linha da tela.</label>
+                <label><input type="radio" name="q8" value="D"> D) Pelo número da coluna seguido da letra da linha (por exemplo: <strong>4B</strong>).</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Ao elaborar uma planilha de controle financeiro pessoal no item <strong>7.1</strong>, organizamos os dados em colunas como <em>Data, Descrição, Categoria (Receita ou Despesa)</em> e <em>Valor</em>. Qual é a principal vantagem de utilizar uma planilha eletrônica em vez de anotações soltas em papéis avulsos?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) A planilha apaga automaticamente todas as despesas para que o saldo pareça sempre positivo.</label>
+                <label><input type="radio" name="q9" value="B"> B) Permite estruturar os dados de forma clara, atualizar valores rapidamente, visualizar para onde vai o dinheiro e evitar esquecimentos.</label>
+                <label><input type="radio" name="q9" value="C"> C) Dispensa a necessidade de registrar os gastos pequenos do dia a dia.</label>
+                <label><input type="radio" name="q9" value="D"> D) Funciona apenas para empresas multinacionais, não podendo ser usada por estudantes.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Observe o trecho de uma planilha eletrônica de mesada elaborada por um aluno do 7º ano:<br>
+            • Célula <strong>B2</strong>: Mesada recebida = R$ 120,00<br>
+            • Célula <strong>B3</strong>: Lanche na cantina = R$ 35,00<br>
+            • Célula <strong>B4</strong>: Compra de livro usado (sebo) = R$ 25,00<br>
+            • Célula <strong>B5</strong>: Saldo restante = ?<br>
+            Considerando os registros dessa planilha, qual é o valor correto do saldo restante na célula <strong>B5</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) R$ 180,00</label>
+                <label><input type="radio" name="q10" value="B"> B) R$ 85,00</label>
+                <label><input type="radio" name="q10" value="C"> C) R$ 95,00</label>
+                <label><input type="radio" name="q10" value="D"> D) R$ 60,00</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "C", q3: "A", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Alimentação saudável e moradia (necessidade) / trocar de celular pela cor nova (desejo)",
+    q2: "Consumo consciente avalia necessidade e orçamento; consumismo é compra impulsiva e exagerada",
+    q3: "Verificar o orçamento disponível, pesquisar preços e avaliar se cabe sem gerar dívidas",
+    q4: "R$ 40,00 (à vista: R$ 180,00 vs. a prazo: 4 x R$ 55,00 = R$ 220,00)",
+    q5: "Eu realmente preciso disso agora, tenho dinheiro para pagar e já pesquisei outras opções?",
+    q6: "Participar de feira de troca de livros/jogos ou alugar bicicleta compartilhada",
+    q7: "Reduz despesas, evita desperdício, diminui lixo e fortalece a cooperação comunitária",
+    q8: "Combinação da letra da coluna com o número da linha (ex: B4)",
+    q9: "Estruturar dados com clareza, atualizar valores e visualizar para onde vai o dinheiro",
+    q10: "R$ 60,00 (R$ 120,00 - R$ 35,00 - R$ 25,00)"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "B) Alimentação saudável e moradia / trocar de celular apenas porque lançou um modelo com cor nova.<br><strong>Explicação:</strong> Necessidades são itens essenciais à vida e bem-estar; desejos são vontades supérfluas influenciadas pela novidade ou publicidade.",
+    q2: "C) O consumo consciente avalia a real necessidade, o impacto ambiental e a capacidade financeira antes da compra, enquanto o consumismo é o ato impulsivo e exagerado de comprar sem necessidade.<br><strong>Explicação:</strong> Consumir de forma consciente garante equilíbrio financeiro e sustentabilidade.",
+    q3: "A) Verificar o orçamento disponível, pesquisar preços em diferentes lojas e avaliar se o gasto cabe sem gerar dívidas.<br><strong>Explicação:</strong> O consumo planejado exige pesquisa e análise prévia do orçamento antes de fechar negócio.",
+    q4: "D) R$ 40,00<br><strong>Explicação:</strong> À vista com 10% de desconto: R$ 200,00 − R$ 20,00 = <strong>R$ 180,00</strong>. A prazo: 4 × R$ 55,00 = <strong>R$ 220,00</strong>. Economia: R$ 220,00 − R$ 180,00 = <strong>R$ 40,00</strong>.",
+    q5: "A) <em>\"Eu realmente preciso disso agora, tenho dinheiro para pagar e já pesquisei outras opções?\"</em><br><strong>Explicação:</strong> Essas três perguntas freiam o impulso e ajudam a decidir de modo racional.",
+    q6: "B) Participar de uma feira de troca de livros e jogos usados entre colegas da escola ou alugar uma bicicleta compartilhada.<br><strong>Explicação:</strong> O consumo colaborativo prioriza o acesso, a troca e o compartilhamento em vez da compra individual desnecessária.",
+    q7: "C) Reduz despesas financeiras, evita o desperdício de recursos naturais, diminui a geração de lixo e fortalece a cooperação comunitária.<br><strong>Explicação:</strong> Compartilhar e reutilizar gera economia financeira e menor impacto ambiental.",
+    q8: "A) Pela combinação da letra da coluna com o número da linha (por exemplo: <strong>B4</strong>, que fica na coluna B e na linha 4).<br><strong>Explicação:</strong> Na estrutura das planilhas eletrônicas, colunas são identificadas por letras e linhas por números.",
+    q9: "B) Permite estruturar os dados de forma clara, atualizar valores rapidamente, visualizar para onde vai o dinheiro e evitar esquecimentos.<br><strong>Explicação:</strong> A planilha organiza receitas e despesas em categorias, facilitando o controle do orçamento.",
+    q10: "D) R$ 60,00<br><strong>Explicação:</strong> Total de despesas = R$ 35,00 + R$ 25,00 = R$ 60,00. Saldo restante (B5) = R$ 120,00 − R$ 60,00 = <strong>R$ 60,00</strong>."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "💰 Educação Financeira | 1º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

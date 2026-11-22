@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira – 3º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1b5e20; --secondary: #2e7d32; --success: #2e7d32; --danger: #c62828; --bg: #e8f5e9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>💰 Educação Financeira | 3º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Educação Financeira – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano C)" required>
+        </div>
+        <h2>Questões Objetivas – Módulos 06 e 07 (Consumo e Planilhas Eletrônicas)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) No item <strong>6.1 (Consumir é preciso!)</strong>, refletimos sobre o consumo consciente e a chamada <strong>obsolescência programada</strong> (quando produtos são fabricados para durar pouco ou parecerem ultrapassados rapidamente). Como um consumidor consciente deve agir diante desse cenário?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Jogar aparelhos eletrônicos no lixo comum assim que surge uma pequena falha.</label>
+                <label><input type="radio" name="q1" value="B"> B) Priorizar produtos duráveis, buscar conserto ou manutenção antes de substituir e descartar eletrônicos em pontos de coleta adequados.</label>
+                <label><input type="radio" name="q1" value="C"> C) Trocar de smartphone a cada seis meses mesmo que o aparelho antigo funcione perfeitamente.</label>
+                <label><input type="radio" name="q1" value="D"> D) Comprar produtos sem garantia apenas porque a embalagem é colorida.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Considere os <strong>5 Rs da Sustentabilidade</strong> relacionados ao consumo consciente (<em>Repensar, Recusar, Reduzir, Reutilizar e Reciclar</em>). Quando um estudante decide <strong>não</strong> comprar um brinquedo de plástico descartável que quebrará no mesmo dia, qual dos 5 Rs ele está praticando diretamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Recusar (evitar produtos desnecessários ou prejudiciais ao meio ambiente).</label>
+                <label><input type="radio" name="q2" value="B"> B) Reciclar (derreter o plástico em casa para fabricar outro objeto).</label>
+                <label><input type="radio" name="q2" value="C"> C) Aumentar o descarte em aterros sanitários.</label>
+                <label><input type="radio" name="q2" value="D"> D) Consumir por impulso sem avaliar a qualidade.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No item <strong>6.2 (Consumo planejado)</strong>, estudamos a importância de comparar o <strong>preço por unidade de medida</strong> (como preço por quilo ou por litro) no supermercado. Uma embalagem de suco de <strong>1 litro</strong> custa <strong>R$ 8,00</strong>, enquanto uma caixa maior de <strong>2 litros</strong> da mesma marca custa <strong>R$ 13,00</strong>. Qual opção é mais vantajosa e quanto se economiza ao levar 2 litros na embalagem maior?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) A embalagem de 1 litro é mais barata, economizando R$ 5,00.</label>
+                <label><input type="radio" name="q3" value="B"> B) As duas opções têm exatamente o mesmo custo por litro.</label>
+                <label><input type="radio" name="q3" value="C"> C) A embalagem de 2 litros é mais vantajosa (R$ 6,50 por litro), gerando economia de R$ 3,00 na compra de 2 litros.</label>
+                <label><input type="radio" name="q3" value="D"> D) A embalagem de 2 litros sai mais cara porque o valor total da etiqueta é maior.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Pedro recebeu <strong>R$ 100,00</strong> de presente de aniversário e quer comprar um jogo que custa <strong>R$ 140,00</strong>. Ele ganha R$ 20,00 de mesada por mês e não possui nenhuma dívida. Qual é o planejamento mais adequado para Pedro realizar esse objetivo sem comprometer seu orçamento?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Gastar os R$ 100,00 hoje em doces e figurinhas e esperar ganhar outro presente no ano que vem.</label>
+                <label><input type="radio" name="q4" value="B"> B) Guardar os R$ 100,00 e poupar integralmente sua mesada durante 2 meses (2 × R$ 20,00 = R$ 40,00) para comprar o jogo à vista.</label>
+                <label><input type="radio" name="q4" value="C"> C) Pedir R$ 140,00 emprestados com juros de 50% ao mês para comprar o jogo imediatamente.</label>
+                <label><input type="radio" name="q4" value="D"> D) Comprar um produto parecido de R$ 100,00 que ele não queria apenas para gastar o dinheiro na hora.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Por que o pagamento <strong>parcelado "sem juros"</strong> em muitas parcelas também exige atenção no <strong>consumo planejado</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Porque parcelas pequenas acumuladas de várias compras diferentes podem comprometer boa parte da renda dos meses futuros.</label>
+                <label><input type="radio" name="q5" value="B"> B) Porque compras parceladas nunca precisam ser pagas após a terceira parcela.</label>
+                <label><input type="radio" name="q5" value="C"> C) Porque o consumidor recebe dinheiro de volta da loja a cada parcela paga.</label>
+                <label><input type="radio" name="q5" value="D"> D) Porque parcelar sempre aumenta o salário mensal do comprador.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No item <strong>6.3 (Consumo colaborativo)</strong>, vemos como as plataformas digitais e as iniciativas comunitárias facilitam o reaproveitamento de bens. Qual das alternativas apresenta uma prática legítima de <strong>consumo colaborativo</strong> na vida escolar ou familiar?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Rasgar os livros didáticos ao final do ano letivo para que ninguém mais possa utilizá-los.</label>
+                <label><input type="radio" name="q6" value="B"> B) Doar ou trocar uniformes escolares que já não servem mais com outros alunos da escola que precisam daquele tamanho.</label>
+                <label><input type="radio" name="q6" value="C"> C) Comprar cinco estojos novos todos os semestres mesmo com o antigo em perfeito estado.</label>
+                <label><input type="radio" name="q6" value="D"> D) Recusar-se a emprestar uma régua ou livro para um colega em sala de aula.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Além de economizar dinheiro, o <strong>consumo colaborativo</strong> combate o problema dos "bens ociosos" (objetos que compramos e deixamos parados 95% do tempo, como barracas de acampamento, malas de viagem grandes ou ferramentas específicas). Qual solução colaborativa resolve esse problema de forma inteligente?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Construir um galpão maior em casa para guardar mais objetos que nunca são usados.</label>
+                <label><input type="radio" name="q7" value="B"> B) Comprar duas barracas novas para cada viagem de fim de semana.</label>
+                <label><input type="radio" name="q7" value="C"> C) Alugar o item apenas pelos dias da viagem ou pedir emprestado a um familiar/vizinho.</label>
+                <label><input type="radio" name="q7" value="D"> D) Jogar fora a barraca logo após o primeiro acampamento para não ter trabalho de guardar.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Na <strong>Unidade 4 – Módulo 07 (Item 7.1 – Elaborando planilhas)</strong>, aprendemos a organizar tabelas financeiras. Se você selecionar um conjunto contínuo de células da coluna <strong>B</strong>, indo da linha <strong>2</strong> até a linha <strong>8</strong>, como esse <strong>intervalo de células</strong> é representado nas planilhas eletrônicas?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) B2:B8</label>
+                <label><input type="radio" name="q8" value="B"> B) B2+B8</label>
+                <label><input type="radio" name="q8" value="C"> C) 2B-8B</label>
+                <label><input type="radio" name="q8" value="D"> D) B2/B8</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Ao elaborar uma planilha de controle de gastos no item <strong>7.1</strong>, qual é a importância de classificar as despesas em <strong>categorias</strong> (por exemplo: <em>Alimentação, Transporte, Lazer, Material Escolar</em>)?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Deixar a planilha mais colorida apenas por estética, sem utilidade prática.</label>
+                <label><input type="radio" name="q9" value="B"> B) Identificar exatamente em quais áreas o dinheiro está sendo mais gasto e descobrir onde é possível economizar.</label>
+                <label><input type="radio" name="q9" value="C"> C) Impedir que o usuário saiba quanto gastou no total do mês.</label>
+                <label><input type="radio" name="q9" value="D"> D) Substituir todas as despesas por receitas automaticamente.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Analise o controle financeiro mensal registrado na planilha de Sofia (Item 7.1):<br>
+            • <strong>Receitas totais</strong> (mesada + ajuda em tarefas): R$ 150,00<br>
+            • <strong>Despesas totais</strong> (lanches + cinema + revistas): R$ 165,00<br>
+            Observando o resultado final dessa planilha (<strong>Saldo = Receitas − Despesas</strong>), qual é a situação financeira de Sofia nesse mês?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Superávit (saldo positivo) de R$ 15,00.</label>
+                <label><input type="radio" name="q10" value="B"> B) Equilíbrio perfeito com saldo de R$ 315,00.</label>
+                <label><input type="radio" name="q10" value="C"> C) Economia acumulada de R$ 150,00.</label>
+                <label><input type="radio" name="q10" value="D"> D) Déficit (saldo negativo) de −R$ 15,00, indicando que ela gastou mais do que recebeu.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "A", q3: "C", q4: "B", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Priorizar produtos duráveis, buscar conserto e descartar eletrônicos em pontos adequados",
+    q2: "Recusar (evitar produtos desnecessários ou prejudiciais ao meio ambiente)",
+    q3: "A embalagem de 2 litros é mais vantajosa (R$ 6,50/L), gerando economia de R$ 3,00",
+    q4: "Guardar os R$ 100,00 e poupar a mesada por 2 meses (R$ 40,00) para comprar à vista",
+    q5: "Parcelas pequenas acumuladas comprometem boa parte da renda dos meses futuros",
+    q6: "Doar ou trocar uniformes escolares que não servem mais com outros alunos",
+    q7: "Alugar o item apenas pelos dias da viagem ou pedir emprestado a familiar/vizinho",
+    q8: "B2:B8 (dois-pontos indicam intervalo contínuo de células)",
+    q9: "Identificar onde o dinheiro está sendo mais gasto e descobrir onde economizar",
+    q10: "Déficit (saldo negativo) de -R$ 15,00, pois gastou mais do que recebeu"
+};
+
+// Explicações diretas e objetivas para as 10 questões objetivas
+const resolucoesDetalhadas = {
+    q1: "B) Priorizar produtos duráveis, buscar conserto ou manutenção antes de substituir e descartar eletrônicos em pontos de coleta adequados.<br><strong>Explicação:</strong> Consertar, prolongar a vida útil e descartar corretamente combate o desperdício causado pela obsolescência programada.",
+    q2: "A) Recusar (evitar produtos desnecessários ou prejudiciais ao meio ambiente).<br><strong>Explicação:</strong> Dizer 'não' a produtos descartáveis ou supérfluos é a prática direta do R de <em>Recusar</em>.",
+    q3: "C) A embalagem de 2 litros é mais vantajosa (R$ 6,50 por litro), gerando economia de R$ 3,00 na compra de 2 litros.<br><strong>Explicação:</strong> Duas embalagens de 1 L custariam 2 × R$ 8,00 = <strong>R$ 16,00</strong> (R$ 8,00/L). A caixa de 2 L custa <strong>R$ 13,00</strong> (R$ 6,50/L), gerando economia de <strong>R$ 3,00</strong>.",
+    q4: "B) Guardar os R$ 100,00 e poupar integralmente sua mesada durante 2 meses (2 × R$ 20,00 = R$ 40,00) para comprar o jogo à vista.<br><strong>Explicação:</strong> Com planejamento e paciência, R$ 100,00 + R$ 40,00 = <strong>R$ 140,00</strong>, realizando o sonho sem dívidas nem juros.",
+    q5: "A) Porque parcelas pequenas acumuladas de várias compras diferentes podem comprometer boa parte da renda dos meses futuros.<br><strong>Explicação:</strong> O acúmulo de parcelas reduz a margem do orçamento nos meses seguintes (efeito 'bola de neve').",
+    q6: "B) Doar ou trocar uniformes escolares que já não servem mais com outros alunos da escola que precisam daquele tamanho.<br><strong>Explicação:</strong> A troca e doação de uniformes prolongam o uso das peças e geram economia para as famílias.",
+    q7: "C) Alugar o item apenas pelos dias da viagem ou pedir emprestado a um familiar/vizinho.<br><strong>Explicação:</strong> Para itens de uso raro, alugar ou pegar emprestado evita gastar dinheiro com algo que ficará ocioso.",
+    q8: "A) B2:B8<br><strong>Explicação:</strong> Nas planilhas eletrônicas, o símbolo de dois-pontos (<strong>:</strong>) indica um intervalo contínuo entre a célula inicial e a final.",
+    q9: "B) Identificar exatamente em quais áreas o dinheiro está sendo mais gasto e descobrir onde é possível economizar.<br><strong>Explicação:</strong> Categorizar despesas permite diagnosticar excessos (por exemplo, gastos elevados com lanches ou lazer).",
+    q10: "D) Déficit (saldo negativo) de −R$ 15,00, indicando que ela gastou mais do que recebeu.<br><strong>Explicação:</strong> Saldo = R$ 150,00 (receitas) − R$ 165,00 (despesas) = <strong>−R$ 15,00</strong> (déficit)."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva das 10 questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Correção das questões objetivas e exibição das explicações
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> questões (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados de cada questão.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "💰 Educação Financeira | 3º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+    const relatorioCompleto = erros.length > 0 ? erros.join("\n") : "Nenhum erro (100% de acertos)";
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
