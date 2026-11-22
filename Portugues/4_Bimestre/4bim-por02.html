@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Língua Portuguesa – 2º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1a237e; --secondary: #303f9f; --success: #2e7d32; --danger: #c62828; --bg: #e8eaf6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8eaf6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📚 Língua Portuguesa | 2º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Língua Portuguesa – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano B)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Os provérbios populares costumam apresentar conselhos práticos por meio de imagens metafóricas do cotidiano. Qual é o ensinamento transmitido pelo provérbio: <em>"Mais vale um pássaro na mão do que dois voando"</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) É mais sensato valorizar e garantir aquilo que já conquistamos com segurança do que arriscar tudo por promessas incertas.</label>
+                <label><input type="radio" name="q1" value="B"> B) Devemos capturar aves silvestres e mantê-las presas em gaiolas dentro de casa.</label>
+                <label><input type="radio" name="q1" value="C"> C) Quem possui apenas um objetivo na vida nunca conseguirá alcançar o sucesso financeiro.</label>
+                <label><input type="radio" name="q1" value="D"> D) A velocidade dos pássaros impede que qualquer pessoa consiga planejar o futuro.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) No famoso texto <em>"A Agulha e a Linha"</em>, de Machado de Assis, uma agulha e um novelo de linha discutem sobre qual dos dois tem maior importância na confecção de um vestido de baile. Pela natureza de seus personagens e pela presença de uma lição moral implícita, esse texto classifica-se como:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Apólogo (narrativa alegórica protagonizada por objetos inanimados dotados de fala e sentimentos humanos).</label>
+                <label><input type="radio" name="q2" value="B"> B) Fábula (narrativa protagonizada exclusivamente por animais selvagens da floresta).</label>
+                <label><input type="radio" name="q2" value="C"> C) Parábola (narrativa protagonizada por seres humanos comuns em uma situação realista).</label>
+                <label><input type="radio" name="q2" value="D"> D) Reportagem jornalística (relato objetivo de um fato real ocorrido em um ateliê de costura).</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Na produção de uma campanha educativa voltada à boa convivência escolar (como o combate ao cyberbullying), qual elemento é indispensável para que a mensagem atinja seu objetivo comunicativo?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Clareza na identificação do problema social, adequação da linguagem ao público-alvo e apelo à reflexão ou ação solidária.</label>
+                <label><input type="radio" name="q3" value="B"> B) Uso de termos técnicos jurídicos incompreensíveis para crianças e adolescentes.</label>
+                <label><input type="radio" name="q3" value="C"> C) Divulgação exclusiva de preços e promoções comerciais de produtos eletrônicos.</label>
+                <label><input type="radio" name="q3" value="D"> D) Omissão completa do tema central para que o leitor adivinhe o assunto da campanha.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Observe a pontuação e a função sintática dos termos destacados nas frases a seguir. Em qual alternativa a vírgula foi empregada obrigatoriamente para isolar um <strong>vocativo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Não se esqueça de trazer o livro de fábulas, <strong>Mariana</strong>!</label>
+                <label><input type="radio" name="q4" value="B"> B) <strong>Mariana</strong>, a aluna mais dedicada da turma, venceu o concurso de redação.</label>
+                <label><input type="radio" name="q4" value="C"> C) Ontem à tarde, <strong>Mariana</strong> leu três parábolas na biblioteca.</label>
+                <label><input type="radio" name="q4" value="D"> D) O caderno de <strong>Mariana</strong>, que estava sobre a mesa, foi recolhido.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) O aposto pode assumir diferentes classificações conforme a relação que estabelece com o termo anterior (explicativo, enumerativo, resumitivo ou especificativo). Identifique a alternativa que contém um <strong>aposto enumerativo</strong>:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) A campanha educativa abordou três valores essenciais: <strong>respeito, empatia e solidariedade</strong>.</label>
+                <label><input type="radio" name="q5" value="B"> B) O escritor <strong>Monteiro Lobato</strong> reescreveu muitas fábulas clássicas.</label>
+                <label><input type="radio" name="q5" value="C"> C) Respeito, empatia e solidariedade, <strong>tudo</strong> contribui para a paz na escola.</label>
+                <label><input type="radio" name="q5" value="D"> D) <strong>Caros colegas</strong>, vamos colaborar com a limpeza da sala.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Diferentemente do adjunto adnominal (que se liga apenas a substantivos), o <strong>complemento nominal</strong> pode completar o sentido de um substantivo abstrato, de um adjetivo ou de um advérbio. Em qual das orações abaixo o termo destacado é um complemento nominal ligado a um <strong>adjetivo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Os alunos estavam conscientes <strong>da importância da campanha</strong>.</label>
+                <label><input type="radio" name="q6" value="B"> B) A leitura <strong>do livro</strong> emocionou todos os estudantes.</label>
+                <label><input type="radio" name="q6" value="C"> C) Aquela escola <strong>antiga</strong> fica no centro do bairro.</label>
+                <label><input type="radio" name="q6" value="D"> D) As histórias <strong>de Esopo</strong> atravessaram séculos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Quando uma locução adjetiva (preposição + substantivo) acompanha um substantivo concreto indicando posse, origem ou matéria, ela exerce sempre a função de <strong>adjunto adnominal</strong>. Assinale a alternativa que apresenta um adjunto adnominal com valor de <strong>matéria</strong>:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) A agulha <strong>de aço</strong> abriu caminho para a linha.</label>
+                <label><input type="radio" name="q7" value="B"> B) O amor <strong>ao próximo</strong> é o tema central da parábola.</label>
+                <label><input type="radio" name="q7" value="C"> C) A obediência <strong>às regras</strong> garante a boa convivência.</label>
+                <label><input type="radio" name="q7" value="D"> D) O medo <strong>do escuro</strong> impediu a criança de entrar no quarto.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Alguns verbos abundantes (como <em>aceitar, acender, entregar, enxugar, prender</em> e <em>salvar</em>) exigem atenção na norma-padrão quanto ao uso dos particípios regular e irregular. Assinale a alternativa em que o particípio do verbo abundante está empregado <strong>corretamente</strong>:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Os bombeiros tinham <strong>salvado</strong> os moradores antes que o incêndio fosse controlado.</label>
+                <label><input type="radio" name="q8" value="B"> B) Os bombeiros tinham <strong>salvo</strong> os moradores antes que o incêndio tivesse <strong>salvo</strong> a casa.</label>
+                <label><input type="radio" name="q8" value="C"> C) A proposta foi <strong>aceitada</strong> pela turma depois que o diretor havia <strong>aceito</strong> o convite.</label>
+                <label><input type="radio" name="q8" value="D"> D) O ladrão havia sido <strong>prendido</strong> pela polícia assim que o guarda tinha <strong>preso</strong> o portão.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Na formação de uma <strong>locução verbal</strong>, apenas o verbo auxiliar é flexionado em tempo, modo, número e pessoa, enquanto o verbo principal permanece em uma das três formas nominais (infinitivo, gerúndio ou particípio). Em qual forma nominal está o verbo principal na locução destacada: <em>"Os estudantes <strong>estavam debatendo</strong> os valores da fábula"</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Gerúndio (terminação <em>-ndo</em>, indicando ação em andamento).</label>
+                <label><input type="radio" name="q9" value="B"> B) Infinitivo pessoal (terminação <em>-ar</em>).</label>
+                <label><input type="radio" name="q9" value="C"> C) Particípio irregular.</label>
+                <label><input type="radio" name="q9" value="D"> D) Futuro do pretérito do indicativo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Leia a oração: <em>"Lemos várias parábolas inspiradoras durante a aula de Língua Portuguesa."</em> Como se classifica o sujeito dessa oração?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Sujeito oculto ou desinencial (identificado pela desinência verbal <em>-mos</em>: "Nós").</label>
+                <label><input type="radio" name="q10" value="B"> B) Sujeito indeterminado (não é possível saber quem praticou a ação).</label>
+                <label><input type="radio" name="q10" value="C"> C) Oração sem sujeito (verbo impessoal).</label>
+                <label><input type="radio" name="q10" value="D"> D) Sujeito composto (dois núcleos expressos na frase).</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Leia o provérbio: <em>"Quem semeia ventos colhe tempestades."</em> Explique com suas palavras o ensinamento moral transmitido por esse ditado popular:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Leia a frase: <em>"A solidariedade, a empatia e o diálogo, tudo fortalece a boa convivência escolar."</em> Identifique o termo que exerce a função de <strong>aposto resumitivo</strong> e explique por que ele recebe essa classificação:</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Complete adequadamente as lacunas abaixo utilizando as formas regular e irregular do verbo abundante <strong>acender</strong>:<br>
+            a) O zelador já havia __________ as luzes do pátio.<br>
+            b) As luzes do pátio já estavam __________ pelo zelador.</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Leia a oração: <em>"Choveu muito durante a apresentação da campanha educativa."</em> Classifique o <strong>sujeito</strong> dessa oração e justifique sua resposta:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "A", q3: "A", q4: "A", q5: "A",
+    q6: "A", q7: "A", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Mais sensato valorizar o que já conquistamos com segurança do que arriscar por promessas incertas",
+    q2: "Apólogo (narrativa alegórica protagonizada por objetos inanimados)",
+    q3: "Clareza do problema, adequação ao público-alvo e apelo à reflexão/ação",
+    q4: "Não se esqueça de trazer o livro de fábulas, Mariana!",
+    q5: "respeito, empatia e solidariedade (aposto enumerativo)",
+    q6: "da importância da campanha (complemento nominal ligado ao adjetivo 'conscientes')",
+    q7: "de aço (adjunto adnominal indicando matéria do substantivo concreto 'agulha')",
+    q8: "tinham salvado (particípio regular usado com o verbo auxiliar 'ter')",
+    q9: "Gerúndio (terminação -ndo, indicando ação em andamento)",
+    q10: "Sujeito oculto ou desinencial ('Nós', identificado pela desinência -mos)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) É mais sensato valorizar e garantir aquilo que já conquistamos com segurança do que arriscar tudo por promessas incertas.<br><strong>Explicação:</strong> O provérbio aconselha prudência e valorização do que é concreto e seguro em vez de ambição arriscada.",
+    q2: "A) Apólogo (narrativa alegórica protagonizada por objetos inanimados dotados de fala e sentimentos humanos).<br><strong>Explicação:</strong> Em 'A Agulha e a Linha', objetos inanimados dialogam para criticar a vaidade e valorizar quem realiza o trabalho discreto.",
+    q3: "A) Clareza na identificação do problema social, adequação da linguagem ao público-alvo e apelo à reflexão ou ação solidária.<br><strong>Explicação:</strong> Toda campanha educativa busca conscientizar e mobilizar um público específico diante de um problema coletivo.",
+    q4: "A) Não se esqueça de trazer o livro de fábulas, <strong>Mariana</strong>!<br><strong>Explicação:</strong> O nome 'Mariana' está no fim da frase, separado por vírgula, servindo para chamar diretamente a pessoa com quem se fala (vocativo).",
+    q5: "A) A campanha educativa abordou três valores essenciais: <strong>respeito, empatia e solidariedade</strong>.<br><strong>Explicação:</strong> Após os dois-pontos, o aposto desdobra e enumera os elementos que compõem 'três valores essenciais'.",
+    q6: "A) Os alunos estavam conscientes <strong>da importância da campanha</strong>.<br><strong>Explicação:</strong> O termo preposicionado completa o sentido do adjetivo 'conscientes' (quem está consciente, está consciente <em>de algo</em>).",
+    q7: "A) A agulha <strong>de aço</strong> abriu caminho para a linha.<br><strong>Explicação:</strong> 'De aço' caracteriza o substantivo concreto 'agulha', indicando o material de que ela é feita (adjunto adnominal).",
+    q8: "A) Os bombeiros tinham <strong>salvado</strong> os moradores antes que o incêndio fosse controlado.<br><strong>Explicação:</strong> Com os verbos auxiliares 'ter' e 'haver' (voz ativa), a norma-padrão exige o particípio regular ('salvado').",
+    q9: "A) Gerúndio (terminação <em>-ndo</em>, indicando ação em andamento).<br><strong>Explicação:</strong> Na locução 'estavam debatendo', 'estavam' é o verbo auxiliar flexionado e 'debatendo' é o verbo principal no gerúndio.",
+    q10: "A) Sujeito oculto ou desinencial (identificado pela desinência verbal <em>-mos</em>: 'Nós').<br><strong>Explicação:</strong> Embora o pronome 'Nós' não esteja escrito na frase, ele é facilmente identificado pela terminação do verbo 'lemos'.",
+    q11: "<strong>Resposta Esperada:</strong> O provérbio ensina que toda atitude negativa, agressiva ou irresponsável ('semear ventos') acaba gerando consequências ainda mais graves e prejudiciais ('colher tempestades') para quem a praticou.",
+    q12: "<strong>Resposta Esperada:</strong> O termo é o pronome indefinido 'tudo'. Ele é classificado como aposto resumitivo porque sintetiza/resume em uma única palavra os três elementos citados anteriormente ('a solidariedade, a empatia e o diálogo').",
+    q13: "<strong>Resposta Esperada:</strong> a) O zelador já havia <strong>acendido</strong> as luzes do pátio (particípio regular com o verbo auxiliar 'haver').<br>b) As luzes do pátio já estavam <strong>acesas</strong> pelo zelador (particípio irregular flexionado com o verbo auxiliar 'estar').",
+    q14: "<strong>Resposta Esperada:</strong> Classificação: Oração sem sujeito (ou sujeito inexistente). Justificativa: O verbo 'chover' está empregado em seu sentido literal indicando um fenômeno da natureza, sendo, portanto, um verbo impessoal."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📚 Língua Portuguesa | 2º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Língua Portuguesa – 5º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1a237e; --secondary: #303f9f; --success: #2e7d32; --danger: #c62828; --bg: #e8eaf6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8eaf6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📚 Língua Portuguesa | 5º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Língua Portuguesa – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano E)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Os provérbios populares costumam sintetizar conselhos práticos sobre escolhas e comportamentos humanos. Qual alternativa interpreta corretamente o ensinamento do provérbio: <em>"Antes só do que mal acompanhado"</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) É preferível ficar sozinho e preservar a paz e os próprios valores do que conviver com pessoas que trazem más influências ou prejuízos.</label>
+                <label><input type="radio" name="q1" value="B"> B) Devemos evitar fazer qualquer amizade ou trabalho em grupo durante toda a vida escolar.</label>
+                <label><input type="radio" name="q1" value="C"> C) Quem vive isolado nunca precisa respeitar as regras de boa convivência social.</label>
+                <label><input type="radio" name="q1" value="D"> D) As companhias não exercem nenhuma influência sobre as atitudes de uma pessoa.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na fábula <em>"O Leão e o Ratinho"</em>, um pequeno rato liberta um poderoso leão preso em uma rede de caçadores, retribuindo o favor de ter sido poupado anteriormente. Qual valor humano essa narrativa alegórica ensina?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) A gratidão e o respeito ao próximo, mostrando que ninguém deve ser subestimado por sua aparência ou tamanho.</label>
+                <label><input type="radio" name="q2" value="B"> B) A superioridade absoluta dos animais fortes sobre os seres menores da natureza.</label>
+                <label><input type="radio" name="q2" value="C"> C) A inutilidade de ajudar alguém que não possui riqueza ou poder imediato.</label>
+                <label><input type="radio" name="q2" value="D"> D) A necessidade de capturar animais silvestres com redes nas florestas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No estudo das campanhas educativas de boa convivência (Módulo 8 do material didático), o uso de verbos no modo imperativo (como <em>"Diga não ao preconceito"</em> ou <em>"Pratique a empatia"</em>) tem uma função discursiva específica. Qual é essa função?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Interpelar diretamente o leitor, orientando, aconselhando ou convidando-o a adotar uma atitude positiva.</label>
+                <label><input type="radio" name="q3" value="B"> B) Narrar fatos históricos ocorridos no passado distante sem relação com o presente.</label>
+                <label><input type="radio" name="q3" value="C"> C) Expressar dúvidas e incertezas científicas sobre a existência dos problemas sociais.</label>
+                <label><input type="radio" name="q3" value="D"> D) Substituir todos os substantivos e imagens do cartaz por fórmulas matemáticas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Na frase: <em>"<strong>Pessoal</strong>, vamos organizar os cartazes da campanha educativa!"</em>, o termo destacado exerce a função sintática de vocativo. Qual característica sintática define corretamente o <strong>vocativo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Não pertence nem ao sujeito nem ao predicado da oração, funcionando como um termo independente usado para chamar o interlocutor.</label>
+                <label><input type="radio" name="q4" value="B"> B) É sempre o núcleo do sujeito simples que concorda obrigatoriamente com o verbo no singular.</label>
+                <label><input type="radio" name="q4" value="C"> C) Completa o sentido de um adjetivo ou advérbio por meio de preposição obrigatória.</label>
+                <label><input type="radio" name="q4" value="D"> D) Nunca pode ser isolado por vírgula ou ponto de exclamação na escrita formal.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Identifique a alternativa em que o termo destacado desempenha a função de <strong>aposto explicativo</strong>:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) A empatia, <strong>capacidade de se colocar no lugar do outro</strong>, é essencial para a paz escolar.</label>
+                <label><input type="radio" name="q5" value="B"> B) <strong>Caros colegas</strong>, respeitem as opiniões diferentes durante o debate.</label>
+                <label><input type="radio" name="q5" value="C"> C) Todos os alunos tinham <strong>medo de errar</strong> na apresentação oral.</label>
+                <label><input type="radio" name="q5" value="D"> D) A mesa <strong>de vidro</strong> foi colocada no centro da sala de leitura.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Assinale a alternativa em que o termo destacado exerce a função de <strong>complemento nominal</strong> ligado a um substantivo abstrato (indicando o alvo/paciente da ação):</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) A preservação <strong>do meio ambiente</strong> depende da atitude de todos.</label>
+                <label><input type="radio" name="q6" value="B"> B) O caderno <strong>de capa dura</strong> pertence ao professor de Português.</label>
+                <label><input type="radio" name="q6" value="C"> C) A voz <strong>do narrador</strong> emocionou toda a plateia do auditório.</label>
+                <label><input type="radio" name="q6" value="D"> D) Aquelas <strong>quatro</strong> fábulas foram lidas durante a semana.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Assinale a alternativa em que o termo preposicionado destacado é um <strong>adjunto adnominal</strong> (indica posse ou agente):</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) A opinião <strong>dos estudantes</strong> ajudou a melhorar o cartaz da campanha.</label>
+                <label><input type="radio" name="q7" value="B"> B) Todos estavam ansiosos <strong>pelo resultado do concurso</strong>.</label>
+                <label><input type="radio" name="q7" value="C"> C) O combate <strong>ao bullying</strong> é dever de toda a comunidade escolar.</label>
+                <label><input type="radio" name="q7" value="D"> D) O respeito <strong>aos colegas</strong> fortalece a amizade na turma.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Entre os <strong>verbos abundantes</strong> (como <em>enxugar, extinguir, pagar, suspender</em>), a forma regular do particípio (terminada em <em>-ado</em> ou <em>-ido</em>) é usada com os auxiliares <em>ter</em> ou <em>haver</em>, enquanto a forma irregular é usada com <em>ser</em> ou <em>estar</em>. Assinale a alternativa que aplica corretamente essa regra:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) A diretora havia <strong>suspendido</strong> a reunião, que agora está <strong>suspensa</strong> até segunda-feira.</label>
+                <label><input type="radio" name="q8" value="B"> B) A diretora havia <strong>suspensa</strong> a reunião, que agora está <strong>suspendida</strong> até segunda-feira.</label>
+                <label><input type="radio" name="q8" value="C"> C) O incêndio tinha sido <strong>extinguido</strong> antes de os bombeiros terem <strong>extinto</strong> as brasas.</label>
+                <label><input type="radio" name="q8" value="D"> D) O aluno tinha <strong>pago</strong> a taxa assim que o boleto foi <strong>pagado</strong> no banco.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Em qual das alternativas abaixo a sequência verbal destacada forma uma <strong>locução verbal</strong> (verbo auxiliar + verbo principal exprimindo uma única ação)?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Os alunos <strong>estão produzindo</strong> um mural sobre provérbios brasileiros.</label>
+                <label><input type="radio" name="q9" value="B"> B) A professora <strong>explicou</strong> e <strong>corrigiu</strong> todos os exercícios no quadro.</label>
+                <label><input type="radio" name="q9" value="C"> C) O diretor <strong>autorizou</strong> os alunos a <strong>saírem</strong> mais cedo hoje.</label>
+                <label><input type="radio" name="q9" value="D"> D) A formiga <strong>trabalhou</strong> duro enquanto a cigarra <strong>cantava</strong>.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Leia a oração: <em>"Havia muitos cartazes criativos expostos no pátio da escola."</em> Como se classifica o sujeito dessa oração construída com o verbo <strong>haver</strong> no sentido de <em>existir</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Oração sem sujeito (verbo impessoal, usado obrigatoriamente na 3ª pessoa do singular).</label>
+                <label><input type="radio" name="q10" value="B"> B) Sujeito simples (núcleo: "cartazes").</label>
+                <label><input type="radio" name="q10" value="C"> C) Sujeito composto (núcleos: "cartazes" e "pátio").</label>
+                <label><input type="radio" name="q10" value="D"> D) Sujeito oculto ou desinencial ("Eles").</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Leia o provérbio: <em>"De grão em grão a galinha enche o papo."</em> Explique o ensinamento transmitido por esse provérbio e cite um exemplo prático de como aplicá-lo nos estudos:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Leia a frase: <em>"Professora, o apólogo, narrativa com objetos falantes, despertou nossa curiosidade."</em> Identifique o termo que exerce a função de <strong>vocativo</strong> e o trecho que exerce a função de <strong>aposto explicativo</strong>:</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Complete adequadamente as lacunas abaixo utilizando as formas regular e irregular do verbo abundante <strong>enxugar</strong>:<br>
+            a) Os alunos já haviam __________ a mesa após a pintura dos cartazes.<br>
+            b) A mesa já estava __________ pelos alunos após a pintura dos cartazes.</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Leia as duas orações a seguir e classifique o <strong>sujeito</strong> de cada uma delas:<br>
+            a) <em>"Entregamos todos os cartazes da campanha hoje."</em><br>
+            b) <em>"Entregaram todos os cartazes da campanha hoje."</em> (sem referente anterior)</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "A", q3: "A", q4: "A", q5: "A",
+    q6: "A", q7: "A", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Preferível ficar sozinho e preservar a paz do que conviver com más influências",
+    q2: "A gratidão e o respeito ao próximo, sem subestimar ninguém pelo tamanho ou aparência",
+    q3: "Interpelar diretamente o leitor, orientando ou convidando-o a adotar atitude positiva",
+    q4: "Não pertence ao sujeito nem ao predicado; termo independente usado para chamar o interlocutor",
+    q5: "capacidade de se colocar no lugar do outro (aposto explicativo)",
+    q6: "do meio ambiente (complemento nominal ligado ao substantivo abstrato 'preservação')",
+    q7: "dos estudantes (adjunto adnominal indicando agente: os estudantes opinaram)",
+    q8: "havia suspendido (particípio regular com 'haver') / está suspensa (irregular com 'estar')",
+    q9: "estão produzindo (verbo auxiliar + verbo principal exprimindo uma única ação)",
+    q10: "Oração sem sujeito (verbo haver no sentido de existir é impessoal)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) É preferível ficar sozinho e preservar a paz e os próprios valores do que conviver com pessoas que trazem más influências ou prejuízos.<br><strong>Explicação:</strong> O provérbio aconselha prudência na escolha das companhias.",
+    q2: "A) A gratidão e o respeito ao próximo, mostrando que ninguém deve ser subestimado por sua aparência ou tamanho.<br><strong>Explicação:</strong> Na fábula, o pequeno rato salva o grande leão, provando que todos têm valor e podem ajudar uns aos outros.",
+    q3: "A) Interpelar diretamente o leitor, orientando, aconselhando ou convidando-o a adotar uma atitude positiva.<br><strong>Explicação:</strong> O modo imperativo cria proximidade e convoca o público a agir em prol da boa convivência.",
+    q4: "A) Não pertence nem ao sujeito nem ao predicado da oração, funcionando como um termo independente usado para chamar o interlocutor.<br><strong>Explicação:</strong> O vocativo é um termo à parte na estrutura da oração e deve ser sempre isolado por vírgula.",
+    q5: "A) A empatia, <strong>capacidade de se colocar no lugar do outro</strong>, é essencial para a paz escolar.<br><strong>Explicação:</strong> O trecho entre vírgulas define e explica o significado do substantivo 'empatia'.",
+    q6: "A) A preservação <strong>do meio ambiente</strong> depende da atitude de todos.<br><strong>Explicação:</strong> 'Do meio ambiente' completa o sentido do substantivo abstrato 'preservação' e sofre a ação de ser preservado (paciente = complemento nominal).",
+    q7: "A) A opinião <strong>dos estudantes</strong> ajudou a melhorar o cartaz da campanha.<br><strong>Explicação:</strong> 'Dos estudantes' pratica a ação de opinar (agente ligado a substantivo abstrato = adjunto adnominal).",
+    q8: "A) A diretora havia <strong>suspendido</strong> a reunião, que agora está <strong>suspensa</strong> até segunda-feira.<br><strong>Explicação:</strong> Com o auxiliar 'haver' usa-se o particípio regular ('suspendido'); com o auxiliar 'estar' usa-se o particípio irregular ('suspensa').",
+    q9: "A) Os alunos <strong>estão produzindo</strong> um mural sobre provérbios brasileiros.<br><strong>Explicação:</strong> 'Estão' (verbo auxiliar) + 'produzindo' (verbo principal no gerúndio) têm o mesmo sujeito ('Os alunos') e exprimem uma única ação.",
+    q10: "A) Oração sem sujeito (verbo impessoal, usado obrigatoriamente na 3ª pessoa do singular).<br><strong>Explicação:</strong> O verbo 'haver' empregado com o sentido de 'existir' ou 'ocorrer' não possui sujeito.",
+    q11: "<strong>Resposta Esperada:</strong> O provérbio ensina que conquistas grandes são alcançadas aos poucos, com paciência, constância e esforço diário. Exemplo nos estudos: estudar um pouco todos os dias em vez de deixar toda a matéria para a véspera da prova.",
+    q12: "<strong>Resposta Esperada:</strong> Vocativo: <strong>'Professora'</strong> (termo usado para chamar a interlocutora). Aposto explicativo: <strong>'narrativa com objetos falantes'</strong> (trecho entre vírgulas que explica o substantivo 'apólogo').",
+    q13: "<strong>Resposta Esperada:</strong> a) Os alunos já haviam <strong>enxugado</strong> a mesa após a pintura dos cartazes (particípio regular com o verbo auxiliar 'haver').<br>b) A mesa já estava <strong>enxuta</strong> pelos alunos após a pintura dos cartazes (particípio irregular flexionado com o verbo auxiliar 'estar').",
+    q14: "<strong>Resposta Esperada:</strong> a) <strong>Sujeito oculto ou desinencial</strong> ('Nós', identificado pela desinência verbal <em>-mos</em> em 'entregamos').<br>b) <strong>Sujeito indeterminado</strong> (verbo na 3ª pessoa do plural sem sujeito expresso e sem referente no contexto)."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📚 Língua Portuguesa | 5º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

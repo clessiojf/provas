@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Língua Portuguesa – 3º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1a237e; --secondary: #303f9f; --success: #2e7d32; --danger: #c62828; --bg: #e8eaf6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8eaf6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📚 Língua Portuguesa | 3º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Língua Portuguesa – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano C)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Os provérbios muitas vezes apresentam ensinamentos baseados na prudência e na coerência entre discurso e prática. Qual alternativa traduz corretamente o sentido do provérbio: <em>"Em casa de ferreiro, o espeto é de pau"</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Muitas vezes, justamente onde mais se espera encontrar algo por ser a especialidade da pessoa, esse recurso está em falta ou é improvisado.</label>
+                <label><input type="radio" name="q1" value="B"> B) Os ferreiros são proibidos por lei de trabalhar com objetos feitos de ferro ou aço.</label>
+                <label><input type="radio" name="q1" value="C"> C) Toda casa construída com madeira é mais resistente do que uma oficina de metais.</label>
+                <label><input type="radio" name="q1" value="D"> D) As pessoas nunca devem compartilhar suas habilidades profissionais com seus familiares.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na parábola bíblica do <em>"Bom Samaritano"</em>, um viajante ferido é ignorado por duas autoridades religiosas e socorrido apenas por um estrangeiro que cuida de seus ferimentos. Por que esse texto classifica-se como <strong>parábola</strong> e não como fábula ou apólogo?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Porque é protagonizada por seres humanos em uma situação realista do cotidiano para transmitir um ensinamento ético e moral.</label>
+                <label><input type="radio" name="q2" value="B"> B) Porque apresenta animais selvagens falantes debatendo regras da floresta.</label>
+                <label><input type="radio" name="q2" value="C"> C) Porque os personagens principais são objetos inanimados que ganham vida durante a noite.</label>
+                <label><input type="radio" name="q2" value="D"> D) Porque não possui nenhuma intenção educativa ou reflexão sobre valores humanos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Ao planejar uma campanha educativa na escola sobre o uso responsável das redes sociais, os alunos precisam escolher as peças de divulgação mais adequadas (cartazes, folhetos, posts digitais). Qual é a função do <strong>slogan</strong> (frase curta de efeito) em uma campanha educativa?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Sintetizar a ideia central da campanha de forma marcante, rápida e fácil de memorizar pelo público.</label>
+                <label><input type="radio" name="q3" value="B"> B) Apresentar uma lista extensa de estatísticas técnicas de dez páginas sem conclusão.</label>
+                <label><input type="radio" name="q3" value="C"> C) Substituir completamente todas as imagens, cores e informações de contato da campanha.</label>
+                <label><input type="radio" name="q3" value="D"> D) Confundir o leitor usando palavras contraditórias que escondem o problema abordado.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Observe a posição do <strong>vocativo</strong> na oração: <em>"Não deixem, <strong>meus queridos alunos</strong>, de praticar o respeito no dia a dia."</em> Por que a expressão destacada está isolada entre duas vírgulas?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Porque o vocativo é um termo sintaticamente independente e, quando aparece intercalado no meio da frase, deve ficar obrigatoriamente entre vírgulas.</label>
+                <label><input type="radio" name="q4" value="B"> B) Porque se trata do sujeito simples da oração deslocado antes do verbo principal.</label>
+                <label><input type="radio" name="q4" value="C"> C) Porque é um complemento nominal ligado diretamente ao verbo "deixem".</label>
+                <label><input type="radio" name="q4" value="D"> D) Porque indica uma enumeração de três objetos diferentes pertencentes aos alunos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) O <strong>aposto especificativo</strong> individualiza ou especifica um substantivo comum (geralmente um nome próprio de pessoa, lugar ou obra) e vem ligado a ele <strong>sem vírgulas</strong>. Em qual alternativa há um aposto especificativo destacado?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) O fabulista francês <strong>La Fontaine</strong> adaptou diversas histórias tradicionais com ensinamentos morais.</label>
+                <label><input type="radio" name="q5" value="B"> B) La Fontaine, <strong>fabulista francês do século XVII</strong>, escreveu "A Cigarra e a Formiga".</label>
+                <label><input type="radio" name="q5" value="C"> C) <strong>Fabulista francês</strong>, conte-nos mais uma história com moral!</label>
+                <label><input type="radio" name="q5" value="D"> D) Os livros <strong>de fábulas</strong> estavam organizados na estante da biblioteca.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) O <strong>complemento nominal</strong> também pode completar o sentido de um <strong>advérbio</strong> terminado em <em>-mente</em>, sendo sempre introduzido por preposição. Assinale a alternativa em que o termo destacado é um complemento nominal ligado a um advérbio:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Os alunos agiram favoravelmente <strong>à campanha contra o bullying</strong>.</label>
+                <label><input type="radio" name="q6" value="B"> B) A voz <strong>do professor</strong> ecoou por toda a sala de aula.</label>
+                <label><input type="radio" name="q6" value="C"> C) Aqueles <strong>dois</strong> cartazes ficaram muito bem ilustrados.</label>
+                <label><input type="radio" name="q6" value="D"> D) A casa <strong>de tijolos</strong> resistiu à tempestade na fábula.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Compare os termos destacados nas duas frases a seguir:<br>
+            I. A invenção <strong>de Santos Dumont</strong> revolucionou a aviação.<br>
+            II. A invenção <strong>do avião</strong> facilitou o transporte mundial.<br>
+            Assinale a alternativa que classifica corretamente os termos destacados em I e II, respectivamente:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Adjunto adnominal (agente: Santos Dumont inventou) e Complemento nominal (paciente: o avião foi inventado).</label>
+                <label><input type="radio" name="q7" value="B"> B) Complemento nominal em ambas as frases, pois os dois termos vêm com preposição.</label>
+                <label><input type="radio" name="q7" value="C"> C) Adjunto adnominal em ambas as frases, pois acompanham um substantivo concreto.</label>
+                <label><input type="radio" name="q7" value="D"> D) Vocativo na primeira frase e Aposto especificativo na segunda frase.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Alguns verbos possuem apenas o particípio irregular (como <em>abrir -> aberto, escrever -> escrito, fazer -> feito, dizer -> dito</em>), não sendo verbos abundantes. Já entre os <strong>verbos abundantes</strong> (como <em>enxugar, entregar, extinguir, pagar</em>), assinale a alternativa em que há <strong>erro</strong> no emprego do particípio segundo a norma-padrão:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) O aluno tinha <strong>entregue</strong> a redação antes mesmo de a prova ter sido <strong>entregada</strong>.</label>
+                <label><input type="radio" name="q8" value="B"> B) O aluno tinha <strong>entregado</strong> a redação antes mesmo de a prova ser <strong>entregue</strong>.</label>
+                <label><input type="radio" name="q8" value="C"> C) A conta já havia sido <strong>paga</strong> quando o cliente conferiu o recibo.</label>
+                <label><input type="radio" name="q8" value="D"> D) Os moradores tinham <strong>enxugado</strong> o chão que estava <strong>enxuto</strong> pela manhã.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Nem toda sequência de dois verbos próximos forma uma locução verbal; para ser uma <strong>locução verbal</strong>, os verbos devem ter o <strong>mesmo sujeito</strong> e exprimir uma única ação verbal. Assinale a alternativa que apresenta uma verdadeira locução verbal:</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) A formiga <strong>havia trabalhado</strong> durante todo o verão para guardar alimentos.</label>
+                <label><input type="radio" name="q9" value="B"> B) O professor <strong>pediu</strong> para os alunos <strong>lerem</strong> a fábula em voz alta. (sujeitos diferentes)</label>
+                <label><input type="radio" name="q9" value="C"> C) A cigarra <strong>cantou</strong> e <strong>dançou</strong> alegremente sob o sol. (duas ações distintas)</label>
+                <label><input type="radio" name="q9" value="D"> D) Os pais <strong>deixaram</strong> as crianças <strong>brincarem</strong> no parque escolar. (sujeitos diferentes)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Leia a oração: <em>"Precisa-se de voluntários para a campanha de arrecadação de livros."</em> Como se classifica o sujeito dessa oração construída com verbo transitivo indireto acompanhado do índice de indeterminação do sujeito (<em>-se</em>)?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Sujeito indeterminado</label>
+                <label><input type="radio" name="q10" value="B"> B) Sujeito simples (núcleo: "voluntários")</label>
+                <label><input type="radio" name="q10" value="C"> C) Sujeito composto (núcleos: "voluntários" e "livros")</label>
+                <label><input type="radio" name="q10" value="D"> D) Oração sem sujeito (verbo impessoal)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Leia o provérbio: <em>"A união faz a força."</em> Explique o ensinamento transmitido por esse provérbio e cite uma situação do cotidiano escolar em que ele se aplica:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Leia a frase: <em>"O escritor brasileiro Monteiro Lobato adaptou diversas fábulas."</em> Identifique o <strong>aposto especificativo</strong> presente nessa oração e explique por que ele não é separado por vírgulas:</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Analise a função sintática dos termos destacados nas duas orações a seguir, identificando qual é <strong>adjunto adnominal</strong> e qual é <strong>complemento nominal</strong>:<br>
+            a) A leitura <strong>do estudante</strong> foi muito expressiva.<br>
+            b) A leitura <strong>do livro</strong> despertou o interesse da turma.</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Leia a oração: <em>"Faz dois meses que iniciamos a campanha educativa na escola."</em> Classifique o sujeito da primeira oração (<em>"Faz dois meses"</em>) e justifique sua classificação:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "A", q3: "A", q4: "A", q5: "A",
+    q6: "A", q7: "A", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Onde mais se espera encontrar algo por especialidade, esse recurso falta ou é improvisado",
+    q2: "Protagonizada por seres humanos em situação realista para transmitir ensinamento moral",
+    q3: "Sintetizar a ideia central de forma marcante, rápida e fácil de memorizar",
+    q4: "Vocativo intercalado no meio da frase deve ficar obrigatoriamente entre vírgulas",
+    q5: "La Fontaine (aposto especificativo ligado sem vírgulas ao substantivo comum)",
+    q6: "à campanha contra o bullying (complemento nominal ligado ao advérbio 'favoravelmente')",
+    q7: "Adjunto adnominal (agente) em I; Complemento nominal (paciente) em II",
+    q8: "Erro: 'tinha entregue' / 'ter sido entregada' (inversão dos particípios regular e irregular)",
+    q9: "havia trabalhado (verbo auxiliar + verbo principal com o mesmo sujeito)",
+    q10: "Sujeito indeterminado (verbo transitivo indireto + índice '-se')"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) Muitas vezes, justamente onde mais se espera encontrar algo por ser a especialidade da pessoa, esse recurso está em falta ou é improvisado.<br><strong>Explicação:</strong> O ditado critica a contradição entre a habilidade/profissão de alguém e a ausência desse recurso em sua própria casa.",
+    q2: "A) Porque é protagonizada por seres humanos em uma situação realista do cotidiano para transmitir um ensinamento ético e moral.<br><strong>Explicação:</strong> Diferentemente da fábula (animais) e do apólogo (objetos), a parábola utiliza personagens humanos verossímeis.",
+    q3: "A) Sintetizar a ideia central da campanha de forma marcante, rápida e fácil de memorizar pelo público.<br><strong>Explicação:</strong> O slogan é a frase de impacto que resume a mensagem educativa e fixa o tema na memória do leitor.",
+    q4: "A) Porque o vocativo é um termo sintaticamente independente e, quando aparece intercalado no meio da frase, deve ficar obrigatoriamente entre vírgulas.<br><strong>Explicação:</strong> Sempre que o chamamento ao interlocutor surge no meio da oração, isola-se com vírgula antes e depois.",
+    q5: "A) O fabulista francês <strong>La Fontaine</strong> adaptou diversas histórias tradicionais com ensinamentos morais.<br><strong>Explicação:</strong> O nome próprio 'La Fontaine' individualiza o substantivo comum 'fabulista', formando um aposto especificativo sem vírgulas.",
+    q6: "A) Os alunos agiram favoravelmente <strong>à campanha contra o bullying</strong>.<br><strong>Explicação:</strong> O termo preposicionado completa o sentido do advérbio 'favoravelmente' (quem age favoravelmente, age favoravelmente <em>a algo</em>).",
+    q7: "A) Adjunto adnominal (agente: Santos Dumont inventou) e Complemento nominal (paciente: o avião foi inventado).<br><strong>Explicação:</strong> Em I, 'de Santos Dumont' pratica a ação de inventar (agente = adjunto adnominal); em II, 'do avião' sofre a ação de ser inventado (paciente = complemento nominal).",
+    q8: "A) O aluno tinha <strong>entregue</strong> a redação antes mesmo de a prova ter sido <strong>entregada</strong>.<br><strong>Explicação:</strong> O correto na norma-padrão seria o inverso: 'tinha <strong>entregado</strong>' (regular com 'ter') e 'ter sido <strong>entregue</strong>' (irregular com 'ser').",
+    q9: "A) A formiga <strong>havia trabalhado</strong> durante todo o verão para guardar alimentos.<br><strong>Explicação:</strong> Os dois verbos têm o mesmo sujeito ('A formiga') e exprimem juntos uma única ideia verbal.",
+    q10: "A) Sujeito indeterminado.<br><strong>Explicação:</strong> Com verbos transitivos indiretos na 3ª pessoa do singular acompanhados do pronome '-se' (índice de indeterminação do sujeito), não se identifica quem pratica a ação.",
+    q11: "<strong>Resposta Esperada:</strong> O provérbio ensina que a cooperação, o trabalho em equipe e a solidariedade tornam as pessoas muito mais capazes de vencer desafios do que o esforço isolado. Exemplo escolar: organização coletiva da turma para realizar uma feira cultural ou campanha solidária.",
+    q12: "<strong>Resposta Esperada:</strong> O aposto especificativo é o nome próprio 'Monteiro Lobato'. Ele não é separado por vírgulas porque tem a função de individualizar/especificar diretamente o substantivo comum 'escritor brasileiro', formando com ele uma unidade sintática contínua.",
+    q13: "<strong>Resposta Esperada:</strong> a) 'do estudante' é <strong>adjunto adnominal</strong>, pois tem valor ativo de agente (o estudante praticou a ação de ler).<br>b) 'do livro' é <strong>complemento nominal</strong>, pois tem valor passivo de alvo/paciente (o livro recebeu a ação de ser lido).",
+    q14: "<strong>Resposta Esperada:</strong> Classificação: Oração sem sujeito (sujeito inexistente). Justificativa: O verbo 'fazer' indicando tempo decorrido é impessoal e permanece obrigatoriamente na 3ª pessoa do singular."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📚 Língua Portuguesa | 3º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

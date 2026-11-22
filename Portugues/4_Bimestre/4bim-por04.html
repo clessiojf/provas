@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Língua Portuguesa – 4º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1a237e; --secondary: #303f9f; --success: #2e7d32; --danger: #c62828; --bg: #e8eaf6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f3e5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8eaf6;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📚 Língua Portuguesa | 4º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Língua Portuguesa – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano D)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Os provérbios refletem a sabedoria popular acumulada ao longo do tempo, alertando sobre comportamentos humanos. Qual alternativa expressa corretamente o sentido do provérbio: <em>"Não deixe para amanhã o que você pode fazer hoje"</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Combate a procrastinação, incentivando a responsabilidade e o cumprimento imediato dos deveres.</label>
+                <label><input type="radio" name="q1" value="B"> B) Recomenda que todas as tarefas escolares sejam feitas com pressa e sem revisão.</label>
+                <label><input type="radio" name="q1" value="C"> C) Afirma que o planejamento do dia seguinte é totalmente inútil para os estudantes.</label>
+                <label><input type="radio" name="q1" value="D"> D) Sugere que as pessoas nunca descansem após concluir suas obrigações diárias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Na clássica fábula <em>"A Raposa e as Uvas"</em>, uma raposa faminta tenta alcançar um cacho de uvas altas e, ao não conseguir, vai embora dizendo que estavam verdes. Qual crítica moral essa narrativa transmite ao leitor?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) A tendência humana de desdenhar ou desprezar aquilo que não se tem capacidade ou esforço suficiente para conquistar.</label>
+                <label><input type="radio" name="q2" value="B"> B) A importância nutricional de comer frutas silvestres antes de amadurecerem nas parreiras.</label>
+                <label><input type="radio" name="q2" value="C"> C) A superioridade física das raposas sobre todos os outros animais da floresta.</label>
+                <label><input type="radio" name="q2" value="D"> D) A necessidade de desistir de qualquer alimento que exija um pequeno salto para ser alcançado.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) No Módulo 8 do material didático (<em>Valores nas campanhas educativas</em>), analisa-se a diferença entre uma <strong>propaganda comercial</strong> e uma <strong>campanha educativa (institucional/social)</strong>. Qual é o objetivo principal de uma campanha educativa?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Promover a conscientização social, a prevenção de problemas e a mudança de hábitos em benefício da coletividade, sem visar lucro financeiro.</label>
+                <label><input type="radio" name="q3" value="B"> B) Vender produtos eletrônicos e roupas de marca com descontos exclusivos para jovens.</label>
+                <label><input type="radio" name="q3" value="C"> C) Divulgar exclusivamente resultados de campeonatos esportivos profissionais.</label>
+                <label><input type="radio" name="q3" value="D"> D) Substituir as leis do país por anúncios publicitários sem nenhum valor educativo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Observe a diferença de sentido causada pela vírgula nas frases abaixo:<br>
+            I. <strong>Crianças</strong>, respeitem os mais velhos!<br>
+            II. As <strong>crianças</strong> respeitam os mais velhos.<br>
+            Qual é a função sintática da palavra <strong>"Crianças"</strong> na frase I e na frase II, respectivamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Vocativo na frase I (chamamento ao interlocutor) e Sujeito simples na frase II (quem pratica a ação verbal).</label>
+                <label><input type="radio" name="q4" value="B"> B) Sujeito simples na frase I e Aposto explicativo na frase II.</label>
+                <label><input type="radio" name="q4" value="C"> C) Aposto enumerativo na frase I e Complemento nominal na frase II.</label>
+                <label><input type="radio" name="q4" value="D"> D) Vocativo em ambas as frases, pois aparece no início da oração.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Leia a frase: <em>"A fábula 'A Cigarra e a Formiga' ensina uma lição valiosa sobre o planejamento e o trabalho."</em> Qual é a classificação sintática do título <strong>'A Cigarra e a Formiga'</strong> nesse período?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Aposto especificativo (individualiza o substantivo comum 'fábula' sem o uso de vírgulas).</label>
+                <label><input type="radio" name="q5" value="B"> B) Vocativo (chamamento direto dirigido aos personagens da história).</label>
+                <label><input type="radio" name="q5" value="C"> C) Complemento nominal (completa o sentido do adjetivo 'valiosa').</label>
+                <label><input type="radio" name="q5" value="D"> D) Adjunto adnominal preposicionado com valor de matéria.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) O <strong>complemento nominal</strong> é um termo integrante da oração que completa o sentido de um nome (substantivo abstrato, adjetivo ou advérbio) por meio de preposição. Assinale a alternativa em que o termo destacado exerce a função de complemento nominal:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Todos temos confiança <strong>no trabalho da equipe</strong>.</label>
+                <label><input type="radio" name="q6" value="B"> B) A casa <strong>de pedra</strong> protegeu os três porquinhos.</label>
+                <label><input type="radio" name="q6" value="C"> C) O caderno <strong>da aluna</strong> estava repleto de anotações.</label>
+                <label><input type="radio" name="q6" value="D"> D) Aqueles <strong>três</strong> provérbios são muito conhecidos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Lembre-se de que o <strong>adjunto adnominal</strong> nunca vem ligado a adjetivos ou advérbios — ele acompanha exclusivamente <strong>substantivos</strong>. Assinale a alternativa em que todos os termos destacados exercem a função de adjunto adnominal na frase: <em>"<strong>As</strong> <strong>antigas</strong> histórias <strong>populares</strong> transmitem lições."</em></p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Correto: o artigo ("As") e os adjetivos ("antigas", "populares") acompanham diretamente o substantivo "histórias", caracterizando-o e determinando-o.</label>
+                <label><input type="radio" name="q7" value="B"> B) Incorreto: o artigo "As" é vocativo e "populares" é complemento nominal.</label>
+                <label><input type="radio" name="q7" value="C"> C) Incorreto: "antigas" é aposto explicativo do sujeito "lições".</label>
+                <label><input type="radio" name="q7" value="D"> D) Incorreto: nenhum adjetivo ou artigo pode exercer a função de adjunto adnominal.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Alguns verbos abundantes como <em>eleger, matar, morrer, prender</em> e <em>suspender</em> apresentam particípio regular (com <em>ter/haver</em>) e irregular (com <em>ser/estar</em>). Assinale a alternativa que emprega <strong>corretamente</strong> as formas do verbo <strong>eleger</strong>:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Os alunos haviam <strong>elegido</strong> o representante da turma, que foi <strong>eleito</strong> por unanimidade.</label>
+                <label><input type="radio" name="q8" value="B"> B) Os alunos haviam <strong>eleito</strong> o representante da turma, que foi <strong>elegido</strong> por unanimidade.</label>
+                <label><input type="radio" name="q8" value="C"> C) O representante tinha sido <strong>elegido</strong> depois que a sala havia <strong>eleito</strong> a chapa.</label>
+                <label><input type="radio" name="q8" value="D"> D) Todos tinham <strong>eleito</strong> o líder antes mesmo de o candidato ser <strong>elegido</strong>.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Leia o período: <em>"Os estudantes <strong>devem participar</strong> ativamente das campanhas educativas da escola."</em> Na locução verbal destacada, qual é o <strong>verbo auxiliar</strong> e qual é o <strong>verbo principal</strong>, respectivamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Verbo auxiliar: "devem" (flexionado); Verbo principal: "participar" (no infinitivo, carrega o sentido central da ação).</label>
+                <label><input type="radio" name="q9" value="B"> B) Verbo auxiliar: "participar"; Verbo principal: "devem".</label>
+                <label><input type="radio" name="q9" value="C"> C) Ambos são verbos principais de orações coordenadas independentes.</label>
+                <label><input type="radio" name="q9" value="D"> D) Não há locução verbal, pois "devem" é um substantivo abstrato.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Leia a oração: <em>"A fábula, a parábola e o apólogo transmitem importantes ensinamentos morais."</em> Como se classifica o sujeito dessa oração e quais são seus núcleos?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Sujeito composto (três núcleos: "fábula", "parábola" e "apólogo").</label>
+                <label><input type="radio" name="q10" value="B"> B) Sujeito simples (um único núcleo: "ensinamentos").</label>
+                <label><input type="radio" name="q10" value="C"> C) Sujeito oculto ou desinencial ("Eles").</label>
+                <label><input type="radio" name="q10" value="D"> D) Sujeito indeterminado (verbo na 3ª pessoa do plural sem sujeito expresso).</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Qual é a diferença principal entre uma <strong>propaganda comercial</strong> e uma <strong>campanha educativa</strong> quanto à sua finalidade e intenção comunicativa?</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Pontue corretamente as duas frases abaixo e identifique qual delas apresenta <strong>vocativo</strong> e qual apresenta <strong>aposto explicativo</strong>:<br>
+            a) Lucas traga os cartazes da campanha educativa.<br>
+            b) Lucas o representante da turma trouxe os cartazes da campanha educativa.</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Complete as frases a seguir empregando adequadamente os particípios regular ou irregular do verbo abundante <strong>prender</strong>:<br>
+            a) Os policiais haviam __________ o suspeito no início da manhã.<br>
+            b) O suspeito foi __________ pelos policiais no início da manhã.</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Sublinhe ou transcreva a <strong>locução verbal</strong> presente na frase <em>"Nós vamos criar um slogan bem criativo para a escola"</em> e classifique o <strong>sujeito</strong> dessa oração:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "A", q3: "A", q4: "A", q5: "A",
+    q6: "A", q7: "A", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Combate a procrastinação, incentivando a responsabilidade e o cumprimento imediato dos deveres",
+    q2: "A tendência humana de desdenhar ou desprezar aquilo que não se consegue conquistar",
+    q3: "Promover a conscientização social e a mudança de hábitos em benefício da coletividade, sem visar lucro",
+    q4: "Vocativo na frase I (chamamento) e Sujeito simples na frase II (quem pratica a ação)",
+    q5: "Aposto especificativo (individualiza o substantivo comum 'fábula' sem vírgulas)",
+    q6: "no trabalho da equipe (complemento nominal ligado ao substantivo abstrato 'confiança')",
+    q7: "Correto: o artigo ('As') e os adjetivos ('antigas', 'populares') são adjuntos adnominais de 'histórias'",
+    q8: "haviam elegido (particípio regular com 'haver') / foi eleito (particípio irregular com 'ser')",
+    q9: "Verbo auxiliar: 'devem' (flexionado); Verbo principal: 'participar' (no infinitivo)",
+    q10: "Sujeito composto (três núcleos: 'fábula', 'parábola' e 'apólogo')"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) Combate a procrastinação, incentivando a responsabilidade e o cumprimento imediato dos deveres.<br><strong>Explicação:</strong> O provérbio alerta contra o hábito de adiar tarefas importantes que já podem ser resolvidas no presente.",
+    q2: "A) A tendência humana de desdenhar ou desprezar aquilo que não se tem capacidade ou esforço suficiente para conquistar.<br><strong>Explicação:</strong> Ao dizer que as uvas estavam verdes, a raposa tenta disfarçar sua frustração por não conseguir alcançá-las.",
+    q3: "A) Promover a conscientização social, a prevenção de problemas e a mudança de hábitos em benefício da coletividade, sem visar lucro financeiro.<br><strong>Explicação:</strong> Diferentemente da propaganda comercial (que busca vender produtos/serviços), a campanha educativa tem finalidade social e cidadã.",
+    q4: "A) Vocativo na frase I (chamamento ao interlocutor) e Sujeito simples na frase II (quem pratica a ação verbal).<br><strong>Explicação:</strong> Na frase I, fala-se diretamente <em>com</em> as crianças (vocativo); na frase II, fala-se <em>sobre</em> as crianças (sujeito).",
+    q5: "A) Aposto especificativo (individualiza o substantivo comum 'fábula' sem o uso de vírgulas).<br><strong>Explicação:</strong> O título especifica qual é a fábula mencionada, ligando-se diretamente ao substantivo sem pontuação.",
+    q6: "A) Todos temos confiança <strong>no trabalho da equipe</strong>.<br><strong>Explicação:</strong> O termo preposicionado completa o sentido do substantivo abstrato 'confiança' (quem tem confiança, tem confiança <em>em algo</em>).",
+    q7: "A) Correto: o artigo ('As') e os adjetivos ('antigas', 'populares') acompanham diretamente o substantivo 'histórias', caracterizando-o e determinando-o.<br><strong>Explicação:</strong> Artigos, adjetivos, numerais e pronomes adjetivos que acompanham o substantivo exercem a função de adjunto adnominal.",
+    q8: "A) Os alunos haviam <strong>elegido</strong> o representante da turma, que foi <strong>eleito</strong> por unanimidade.<br><strong>Explicação:</strong> Com o auxiliar 'haver' usa-se o particípio regular ('elegido'); com o auxiliar 'ser' usa-se o irregular ('eleito').",
+    q9: "A) Verbo auxiliar: 'devem' (flexionado); Verbo principal: 'participar' (no infinitivo, carrega o sentido central da ação).<br><strong>Explicação:</strong> Na locução verbal, o auxiliar indica tempo, modo e pessoa, enquanto o principal expressa o significado fundamental.",
+    q10: "A) Sujeito composto (três núcleos: 'fábula', 'parábola' e 'apólogo').<br><strong>Explicação:</strong> Quando o sujeito expresso na oração apresenta dois ou mais núcleos substantivos, classifica-se como composto.",
+    q11: "<strong>Resposta Esperada:</strong> A <strong>propaganda comercial</strong> tem finalidade lucrativa, buscando convencer o consumidor a comprar um produto ou contratar um serviço. Já a <strong>campanha educativa</strong> não tem fins lucrativos e busca conscientizar, orientar e transformar comportamentos da população em prol do bem coletivo.",
+    q12: "<strong>Resposta Esperada:</strong> a) <em>'Lucas<strong>,</strong> traga os cartazes da campanha educativa.'</em> → <strong>Vocativo</strong> ('Lucas' é um chamamento).<br>b) <em>'Lucas<strong>,</strong> o representante da turma<strong>,</strong> trouxe os cartazes da campanha educativa.'</em> → <strong>Aposto explicativo</strong> ('o representante da turma' explica quem é Lucas).",
+    q13: "<strong>Resposta Esperada:</strong> a) Os policiais haviam <strong>prendido</strong> o suspeito no início da manhã (particípio regular com o verbo auxiliar 'haver').<br>b) O suspeito foi <strong>preso</strong> pelos policiais no início da manhã (particípio irregular com o verbo auxiliar 'ser').",
+    q14: "<strong>Resposta Esperada:</strong> Locução verbal: <strong>'vamos criar'</strong> (verbo auxiliar 'vamos' + verbo principal 'criar' no infinitivo). Classificação do sujeito: <strong>Sujeito simples</strong> (núcleo expresso: o pronome pessoal 'Nós')."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📚 Língua Portuguesa | 4º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
