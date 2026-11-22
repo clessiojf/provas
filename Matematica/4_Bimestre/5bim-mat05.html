@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática – 5º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #1565c0; --secondary: #1e88e5; --success: #2e7d32; --danger: #c62828; --bg: #e3f2fd; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        .graph-container { margin: 15px 0; text-align: center; background: #fafafa; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; display: inline-block; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .correct { border-color: #2e7d32 !important; background: #f1f8e9; }
+        .wrong { border-color: #c62828 !important; background: #ffebee; }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📘 Matemática | 5º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Matemática – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar o teste.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano E)" required>
+        </div>
+        <h2>Módulo 11 – Comprimento da Circunferência</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Uma pista circular de patinação construída em um complexo esportivo possui raio medindo exatamente 18 metros. Considerando π = 3,14, qual é a distância total percorrida por um patinador ao completar exatamente uma volta inteira ao redor dessa pista?</p>
+            
+            <div class="graph-container">
+                <svg width="200" height="200" viewBox="-40 -40 80 80" xmlns="http://w3.org" style="background:#fafafa;">
+                    <circle cx="0" cy="0" r="28" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+                    <circle cx="0" cy="0" r="1.5" fill="#1565c0"/>
+                    <line x1="0" y1="0" x2="28" y2="0" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="2,2"/>
+                    <text x="6" y="-3" font-size="6" font-weight="bold" fill="#1565c0">r = 18 m</text>
+                </svg>
+            </div>
+
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) 56,52 metros</label>
+                <label><input type="radio" name="q1" value="B"> B) 84,78 metros</label>
+                <label><input type="radio" name="q1" value="C"> C) 113,04 metros</label>
+                <label><input type="radio" name="q1" value="D"> D) 226,08 metros</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) A roda dianteira de um carrinho de carga possui diâmetro medindo exatamente 40 cm. Se um operador empurrar esse carrinho em linha reta até que a roda dê 20 voltas completas sem deslizar, qual distância aproximada ele percorrerá? (Adote π = 3,14)</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) 1256 cm</label>
+                <label><input type="radio" name="q2" value="B"> B) 2512 cm</label>
+                <label><input type="radio" name="q2" value="C"> C) 3768 cm</label>
+                <label><input type="radio" name="q2" value="D"> D) 5024 cm</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Um vidraceiro aplicou uma borracha de vedação flexível em toda a borda externa de um tampo de mesa circular cujo contorno (comprimento da circunferência) mede exatamente 439,6 cm. Utilizando π = 3,14, determine a medida exata do raio desse tampo:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) 70 cm</label>
+                <label><input type="radio" name="q3" value="B"> B) 90 cm</label>
+                <label><input type="radio" name="q3" value="C"> C) 120 cm</label>
+                <label><input type="radio" name="q3" value="D"> D) 140 cm</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+        <h2>Módulo 12 – Inequações do 1º Grau</h2>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Considere a inequação do 1º grau representada por: 8x - 13 &gt; 5x + 11. No conjunto dos números naturais (ℕ), qual é o menor valor inteiro que x pode assumir para tornar essa desigualdade verdadeira?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 7</label>
+                <label><input type="radio" name="q4" value="B"> B) 8</label>
+                <label><input type="radio" name="q4" value="C"> C) 9</label>
+                <label><input type="radio" name="q4" value="D"> D) 10</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Resolvendo a inequação com parênteses 3(x - 4) - 6x ≤ 12 no universo dos números racionais (ℚ), assinale a alternativa que apresenta corretamente o conjunto solução da desigualdade:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) x ≥ -8</label>
+                <label><input type="radio" name="q5" value="B"> B) x ≤ -8</label>
+                <label><input type="radio" name="q5" value="C"> C) x ≥ 8</label>
+                <label><input type="radio" name="q5" value="D"> D) x ≤ 0</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Determine o conjunto solução no universo dos números racionais (ℚ) para a seguinte inequação fracionária do 1º grau: (x + 1) / 2 - (x - 3) / 4 &gt; 2</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) x &gt; 3</label>
+                <label><input type="radio" name="q6" value="B"> B) x &lt; 3</label>
+                <label><input type="radio" name="q6" value="C"> C) x &gt; 5</label>
+                <label><input type="radio" name="q6" value="D"> D) x &lt; 5</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+        <h2>Módulo 13 – Ângulos e Retas Paralelas Cortadas por uma Transversal</h2>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Na figura geométrica a seguir, as retas r e s são paralelas (r // s) e são interceptadas por uma reta transversal t. Sabendo que os ângulos destacados são alternos internos, determine o valor exato da incógnita x em graus:</p>
+            
+            <div class="graph-container">
+                <svg width="260" height="200" viewBox="0 0 260 200" xmlns="http://w3.org" style="background:#fafafa;">
+                    <line x1="20" y1="60" x2="240" y2="60" stroke="#1565c0" stroke-width="2.5"/>
+                    <text x="225" y="52" font-size="14" font-weight="bold" fill="#1565c0">r</text>
+                    <line x1="20" y1="140" x2="240" y2="140" stroke="#1565c0" stroke-width="2.5"/>
+                    <text x="225" y="132" font-size="14" font-weight="bold" fill="#1565c0">s</text>
+                    <line x1="70" y1="185" x2="190" y2="15" stroke="#c62828" stroke-width="2.5"/>
+                    <text x="195" y="25" font-size="14" font-weight="bold" fill="#c62828">t</text>
+                    <path d="M 146,60 A 15,15 0 0,1 139,73" fill="none" stroke="#2e7d32" stroke-width="2"/>
+                    <text x="148" y="80" font-size="13" font-weight="bold" fill="#2e7d32">4x + 15°</text>
+                    <path d="M 88,140 A 15,15 0 0,1 96,127" fill="none" stroke="#2e7d32" stroke-width="2"/>
+                    <text x="35" y="128" font-size="13" font-weight="bold" fill="#2e7d32">6x - 35°</text>
+                </svg>
+            </div>
+
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) x = 25°</label>
+                <label><input type="radio" name="q7" value="B"> B) x = 20°</label>
+                <label><input type="radio" name="q7" value="C"> C) x = 15°</label>
+                <label><input type="radio" name="q7" value="D"> D) x = 10°</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Duas retas paralelas r e s são cortadas por uma transversal t, formando dois ângulos colaterais internos cujas medidas são expressas por (4x + 25°) e (2x - 25°). Sabendo que ângulos colaterais internos são suplementares (somam 180°), determine a medida do menor desses dois ângulos:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) 30°</label>
+                <label><input type="radio" name="q8" value="B"> B) 35°</label>
+                <label><input type="radio" name="q8" value="C"> C) 145°</label>
+                <label><input type="radio" name="q8" value="D"> D) 150°</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Observe o feixe de retas paralelas r // s cortado pela reta transversal t abaixo. Os ângulos destacados ocupam posições correspondentes na figura. Qual é o valor numérico de x?</p>
+            
+            <div class="graph-container">
+                <svg width="260" height="200" viewBox="0 0 260 200" xmlns="http://w3.org" style="background:#fafafa;">
+                    <line x1="20" y1="60" x2="240" y2="60" stroke="#1565c0" stroke-width="2.5"/>
+                    <text x="225" y="52" font-size="14" font-weight="bold" fill="#1565c0">r</text>
+                    <line x1="20" y1="140" x2="240" y2="140" stroke="#1565c0" stroke-width="2.5"/>
+                    <text x="225" y="132" font-size="14" font-weight="bold" fill="#1565c0">s</text>
+                    <line x1="65" y1="15" x2="185" y2="185" stroke="#c62828" stroke-width="2.5"/>
+                    <text x="55" y="25" font-size="14" font-weight="bold" fill="#c62828">t</text>
+                    <path d="M 110,60 A 15,15 0 0,0 102,47" fill="none" stroke="#e65100" stroke-width="2"/>
+                    <text x="112" y="45" font-size="13" font-weight="bold" fill="#e65100">7x - 30°</text>
+                    <path d="M 166,140 A 15,15 0 0,0 158,127" fill="none" stroke="#e65100" stroke-width="2"/>
+                    <text x="168" y="125" font-size="13" font-weight="bold" fill="#e65100">4x + 30°</text>
+                </svg>
+            </div>
+
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) x = 20°</label>
+                <label><input type="radio" name="q9" value="B"> B) x = 25°</label>
+                <label><input type="radio" name="q9" value="C"> C) x = 30°</label>
+                <label><input type="radio" name="q9" value="D"> D) x = 15°</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Duas retas concorrentes se cruzam em um ponto O, formando dois ângulos opostos pelo vértice (O.P.V.) cujas medidas são expressas por (5x - 18°) e (3x + 26°). Qual é a medida real de cada um desses ângulos?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) 22°</label>
+                <label><input type="radio" name="q10" value="B"> B) 88°</label>
+                <label><input type="radio" name="q10" value="C"> C) 90°</label>
+                <label><input type="radio" name="q10" value="D"> D) 92°</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial balanceado de forma diversificada (A, B, C, D)
+const gabarito = {
+    q1: "C", q2: "B", q3: "A", q4: "C", q5: "A",
+    q6: "A", q7: "A", q8: "B", q9: "A", q10: "D"
+};
+
+// Respostas textuais exigidas para o relatório de erros e acertos da planilha Google
+const respostasTextuais = {
+    q1: "113,04 metros", q2: "2512 cm", q3: "70 cm", q4: "9", q5: "x ≥ -8",
+    q6: "x > 3", q7: "x = 25°", q8: "35°", q9: "x = 20°", q10: "92°"
+};
+
+// Explicações pedagógicas detalhadas injetadas pós-correção
+const resolucoesDetalhadas = {
+    q1: "C) 113,04 metros<br><strong>Resolução:</strong> Aplicamos a fórmula do comprimento da circunferência usando o raio: C = 2 · π · r. Substituindo os valores: C = 2 · 3,14 · 18 → C = 36 · 3,14 = 113,04 metros.",
+    q2: "B) 2512 cm<br><strong>Resolução:</strong> Primeiro calculamos o comprimento de 1 volta usando o diâmetro (C = π · d): C = 3,14 · 40 = 125,6 cm. Como a roda deu 20 voltas completas, multiplicamos por 20: 125,6 · 20 = 2512 cm.",
+    q3: "A) 70 cm<br><strong>Resolução:</strong> Sabemos que C = 2 · π · r. Substituindo os dados: 439,6 = 2 · 3,14 · r → 439,6 = 6,28 · r → r = 439,6 ÷ 6,28 = 70 cm.",
+    q4: "C) 9<br><strong>Resolução:</strong> Isolamos a incógnita x: 8x - 5x &gt; 11 + 13 → 3x &gt; 24 → x &gt; 8. Como x deve ser estritamente maior que 8, o menor número natural possível é 9.",
+    q5: "A) x ≥ -8<br><strong>Resolução:</strong> Aplicamos a distributiva: 3x - 12 - 6x ≤ 12 → -3x ≤ 12 + 12 → -3x ≤ 24. Multiplicando toda a inequação por (-1), invertemos o sinal da desigualdade: 3x ≥ -24 → x ≥ -8.",
+    q6: "A) x &gt; 3<br><strong>Resolução:</strong> Tirando o MMC(2, 4) = 4 em toda a inequação: 2(x + 1) - 1(x - 3) &gt; 8 → 2x + 2 - x + 3 &gt; 8 → x + 5 &gt; 8 → x &gt; 8 - 5 → x &gt; 3.",
+    q7: "A) x = 25°<br><strong>Resolução:</strong> Ângulos alternos internos formados por retas paralelas são congruentes (iguais): 6x - 35° = 4x + 15° → 6x - 4x = 15° + 35° → 2x = 50° → x = 25°.",
+    q8: "B) 35°<br><strong>Resolução:</strong> Ângulos colaterais internos somam 180°: (4x + 25°) + (2x - 25°) = 180° → 6x = 180° → x = 30°. Substituindo x = 30° nos dois ângulos: 4(30) + 25 = 145° e 2(30) - 25 = 35°. Portanto, o menor ângulo mede 35°.",
+    q9: "A) x = 20°<br><strong>Resolução:</strong> Ângulos correspondentes em retas paralelas são congruentes (iguais): 7x - 30° = 4x + 30° → 7x - 4x = 30° + 30° → 3x = 60° → x = 20°.",
+    q10: "D) 92°<br><strong>Resolução:</strong> Ângulos opostos pelo vértice (O.P.V.) são congruentes: 5x - 18° = 3x + 26° → 5x - 3x = 26° + 18° → 2x = 44° → x = 22°. Para achar a medida do ângulo, substituímos x = 22° na expressão: 5(22°) - 18° = 110° - 18° = 92°."
+};
+function finalizar() {
+    let acertos = 0;
+    const total = 10;
+    const erros = [];
+
+    // Etapa 1: Validação preventiva. Verifica se alguma questão está em branco antes de corrigir
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 2: Executa a correção, coloração e coleta de erros
+    for (let i = 1; i <= total; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    const perc = ((acertos / total) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Simulado Concluído!</h2>
+        <p>Você acertou <strong>${acertos}</strong> de <strong>${total}</strong>.</p>
+        <p>Aproveitamento Final: <strong>${perc}</strong></p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📘 Matemática | 5º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", erros.join("\n"));
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
