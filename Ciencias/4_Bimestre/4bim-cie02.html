@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciências – 2º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #2e7d32; --secondary: #43a047; --success: #1b5e20; --danger: #c62828; --bg: #e8f5e9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🌿 Ciências | 2º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Ciências – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano B)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Antes da popularização dos motores a vapor no século XVIII, quais eram as principais fontes de energia mecânica utilizadas pela humanidade para mover embarcações, moinhos de grãos e engenhos?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Energia nuclear, painéis fotovoltaicos e baterias de lítio.</label>
+                <label><input type="radio" name="q1" value="B"> B) Força muscular humana, tração animal, força dos ventos e quedas d'água.</label>
+                <label><input type="radio" name="q1" value="C"> C) Turbinas a gás natural e geradores hidrelétricos de alta tensão.</label>
+                <label><input type="radio" name="q1" value="D"> D) Motores elétricos alimentados por usinas termelétricas a óleo diesel.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) A queima intensa de combustíveis fósseis (como gasolina, óleo diesel e carvão mineral) em veículos e indústrias libera grandes volumes de gases na atmosfera, entre eles o dióxido de carbono (CO₂). Qual é a principal consequência ambiental desse processo?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Aumento da camada de ozônio e resfriamento global dos oceanos.</label>
+                <label><input type="radio" name="q2" value="B"> B) Intensificação do efeito estufa e aquecimento global do planeta.</label>
+                <label><input type="radio" name="q2" value="C"> C) Purificação imediata do ar atmosférico nas grandes metrópoles.</label>
+                <label><input type="radio" name="q2" value="D"> D) Redução da acidez das chuvas e aumento da biodiversidade marinha.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Nos motores de combustão interna presentes nos automóveis modernos (ciclo Otto ou Diesel), onde ocorre a queima do combustível que gera a expansão dos gases para empurrar os pistões?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) No interior dos próprios cilindros do motor, sem necessidade de caldeira externa.</label>
+                <label><input type="radio" name="q3" value="B"> B) Em um tanque externo de água fervente acoplado ao escapamento.</label>
+                <label><input type="radio" name="q3" value="C"> C) Diretamente no radiador frontal para aquecer o líquido de arrefecimento.</label>
+                <label><input type="radio" name="q3" value="D"> D) Dentro da bateria elétrica por meio de reações sem liberação de calor.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) O avanço da informatização e da robótica nas linhas de montagem modernas trouxe benefícios produtivos, mas também gerou um desafio social importante no mercado de trabalho conhecido como:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Escassez mundial de matérias-primas metálicas para fabricação de parafusos.</label>
+                <label><input type="radio" name="q4" value="B"> B) Desemprego estrutural, causado pela substituição de trabalhadores humanos por máquinas automatizadas.</label>
+                <label><input type="radio" name="q4" value="C"> C) Proibição do uso de computadores em empresas de logística e transporte.</label>
+                <label><input type="radio" name="q4" value="D"> D) Aumento da jornada de trabalho manual nas fábricas sem uso de eletricidade.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Além da notocorda, todos os animais do Filo dos Cordados apresentam, pelo menos na fase embrionária, um tubo nervoso dorsal oco que nos vertebrados origina:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) O sistema digestório completo (estômago e intestinos).</label>
+                <label><input type="radio" name="q5" value="B"> B) O sistema respiratório branquial e pulmonar.</label>
+                <label><input type="radio" name="q5" value="C"> C) O sistema nervoso central (encéfalo e medula espinhal).</label>
+                <label><input type="radio" name="q5" value="D"> D) O sistema excretor renal e as glândulas sudoríparas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Os peixes cartilaginosos (condrictes, como tubarões e raias) diferem dos peixes ósseos (osteíctes) em várias características anatômicas. Qual estrutura está presente nos peixes ósseos para proteger suas brânquias, mas é ausente nos tubarões?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Opérculo</label>
+                <label><input type="radio" name="q6" value="B"> B) Cloaca</label>
+                <label><input type="radio" name="q6" value="C"> C) Escamas placoides</label>
+                <label><input type="radio" name="q6" value="D"> D) Fendas branquiais expostas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Durante o ciclo de vida dos anuros (sapos, rãs e pererecas), ocorre a metamorfose completa entre a fase larval aquática (girino) e a fase adulta terrestre. Qual mudança fisiológica marca essa transição?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Substituição da respiração pulmonar na larva pela respiração branquial no adulto.</label>
+                <label><input type="radio" name="q7" value="B"> B) Perda da cauda, desenvolvimento de patas e troca das brânquias por pulmões e respiração cutânea.</label>
+                <label><input type="radio" name="q7" value="C"> C) Surgimento de escamas córneas secas e perda total das glândulas mucosas da pele.</label>
+                <label><input type="radio" name="q7" value="D"> D) Formação de um casco ósseo dorsal logo após a eclosão do ovo em terra firme.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) A Classe dos Anfíbios é dividida em três ordens principais de acordo com a presença ou ausência de patas e cauda na fase adulta. Qual ordem reúne as salamandras e os tritões, que mantêm a cauda alongada durante toda a vida?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Ordem Anura (anuros)</label>
+                <label><input type="radio" name="q8" value="B"> B) Ordem Gymnophiona ou Apoda (ápodes)</label>
+                <label><input type="radio" name="q8" value="C"> C) Ordem Urodela ou Caudata (urodelos)</label>
+                <label><input type="radio" name="q8" value="D"> D) Ordem Squamata (escamados)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Os répteis da Ordem Squamata (escamados) representam o grupo mais diversificado da classe atual, caracterizados pela troca periódica da camada externa da pele (ecdise). Quais animais pertencem a essa ordem?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Jacarés, crocodilos e gaviais.</label>
+                <label><input type="radio" name="q9" value="B"> B) Tartarugas marinhas, jabutis e cágados.</label>
+                <label><input type="radio" name="q9" value="C"> C) Serpentes (cobras), lagartos, camaleões e anfisbenas.</label>
+                <label><input type="radio" name="q9" value="D"> D) Sapos-cururus, rãs-touro e pererecas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao contrário dos anfíbios, que possuem pele fina e permeável, os répteis conseguem sobreviver em desertos e regiões áridas sem sofrer desidratação rápida. Qual característica do tegumento (pele) explica essa resistência?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Pele rica em glândulas sudoríparas que produzem suor continuamente.</label>
+                <label><input type="radio" name="q10" value="B"> B) Pele espessa, seca, pobre em glândulas e revestida por escamas ou placas queratinizadas.</label>
+                <label><input type="radio" name="q10" value="C"> C) Pele coberta por muco viscoso que absorve umidade diretamente das rochas.</label>
+                <label><input type="radio" name="q10" value="D"> D) Presença de penas impermeáveis lubrificadas por glândula uropigiana.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique como funciona uma máquina térmica a vapor e qual transformação de energia ocorre durante sua operação:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Cite duas diferenças anatômicas entre os peixes cartilaginosos (condrictes) e os peixes ósseos (osteíctes):</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Por que os anfíbios são considerados excelentes bioindicadores da qualidade ambiental (poluição da água e do ar)?</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Explique por que lagartos, cobras e jacarés costumam ficar expostos ao sol durante as primeiras horas da manhã (comportamento de termorregulação):</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "B", q2: "B", q3: "A", q4: "B", q5: "C",
+    q6: "A", q7: "B", q8: "C", q9: "C", q10: "B"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Força muscular, tração animal, ventos e quedas d'água",
+    q2: "Intensificação do efeito estufa e aquecimento global",
+    q3: "No interior dos cilindros do motor",
+    q4: "Desemprego estrutural",
+    q5: "Sistema nervoso central (encéfalo e medula espinhal)",
+    q6: "Opérculo",
+    q7: "Perda da cauda, surgimento de patas e respiração pulmonar/cutânea",
+    q8: "Ordem Urodela ou Caudata (urodelos)",
+    q9: "Serpentes, lagartos, camaleões e anfisbenas",
+    q10: "Pele espessa, seca e revestida por escamas queratinizadas"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "B) Força muscular humana, tração animal, força dos ventos e quedas d'água.<br><strong>Explicação:</strong> Antes da Revolução Industrial, moinhos, engenhos e navios dependiam exclusivamente de forças naturais e musculares.",
+    q2: "B) Intensificação do efeito estufa e aquecimento global do planeta.<br><strong>Explicação:</strong> O excesso de CO₂ retém mais radiação infravermelha na atmosfera, elevando a temperatura média global.",
+    q3: "A) No interior dos próprios cilindros do motor, sem necessidade de caldeira externa.<br><strong>Explicação:</strong> Nos motores de combustão interna, a mistura de ar e combustível explode dentro dos cilindros, empurrando os pistões diretamente.",
+    q4: "B) Desemprego estrutural, causado pela substituição de trabalhadores humanos por máquinas automatizadas.<br><strong>Explicação:</strong> A automação elimina postos de trabalho repetitivos e exige profissionais altamente qualificados em tecnologia.",
+    q5: "C) O sistema nervoso central (encéfalo e medula espinhal).<br><strong>Explicação:</strong> O tubo nervoso dorsal oco é exclusivo dos cordados e se diferencia no encéfalo e na medula espinhal nos vertebrados.",
+    q6: "A) Opérculo.<br><strong>Explicação:</strong> Peixes ósseos possuem uma tampa óssea chamada opérculo cobrindo as brânquias, enquanto cartilaginosos têm fendas branquiais expostas.",
+    q7: "B) Perda da cauda, desenvolvimento de patas e troca das brânquias por pulmões e respiração cutânea.<br><strong>Explicação:</strong> Na metamorfose dos anuros, o girino aquático perde a cauda e as brânquias para assumir a vida terrestre.",
+    q8: "C) Ordem Urodela ou Caudata (urodelos).<br><strong>Explicação:</strong> Salamandras e tritões são anfíbios urodelos que conservam quatro patas e cauda alongada na fase adulta.",
+    q9: "C) Serpentes (cobras), lagartos, camaleões e anfisbenas.<br><strong>Explicação:</strong> A ordem Squamata reúne os répteis com corpo coberto por escamas epidérmicas que passam por trocas periódicas (mudas).",
+    q10: "B) Pele espessa, seca, pobre em glândulas e revestida por escamas ou placas queratinizadas.<br><strong>Explicação:</strong> A queratina impermeabiliza a pele dos répteis, impedindo a perda excessiva de água em ambientes secos.",
+    q11: "<strong>Resposta Esperada:</strong> A queima de combustível aquece a água numa caldeira, gerando vapor sob alta pressão que empurra pistões ou turbinas. Ocorre a transformação de energia térmica (calor) em energia mecânica (movimento).",
+    q12: "<strong>Resposta Esperada:</strong> 1) Esqueleto cartilaginoso nos condrictes e ósseo nos osteíctes; 2) Presença de opérculo e bexiga natatória apenas nos peixes ósseos (ausentes nos cartilaginosos).",
+    q13: "<strong>Resposta Esperada:</strong> Porque possuem pele fina e altamente permeável, absorvendo rapidamente substâncias tóxicas e poluentes presentes na água e no ar, o que provoca queda imediata em suas populações.",
+    q14: "<strong>Resposta Esperada:</strong> Como são animais ectotérmicos, não produzem calor interno suficiente para manter a temperatura corporal constante e precisam absorver o calor do sol para ativar seu metabolismo."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🌿 Ciências | 2º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

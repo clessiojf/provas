@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciências – 1ª Prova Completa (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #2e7d32; --secondary: #43a047; --success: #1b5e20; --danger: #c62828; --bg: #e8f5e9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f1f8e9; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🌿 Ciências | 1ª Prova (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Avaliação de Ciências – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+       
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano A)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Durante a Primeira Revolução Industrial, o aperfeiçoamento das máquinas a vapor transformou o transporte e a produção fabril. Qual é o princípio físico fundamental de funcionamento dessas máquinas térmicas?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Transformar energia elétrica diretamente em energia química.</label>
+                <label><input type="radio" name="q1" value="B"> B) Converter energia eólica em calor para resfriar caldeiras.</label>
+                <label><input type="radio" name="q1" value="C"> C) Converter energia térmica (calor da combustão) em energia mecânica (movimento).</label>
+                <label><input type="radio" name="q1" value="D"> D) Gerar energia nuclear a partir da condensação de água fria.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Os combustíveis liberam grande quantidade de energia térmica durante a queima. Sobre a origem e a renovação desses recursos na natureza, assinale a alternativa correta:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Carvão mineral e gás natural são biocombustíveis renováveis a curto prazo.</label>
+                <label><input type="radio" name="q2" value="B"> B) Etanol e biodiesel são combustíveis renováveis produzidos a partir de biomassa vegetal.</label>
+                <label><input type="radio" name="q2" value="C"> C) O petróleo é uma fonte limpa que não libera gases estufa ao ser queimado.</label>
+                <label><input type="radio" name="q2" value="D"> D) Lenha e biogás são combustíveis fósseis formados há milhões de anos no subsolo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) A partir da segunda metade do século XX, as indústrias passaram pelos processos de automação e informatização. Qual foi o principal impacto dessa evolução na produção?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Substituição de tarefas repetitivas por robôs programáveis e ganho de precisão.</label>
+                <label><input type="radio" name="q3" value="B"> B) Retorno exclusivo ao uso de máquinas movidas a tração animal e carvão vegetal.</label>
+                <label><input type="radio" name="q3" value="C"> C) Redução na velocidade de fabricação e eliminação dos sistemas digitais.</label>
+                <label><input type="radio" name="q3" value="D"> D) Fim da necessidade de qualificação técnica para operar equipamentos industriais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Para que ocorra a reação química de combustão no interior de um motor térmico, três elementos essenciais precisam atuar juntos ("triângulo do fogo"). Assinale a alternativa correta:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Combustível, gás carbônico e água líquida.</label>
+                <label><input type="radio" name="q4" value="B"> B) Nitrogênio, calor e vapor d'água.</label>
+                <label><input type="radio" name="q4" value="C"> C) Combustível, comburente (gás oxigênio) e fonte de calor (ignição).</label>
+                <label><input type="radio" name="q4" value="D"> D) Gás hélio, combustível fóssil e resfriamento mecânico.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Os animais do Filo dos Cordados apresentam características embrionárias exclusivas. Qual estrutura dorsal flexível dá nome ao filo e, nos vertebrados, é substituída pela coluna vertebral?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Notocorda</label>
+                <label><input type="radio" name="q5" value="B"> B) Exoesqueleto quitinoso</label>
+                <label><input type="radio" name="q5" value="C"> C) Cavidade gastrovascular</label>
+                <label><input type="radio" name="q5" value="D"> D) Rádula raspadora</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) A Classe dos Peixes reúne vertebrados aquáticos divididos em cartilaginosos (tubarões e raias) e ósseos (sardinhas e tilápias). Qual estrutura sensorial permite aos peixes perceber vibrações e variações de pressão na água?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Brânquias operculares</label>
+                <label><input type="radio" name="q6" value="B"> B) Bexiga natatória</label>
+                <label><input type="radio" name="q6" value="C"> C) Linha lateral</label>
+                <label><input type="radio" name="q6" value="D"> D) Nadadeira caudal</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Os anfíbios (sapos, rãs e pererecas) vivem uma transição evolutiva entre a água e a terra, passando por metamorfose. Sobre a pele e a respiração desses animais na fase adulta, assinale a alternativa correta:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Pele fina, úmida e vascularizada, realizando respiração cutânea complementar aos pulmões.</label>
+                <label><input type="radio" name="q7" value="B"> B) Pele grossa, seca e recoberta por placas córneas impermeáveis à água.</label>
+                <label><input type="radio" name="q7" value="C"> C) Respiração exclusivamente branquial durante toda a fase adulta terrestre.</label>
+                <label><input type="radio" name="q7" value="D"> D) Presença de glândulas sudoríparas que mantêm a temperatura constante.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Diferentemente dos anfíbios, os répteis conquistaram definitivamente o ambiente terrestre seco, tornando-se independentes da água para a reprodução. Qual adaptação evolutiva foi decisiva para essa conquista?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Fecundação externa realizada exclusivamente em rios e lagoas.</label>
+                <label><input type="radio" name="q8" value="B"> B) Desenvolvimento do ovo amniótico com casca resistente que evita a desidratação do embrião.</label>
+                <label><input type="radio" name="q8" value="C"> C) Presença de fase larval aquática (girino) antes da formação dos pulmões.</label>
+                <label><input type="radio" name="q8" value="D"> D) Pele permeável e rica em glândulas mucosas para absorver oxigênio do ar.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Peixes, anfíbios e répteis são classificados fisiologicamente como animais ectotérmicos (ou pecilotérmicos). O que significa essa característica?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) A temperatura corporal varia conforme o ambiente externo, exigindo fontes externas de calor.</label>
+                <label><input type="radio" name="q9" value="B"> B) Produzem calor metabólico interno suficiente para manter o corpo sempre a 37 °C.</label>
+                <label><input type="radio" name="q9" value="C"> C) São incapazes de sobreviver em regiões tropicais devido ao calor excessivo.</label>
+                <label><input type="radio" name="q9" value="D"> D) Utilizam pelos e camadas espessas de gordura para isolar o frio.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Qual ordem da Classe dos Répteis reúne os animais que possuem o corpo protegido por uma carapaça dorsal e um plastrão ventral fundidos às costelas, como tartarugas, jabutis e cágados?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Ordem Crocodilia (crocodilianos)</label>
+                <label><input type="radio" name="q10" value="B"> B) Ordem Squamata (escamados)</label>
+                <label><input type="radio" name="q10" value="C"> C) Ordem Anura (anuros)</label>
+                <label><input type="radio" name="q10" value="D"> D) Ordem Testudines ou Chelonia (quelônios)</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Diferencie os combustíveis fósseis dos biocombustíveis quanto à sua origem na natureza e dê um exemplo de cada tipo:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Explique qual é a função da bexiga natatória encontrada nos peixes ósseos (osteíctes):</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Por que os anfíbios adultos precisam manter a pele constantemente úmida e viver próximos a ambientes aquáticos ou sombreados?</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Cite duas adaptações evolutivas que permitiram aos répteis viver em ambientes terrestres secos sem depender da água para se reproduzir:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "C", q2: "B", q3: "A", q4: "C", q5: "A",
+    q6: "C", q7: "A", q8: "B", q9: "A", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Converter energia térmica em energia mecânica",
+    q2: "Etanol e biodiesel são renováveis de biomassa",
+    q3: "Robôs programáveis e ganho de precisão",
+    q4: "Combustível, comburente (O2) e calor",
+    q5: "Notocorda",
+    q6: "Linha lateral",
+    q7: "Pele fina e úmida com respiração cutânea",
+    q8: "Ovo amniótico com casca resistente",
+    q9: "Temperatura corporal varia com o ambiente",
+    q10: "Ordem Testudines ou Chelonia (quelônios)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "C) Converter energia térmica em energia mecânica.<br><strong>Explicação:</strong> O calor da queima aquece a água, gerando vapor sob pressão que movimenta pistões e turbinas.",
+    q2: "B) Etanol e biodiesel são combustíveis renováveis produzidos a partir de biomassa vegetal.<br><strong>Explicação:</strong> Biocombustíveis vêm de plantas renováveis a curto prazo, enquanto petróleo, carvão e gás natural são fósseis não renováveis.",
+    q3: "A) Substituição de tarefas repetitivas por robôs programáveis e ganho de precisão.<br><strong>Explicação:</strong> A informatização e os robôs aceleraram a produção industrial e aumentaram a exatidão técnica.",
+    q4: "C) Combustível, comburente (gás oxigênio) e fonte de calor (ignição).<br><strong>Explicação:</strong> Sem o material que queima, o oxigênio que alimenta a chama e o calor inicial, a combustão não ocorre.",
+    q5: "A) Notocorda.<br><strong>Explicação:</strong> Bastão dorsal flexível presente no embrião dos cordados que é substituído pela coluna vertebral nos vertebrados.",
+    q6: "C) Linha lateral.<br><strong>Explicação:</strong> Órgão sensorial nas laterais do corpo dos peixes que detecta vibrações e movimentos na água.",
+    q7: "A) Pele fina, úmida e vascularizada, realizando respiração cutânea complementar aos pulmões.<br><strong>Explicação:</strong> Como os pulmões dos anfíbios são simples, eles absorvem oxigênio diretamente pela pele úmida.",
+    q8: "B) Desenvolvimento do ovo amniótico com casca resistente que evita a desidratação do embrião.<br><strong>Explicação:</strong> O ovo com casca e reservas nutritivas permitiu o desenvolvimento embrionário em terra seca, sem depender da água.",
+    q9: "A) A temperatura corporal varia conforme o ambiente externo, exigindo fontes externas de calor.<br><strong>Explicação:</strong> Animais ectotérmicos dependem do sol ou da sombra para regular o calor do corpo.",
+    q10: "D) Ordem Testudines ou Chelonia (quelônios).<br><strong>Explicação:</strong> Grupo das tartarugas, jabutis e cágados, caracterizados pelo casco ósseo (carapaça e plastrão).",
+    q11: "<strong>Resposta Esperada:</strong> Combustíveis fósseis são não renováveis, formados há milhões de anos pela decomposição de seres vivos soterrados (ex.: petróleo, carvão mineral). Biocombustíveis são renováveis, obtidos a partir de matéria orgânica vegetal recente (ex.: etanol, biodiesel).",
+    q12: "<strong>Resposta Esperada:</strong> A bexiga natatória é uma bolsa de gás interna que permite aos peixes ósseos controlar sua flutuabilidade (subir ou descer na coluna d'água) sem gastar energia nadando continuamente.",
+    q13: "<strong>Resposta Esperada:</strong> Porque os pulmões dos anfíbios são pouco eficientes e eles dependem da respiração cutânea (trocas gasosas pela pele), que só funciona se a pele estiver fina, limpa e úmida.",
+    q14: "<strong>Resposta Esperada:</strong> 1) Pele grossa, seca e queratinizada (com escamas ou placas córneas) que evita a perda de água por desidratação; 2) Fecundação interna e ovo amniótico com casca resistente."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🌿 Ciências | 1ª Prova Completa (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
