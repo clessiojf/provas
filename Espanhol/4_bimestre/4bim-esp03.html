@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espanhol – 3º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #b71c1c; --secondary: #d32f2f; --success: #2e7d32; --danger: #c62828; --bg: #ffebee; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fff3e0; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #ffebee;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🇪🇸 Espanhol | 3º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Espanhol – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano C)" required>
+        </div>
+        <h2>Parte I – Cuestiones Objetivas (Opción Múltiple)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) En español (Clase 1 – Unidad 4), para expresar acuerdo o desacuerdo con la opinión de otra persona usamos expresiones como <em>"Estoy de acuerdo"</em> o <em>"No estoy de acuerdo"</em>. Completa correctamente el diálogo aplicando la regla de <strong>Indicativo</strong> (opinión afirmativa) y <strong>Subjuntivo</strong> (opinión negativa):<br>
+            — A mí me parece que las playas de Uruguay <strong>__________</strong> muy limpias.<br>
+            — Yo también lo creo, pero no pienso que el agua del mar <strong>__________</strong> muy caliente.</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) sean / es</label>
+                <label><input type="radio" name="q1" value="B"> B) son / sea</label>
+                <label><input type="radio" name="q1" value="C"> C) sean / sea</label>
+                <label><input type="radio" name="q1" value="D"> D) son / es</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Observa la diferencia entre las estructuras de opinión en español: <em>"En mi opinión..."</em> / <em>"Para mí..."</em> (siempre seguidas de <strong>Indicativo</strong>, incluso en frases negativas) frente a <em>"No creo que..."</em> / <em>"No pienso que..."</em> (seguidas de <strong>Subjuntivo</strong>). Elige la opción que completa correctamente:<br>
+            <em>"Para mí, estudiar idiomas no __________ difícil, pero no creo que todos los alumnos __________ todos los días."</em></p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) sea / estudian</label>
+                <label><input type="radio" name="q2" value="B"> B) es / estudian</label>
+                <label><input type="radio" name="q2" value="C"> C) sea / estudien</label>
+                <label><input type="radio" name="q2" value="D"> D) es / estudien</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) En la Clase 2 (<em>"Estás guapísima y también contentísima – superlativos"</em>), estudiamos que algunos adjetivos que tienen los diptongos <em>ue</em> o <em>ie</em> en su raíz recuperan la vocal original latina (<em>o</em> o <em>e</em>) en el superlativo culto (por ejemplo: <em>fuerte → fortísimo</em>, <em>caliente → calentísimo</em>). ¿Cuál es el superlativo culto correspondiente al adjetivo <strong>nuevo</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) novísimo</label>
+                <label><input type="radio" name="q3" value="B"> B) nuevíssimo</label>
+                <label><input type="radio" name="q3" value="C"> C) novíssimo</label>
+                <label><input type="radio" name="q3" value="D"> D) nuevicísimo</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) El superlativo absoluto en español también puede formarse anteponiendo al adjetivo otros adverbios de intensidad además de <em>muy</em> (como <em>sumamente, extremadamente, increíblemente</em>) o prefijos como <em>super-</em> / <em>re-</em>. Señala la frase en la que el superlativo absoluto está empleado <strong>correctamente</strong> (recuerda que no se debe mezclar <em>muy</em> con <em>-ísimo</em>):</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) La exposición de arte estuvo muy interesantísima.</label>
+                <label><input type="radio" name="q4" value="B"> B) La exposición de arte estuvo sumamente interesante.</label>
+                <label><input type="radio" name="q4" value="C"> C) La exposición de arte estuvo más interesantísima que ayer.</label>
+                <label><input type="radio" name="q4" value="D"> D) La exposición de arte estuvo tan interesantísima.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) ¿Cuál es la forma correcta del superlativo absoluto con sufijo <em>-ísimo / -ísima</em> de los adjetivos <strong>fácil</strong> y <strong>joven</strong> (recuerda que los adjetivos terminados en <em>-n</em> o <em>-or</em> añaden <em>-císimo</em>)?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) facilísimo / jovencísimo</label>
+                <label><input type="radio" name="q5" value="B"> B) facilíssimo / joveníssimo</label>
+                <label><input type="radio" name="q5" value="C"> C) facicísimo / jovenísimo</label>
+                <label><input type="radio" name="q5" value="D"> D) facilísimo / jovenísimo</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) En español, cuando queremos formar el <strong>superlativo relativo de superioridad</strong> (destacando el grado máximo dentro de un grupo), usamos la estructura: <em>el / la / los / las + más + adjetivo + de</em>. Elige la alternativa que presenta un ejemplo correcto:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) El mate es la bebida más tradicional de Uruguay.</label>
+                <label><input type="radio" name="q6" value="B"> B) El mate es una bebida muy riquísima en Uruguay.</label>
+                <label><input type="radio" name="q6" value="C"> C) El mate es más óptimo que el café frío.</label>
+                <label><input type="radio" name="q6" value="D"> D) El mate es extremadamente popularísimo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Observa los cuatro superlativos irregulares cultos del español: <em>óptimo, pésimo, máximo</em> y <em>mínimo</em>. Elige la alternativa que relaciona correctamente cada adjetivo con su superlativo irregular culto:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) bueno → pésimo / malo → óptimo / grande → mínimo / pequeño → máximo</label>
+                <label><input type="radio" name="q7" value="B"> B) bueno → máximo / malo → mínimo / grande → óptimo / pequeño → pésimo</label>
+                <label><input type="radio" name="q7" value="C"> C) bueno → óptimo / malo → pésimo / grande → máximo / pequeño → mínimo</label>
+                <label><input type="radio" name="q7" value="D"> D) bueno → bonísimo / malo → malísimo / grande → grandísimo / pequeño → pequeñísimo</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) En la Clase 3 (<em>"Lectura e interpretación de texto – Lunas tres: Uruguay"</em>), conocemos lugares emblemáticos de Montevideo y de la costa uruguaya. ¿Qué es el <strong>Mercado del Puerto</strong> en Montevideo?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Un histórico edificio de hierro del siglo XIX convertido en famoso centro gastronómico y cultural donde se prueba el tradicional asado uruguayo.</label>
+                <label><input type="radio" name="q8" value="B"> B) Una estación espacial construida en las montañas de los Andes.</label>
+                <label><input type="radio" name="q8" value="C"> C) Un museo dedicado exclusivamente a los pingüinos de la Antártida.</label>
+                <label><input type="radio" name="q8" value="D"> D) Una biblioteca subterránea donde está prohibido hablar o comer.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Lee el siguiente texto breve sobre la literatura y cultura uruguaya:<br>
+            <em>"Uruguay cuenta con escritores de gran reconocimiento internacional, como Mario Benedetti, Eduardo Galeano y Horacio Quiroga, cuyas obras reflejan tanto la vida cotidiana de Montevideo como los paisajes y leyendas del Río de la Plata."</em><br>
+            Según el texto, ¿qué reflejan las obras de estos autores uruguayos?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Únicamente manuales científicos sobre astronomía europea.</label>
+                <label><input type="radio" name="q9" value="B"> B) La vida cotidiana de Montevideo y los paisajes y leyendas del Río de la Plata.</label>
+                <label><input type="radio" name="q9" value="C"> C) Solo recetas de cocina italiana del siglo XV.</label>
+                <label><input type="radio" name="q9" value="D"> D) Reglas de tránsito de las grandes ciudades asiáticas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) En el español de Uruguay (variante rioplatense), si alguien te dice: <em>"¡Qué lindo está el día! Vamos a tomar un colectivo para ir al centro"</em>, ¿qué significa la palabra <strong>colectivo</strong> en ese contexto?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Un avión privado de carga pesada.</label>
+                <label><input type="radio" name="q10" value="B"> B) Un barco turístico que cruza el océano Atlántico.</label>
+                <label><input type="radio" name="q10" value="C"> C) Una bicicleta eléctrica individual.</label>
+                <label><input type="radio" name="q10" value="D"> D) Un autobús urbano de transporte público (<em>ônibus</em>).</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Cuestiones Disertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Responde en español a la pregunta expresando una <strong>opinión negativa</strong> (usando <em>"No creo que..."</em> o <em>"No me parece que..."</em> + Subjuntivo):<br>
+            <em>¿Crees que aprender un segundo idioma es una pérdida de tiempo?</em></p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escribe tu respuesta en español utilizando el Subjuntivo..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Escribe el <strong>superlativo absoluto culto</strong> (o con sufijo <em>-ísimo</em>) de los siguientes adjetivos:<br>
+            a) bueno (culto) → ____________________<br>
+            b) malo (culto) → ____________________<br>
+            c) fuerte (culto, sin diptongo) → ____________________<br>
+            d) joven (con sufijo) → ____________________</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escribe las cuatro formas superlativas..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Corrige el error gramatical en las dos oraciones siguientes sobre el uso de los superlativos en español:<br>
+            a) <em>"Esa canción uruguaya es muy lindíssima."</em><br>
+            b) <em>"Mi hermano es más óptimo que yo en fútbol."</em></p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Reescribe las dos frases corregidas en español..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Lee el fragmento sobre Uruguay (Clase 3):<br>
+            <em>"Punta del Este es uno de los balnearios más famosos de América del Sur. Allí se encuentran la Playa Mansa (de aguas tranquilas, bañada por el Río de la Plata) y la Playa Brava (con olas fuertes del Océano Atlántico, donde está la famosa escultura de 'La Mano')."</em><br>
+            Responde en español o portugués: ¿Cuál es la diferencia principal entre la Playa Mansa y la Playa Brava de Punta del Este?</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escribe tu respuesta de forma clara y objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "D", q3: "A", q4: "B", q5: "A",
+    q6: "A", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "son (Indicativo com 'me parece que') / sea (Subjuntivo com 'no pienso que')",
+    q2: "es (Indicativo com 'Para mí') / estudien (Subjuntivo com 'no creo que')",
+    q3: "novísimo (superlativo culto de nuevo, pierde el diptongo ue -> o)",
+    q4: "sumamente interesante (sin mezclar muy con -ísimo)",
+    q5: "facilísimo / jovencísimo (adjetivos en -n añaden -císimo)",
+    q6: "El mate es la bebida más tradicional de Uruguay (superlativo relativo)",
+    q7: "bueno -> óptimo / malo -> pésimo / grande -> máximo / pequeño -> mínimo",
+    q8: "Histórico edificio de hierro convertido en centro gastronómico y cultural en Montevideo",
+    q9: "La vida cotidiana de Montevideo y los paisajes y leyendas del Río de la Plata",
+    q10: "Un autobús urbano de transporte público (ônibus)"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "B) son / sea<br><strong>Explicación:</strong> <em>Me parece que</em> (afirmativo) exige Indicativo (<em>son</em>); <em>no pienso que</em> (negativo) exige Subjuntivo (<em>sea</em>).",
+    q2: "D) es / estudien<br><strong>Explicación:</strong> Expresiones como <em>Para mí</em> o <em>En mi opinión</em> siempre rigen Indicativo (<em>es</em>), mientras que <em>no creo que</em> rige Subjuntivo (<em>estudien</em>).",
+    q3: "A) novísimo<br><strong>Explicación:</strong> En la forma culta, <em>nuevo</em> pierde el diptongo <em>ue</em> y recupera la vocal latina <em>o</em> (<em>novísimo</em>, con una sola <em>s</em>).",
+    q4: "B) La exposición de arte estuvo sumamente interesante.<br><strong>Explicación:</strong> No se debe combinar <em>muy</em>, <em>más</em> o <em>tan</em> con adjetivos que ya llevan el sufijo <em>-ísimo</em>.",
+    q5: "A) facilísimo / jovencísimo<br><strong>Explicación:</strong> Los adjetivos terminados en <em>-n</em> (como <em>joven</em>) forman el superlativo añadiendo <em>-císimo</em> (<em>jovencísimo</em>).",
+    q6: "A) El mate es la bebida más tradicional de Uruguay.<br><strong>Explicación:</strong> El superlativo relativo de superioridad se construye con <em>el/la/los/las + más + adjetivo + de</em>.",
+    q7: "C) bueno → óptimo / malo → pésimo / grande → máximo / pequeño → mínimo<br><strong>Explicación:</strong> Estas son las cuatro formas irregulares cultas heredadas del latín en español.",
+    q8: "A) Un histórico edificio de hierro del siglo XIX convertido en famoso centro gastronómico y cultural donde se prueba el tradicional asado uruguayo.<br><strong>Explicación:</strong> El Mercado del Puerto es uno de los puntos turísticos y culinarios más emblemáticos de la Ciudad Vieja de Montevideo.",
+    q9: "B) La vida cotidiana de Montevideo y los paisajes y leyendas del Río de la Plata.<br><strong>Explicación:</strong> Información explícita en el fragmento sobre autores uruguayos.",
+    q10: "D) Un autobús urbano de transporte público (<em>ônibus</em>).<br><strong>Explicación:</strong> En el español rioplatense (Uruguay y Argentina), el autobús urbano se llama <em>colectivo</em> (o <em>ómnibus</em> en Uruguay).",
+    q11: "<strong>Respuesta Esperada (ejemplo):</strong> <em>No creo que aprender un segundo idioma <strong>sea</strong> una pérdida de tiempo; al contrario, es muy útil.</em> (Uso obligatorio del Subjuntivo <em>sea</em> tras <em>No creo que</em>).",
+    q12: "<strong>Respuesta Esperada:</strong><br>a) bueno (culto) → <strong>óptimo / óptima</strong><br>b) malo (culto) → <strong>pésimo / pésima</strong><br>c) fuerte (culto) → <strong>fortísimo / fortísima</strong><br>d) joven → <strong>jovencísimo / jovencísima</strong>",
+    q13: "<strong>Respuesta Esperada:</strong><br>a) <em>\"Esa canción uruguaya es <strong>lindísima</strong>\"</em> (o <em>\"es <strong>muy linda</strong>\"</em> — se elimina la redundancia <em>muy + -ísimo</em> y se escribe con una sola <em>s</em>).<br>b) <em>\"Mi hermano es <strong>óptimo</strong> en fútbol\"</em> (o <em>\"es <strong>mejor</strong> que yo en fútbol\"</em> — <em>óptimo</em> no admite <em>más</em>).",
+    q14: "<strong>Respuesta Esperada:</strong> La Playa Mansa tiene aguas tranquilas y está bañada por el Río de la Plata, mientras que la Playa Brava tiene olas fuertes del Océano Atlántico (y allí está la escultura de 'La Mano')."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicación / Explicação:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🇪🇸 Espanhol | 3º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

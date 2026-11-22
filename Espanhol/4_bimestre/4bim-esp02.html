@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espanhol – 2º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #b71c1c; --secondary: #d32f2f; --success: #2e7d32; --danger: #c62828; --bg: #ffebee; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #fff3e0; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #ffebee;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>🇪🇸 Espanhol | 2º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de Espanhol – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano B)" required>
+        </div>
+        <h2>Parte I – Cuestiones Objetivas (Opción Múltiple)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) En español (Clase 1 – Unidad 4), para pedir la opinión de alguien sobre un tema o actividad, usamos expresiones como <em>"¿Qué te parece...?"</em> o <em>"¿Qué opinas de...?"</em>. Elige la respuesta que completa correctamente el diálogo con una <strong>opinión negativa</strong> (Subjuntivo):<br>
+            — ¿Qué te parece salir sin abrigo hoy?<br>
+            — Pues, yo <strong>no creo que __________</strong> una buena idea, porque hace mucho frío.</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) es</label>
+                <label><input type="radio" name="q1" value="B"> B) sea</label>
+                <label><input type="radio" name="q1" value="C"> C) eres</label>
+                <label><input type="radio" name="q1" value="D"> D) son</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Completa las dos oraciones siguientes aplicando correctamente el contraste entre <strong>Indicativo</strong> (opinión afirmativa) y <strong>Subjuntivo</strong> (opinión negativa):<br>
+            I. Me parece que los dulces uruguayos __________ deliciosos.<br>
+            II. No me parece que este libro __________ difícil de leer.</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) sean / es</label>
+                <label><input type="radio" name="q2" value="B"> B) son / sea</label>
+                <label><input type="radio" name="q2" value="C"> C) sean / sea</label>
+                <label><input type="radio" name="q2" value="D"> D) son / es</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) En la Clase 2 (<em>"Estás guapísima y también contentísima – superlativos"</em>), aprendemos que cuando un adjetivo termina en vocal (como <em>guapa, contenta, alto, rápida</em>), se elimina la vocal final antes de añadir el sufijo <em>-ísimo / -ísima</em>. ¿Cuál es la forma correcta del superlativo absoluto de <strong>inteligente</strong>?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) inteligenteísimo</label>
+                <label><input type="radio" name="q3" value="B"> B) inteligentíssimo</label>
+                <label><input type="radio" name="q3" value="C"> C) inteligentísimo</label>
+                <label><input type="radio" name="q3" value="D"> D) inteligenticísimo</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Recuerda que en español el sufijo superlativo <em>-ísimo / -ísima</em> nunca se escribe con doble <em>s</em> (a diferencia del portugués). Además, algunos adjetivos como <strong>fuerte</strong> o <strong>nuevo</strong> pierden el diptongo al formar el superlativo culto, o bien se usan con el adverbio <em>muy</em>. Elige la opción escrita <strong>sin errores ortográficos</strong>:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) altíssimo / guapíssima</label>
+                <label><input type="radio" name="q4" value="B"> B) contentíssimo / tristíssimo</label>
+                <label><input type="radio" name="q4" value="C"> C) rapidíssimo / facilíssimo</label>
+                <label><input type="radio" name="q4" value="D"> D) altísimo / guapísima</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Observa los superlativos irregulares cultos en español: <em>bueno → óptimo</em>, <em>malo → pésimo</em>, <em>grande → máximo</em>, <em>pequeño → mínimo</em>. Señala la frase que emplea correctamente uno de estos superlativos irregulares:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) El equipo jugó con un rendimiento <strong>óptimo</strong> y ganó el partido.</label>
+                <label><input type="radio" name="q5" value="B"> B) El equipo jugó con un rendimiento <strong>más óptimo</strong> que ayer.</label>
+                <label><input type="radio" name="q5" value="C"> C) El equipo jugó con un rendimiento <strong>muy pésimo</strong> y perdió.</label>
+                <label><input type="radio" name="q5" value="D"> D) El equipo jugó con un rendimiento <strong>tan máximo</strong> en la final.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) En español, cuando queremos expresar el <strong>superlativo relativo de inferioridad</strong> (destacando el grado mínimo dentro de un grupo), usamos la estructura: <em>el / la / los / las + menos + adjetivo + de</em>. Elige la alternativa que presenta un ejemplo correcto:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Este ejercicio es muy facilísimo para toda la clase.</label>
+                <label><input type="radio" name="q6" value="B"> B) Febrero es el mes menos largo del año.</label>
+                <label><input type="radio" name="q6" value="C"> C) La película de ayer estuvo aburridísima.</label>
+                <label><input type="radio" name="q6" value="D"> D) Mis amigos son muy simpáticos y amables.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) ¿Cuál es la forma correcta del superlativo absoluto con sufijo de los adjetivos <strong>blanco</strong> y <strong>largo</strong>, respetando los cambios ortográficos del español antes de <em>-ísimo</em>?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) blancísimo / largísimo</label>
+                <label><input type="radio" name="q7" value="B"> B) blanquíssimo / larguíssimo</label>
+                <label><input type="radio" name="q7" value="C"> C) blanquísimo / larguísimo</label>
+                <label><input type="radio" name="q7" value="D"> D) blancíssimo / largíssimo</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) En la Clase 3 (<em>"Lectura e interpretación de texto – Lunas tres: Uruguay"</em>), estudiamos el patrimonio cultural y musical de Uruguay. ¿Cuál de los siguientes ritmos musicales y danzas tradicionales uruguayos fue declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) El candombe (ritmo de origen afrouruguayo tocado con tambores).</label>
+                <label><input type="radio" name="q8" value="B"> B) El flamenco andaluz.</label>
+                <label><input type="radio" name="q8" value="C"> C) La salsa caribeña.</label>
+                <label><input type="radio" name="q8" value="D"> D) La mariachi mexicana.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Lee el siguiente texto breve sobre la gastronomía uruguaya:<br>
+            <em>"La gastronomía de Uruguay se destaca por sus carnes asadas a la parrilla, el chivito (un sándwich tradicional muy completo) y los postres preparados con dulce de leche, como los alfajores."</em><br>
+            Según el texto, ¿qué es el <strong>chivito</strong> en Uruguay?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Un postre dulce hecho exclusivamente con frutas tropicales.</label>
+                <label><input type="radio" name="q9" value="B"> B) Un sándwich tradicional muy completo de la gastronomía uruguaya.</label>
+                <label><input type="radio" name="q9" value="C"> C) Una bebida caliente similar al café con leche.</label>
+                <label><input type="radio" name="q9" value="D"> D) Una danza típica ejecutada durante el carnaval de Montevideo.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) En el vocabulario cotidiano de Uruguay (español rioplatense), algunas palabras tienen significados diferentes al português (falsos amigos) o son típicas de la región. Si un amigo uruguayo te invita a comer <em>"facturas"</em> en el desayuno, ¿qué van a comer?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Recibos y cuentas de electricidad pagadas en el banco.</label>
+                <label><input type="radio" name="q10" value="B"> B) Ensaladas verdes con tomates y cebolla.</label>
+                <label><input type="radio" name="q10" value="C"> C) Pescados fritos traídos directamente del océano.</label>
+                <label><input type="radio" name="q10" value="D"> D) Panes dulces y bollería variada (como medialunas) típicos de la panadería.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Cuestiones Disertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Completa los diálogos en español conjugando el verbo <strong>ser</strong> en <strong>Indicativo</strong> (opinión afirmativa) o en <strong>Subjuntivo</strong> (opinión negativa):<br>
+            a) — ¿Qué te parece la clase de arte? — Creo que __________ muy creativa.<br>
+            b) — ¿Te parece difícil el examen de español? — No creo que __________ difícil.</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escribe las dos respuestas completas..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Explica en portugués o español por qué el superlativo absoluto de <strong>guapa</strong> en español se escribe <em>guapísima</em> (con una sola <em>s</em>) y por qué el superlativo de <strong>feliz</strong> se escribe <em>felicísimo</em> (con <em>c</em>):</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Explica las dos reglas ortográficas..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Escribe dos oraciones en español utilizando:<br>
+            a) Un <strong>superlativo absoluto</strong> (con <em>muy</em> o <em>-ísimo/a</em>).<br>
+            b) Un <strong>superlativo relativo</strong> (con <em>el/la más ... de</em>).</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escribe las dos oraciones en español..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Lee el fragmento sobre Uruguay (Clase 3):<br>
+            <em>"La Rambla de Montevideo es una extensa avenida costera de más de 22 kilómetros junto al Río de la Plata. Es el lugar favorito de los montevideanos para caminar, correr, andar en bicicleta y tomar mate al atardecer."</em><br>
+            Responde en español o portugués: ¿Qué es la Rambla de Montevideo y qué actividades suelen hacer las personas allí?</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escribe tu respuesta de forma clara y objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas (letras distribuídas entre A, B, C e D)
+const gabarito = {
+    q1: "B", q2: "B", q3: "C", q4: "D", q5: "A",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "D"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "sea (Subjuntivo com 'no creo que')",
+    q2: "son (Indicativo com 'me parece que') / sea (Subjuntivo com 'no me parece que')",
+    q3: "inteligentísimo (elimina la vocal final 'e' + -ísimo con una sola s)",
+    q4: "altísimo / guapísima (sufijo -ísimo siempre con una sola s)",
+    q5: "rendimiento óptimo (superlativo irregular culto de bueno sin adverbios como más/muy)",
+    q6: "Febrero es el mes menos largo del año (superlativo relativo de inferioridad)",
+    q7: "blanquísimo (c -> qu) / larguísimo (g -> gu)",
+    q8: "El candombe (ritmo de origen afrouruguayo tocado con tambores)",
+    q9: "Un sándwich tradicional muy completo de la gastronomía uruguaya",
+    q10: "Panes dulces y bollería variada (como medialunas) típicos de la panadería"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "B) sea<br><strong>Explicación:</strong> Al expresar una opinión en forma negativa (<em>no creo que</em>), el verbo debe conjugarse en modo Subjuntivo (<em>sea</em>).",
+    q2: "B) son / sea<br><strong>Explicación:</strong> <em>Me parece que</em> (afirmativo) rige Indicativo (<em>son</em>); <em>No me parece que</em> (negativo) rige Subjuntivo (<em>sea</em>).",
+    q3: "C) inteligentísimo<br><strong>Explicación:</strong> Se suprime la vocal final <em>-e</em> de <em>inteligente</em> y se añade el sufijo <em>-ísimo</em> (siempre con una sola <em>s</em> en español).",
+    q4: "D) altísimo / guapísima<br><strong>Explicación:</strong> En español no existe el dígrafo <em>ss</em>; por eso, el sufijo superlativo se escribe siempre con una sola <em>s</em> (<em>-ísimo / -ísima</em>).",
+    q5: "A) El equipo jugó con un rendimiento <strong>óptimo</strong> y ganó el partido.<br><strong>Explicación:</strong> <em>Óptimo</em> ya expresa el grado máximo de <em>bueno</em>, por lo que no admite adverbios comparativos o intensificadores como <em>más</em> o <em>muy</em>.",
+    q6: "B) Febrero es el mes menos largo del año.<br><strong>Explicación:</strong> El superlativo relativo de inferioridad se forma con <em>el/la/los/las + menos + adjetivo + de</em>.",
+    q7: "C) blanquísimo / larguísimo<br><strong>Explicación:</strong> Para mantener el sonido fuerte antes de <em>-ísimo</em>, <em>c</em> cambia a <em>qu</em> (<em>blanquísimo</em>) y <em>g</em> cambia a <em>gu</em> (<em>larguísimo</em>).",
+    q8: "A) El candombe (ritmo de origen afrouruguayo tocado con tambores).<br><strong>Explicación:</strong> El candombe es una expresión cultural emblemática de Uruguay declarada Patrimonio Cultural Inmaterial de la Humanidad.",
+    q9: "B) Un sándwich tradicional muy completo de la gastronomía uruguaya.<br><strong>Explicación:</strong> Como indica el texto, el <em>chivito</em> es un sándwich tradicional típico de Uruguay.",
+    q10: "D) Panes dulces y bollería variada (como medialunas) típicos de la panadería.<br><strong>Explicación:</strong> En Uruguay y Argentina, <em>facturas</em> es el nombre cotidiano que reciben los panes dulces y medialunas.",
+    q11: "<strong>Respuesta Esperada:</strong><br>a) <em>Creo que <strong>es</strong> muy creativa.</em> (Opinión afirmativa → Indicativo: <em>es</em>).<br>b) <em>No creo que <strong>sea</strong> difícil.</em> (Opinión negativa → Subjuntivo: <em>sea</em>).",
+    q12: "<strong>Respuesta Esperada:</strong> 1) En español no existe doble <em>s</em> (<em>ss</em>), por lo que el sufijo superlativo <em>-ísimo/a</em> se escribe siempre con una sola <em>s</em> (<em>guapísima</em>).<br>2) Los adjetivos terminados en <em>-z</em> cambian la <em>z</em> por <em>c</em> antes de la vocal <em>i</em> (<em>feliz → felicísimo</em>).",
+    q13: "<strong>Respuesta Esperada (ejemplos):</strong><br>a) Superlativo absoluto: <em>Montevideo es una ciudad <strong>limpísima</strong></em> (o <em><strong>muy limpia</strong></em>).<br>b) Superlativo relativo: <em>Punta del Este es <strong>la playa más famosa de</strong> Uruguay.</em>",
+    q14: "<strong>Respuesta Esperada:</strong> La Rambla de Montevideo es una extensa avenida costera (de más de 22 km) situada junto al Río de la Plata, donde las personas suelen caminar, correr, andar en bicicleta y tomar mate al atardecer."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicación / Explicação:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "🇪🇸 Espanhol | 2º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
