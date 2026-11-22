@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História – 1º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #4e342e; --secondary: #6d4c41; --success: #2e7d32; --danger: #c62828; --bg: #efebe9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f5f5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #efebe9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📜 História | 1º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de História – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano A)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) Durante o período colonial, diversas expedições partiram em direção ao interior da América Portuguesa, contribuindo para a expansão das fronteiras além do Tratado de Tordesilhas. Qual era a principal diferença entre as "Entradas" e as "Bandeiras"?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) As Entradas eram expedições oficiais organizadas e financiadas pela Coroa Portuguesa, enquanto as Bandeiras eram expedições particulares organizadas principalmente por colonos paulistas.</label>
+                <label><input type="radio" name="q1" value="B"> B) As Entradas navegavam exclusivamente pelos rios amazônicos, enquanto as Bandeiras cruzavam o Oceano Atlântico rumo à África.</label>
+                <label><input type="radio" name="q1" value="C"> C) As Entradas tinham como único objetivo libertar indígenas escravizados, enquanto as Bandeiras fundavam universidades jesuíticas.</label>
+                <label><input type="radio" name="q1" value="D"> D) As Entradas eram lideradas por piratas franceses e holandeses, enquanto as Bandeiras eram comandadas pelo rei da Espanha.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) Com a descoberta das primeiras jazidas auríferas na região das Minas Gerais no final do século XVII, surgiram rotas fluviais que partiam de São Paulo (como Porto Feliz, no rio Tietê) levando alimentos, ferramentas e mercadorias até as minas de Cuiabá e Goiás. Como ficaram conhecidas essas expedições comerciais fluviais?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Tropas de resgate</label>
+                <label><input type="radio" name="q2" value="B"> B) Monções</label>
+                <label><input type="radio" name="q2" value="C"> C) Sesmarias</label>
+                <label><input type="radio" name="q2" value="D"> D) Companhias de Comércio</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Para controlar a arrecadação de impostos na região mineradora e evitar o contrabando de ouro em pó, a Coroa Portuguesa criou instituições onde todo o ouro extraído deveria ser derretido, purificado e transformado em barras carimbadas com o selo real, já descontado o imposto do "quinto" (20%). Como se chamavam esses órgãos?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Casas de Fundição</label>
+                <label><input type="radio" name="q3" value="B"> B) Câmaras Municipais</label>
+                <label><input type="radio" name="q3" value="C"> C) Engenhos Reais</label>
+                <label><input type="radio" name="q3" value="D"> D) Feitorias Litorâneas</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Entre 1707 e 1709, ocorreu um sangrento conflito na região mineradora envolvendo os bandeirantes paulistas (que reivindicavam exclusividade na exploração das minas por terem descoberto o ouro) e os forasteiros vindos de Portugal e de outras regiões da colônia. Como ficou conhecido esse conflito?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Guerra dos Mascates</label>
+                <label><input type="radio" name="q4" value="B"> B) Revolta de Beckman</label>
+                <label><input type="radio" name="q4" value="C"> C) Guerra dos Emboabas</label>
+                <label><input type="radio" name="q4" value="D"> D) Conjuração Baiana</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Em 1720, em Vila Rica (atual Ouro Preto), mineradores e comerciantes liderados por Felipe dos Santos rebelaram-se contra a instalação das Casas de Fundição e a proibição da circulação do ouro em pó. Qual foi a reação das autoridades portuguesas diante dessa revolta?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) A Coroa anulou todos os impostos sobre o ouro e concedeu autonomia política imediata a Minas Gerais.</label>
+                <label><input type="radio" name="q5" value="B"> B) O movimento foi violentamente reprimido pelo governador Conde de Assumar, que mandou incendiar casas e executar Felipe dos Santos.</label>
+                <label><input type="radio" name="q5" value="C"> C) Os revoltosos conquistaram o Rio de Janeiro e expulsaram definitivamente os portugueses do Brasil.</label>
+                <label><input type="radio" name="q5" value="D"> D) Felipe dos Santos foi nomeado vice-rei do Brasil e encarregado de administrar as minas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) O Iluminismo foi um movimento intelectual e filosófico que atingiu seu auge na Europa durante o século XVIII (conhecido como o "Século das Luzes"). Qual era a principal crítica política e econômica feita pelos pensadores iluministas ao Antigo Regime?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Defendiam o retorno ao feudalismo medieval e ao poder absoluto dos reis por direito divino.</label>
+                <label><input type="radio" name="q6" value="B"> B) Combatiam o Absolutismo monárquico, os privilégios da nobreza e do clero e a intervenção estatal do Mercantilismo, valorizando a razão, a liberdade e a igualdade jurídica.</label>
+                <label><input type="radio" name="q6" value="C"> C) Propunham a proibição da ciência experimental e o fechamento de todas as escolas públicas.</label>
+                <label><input type="radio" name="q6" value="D"> D) Apoiavam a censura religiosa sobre livros e o monopólio comercial das metrópoles sobre as colônias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) Entre os principais filósofos iluministas do século XVIII, o pensador francês Montesquieu destacou-se por sua obra <em>O Espírito das Leis</em> (1748). Qual teoria política fundamental foi defendida por Montesquieu para evitar a tirania dos governantes?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) A concentração de todos os poderes políticos nas mãos de um único monarca hereditário.</label>
+                <label><input type="radio" name="q7" value="B"> B) A divisão do poder do Estado em três esferas independentes e harmônicas: Executivo, Legislativo e Judiciário.</label>
+                <label><input type="radio" name="q7" value="C"> C) A entrega do governo civil exclusivamente aos tribunais da Inquisição religiosa.</label>
+                <label><input type="radio" name="q7" value="D"> D) A abolição imediata de todas as leis escritas e constituições nacionais.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Na segunda metade do século XVIII, com a queda na produção de ouro em Minas Gerais, a Coroa Portuguesa decidiu cobrar os impostos atrasados (as 100 arrobas anuais de ouro) por meio de uma cobrança forçada que confiscaria bens dos colonos. Como era chamada essa cobrança extrema que motivou a Inconfidência Mineira (1789)?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Derrama</label>
+                <label><input type="radio" name="q8" value="B"> B) Alcabala</label>
+                <label><input type="radio" name="q8" value="C"> C) Dízimo eclesiástico</label>
+                <label><input type="radio" name="q8" value="D"> D) Pacto Colonial</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) A Inconfidência Mineira (1789) foi fortemente influenciada pelos ideais iluministas europeus e pela Independência dos Estados Unidos (1776), trazidos ao Brasil por jovens da elite colonial que estudavam em universidades europeias (como Coimbra, na França e em Portugal). Qual era o principal objetivo político dos inconfidentes?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Proclamar uma república independente em Minas Gerais, criar uma universidade em Vila Rica e estimular a instalação de manufaturas locais.</label>
+                <label><input type="radio" name="q9" value="B"> B) Transferir a capital do Império Português de Lisboa para Vila Rica mantendo a submissão ao rei de Portugal.</label>
+                <label><input type="radio" name="q9" value="C"> C) Abolir imediatamente a escravidão em todo o território brasileiro e distribuir terras aos indígenas.</label>
+                <label><input type="radio" name="q9" value="D"> D) Entregar o controle das minas de ouro de Minas Gerais ao governo da Inglaterra.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) O movimento da Inconfidência Mineira foi descoberto pelas autoridades portuguesas antes mesmo de eclodir nas ruas de Vila Rica, após a delação de um dos participantes (Joaquim Silvério dos Reis) em troca do perdão de suas dívidas com a Coroa. Qual foi o desfecho aplicado aos líderes do movimento?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Todos os envolvidos foram perdoados pela rainha D. Maria I e receberam títulos de nobreza.</label>
+                <label><input type="radio" name="q10" value="B"> B) Os integrantes da elite foram condenados ao degredo (exílio) na África, enquanto Joaquim José da Silva Xavier (Tiradentes) foi enforcado e esquartejado em 1792.</label>
+                <label><input type="radio" name="q10" value="C"> C) Os revoltosos derrotaram as tropas portuguesas e proclamaram a independência do Brasil em 1789.</label>
+                <label><input type="radio" name="q10" value="D"> D) Tiradentes fugiu para a França e tornou-se membro da Assembleia Nacional durante a Revolução Francesa.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique como as Bandeiras e as Monções contribuíram para a expansão territorial do Brasil Colonial e para o abastecimento da região mineradora:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Quais foram as principais mudanças provocadas pela descoberta do ouro na sociedade e na urbanização do Brasil Colonial no século XVIII?</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Cite duas ideias centrais defendidas pelos filósofos iluministas do século XVIII contra o Antigo Regime europeu:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Explique de que maneira os ideais iluministas chegaram ao Brasil e influenciaram movimentos emancipacionistas como a Inconfidência Mineira (1789):</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📜 História | 1º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

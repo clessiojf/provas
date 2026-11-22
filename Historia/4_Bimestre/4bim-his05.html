@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História – 5º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #4e342e; --secondary: #6d4c41; --success: #2e7d32; --danger: #c62828; --bg: #efebe9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f5f5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #efebe9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📜 História | 5º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de História – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano E)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) As expedições bandeirantes que partiam da Vila de São Paulo nos séculos XVII e XVIII enfrentavam longas jornadas pelo interior desconhecido, seguindo o curso de rios como o Tietê. Qual era uma característica marcante do modo de vida e composição dessas expedições?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Eram formadas por poucos portugueses da elite e um grande número de indígenas aliados e mamelucos, que conheciam as trilhas do sertão e caminhavam muitas vezes descalços.</label>
+                <label><input type="radio" name="q1" value="B"> B) Eram compostas exclusivamente por nobres da corte de Lisboa montados em carruagens reais escoltadas pela marinha inglesa.</label>
+                <label><input type="radio" name="q1" value="C"> C) Eram viagens marítimas luxuosas que contornavam a Europa antes de desembarcar nos portos do Nordeste.</label>
+                <label><input type="radio" name="q1" value="D"> D) Eram expedições missionárias proibidas de portar armas ou explorar o interior além do litoral.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) No início do Ciclo do Ouro, a maior parte do metal precioso encontrado em Minas Gerais era o "ouro de aluvião". Onde esse tipo de ouro era encontrado e qual técnica básica era utilizada para extraí-lo?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Era encontrado no leito e nas margens dos rios, sendo separado do cascalho e da areia com o uso de bateias (bacias cônicas de madeira ou metal).</label>
+                <label><input type="radio" name="q2" value="B"> B) Era extraído exclusivamente de plataformas marítimas profundas no Oceano Atlântico com bombas a vapor.</label>
+                <label><input type="radio" name="q2" value="C"> C) Era colhido diretamente nas copas das árvores da Floresta Amazônica durante o período das cheias.</label>
+                <label><input type="radio" name="q2" value="D"> D) Era produzido artificialmente nos laboratórios químicos das universidades de Salvador.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) A riqueza gerada pela mineração do ouro no século XVIII financiou uma notável produção artística e arquitetônica nas cidades históricas mineiras (como Ouro Preto, Mariana, Sabará e Congonhas). Qual estilo artístico marcou as igrejas, esculturas e pinturas desse período, tendo como grandes destaques Aleijadinho e Mestre Ataíde?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Barroco Mineiro (e Rococó)</label>
+                <label><input type="radio" name="q3" value="B"> B) Modernismo da Semana de 1922</label>
+                <label><input type="radio" name="q3" value="C"> C) Arte Rupestre Pré-Histórica</label>
+                <label><input type="radio" name="q3" value="D"> D) Cubismo Industrial</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) A Guerra dos Emboabas (1707–1709) teve como uma de suas causas centrais o choque de interesses pelo abastecimento e controle das minas. Além da posse das lavras de ouro, o que os emboabas controlavam que gerava forte revolta entre os paulistas?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) O comércio e o abastecimento de alimentos, roupas e ferramentas vendidos a preços altíssimos na região mineradora.</label>
+                <label><input type="radio" name="q4" value="B"> B) A exportação exclusiva de café paulista pelo porto de Santos para os Estados Unidos.</label>
+                <label><input type="radio" name="q4" value="C"> C) As fábricas de automóveis e siderúrgicas instaladas no Vale do Paraíba.</label>
+                <label><input type="radio" name="q4" value="D"> D) Os tribunais republicanos eleitos pelos trabalhadores escravizados de Vila Rica.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) A Revolta de Felipe dos Santos (1720), ocorrida em Vila Rica, demonstrou o rigor da repressão colonial portuguesa diante de qualquer contestação à cobrança de impostos. Qual medida administrativa Portugal tomou logo após reprimir essa revolta para reforçar sua autoridade na região mineradora?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Desmembrou a região das Minas da Capitania de São Paulo, criando a Capitania de Minas Gerais com administração própria e policiamento reforçado.</label>
+                <label><input type="radio" name="q5" value="B"> B) Fechou definitivamente todas as Casas de Fundição e aboliu a cobrança do quinto em todo o Brasil.</label>
+                <label><input type="radio" name="q5" value="C"> C) Concedeu liberdade comercial total para Minas Gerais negociar ouro diretamente com a França e a Holanda.</label>
+                <label><input type="radio" name="q5" value="D"> D) Transferiu todas as lavras de ouro de Vila Rica para o interior de Pernambuco.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No contexto do Iluminismo europeu do século XVIII, o grupo de economistas franceses conhecidos como "fisiocratas" (liderados por François Quesnay) criou a famosa expressão <em>"Laissez-faire, laissez-passer"</em> ("Deixai fazer, deixai passar"). O que essa máxima defendia para a economia?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) A não intervenção do Estado na economia, permitindo a livre produção e a livre circulação de mercadorias sem barreiras mercantilistas.</label>
+                <label><input type="radio" name="q6" value="B"> B) O controle total do rei sobre todas as fábricas, salários, preços e rotas comerciais.</label>
+                <label><input type="radio" name="q6" value="C"> C) A proibição absoluta da agricultura e do comércio entre países vizinhos.</label>
+                <label><input type="radio" name="q6" value="D"> D) O aumento obrigatório dos impostos alfandegários para impedir qualquer importação.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) A Revolução Científica do século XVII (com nomes como Galileu Galilei e Isaac Newton) preparou o terreno para o Iluminismo do século XVIII. De que maneira a ciência influenciou os pensadores iluministas?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Mostrou que a razão, a observação e a experimentação podiam explicar as leis da natureza e também orientar a organização justa da sociedade e da política.</label>
+                <label><input type="radio" name="q7" value="B"> B) Comprovou que os fenômenos naturais e políticos deveriam ser explicados apenas por mitos e ordens dos reis absolutistas.</label>
+                <label><input type="radio" name="q7" value="C"> C) Levou os iluministas a rejeitar a matemática, a física e a educação formal.</label>
+                <label><input type="radio" name="q7" value="D"> D) Defendeu que apenas o clero e a nobreza tinham capacidade racional para estudar ciências.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Entre os acontecimentos externos da segunda metade do século XVIII, um evento histórico ocorrido na América do Norte em 1776 serviu de inspiração direta para os conspiradores da Inconfidência Mineira (1789), que chegaram a pedir apoio diplomático a Thomas Jefferson. Que evento foi esse?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) A Independência das Treze Colônias Inglesas (formação dos Estados Unidos da América).</label>
+                <label><input type="radio" name="q8" value="B"> B) A Queda do Império Romano do Ocidente.</label>
+                <label><input type="radio" name="q8" value="C"> C) A Revolução Russa de 1917.</label>
+                <label><input type="radio" name="q8" value="D"> D) A Guerra do Paraguai no século XIX.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Sobre a memória histórica construída em torno de Joaquim José da Silva Xavier (Tiradentes) após sua execução em 21 de abril de 1792, em que momento histórico ele passou a ser oficialmente exaltado como "mártir da Independência" e herói nacional?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) A partir da Proclamação da República no Brasil (em 1889), quando os republicanos buscaram um símbolo cívico que representasse a luta republicana contra a monarquia.</label>
+                <label><input type="radio" name="q9" value="B"> B) No dia seguinte à sua execução, por decreto da própria rainha D. Maria I de Portugal.</label>
+                <label><input type="radio" name="q9" value="C"> C) Durante o governo de Tomé de Sousa, no século XVI, antes mesmo do Ciclo do Ouro.</label>
+                <label><input type="radio" name="q9" value="D"> D) Apenas durante a chegada de Pedro Álvares Cabral a Porto Seguro em 1500.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao analisarmos o impacto do Iluminismo no Brasil no final do século XVIII, percebemos que esse movimento intelectual contribuiu para a crise do Sistema Colonial Português porque:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Forneceu argumentos filosóficos e políticos contra o Pacto Colonial, os impostos abusivos e o governo absolutista da metrópole, inspirando projetos de emancipação.</label>
+                <label><input type="radio" name="q10" value="B"> B) Fortaleceu o poder absoluto do rei de Portugal e aumentou o apoio dos colonos ao monopólio comercial.</label>
+                <label><input type="radio" name="q10" value="C"> C) Convenceu os colonos brasileiros de que a metrópole deveria cobrar ainda mais impostos sobre o ouro.</label>
+                <label><input type="radio" name="q10" value="D"> D) Impediu que qualquer estudante brasileiro viajasse para universidades europeias.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique o que era o ouro de aluvião e por que a sua extração facilitou a rápida corrida do ouro para Minas Gerais no final do século XVII e início do século XVIII:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) Quais foram as consequências políticas e administrativas da Guerra dos Emboabas e da Revolta de Felipe dos Santos para o controle de Portugal sobre a região mineradora?</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Explique o que defendia o liberalismo econômico iluminista (como a fisiocracia e as ideias de Adam Smith) em oposição às práticas mercantilistas:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Explique como a figura de Tiradentes foi ressignificada após a Proclamação da República (1889) em comparação ao tratamento que recebeu da Coroa Portuguesa em 1792:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "A", q3: "A", q4: "A", q5: "A",
+    q6: "A", q7: "A", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Formadas por poucos portugueses e muitos indígenas aliados e mamelucos",
+    q2: "Encontrado no leito e margens dos rios, extraído com bateias",
+    q3: "Barroco Mineiro (e Rococó)",
+    q4: "O comércio e abastecimento de alimentos, roupas e ferramentas a preços altos",
+    q5: "Desmembrou a região e criou a Capitania de Minas Gerais com policiamento",
+    q6: "Não intervenção do Estado na economia, livre produção e circulação",
+    q7: "Mostrou que razão e experimentação explicam a natureza e organizam a sociedade",
+    q8: "Independência das Treze Colônias Inglesas (Estados Unidos)",
+    q9: "A partir da Proclamação da República no Brasil (em 1889)",
+    q10: "Forneceu argumentos contra o Pacto Colonial, impostos e Absolutismo"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) Eram formadas por poucos portugueses da elite e um grande número de indígenas aliados e mamelucos, que conheciam as trilhas do sertão e caminhavam muitas vezes descalços.<br><strong>Explicação:</strong> Os bandeirantes adaptaram-se aos costumes indígenas de sobrevivência e navegação fluvial para percorrer o interior.",
+    q2: "A) Era encontrado no leito e nas margens dos rios, sendo separado do cascalho e da areia com o uso de bateias (bacias cônicas de madeira ou metal).<br><strong>Explicação:</strong> Por estar superficialmente nos rios, o ouro de aluvião não exigia grandes escavações subterrâneas iniciais.",
+    q3: "A) Barroco Mineiro (e Rococó).<br><strong>Explicação:</strong> O Barroco Mineiro floresceu nas cidades do ouro com esculturas em pedra-sabão de Aleijadinho e pinturas ilusionistas de Mestre Ataíde.",
+    q4: "A) O comércio e o abastecimento de alimentos, roupas e ferramentas vendidos a preços altíssimos na região mineradora.<br><strong>Explicação:</strong> Além da posse das lavras, os emboabas dominavam o comércio local, gerando forte rivalidade com os paulistas.",
+    q5: "A) Desmembrou a região das Minas da Capitania de São Paulo, criando a Capitania de Minas Gerais com administração própria e policiamento reforçado.<br><strong>Explicação:</strong> A criação da Capitania de Minas Gerais em 1720 permitiu à Coroa fiscalizar de perto as minas e cobrar o quinto.",
+    q6: "A) A não intervenção do Estado na economia, permitindo a livre produção e a livre circulação de mercadorias sem barreiras mercantilistas.<br><strong>Explicação:</strong> Os fisiocratas defendiam que a economia possui leis naturais próprias e não deve ser controlada pelos monopólios do Estado.",
+    q7: "A) Mostrou que a razão, a observação e a experimentação podiam explicar as leis da natureza e também orientar a organização justa da sociedade e da política.<br><strong>Explicação:</strong> Os iluministas aplicaram o espírito racional da Revolução Científica às críticas políticas e sociais.",
+    q8: "A) A Independência das Treze Colônias Inglesas (formação dos Estados Unidos da América).<br><strong>Explicação:</strong> Primeira ex-colônia americana a conquistar independência e instaurar uma república constitucional, inspirando os inconfidentes.",
+    q9: "A) A partir da Proclamação da República no Brasil (em 1889), quando os republicanos buscaram um símbolo cívico que representasse a luta republicana contra a monarquia.<br><strong>Explicação:</strong> Os republicanos transformaram Tiradentes em herói nacional e o dia 21 de abril em feriado cívico.",
+    q10: "A) Forneceu argumentos filosóficos e políticos contra o Pacto Colonial, os impostos abusivos e o governo absolutista da metrópole, inspirando projetos de emancipação.<br><strong>Explicação:</strong> O Iluminismo deu base teórica para questionar a exploração colonial portuguesa.",
+    q11: "<strong>Resposta Esperada:</strong> Ouro de aluvião era o ouro encontrado na superfície, nos leitos e nas margens dos rios. Como podia ser extraído com ferramentas simples (como a bateia) e sem necessidade de grandes investimentos iniciais, atraiu milhares de pessoas de várias partes do Brasil e de Portugal.",
+    q12: "<strong>Resposta Esperada:</strong> Após esses conflitos, Portugal reforçou sua autoridade e fiscalização na região: primeiro separou São Paulo e Minas de Ouro do Rio de Janeiro e, após a Revolta de Felipe dos Santos (1720), criou a Capitania de Minas Gerais com tropas permanentes e Casas de Fundição.",
+    q13: "<strong>Resposta Esperada:</strong> Defendia a liberdade econômica, a livre concorrência, a propriedade privada e a não intervenção do Estado na economia (laissez-faire), opondo-se aos monopólios comerciais e ao controle rígido praticados pelo Mercantilismo.",
+    q14: "<strong>Resposta Esperada:</strong> Em 1792, a Coroa Portuguesa condenou Tiradentes à forca e ao esquartejamento como traidor do rei, para intimidar a população. Após a Proclamação da República (1889), o novo governo o transformou em herói nacional e mártir republicano da luta pela independência."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📜 História | 5º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

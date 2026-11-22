@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História – 3º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #4e342e; --secondary: #6d4c41; --success: #2e7d32; --danger: #c62828; --bg: #efebe9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f5f5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #efebe9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📜 História | 3º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de História – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano C)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) As expedições conhecidas como "sertanismo de contrato" eram bandeiras contratadas por grandes proprietários rurais ou pelas autoridades coloniais com um objetivo específico no interior do Brasil. Qual era a finalidade dessas expedições?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Combater e destruir quilombos (como o Quilombo dos Palmares) e aldeias indígenas que resistiam à ocupação colonial.</label>
+                <label><input type="radio" name="q1" value="B"> B) Mapear o litoral norte para construir faróis marítimos e alfândegas reais.</label>
+                <label><input type="radio" name="q1" value="C"> C) Distribuir lotes de terras gratuitas para trabalhadores escravizados libertos.</label>
+                <label><input type="radio" name="q1" value="D"> D) Escoltar navios iluministas franceses que traziam livros proibidos para o Rio de Janeiro.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) As Monções foram fundamentais para a sobrevivência das populações que viviam nas distantes minas de ouro de Cuiabá (Mato Grosso) no século XVIII. Como eram realizadas essas viagens e quais perigos enfrentavam?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Eram viagens marítimas em grandes caravelas a vapor que contornavam o sul da América.</label>
+                <label><input type="radio" name="q2" value="B"> B) Eram comboios de canoas escavadas em troncos que navegavam por rios cheios de cachoeiras e corredeiras, enfrentando febres tropicais, naufrágios e ataques indígenas.</label>
+                <label><input type="radio" name="q2" value="C"> C) Eram caravanas ferroviárias protegidas por tropas inglesas entre Salvador e Ouro Preto.</label>
+                <label><input type="radio" name="q2" value="D"> D) Eram expedições aéreas em balões experimentais construídos pelos padres jesuítas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Diferentemente da sociedade açucareira nordestina — marcada pela rigidez entre senhores de engenho e escravizados —, a sociedade mineradora no século XVIII apresentou maior dinamismo e mobilidade social. Qual característica comprova essa transformação?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) O crescimento das vilas e cidades e o surgimento de uma camada média urbana formada por comerciantes, tropeiros, artesãos, funcionários públicos, artistas e profissionais liberais.</label>
+                <label><input type="radio" name="q3" value="B"> B) A abolição imediata do trabalho escravo em todas as lavras de ouro de Minas Gerais desde 1700.</label>
+                <label><input type="radio" name="q3" value="C"> C) O desaparecimento completo das cidades e o retorno de toda a população para engenhos rurais isolados.</label>
+                <label><input type="radio" name="q3" value="D"> D) A proibição total de qualquer atividade artística, musical ou religiosa na região das Minas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Durante a Guerra dos Emboabas (1707–1709), ocorreu um episódio famoso conhecido como o "Capão da Traição", no qual centenas de paulistas foram cercados e mortos após se renderem sob a promessa de terem suas vidas poupadas. Quem eram os "emboabas" nessa guerra?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Os portugueses reinóis e os colonos vindos de outras regiões do Brasil (como Bahia e Pernambuco) para explorar o ouro descoberto pelos paulistas.</label>
+                <label><input type="radio" name="q4" value="B"> B) Apenas os soldados holandeses que haviam invadido Olinda e Recife no século XVII.</label>
+                <label><input type="radio" name="q4" value="C"> C) Os bandeirantes nascidos exclusivamente na vila de São Paulo de Piratininga.</label>
+                <label><input type="radio" name="q4" value="D"> D) Os piratas ingleses que saqueavam os navios açucareiros no litoral nordestino.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Na Revolta de Felipe dos Santos (1720), em Vila Rica, os revoltosos exigiam do governador Conde de Assumar a anulação de uma medida fiscal recém-decretada pela Coroa Portuguesa. Qual era a principal reivindicação dos rebeldes?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) O cancelamento da instalação das Casas de Fundição e a permissão para continuar utilizando o ouro em pó como moeda corrente.</label>
+                <label><input type="radio" name="q5" value="B"> B) A transferência imediata da família real portuguesa de Lisboa para Vila Rica.</label>
+                <label><input type="radio" name="q5" value="C"> C) O aumento do imposto do quinto de 20% para 80% sobre todo o ouro extraído.</label>
+                <label><input type="radio" name="q5" value="D"> D) O fechamento de todas as estradas que ligavam Minas Gerais ao porto do Rio de Janeiro.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) Para divulgar o conhecimento científico e filosófico produzido pelos pensadores iluministas no século XVIII, os franceses Denis Diderot e Jean le Rond d'Alembert organizaram uma monumental obra coletiva composta por dezenas de volumes que reunia os saberes da época e criticava a ignorância e o autoritarismo. Como ficou conhecida essa obra?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) A Enciclopédia (ou Dicionário Raciocinado das Ciências, das Artes e dos Ofícios)</label>
+                <label><input type="radio" name="q6" value="B"> B) O Tratado de Tordesilhas</label>
+                <label><input type="radio" name="q6" value="C"> C) As Ordenações Filipinas</label>
+                <label><input type="radio" name="q6" value="D"> D) A Bula Inter Coetera</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) O filósofo genebrino Jean-Jacques Rousseau destacou-se no Iluminismo por defender a soberania popular e a democracia direta em sua obra <em>Do Contrato Social</em> (1762). Segundo Rousseau, de onde emana o poder legítimo de um governo?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Da vontade geral do povo (soberania popular), devendo as leis expressar o interesse coletivo dos cidadãos.</label>
+                <label><input type="radio" name="q7" value="B"> B) Do direito divino hereditário concedido exclusivamente aos reis absolutistas.</label>
+                <label><input type="radio" name="q7" value="C"> C) Do monopólio comercial das companhias de navegação e dos senhores feudais.</label>
+                <label><input type="radio" name="q7" value="D"> D) Da força militar dos exércitos mercenários sem necessidade de leis ou eleições.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Alguns monarcas europeus do século XVIII (como Frederico II da Prússia, Catarina II da Rússia e o Marquês de Pombal, ministro de Portugal) adotaram reformas inspiradas parcialmente nas ideias iluministas — modernizando a administração, a educação e a economia —, mas sem abrir mão do seu poder absoluto. Como ficou conhecida essa forma de governo?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Despotismo Esclarecido</label>
+                <label><input type="radio" name="q8" value="B"> B) República Parlamentarista</label>
+                <label><input type="radio" name="q8" value="C"> C) Feudalismo Descentralizado</label>
+                <label><input type="radio" name="q8" value="D"> D) Democracia Direta</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) No Brasil da segunda metade do século XVIII, as ideias iluministas circularam clandestinamente em bibliotecas particulares (como a do cônego Luís Vieira da Silva, em Mariana) e nas chamadas "sociedades literárias" (no Rio de Janeiro e na Bahia), apesar da forte censura portuguesa. Por que a Coroa Portuguesa proibia a circulação de livros iluministas na colônia?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Porque essas obras questionavam o Absolutismo, o Pacto Colonial e a dominação da metrópole, podendo estimular revoltas pela independência.</label>
+                <label><input type="radio" name="q9" value="B"> B) Porque os livros iluministas ensinavam técnicas secretas para transformar ferro em ouro puro.</label>
+                <label><input type="radio" name="q9" value="C"> C) Porque Portugal já havia adotado uma república democrática e queria impedir o retorno da monarquia.</label>
+                <label><input type="radio" name="q9" value="D"> D) Porque os livros eram escritos exclusivamente em línguas indígenas desconhecidas pelos colonos.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao compararmos a Inconfidência Mineira (1789) com outros movimentos influenciados pelo Iluminismo no Brasil Colonial (como a Conjuração Baiana de 1798), qual característica diferencia claramente o movimento mineiro?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) A Inconfidência Mineira teve caráter elitista (liderada por mineradores, intelectuais e proprietários), enquanto a Conjuração Baiana teve forte participação popular (alfaiates, soldados e escravizados) e defendia o fim da escravidão.</label>
+                <label><input type="radio" name="q10" value="B"> B) A Inconfidência Mineira foi liderada exclusivamente por trabalhadores escravizados, enquanto a Conjuração Baiana foi organizada pelo rei de Portugal.</label>
+                <label><input type="radio" name="q10" value="C"> C) A Inconfidência Mineira ocorreu no século XVI, antes mesmo da descoberta do ouro em Minas Gerais.</label>
+                <label><input type="radio" name="q10" value="D"> D) A Inconfidência Mineira foi vitoriosa e proclamou a República Federativa do Brasil em 1789.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique qual era a função das Monções no Brasil Colonial e como elas se diferenciavam das Bandeiras de apresamento e prospecção:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) O que foi a "derrama" decretada pela Coroa Portuguesa em Minas Gerais e por que ela foi o estopim da Inconfidência Mineira (1789)?</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Explique o que foi o Despotismo Esclarecido no século XVIII e cite um exemplo de governante ou ministro associado a essa prática:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Por que Tiradentes recebeu uma pena muito mais severa que os demais líderes da Inconfidência Mineira após o julgamento realizado pela Coroa Portuguesa?</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "B", q3: "A", q4: "A", q5: "A",
+    q6: "A", q7: "A", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Combater e destruir quilombos e aldeias indígenas rebeldes",
+    q2: "Comboios fluviais de canoas enfrentando cachoeiras, febres e ataques",
+    q3: "Crescimento urbano e surgimento de uma camada média urbana",
+    q4: "Portugueses reinóis e colonos de outras regiões do Brasil",
+    q5: "Cancelamento das Casas de Fundição e manutenção do ouro em pó",
+    q6: "A Enciclopédia (Diderot e d'Alembert)",
+    q7: "Da vontade geral do povo (soberania popular)",
+    q8: "Despotismo Esclarecido",
+    q9: "Questionavam o Absolutismo, o Pacto Colonial e estimulavam revoltas",
+    q10: "Inconfidência Mineira foi elitista; Conjuração Baiana teve participação popular"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) Combater e destruir quilombos (como o Quilombo dos Palmares) e aldeias indígenas que resistiam à ocupação colonial.<br><strong>Explicação:</strong> No sertanismo de contrato, bandeirantes eram pagos por fazendeiros ou pelo governo para reprimir focos de resistência.",
+    q2: "B) Eram comboios de canoas escavadas em troncos que navegavam por rios cheios de cachoeiras e corredeiras, enfrentando febres tropicais, naufrágios e ataques indígenas.<br><strong>Explicação:</strong> As monções conectavam São Paulo às minas de Cuiabá e Goiás pelos rios interiores.",
+    q3: "A) O crescimento das vilas e cidades e o surgimento de uma camada média urbana formada por comerciantes, tropeiros, artesãos, funcionários públicos, artistas e profissionais liberais.<br><strong>Explicação:</strong> A economia mineradora estimulou o mercado interno, o comércio e a vida urbana nas Minas.",
+    q4: "A) Os portugueses reinóis e os colonos vindos de outras regiões do Brasil (como Bahia e Pernambuco) para explorar o ouro descoberto pelos paulistas.<br><strong>Explicação:</strong> Os paulistas chamavam pejorativamente os forasteiros de 'emboabas' e disputavam com eles o monopólio das lavras.",
+    q5: "A) O cancelamento da instalação das Casas de Fundição e a permissão para continuar utilizando o ouro em pó como moeda corrente.<br><strong>Explicação:</strong> Os rebeldes protestavam contra o controle rigoroso do quinto imposto pelas Casas de Fundição.",
+    q6: "A) A Enciclopédia (ou Dicionário Raciocinado das Ciências, das Artes e dos Ofícios).<br><strong>Explicação:</strong> Organizada por Diderot e d'Alembert, a Enciclopédia difundiu o racionalismo e o pensamento científico iluminista.",
+    q7: "A) Da vontade geral do povo (soberania popular), devendo as leis expressar o interesse coletivo dos cidadãos.<br><strong>Explicação:</strong> Em <em>Do Contrato Social</em>, Rousseau afirmou que o povo é o verdadeiro detentor da soberania política.",
+    q8: "A) Despotismo Esclarecido.<br><strong>Explicação:</strong> Monarcas absolutistas adotaram reformas modernizadoras de inspiração iluminista sem abdicar de seu poder centralizado.",
+    q9: "A) Porque essas obras questionavam o Absolutismo, o Pacto Colonial e a dominação da metrópole, podendo estimular revoltas pela independência.<br><strong>Explicação:</strong> A censura portuguesa tentava barrar a entrada das ideias de liberdade e república na América Portuguesa.",
+    q10: "A) A Inconfidência Mineira teve caráter elitista (liderada por mineradores, intelectuais e proprietários), enquanto a Conjuração Baiana teve forte participação popular (alfaiates, soldados e escravizados) e defendia o fim da escravidão.<br><strong>Explicação:</strong> Embora ambas tenham sofrido influência iluminista, possuíam bases sociais e pautas distintas.",
+    q11: "<strong>Resposta Esperada:</strong> As Monções eram expedições comerciais fluviais destinadas a abastecer as regiões mineradoras isoladas com alimentos, ferramentas e mercadorias. Diferenciavam-se das Bandeiras de apresamento e prospecção porque seu foco era o comércio e o transporte pelos rios, e não a captura de indígenas ou a busca inicial por ouro.",
+    q12: "<strong>Resposta Esperada:</strong> A derrama era a cobrança forçada, com confisco de bens pela força militar, dos impostos atrasados caso Minas Gerais não atingisse a cota anual de 100 arrobas de ouro. Foi o estopim da Inconfidência porque arruinaria ainda mais os mineradores e a elite local já endividados.",
+    q13: "<strong>Resposta Esperada:</strong> Foi a forma de governo em que reis absolutistas adotaram reformas inspiradas no Iluminismo (modernizando o ensino, a economia e a administração) sem abrir mão do poder absoluto. Exemplos: Marquês de Pombal (Portugal), Frederico II (Prússia) ou Catarina II (Rússia).",
+    q14: "<strong>Resposta Esperada:</strong> Porque Tiradentes tinha origem social mais modesta (alferes/dentista), enquanto os demais líderes pertenciam à rica elite colonial (proprietários, padres e intelectuais) e receberam penas mais brandas (degredo na África). A Coroa usou a execução pública de Tiradentes como exemplo para intimidar futuras revoltas."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📜 História | 3º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>

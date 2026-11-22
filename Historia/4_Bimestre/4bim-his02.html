@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História – 2º Simulado (4º Bimestre) – 7º Ano</title>
+
+    <style>
+        :root { --primary: #4e342e; --secondary: #6d4c41; --success: #2e7d32; --danger: #c62828; --bg: #efebe9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-top: 80px; color: #263238; }
+
+        header { position: fixed; top: 0; width: 100%; background: var(--primary); color: white; padding: 15px 0; text-align: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        h1 { text-align: center; color: var(--primary); font-size: 1.8em; margin-bottom: 5px; }
+        h2 { color: var(--secondary); font-size: 1.2em; margin-top: 30px; border-left: 5px solid var(--secondary); padding-left: 15px; background: #f5f5f5; padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+        .student-info { display: flex; gap: 15px; margin-bottom: 25px; background: #f5f7f8; padding: 15px; border-radius: 8px; border: 1px solid #cfd8dc; }
+        .student-info input { flex: 1; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-size: 1em; }
+
+        .question { margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .question p { font-weight: bold; margin-top: 0; color: #37474f; }
+
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; padding: 4px; border-radius: 4px; }
+        .options label:hover { background: #f5f5f5; }
+
+        textarea.dissertativa { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #b0bec5; border-radius: 6px; font-family: inherit; font-size: 0.95em; resize: vertical; min-height: 75px; }
+
+        .correct-answer-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: #efebe9;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+            line-height: 1.4;
+        }
+
+        #result { display: none; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; font-weight: bold; background: #e8f5e9; border: 1px solid #a5d6a7; color: var(--success); font-size: 1.2em; }
+
+        button { width: 100%; padding: 18px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        button:hover { background: var(--primary); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+<header><strong>📜 História | 2º Simulado (4º Bimestre) – 7º Ano</strong></header>
+
+<div class="container">
+    <h1>Simulado de História – 4º Bimestre</h1>
+    <p style="text-align:center; color:#546e7a; font-style:italic;">Preencha seus dados de identificação obrigatórios abaixo antes de iniciar a prova.</p>
+
+    <div id="result"></div>
+
+    <form id="quiz" action="https://script.google.com/macros/s/AKfycbwOBD1lvOcCYSy83RGP5_hlRvwjGCQCddmhUYZUhRTdBwZ3F5zJ-XTD4zs_G2GSpa_87Q/exec" method="POST">
+        
+        <div class="student-info">
+            <input type="text" name="Nome_Aluno" id="student_name" placeholder="Nome Completo do Aluno" required>
+            <input type="text" name="Turma" id="student_class" placeholder="Turma (ex: 7º Ano B)" required>
+        </div>
+        <h2>Parte I – Questões Objetivas (Múltipla Escolha)</h2>
+
+        <!-- Q1 -->
+        <div class="question" id="q1_div">
+            <p>1) As expedições particulares conhecidas como Bandeiras desempenharam múltiplos papéis no interior do Brasil Colonial durante os séculos XVII e XVIII. Qual alternativa apresenta corretamente as três principais modalidades de atuação dos bandeirantes?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Apresamento (captura de indígenas para escravização), sertanismo de contrato (destruição de quilombos e aldeias rebeldes) e prospecção (busca por ouro e pedras preciosas).</label>
+                <label><input type="radio" name="q1" value="B"> B) Construção de portos marítimos, fiscalização alfandegária de navios ingleses e cobrança de impostos eclesiásticos.</label>
+                <label><input type="radio" name="q1" value="C"> C) Cultivo exclusivo de cana-de-açúcar no litoral nordestino, fabricação de tecidos finos e exportação de café.</label>
+                <label><input type="radio" name="q1" value="D"> D) Catequese pacífica nas missões jesuíticas, abertura de escolas públicas e defesa dos direitos indígenas.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q1"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question" id="q2_div">
+            <p>2) No auge da mineração do ouro no século XVIII, a Coroa Portuguesa decidiu transferir a capital do Brasil de Salvador para o Rio de Janeiro (em 1763). Qual foi o principal motivo estratégico dessa mudança?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Aproximar a sede administrativa da região das Minas Gerais para fiscalizar melhor o escoamento do ouro e a cobrança de impostos pelo porto carioca.</label>
+                <label><input type="radio" name="q2" value="B"> B) Fugir de uma grande epidemia que havia destruído completamente a cidade de Salvador.</label>
+                <label><input type="radio" name="q2" value="C"> C) Facilitar a exportação do açúcar produzido exclusivamente nas fazendas do interior de São Paulo.</label>
+                <label><input type="radio" name="q2" value="D"> D) Cumprir uma exigência dos líderes da Inconfidência Mineira após a vitória da revolta.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q2"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question" id="q3_div">
+            <p>3) Além do "quinto" (20% sobre todo o ouro extraído), a Coroa Portuguesa cobrava outros tributos na região mineradora para garantir suas receitas, como a "capitação". Sobre o que incidia esse imposto?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Sobre cada pessoa escravizada (por cabeça) que trabalhava na mineração, independentemente da quantidade de ouro encontrada.</label>
+                <label><input type="radio" name="q3" value="B"> B) Apenas sobre os navios estrangeiros que atracavam nos portos de Recife e Olinda.</label>
+                <label><input type="radio" name="q3" value="C"> C) Exclusivamente sobre os padres e bispos que residiam nos mosteiros do litoral.</label>
+                <label><input type="radio" name="q3" value="D"> D) Sobre a venda de livros iluministas importados da França pelos estudantes de Coimbra.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q3"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question" id="q4_div">
+            <p>4) Durante a Guerra dos Emboabas (1707–1709), os bandeirantes paulistas foram derrotados pelos forasteiros ("emboabas") liderados por Manuel Nunes Viana. Qual foi uma das principais consequências políticas dessa guerra para a administração colonial?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) A separação administrativa da região das Minas, com a criação da Capitania de São Paulo e Minas de Ouro, aumentando o controle direto da Coroa.</label>
+                <label><input type="radio" name="q4" value="B"> B) A expulsão definitiva de todos os portugueses da região de Vila Rica e Mariana.</label>
+                <label><input type="radio" name="q4" value="C"> C) O fechamento imediato de todas as minas de ouro e o retorno dos colonos para a lavoura de algodão.</label>
+                <label><input type="radio" name="q4" value="D"> D) A assinatura de um acordo que entregava o controle das minas aos bandeirantes paulistas para sempre.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q4"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question" id="q5_div">
+            <p>5) Tanto a Guerra dos Emboabas (1707–1709) quanto a Revolta de Felipe dos Santos (1720) são classificadas pela historiografia como "revoltas nativistas". Por que esses movimentos recebem essa denominação?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Porque defendiam interesses locais dos colonos contra abusos fiscais ou monopólios, mas ainda não propunham a separação política definitiva entre o Brasil e Portugal.</label>
+                <label><input type="radio" name="q5" value="B"> B) Porque foram organizados exclusivamente por povos indígenas nativos sem participação de colonos brancos ou mestiços.</label>
+                <label><input type="radio" name="q5" value="C"> C) Porque conquistaram a independência imediata do Brasil e proclamaram a República no século XVIII.</label>
+                <label><input type="radio" name="q5" value="D"> D) Porque tinham como objetivo entregar o território brasileiro ao domínio da Espanha e da Holanda.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q5"></div>
+        </div>
+        <!-- Q6 -->
+        <div class="question" id="q6_div">
+            <p>6) No campo econômico, os pensadores iluministas criticavam o Mercantilismo (baseado no monopólio comercial e na forte intervenção do Estado) e deram origem ao Liberalismo Econômico, liderado pelo escocês Adam Smith. Qual ideia central caracteriza o liberalismo econômico?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) O Estado deve controlar todos os preços, proibir o comércio livre e manter monopólios exclusivos.</label>
+                <label><input type="radio" name="q6" value="B"> B) A economia funciona melhor com livre concorrência, propriedade privada e mínima intervenção do governo, regulada pela lei da oferta e da procura.</label>
+                <label><input type="radio" name="q6" value="C"> C) Toda a riqueza de uma nação depende exclusivamente do acúmulo de ouro e prata nos cofres do rei.</label>
+                <label><input type="radio" name="q6" value="D"> D) As colônias devem ser proibidas de comercializar com qualquer país além da sua metrópole.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q6"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question" id="q7_div">
+            <p>7) O filósofo iluminista francês Voltaire destacou-se por sua defesa intransigente da liberdade de pensamento, de expressão e de crença religiosa, criticando o fanatismo e a intolerância da Igreja e do Estado absolutista. Qual frase resume o pensamento de Voltaire sobre a liberdade de opinião?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) "O Estado sou eu, e minha vontade é a única lei do reino."</label>
+                <label><input type="radio" name="q7" value="B"> B) "Posso não concordar com nenhuma palavra do que você diz, mas defenderei até a morte o seu direito de dizê-lo."</label>
+                <label><input type="radio" name="q7" value="C"> C) "A censura prévia sobre todos os livros é necessária para manter a paz social."</label>
+                <label><input type="radio" name="q7" value="D"> D) "Os reis governam por direito divino e não devem prestar contas ao povo."</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q7"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question" id="q8_div">
+            <p>8) Em 1785, a rainha de Portugal D. Maria I assinou um decreto (Alvará) que determinava o fechamento de todas as manufaturas têxteis e fábricas existentes no Brasil, obrigando os colonos a comprar tecidos apenas de Portugal. Como esse decreto contribuiu para a eclosão da Inconfidência Mineira (1789)?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Aumentou a insatisfação da elite colonial mineira contra o Pacto Colonial, pois impedia o desenvolvimento econômico interno da colônia.</label>
+                <label><input type="radio" name="q8" value="B"> B) Beneficiou os comerciantes de Vila Rica ao isentá-los do pagamento do quinto e da derrama.</label>
+                <label><input type="radio" name="q8" value="C"> C) Permitiu que Minas Gerais exportasse tecidos livres de impostos diretamente para a Inglaterra.</label>
+                <label><input type="radio" name="q8" value="D"> D) Reduziu o preço de todos os produtos importados vendidos nas regiões mineradoras.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q8"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question" id="q9_div">
+            <p>9) Os inconfidentes mineiros criaram um projeto de bandeira para a futura república que pretendiam fundar em Minas Gerais, contendo um triângulo vermelho e a frase em latim <em>"Libertas quae sera tamen"</em> ("Liberdade ainda que tardia"). O que o triângulo simbolizava para os conspiradores?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) A Santíssima Trindade cristã e os três ideais iluministas (Liberdade, Igualdade e Fraternidade).</label>
+                <label><input type="radio" name="q9" value="B"> B) As três capitanias do Nordeste açucareiro subordinadas ao rei de Portugal.</label>
+                <label><input type="radio" name="q9" value="C"> C) A aliança militar entre Portugal, Espanha e Inglaterra contra a França.</label>
+                <label><input type="radio" name="q9" value="D"> D) Os três impostos coloniais que deveriam ser dobrados após a revolta.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q9"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question" id="q10_div">
+            <p>10) Ao analisarmos a composição social dos participantes da Inconfidência Mineira (1789), nota-se que a maioria pertencia à elite intelectual e econômica de Minas Gerais (mineradores endividados, padres, poetas como Tomás Antônio Gonzaga e Cláudio Manuel da Costa, militares e advogados). Essa composição explica por que o movimento:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Não chegou a um consenso sobre a abolição imediata da escravidão, pois muitos líderes eram proprietários de pessoas escravizadas.</label>
+                <label><input type="radio" name="q10" value="B"> B) Foi liderado exclusivamente por trabalhadores escravizados das lavras de ouro e alfaiates pobres.</label>
+                <label><input type="radio" name="q10" value="C"> C) Defendia a entrega de todas as fazendas e minas para os povos indígenas da região.</label>
+                <label><input type="radio" name="q10" value="D"> D) Rejeitava completamente os livros iluministas e a formação universitária europeia.</label>
+            </div>
+            <div class="correct-answer-box" id="ans_q10"></div>
+        </div>
+        <h2>Parte II – Questões Dissertativas</h2>
+
+        <!-- Q11 -->
+        <div class="question" id="q11_div">
+            <p>11) Explique o que foi a Guerra dos Emboabas (1707–1709) e quais grupos disputavam o controle da região mineradora nesse conflito:</p>
+            <textarea class="dissertativa" name="q11" id="q11_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q11"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question" id="q12_div">
+            <p>12) O que foram as Casas de Fundição criadas por Portugal nas Minas Gerais e por que elas provocaram revoltas como a de Felipe dos Santos (1720)?</p>
+            <textarea class="dissertativa" name="q12" id="q12_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q12"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question" id="q13_div">
+            <p>13) Explique como a teoria da divisão dos três poderes de Montesquieu buscava combater o Absolutismo monárquico:</p>
+            <textarea class="dissertativa" name="q13" id="q13_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q13"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question" id="q14_div">
+            <p>14) Cite duas propostas dos inconfidentes mineiros de 1789 que demonstram a influência do Iluminismo e da independência dos Estados Unidos no movimento:</p>
+            <textarea class="dissertativa" name="q14" id="q14_text" placeholder="Escreva sua resposta de forma clara e objetiva..."></textarea>
+            <div class="correct-answer-box" id="ans_q14"></div>
+        </div>
+
+        <button type="button" onclick="finalizar()">Finalizar Prova</button>
+    </form>
+</div>
+<script>
+// Gabarito oficial das 10 questões objetivas
+const gabarito = {
+    q1: "A", q2: "A", q3: "A", q4: "A", q5: "A",
+    q6: "B", q7: "B", q8: "A", q9: "A", q10: "A"
+};
+
+// Respostas textuais resumidas para o relatório de erros da planilha Google
+const respostasTextuais = {
+    q1: "Apresamento, sertanismo de contrato e prospecção",
+    q2: "Aproximar a sede administrativa das Minas para fiscalizar o ouro",
+    q3: "Sobre cada pessoa escravizada que trabalhava na mineração",
+    q4: "Criação da Capitania de São Paulo e Minas de Ouro",
+    q5: "Defendiam interesses locais sem propor separação definitiva de Portugal",
+    q6: "Livre concorrência, propriedade privada e mínima intervenção do governo",
+    q7: "Defesa da liberdade de pensamento e expressão (Voltaire)",
+    q8: "Aumentou a insatisfação da elite mineira contra o Pacto Colonial",
+    q9: "A Santíssima Trindade e os três ideais iluministas",
+    q10: "Não chegou a consenso sobre abolição imediata da escravidão"
+};
+
+// Explicações diretas e objetivas para as 10 objetivas + 4 dissertativas
+const resolucoesDetalhadas = {
+    q1: "A) Apresamento (captura de indígenas para escravização), sertanismo de contrato (destruição de quilombos e aldeias rebeldes) e prospecção (busca por ouro e pedras preciosas).<br><strong>Explicação:</strong> Essas foram as três principais frentes de atuação das expedições bandeirantes no interior colonial.",
+    q2: "A) Aproximar a sede administrativa da região das Minas Gerais para fiscalizar melhor o escoamento do ouro e a cobrança de impostos pelo porto carioca.<br><strong>Explicação:</strong> Com o deslocamento do eixo econômico para o Sudeste, o Rio de Janeiro tornou-se o principal porto de saída do ouro.",
+    q3: "A) Sobre cada pessoa escravizada (por cabeça) que trabalhava na mineração, independentemente da quantidade de ouro encontrada.<br><strong>Explicação:</strong> A capitação era um imposto fixo cobrado por cada trabalhador escravizado empregado nas lavras.",
+    q4: "A) A separação administrativa da região das Minas, com a criação da Capitania de São Paulo e Minas de Ouro, aumentando o controle direto da Coroa.<br><strong>Explicação:</strong> Após o conflito, Portugal reforçou a presença estatal e fiscal diretamente na zona mineradora.",
+    q5: "A) Porque defendiam interesses locais dos colonos contra abusos fiscais ou monopólios, mas ainda não propunham a separação política definitiva entre o Brasil e Portugal.<br><strong>Explicação:</strong> Diferentemente dos movimentos emancipacionistas do final do século XVIII, as revoltas nativistas não buscavam a independência.",
+    q6: "B) A economia funciona melhor com livre concorrência, propriedade privada e mínima intervenção do governo, regulada pela lei da oferta e da procura.<br><strong>Explicação:</strong> Adam Smith e os liberais combatiam os monopólios mercantilistas e a interferência estatal excessiva na economia.",
+    q7: "B) 'Posso não concordar com nenhuma palavra do que você diz, mas defenderei até a morte o seu direito de dizê-lo.'<br><strong>Explicação:</strong> Voltaire foi o grande defensor da liberdade de expressão, de imprensa e da tolerância religiosa contra a censura absolutista.",
+    q8: "A) Aumentou a insatisfação da elite colonial mineira contra o Pacto Colonial, pois impedia o desenvolvimento econômico interno da colônia.<br><strong>Explicação:</strong> O Alvará de 1785 proibiu manufaturas no Brasil para manter a dependência dos produtos importados de Portugal.",
+    q9: "A) A Santíssima Trindade cristã e os três ideais iluministas (Liberdade, Igualdade e Fraternidade).<br><strong>Explicação:</strong> A bandeira idealizada pelos inconfidentes unia simbolismo religioso tradicional aos valores iluministas da época.",
+    q10: "A) Não chegou a um consenso sobre a abolição imediata da escravidão, pois muitos líderes eram proprietários de pessoas escravizadas.<br><strong>Explicação:</strong> Por ser um movimento elitista, a Inconfidência Mineira manteve divisões internas sobre o fim do trabalho escravo.",
+    q11: "<strong>Resposta Esperada:</strong> Foi o conflito ocorrido entre 1707 e 1709 pelo controle das jazidas de ouro em Minas Gerais. Disputavam a região os bandeirantes paulistas (que reivindicavam exclusividade pela descoberta do ouro) e os 'emboabas' (forasteiros vindos de Portugal e de outras partes do Brasil).",
+    q12: "<strong>Resposta Esperada:</strong> Eram órgãos criados por Portugal onde todo o ouro extraído tinha de ser derretido em barras carimbadas, já descontando o quinto (20%). Provocaram revoltas como a de Felipe dos Santos porque proibiam a circulação do ouro em pó e aumentavam a fiscalização e os impostos sobre os mineradores.",
+    q13: "<strong>Resposta Esperada:</strong> Montesquieu propôs dividir o poder do Estado em Executivo, Legislativo e Judiciário, independentes entre si. Assim, nenhum governante concentraria todos os poderes nas mãos (como ocorria no Absolutismo), evitando abusos e tirania.",
+    q14: "<strong>Resposta Esperada:</strong> 1) Proclamação de uma república independente em Minas Gerais (inspirada na república norte-americana); 2) Criação de uma universidade em Vila Rica, incentivo à abertura de manufaturas locais e perdão das dívidas com a Coroa."
+};
+function finalizar() {
+    let acertos = 0;
+    const totalObjetivas = 10;
+    const totalDissertativas = 4;
+    const erros = [];
+    const dissertativasLog = [];
+
+    // Etapa 1A: Validação preventiva das questões objetivas (Q1 a Q10)
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!selecionado) {
+            alert("Responda a questão " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+        }
+    }
+
+    // Etapa 1B: Validação preventiva das questões dissertativas (Q11 a Q14)
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const divQuestao = document.getElementById(nome + "_div");
+
+        if (!campoTexto || campoTexto.value.trim() === "") {
+            alert("Responda a questão dissertativa " + i);
+            if (divQuestao) {
+                divQuestao.scrollIntoView({ behavior: "smooth", block: "center" });
+                campoTexto.focus();
+            }
+            return;
+        }
+    }
+
+    // Etapa 2A: Correção das questões objetivas
+    for (let i = 1; i <= totalObjetivas; i++) {
+        const nome = "q" + i;
+        const selecionado = document.querySelector(`input[name="${nome}"]:checked`);
+        const alternativas = document.querySelectorAll(`input[name="${nome}"]`);
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        alternativas.forEach(alt => {
+            const label = alt.parentElement;
+            label.style.color = "";
+            label.style.fontWeight = "";
+        });
+
+        const correta = document.querySelector(`input[name="${nome}"][value="${gabarito[nome]}"]`);
+        correta.parentElement.style.color = "#2e7d32";
+        correta.parentElement.style.fontWeight = "bold";
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = `<strong>Explicação Pedagógica:</strong><br>${resolucoesDetalhadas[nome]}`;
+        }
+
+        if (selecionado.value !== gabarito[nome]) {
+            selecionado.parentElement.style.color = "#c62828";
+            selecionado.parentElement.style.fontWeight = "bold";
+            erros.push(`Q${i} – Marcou: ${selecionado.value} | Correto: ${gabarito[nome]} (${respostasTextuais[nome]})`);
+        } else {
+            acertos++;
+        }
+    }
+
+    // Etapa 2B: Exibição das respostas esperadas nas questões dissertativas e coleta para envio
+    for (let i = totalObjetivas + 1; i <= totalObjetivas + totalDissertativas; i++) {
+        const nome = "q" + i;
+        const campoTexto = document.getElementById(nome + "_text");
+        const boxExplicacao = document.getElementById("ans_" + nome);
+
+        if (boxExplicacao) {
+            boxExplicacao.style.display = "block";
+            boxExplicacao.innerHTML = resolucoesDetalhadas[nome];
+        }
+
+        dissertativasLog.push(`Q${i}: ${campoTexto.value.trim()}`);
+        campoTexto.disabled = true;
+    }
+
+    const perc = ((acertos / totalObjetivas) * 100).toFixed(0) + "%";
+
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <h2>Prova Concluída!</h2>
+        <p>Objetivas: Você acertou <strong>${acertos}</strong> de <strong>${totalObjetivas}</strong> (<strong>${perc}</strong>).</p>
+        <p style="font-size:0.9em; font-weight:normal;">Confira abaixo os gabaritos comentados e os padrões de resposta das questões dissertativas.</p>
+    `;
+    result.style.display = "block";
+
+    document.querySelectorAll("input[type='radio']").forEach(i => i.disabled = true);
+    
+    const btnFinalizar = document.querySelector("button[onclick='finalizar()']");
+    if (btnFinalizar) btnFinalizar.disabled = true;
+
+    const form = document.getElementById("quiz");
+    const formData = new FormData(form);
+
+    const tituloSimulado = "📜 História | 2º Simulado (4º Bimestre) – 7º Ano";
+    const agora = new Date().toLocaleString("pt-BR");
+
+    let relatorioCompleto = erros.join("\n");
+    if (dissertativasLog.length > 0) {
+        relatorioCompleto += (relatorioCompleto ? "\n\n" : "") + "--- DISSERTATIVAS ---\n" + dissertativasLog.join("\n");
+    }
+
+    formData.append("simulado", tituloSimulado);
+    formData.append("data_hora", agora);
+    formData.append("acertos", acertos);
+    formData.append("porcentagem", perc);
+    formData.append("erros", relatorioCompleto);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Bloqueio de segurança anti-cópia e anti-inspeção de código fonte
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'i' || event.key === 'j' || event.key === 'c')) {
+        event.preventDefault();
+    }
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
